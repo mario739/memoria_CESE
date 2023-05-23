@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2023.5.19)  22 MAY 2023 18:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2023.5.19)  23 MAY 2023 18:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -668,9 +668,6 @@ LaTeX Info: Redefining \% on input line 31.
 
 LaTeX Warning: Label `fig:texmaker' multiply defined.
 
-
-LaTeX Warning: Label `fig:texmaker' multiply defined.
-
 ) (/home/mario/Documents/memoria_CESE/build/Chapters/Chapter2.aux) (/home/mario/Documents/memoria_CESE/build/Chapters/Chapter3.aux) (/home/mario/Documents/memoria_CESE/build/Chapters/Chapter4.aux) (/home/mario/Documents/memoria_CESE/build/Chapters/Chapter5.aux))
 \openout1 = `memoria.aux'.
 
@@ -807,7 +804,7 @@ LaTeX Info: Redefining \nameref on input line 61.
 
 Package scrlayer Info: Setting magic \footheight to \baselineskip while
 (scrlayer)             \begin{document} on input line 61.
-<./Figures/logoFIUBA.pdf, id=140, 460.9062pt x 153.61644pt>
+<./Figures/logoFIUBA.pdf, id=108, 460.9062pt x 153.61644pt>
 File: ./Figures/logoFIUBA.pdf Graphic file (type pdf)
 <use ./Figures/logoFIUBA.pdf>
 Package pdftex.def Info: ./Figures/logoFIUBA.pdf  used on input line 61.
@@ -874,10 +871,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 ] (/home/mario/Documents/memoria_CESE/build/memoria.toc
 LaTeX Info: Redefining \. on input line 2.
 LaTeX Info: Redefining \% on input line 2.
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 19.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
-File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-))
+)
 \tf@toc=\write5
 \openout5 = `memoria.toc'.
 
@@ -908,118 +902,54 @@ LaTeX Info: Redefining \% on input line 2.
 [9] [10
 
 ]
---------------------
- Dedicatory
---------------------
-1: section
-[11] [12
-
-]
 1: section
 \openout2 = `Chapters/Chapter1.aux'.
 
 (./Chapters/Chapter1.tex
 Cap\'{\i }tulo 1.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 27.
 1: section
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.50 
+l.44 
       [1
 
 
 ]
-<./Figures/modulo_libelium.png, id=275, 825.0825pt x 1068.99374pt>
+<./Figures/modulo_libelium.png, id=216, 825.0825pt x 1068.99374pt>
 File: ./Figures/modulo_libelium.png Graphic file (type png)
 <use ./Figures/modulo_libelium.png>
-Package pdftex.def Info: ./Figures/modulo_libelium.png  used on input line 61.
+Package pdftex.def Info: ./Figures/modulo_libelium.png  used on input line 65.
 (pdftex.def)             Requested size: 155.91869pt x 202.00174pt.
-<./Figures/modulo_dropcontrol.png, id=277, 666.49pt x 1021.8175pt>
-File: ./Figures/modulo_dropcontrol.png Graphic file (type png)
-<use ./Figures/modulo_dropcontrol.png>
-Package pdftex.def Info: ./Figures/modulo_dropcontrol.png  used on input line 75.
-(pdftex.def)             Requested size: 155.91869pt x 239.03574pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-LaTeX Info: Redefining \. on input line 83.
-LaTeX Info: Redefining \% on input line 83.
+LaTeX Info: Redefining \. on input line 75.
+LaTeX Info: Redefining \% on input line 75.
 pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.83 \subsection
-                {Nodo RF-M1 DropControl} [2 <./Figures/modulo_libelium.png>]
-LaTeX Info: Redefining \. on input line 108.
-LaTeX Info: Redefining \% on input line 108.
- [3 <./Figures/modulo_dropcontrol.png>]
-LaTeX Info: Redefining \. on input line 138.
-LaTeX Info: Redefining \% on input line 138.
- [4] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2019/09/10 1.8c listings language file
-) (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2019/09/10 1.8c listings language file
-)
-<./Figures/texmaker.png, id=301, 1371.1225pt x 710.655pt>
-File: ./Figures/texmaker.png Graphic file (type png)
-<use ./Figures/texmaker.png>
-Package pdftex.def Info: ./Figures/texmaker.png  used on input line 170.
-(pdftex.def)             Requested size: 194.90134pt x 101.00914pt.
-LaTeX Info: Redefining \. on input line 180.
-LaTeX Info: Redefining \% on input line 180.
- [5]
-<./Figures/docMaestro.png, id=316, 1273.75874pt x 448.67625pt>
-File: ./Figures/docMaestro.png Graphic file (type png)
-<use ./Figures/docMaestro.png>
-Package pdftex.def Info: ./Figures/docMaestro.png  used on input line 183.
-(pdftex.def)             Requested size: 389.80269pt x 137.30133pt.
-LaTeX Info: Redefining \. on input line 205.
-LaTeX Info: Redefining \% on input line 205.
- [6 <./Figures/texmaker.png> <./Figures/docMaestro.png>] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2019/09/10 1.8c listings language file
-) (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang2.sty
-File: lstlang2.sty 2019/09/10 1.8c listings language file
-) (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang3.sty
-File: lstlang3.sty 2019/09/10 1.8c listings language file
-) (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2019/09/10 1.8c listings language file
-) (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang2.sty
-File: lstlang2.sty 2019/09/10 1.8c listings language file
-) (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang3.sty
-File: lstlang3.sty 2019/09/10 1.8c listings language file
-) (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2019/09/10 1.8c listings language file
-) (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang2.sty
-File: lstlang2.sty 2019/09/10 1.8c listings language file
-) (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang3.sty
-File: lstlang3.sty 2019/09/10 1.8c listings language file
-) (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
-File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
-)
-LaTeX Info: Redefining \. on input line 248.
-LaTeX Info: Redefining \% on input line 248.
- [7]
-LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <10.95> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 252.
-LaTeX Info: Redefining \. on input line 304.
-LaTeX Info: Redefining \% on input line 304.
- [8])
+l.75 
+      [2]
+<./Figures/modulo_dropcontrol.png, id=222, 666.49pt x 1021.8175pt>
+File: ./Figures/modulo_dropcontrol.png Graphic file (type png)
+<use ./Figures/modulo_dropcontrol.png>
+Package pdftex.def Info: ./Figures/modulo_dropcontrol.png  used on input line 88.
+(pdftex.def)             Requested size: 116.94199pt x 179.28848pt.
+LaTeX Info: Redefining \. on input line 97.
+LaTeX Info: Redefining \% on input line 97.
+ [3 <./Figures/modulo_libelium.png> <./Figures/modulo_dropcontrol.png>])
 LaTeX Info: Redefining \. on input line 124.
 LaTeX Info: Redefining \% on input line 124.
- [9]
+ [4]
 \openout2 = `Chapters/Chapter2.aux'.
 
- (./Chapters/Chapter2.tex [10
+ (./Chapters/Chapter2.tex
+Cap\'{\i }tulo 2.
+1: section
+[5
 
 
 
 ]
-Cap\'{\i }tulo 2.
-1: section
-[11]
-<./Figures/cuadradoAzul.png, id=409, 180.675pt x 180.675pt>
+<./Figures/cuadradoAzul.png, id=244, 180.675pt x 180.675pt>
 File: ./Figures/cuadradoAzul.png Graphic file (type png)
 <use ./Figures/cuadradoAzul.png>
 Package pdftex.def Info: ./Figures/cuadradoAzul.png  used on input line 58.
@@ -1028,7 +958,7 @@ File: ./Figures/cuadradoAzul.png Graphic file (type png)
 <use ./Figures/cuadradoAzul.png>
 Package pdftex.def Info: ./Figures/cuadradoAzul.png  used on input line 65.
 (pdftex.def)             Requested size: 81.303pt x 81.303pt.
-<./Figures/word.jpeg, id=412, 259.97125pt x 194.7275pt>
+<./Figures/word.jpeg, id=247, 259.97125pt x 194.7275pt>
 File: ./Figures/word.jpeg Graphic file (type jpg)
 <use ./Figures/word.jpeg>
 Package pdftex.def Info: ./Figures/word.jpeg  used on input line 74.
@@ -1041,8 +971,8 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <9> on input line 79.
 LaTeX Info: Redefining \. on input line 81.
 LaTeX Info: Redefining \% on input line 81.
- [12 <./Figures/cuadradoAzul.png>]
-<./Figures/questionMark.png, id=425, 225.84375pt x 225.84375pt>
+ [6 <./Figures/cuadradoAzul.png>]
+<./Figures/questionMark.png, id=259, 225.84375pt x 225.84375pt>
 File: ./Figures/questionMark.png Graphic file (type png)
 <use ./Figures/questionMark.png>
 Package pdftex.def Info: ./Figures/questionMark.png  used on input line 87.
@@ -1059,18 +989,22 @@ File: ./Figures/questionMark.png Graphic file (type png)
 <use ./Figures/questionMark.png>
 Package pdftex.def Info: ./Figures/questionMark.png  used on input line 114.
 (pdftex.def)             Requested size: 76.01157pt x 76.01392pt.
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 122.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+)
 LaTeX Info: Redefining \. on input line 144.
 LaTeX Info: Redefining \% on input line 144.
- [13 <./Figures/word.jpeg> <./Figures/questionMark.png>]
+ [7 <./Figures/word.jpeg> <./Figures/questionMark.png>]
 LaTeX Info: Redefining \. on input line 195.
 LaTeX Info: Redefining \% on input line 195.
- [14])
+ [8])
 LaTeX Info: Redefining \. on input line 125.
 LaTeX Info: Redefining \% on input line 125.
- [15]
+ [9]
 \openout2 = `Chapters/Chapter3.aux'.
 
- (./Chapters/Chapter3.tex [16
+ (./Chapters/Chapter3.tex [10
 
 
 
@@ -1082,10 +1016,10 @@ File: lstlang1.sty 2019/09/10 1.8c listings language file
 File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
 ))
 1: section
-[17]
+[11]
 \openout2 = `Chapters/Chapter4.aux'.
 
- (./Chapters/Chapter4.tex [18
+ (./Chapters/Chapter4.tex [12
 
 
 
@@ -1093,10 +1027,10 @@ File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
 Cap\'{\i }tulo 4.
 )
 1: section
-[19]
+[13]
 \openout2 = `Chapters/Chapter5.aux'.
 
- (./Chapters/Chapter5.tex [20
+ (./Chapters/Chapter5.tex [14
 
 
 
@@ -1104,14 +1038,14 @@ Cap\'{\i }tulo 4.
 Cap\'{\i }tulo 5.
 )
 1: section
-[21] [22
+[15] [16
 
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 153.
 
 1: section
-[23]
+[17]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 153.
  (/home/mario/Documents/memoria_CESE/build/memoria.aux
 LaTeX Info: Redefining \. on input line 31.
@@ -1120,7 +1054,7 @@ LaTeX Info: Redefining \% on input line 31.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 153.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 153.
 Package rerunfilecheck Info: File `memoria.out' has not changed.
-(rerunfilecheck)             Checksum: 1EB8CF07C88D701B351D9C3F2F8E5CEC;2389.
+(rerunfilecheck)             Checksum: 97A4747087A3303571AEEF68DA658FB0;1751.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -1130,20 +1064,20 @@ Package logreq Info: Writing requests to 'memoria.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 27586 strings out of 481239
- 569416 string characters out of 5920377
- 1237563 words of memory out of 5000000
- 42237 multiletter control sequences out of 15000+600000
- 594838 words of font info for 129 fonts, out of 8000000 for 9000
+ 26011 strings out of 481239
+ 546708 string characters out of 5920377
+ 1213225 words of memory out of 5000000
+ 40776 multiletter control sequences out of 15000+600000
+ 586169 words of font info for 109 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
- 65i,20n,86p,890b,3597s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 61i,20n,86p,890b,2240s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrbo8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on /home/mario/Documents/memoria_CESE/build/memoria.pdf (37 pages, 1936638 bytes).
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on /home/mario/Documents/memoria_CESE/build/memoria.pdf (29 pages, 1543155 bytes).
 PDF statistics:
- 612 PDF objects out of 1000 (max. 8388607)
- 536 compressed objects within 6 object streams
- 175 named destinations out of 1000 (max. 500000)
- 313 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 424 PDF objects out of 1000 (max. 8388607)
+ 365 compressed objects within 4 object streams
+ 103 named destinations out of 1000 (max. 500000)
+ 239 words of extra memory for PDF output out of 10000 (max. 10000000)
 

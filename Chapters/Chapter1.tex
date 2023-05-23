@@ -20,9 +20,9 @@
 %\section{Introducción}
 
 %----------------------------------------------------------------------------------------
-\section{Aprendiendo \LaTeX{}}
+\section{Introducción}
 
-\LaTeX{} no es \textsc{WYSIWYG} (What You See is What You Get), a diferencia de los procesadores de texto como Microsoft Word o Pages de Apple o incluso LibreOffice en el mundo open-source. En lugar de ello, un documento escrito para \LaTeX{} es en realidad un archivo de texto simple o llano que \emph{no contiene formato} . Nosotros le decimos a \LaTeX{} cómo deseamos que se aplique el formato en el documento final escribiendo comandos simples entre el texto, por ejemplo, si quiero usar texto en itálicas para dar énfasis, escribo \verb|\it{texto}| y pongo el texto que quiero en itálicas entre medio de las llaves. Esto significa que \LaTeX{} es un lenguaje del tipo \enquote{mark-up}, muy parecido a HTML.
+
 
 \subsection{Una introducción (no tan corta) a \LaTeX{}}
 
@@ -39,46 +39,68 @@ Acá tiene un ejemplo de una ``subsubsección'' que es el cuarto nivel de ordena
 
 Si estás escribiendo un documento con mucho contenido matemático, entonces es posible que desees leer el documento de la AMS (American Mathematical Society) llamado, \enquote{A Short Math Guide for \LaTeX{}}. Se puede encontrar en línea en el siguiente link: \url{http://www.ams.org/tex/amslatex.html} en la sección \enquote{Additional Documentation} hacia la parte inferior de la página.
 
+\vspace{5cm}
+%----------------------------------------------------------------------------------------
+
+\section{Estado del arte}
+
+Durante la etapa de investigación del proyecto se realizó la búsqueda de productos comerciales en el mercado local e internacional.
+Se encontraron algunos productos parecidos al que se pretende realizar, un dato interesante a resaltar todos los productos encontrados son del mercado internacional , no se encontro ningun producto o empresa que ofrezca este tipo de soluciones
+en el mercado local.
+
+A continuación se describen los productos encontrados, estas opciones varían con respectos la tecnología que utilizan.
+
+\subsection{Libelium}
+
+Smart Agriculture PRO está diseñado para realizar monitoreo de viñedos para mejorar la calidad del vino, riego selectivo en campos de golf y control de condiciones en invernaderos, entre otros.
+Permite monitorear múltiples parámetros ambientales que involucran una amplia gama de aplicaciones, desde el análisis del desarrollo en crecimiento hasta la observación del clima. Para ello se ha dotado de sensores de temperatura y humedad del aire y del suelo, luminosidad, radiación solar (PAR y UV), velocidad y dirección del viento, precipitaciones, presión atmosférica, humedad de las hojas, distancia y diámetro del fruto o tronco (dendrómetro).
+\vspace{1cm}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=.4\textwidth]{./Figures/modulo_libelium.png}
+	\caption{Entorno de trabajo de texMaker.}
+	\label{fig:texmaker}
+\end{figure}
+
+\vspace{1cm}
+
+\subsection{Nodo RF-M1 DropControl}
+
+El nuevo nodo RF-M1 es adecuado para tareas de monitoreo simples como parte de una red DropControl o por sí solo. Posee una combinación de entradas que le permite realizar múltiples tareas de monitoreo y almacenarlas en la nube.
+\vspace{1cm}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=.4\textwidth]{./Figures/modulo_dropcontrol.png}
+	\caption{Entorno de trabajo de texMaker.}
+	\label{fig:texmaker}
+\end{figure}
+
+\vspace{1cm}
+asdasd
+
+\subsection{Nodo RF-M1 DropControl}
+
 
 %----------------------------------------------------------------------------------------
 
-\section{Utilizando esta plantilla}
+\section{Objetivo y alcances}
 
-Si estás familiarizado con \LaTeX{}, entonces podés explorar la estructura de directorios de esta plantilla y proceder a personalizarla agregando tu información en el bloque \emph{INFORMACIÓN DE LA PORTADA} en el archivo \file{memoria.tex}.  
+\subsection{Objetivo}
+El objetivo principal del trabajo es el diseño e implementación de un prototipo funcional de un sistema de monitoreo de cultivos agrícolas.
 
-Se puede continuar luego modificando el resto de los archivos siguiendo los lineamientos que se describen en la sección \ref{sec:FillingFile} en la página \pageref{sec:FillingFile}.
-
-Debés asegurarte de leer el capítulo \ref{Chapter2} acerca de las convenciones utilizadas para las Memoria de los Trabajos Finales de la \degreename.
-
-Si sos nuevo en \LaTeX{}, se recomienda que continúes leyendo el documento ya que contiene información básica para aprovechar el potencial de esta herramienta.
-
-
-%----------------------------------------------------------------------------------------
-
-\section{Qué incluye esta plantilla}
-
-\subsection{Carpetas}
-
-Esta plantilla se distribuye como una único archivo .zip que se puede descomprimir en varios archivos y carpetas. Asimismo, se puede consultar el repositorio git para obtener la última versión de los archivos, \url{https://github.com/patriciobos/Plantilla-CESE.git}. Los nombres de las carpetas son, o pretender ser, auto-explicativos.
-
-\keyword{Appendices} -- Esta es la carpeta donde se deben poner los apéndices. Cada apéndice debe ir en su propio archivo \file{.tex}. Se incluye un ejemplo y una plantilla en la carpeta.
-
-\keyword{Chapters} -- Esta es la carpeta donde se deben poner los capítulos de la memoria. Cada capítulo debe ir un su propio archivo \file{.tex} por separado.  Se ofrece por defecto, la siguiente estructura de capítulos y se recomienda su utilización dentro de lo posible:
+\subsection{Alcances}
 
 \begin{itemize}
-\item Capítulo 1: Introducción general	
-\item Capítulo 2: Introducción específica
-\item Capítulo 3: Diseño e implementación
-\item Capítulo 4: Ensayos y resultados
-\item Capítulo 5: Conclusiones
-
+  \item Implementacion de un prototipo funcional de hardware de bajo consumo 	
+  \item Desarrollo del firmware sobre un sistema operativo de tiempo real
+  \item Transmision de la informacion por red celular 
+  \item Visualizacion de los datos en una plataforma IoT paga o libre 
+  \item Capítulo 5: Conclusiones
+  
 \end{itemize}
 
-Esta estructura de capítulos es la que se recomienda para las memorias de la especialización.
-
-\keyword{Figures} -- Esta carpeta contiene todas las figuras de la memoria.  Estas son las versiones finales de las imágenes que van a ser incluidas en la memoria.  Pueden ser imágenes en formato \textit{raster}\footnote{\url{https://en.wikipedia.org/wiki/Raster_graphics}} como \file{.png}, \file{.jpg} o en formato vectoriales\footnote{\url{https://en.wikipedia.org/wiki/Vector_graphics}} como \file{.pdf}, \file{.ps}.  Se debe notar que utilizar imágenes vectoriales disminuye notablemente el peso del documento final y acelera el tiempo de compilación por lo que es recomendable su utilización siempre que sea posible.
-
-\subsection{Archivos}
 
 También están incluidos varios archivos, la mayoría de ellos son de texto plano y se puede ver su contenido en un editor de texto. Después de la compilación inicial, se verá que más archivos auxiliares son creados por \ LaTeX{} o BibTeX, pero son de uso interno y no es necesario hacer nada en particular con ellos.  Toda la información necesaria para compilar el documento se encuentra en los archivos \file{.tex}, \file{.bib}, \file{.cls} y en las imágenes de la carpeta Figures.
 

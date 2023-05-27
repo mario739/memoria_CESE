@@ -1,7 +1,7 @@
 % Chapter 1
 
 \chapter{Introducción general} % Main chapter title
-
+En este capítulo se hace una breve introducción a la necesidad que condujo al desarrollo del trabajo. Se presenta el internet de las cosas y el estado del arte de dispositivos similares. Asimismo, se explica el objetivo y los alcances del trabajo.
 \label{Chapter1} % For referencing the chapter elsewhere, use \ref{Chapter1} 
 \label{IntroGeneral}
 
@@ -23,47 +23,51 @@
 \section{Introducción}
 En los últimos años la agricultura ha enfrentado muchos desafíos, desde una creciente población mundial a ser alimentada, hasta requisitos de sostenibilidad y restricciones ambientales debido al cambio climático y el calentamiento global.
 
-La agricultura es uno de los sectores que más sufre la escasez de agua que existe actualmente en el mundo, uno de los objetivos de implantar la tecnología IoT en este sector, es el de lograr una gestión eficiente y sostenible de los recursos hídricos.
+La agricultura es uno de los sectores que más sufre la escasez de agua que existe actualmente en el mundo, uno de los objetivos de implementar la tecnología IoT en este sector, es el de lograr una gestión eficiente y sostenible de los recursos hídricos.
 
 Esto obliga a implementar soluciones que permitan modernizar las prácticas agrícolas. En este contexto, la Agricultura 4.0 representa la última evolución de la  agricultura de precisión. La misma se encuentra basada en el concepto de agricultura inteligente, donde convergen el uso de internet de las cosas, computación
 en la nube, aprendizaje automático para el análisis de grandes volúmenes de datos, vehículos no tripulados y robótica.
 
 \subsection{Internet de las cosas}
-El concepto de internet de las cosas se refiere a la interconexión digital de dispositivos y objetos a través de una red, es decir, dispositivos como sensores y/o actuadores, equipados con una interfaz de comunicación, unidades de procesamiento y almacenamiento. Estos dispositivos tienen la capacidad de adquirir, intercambiar y transferir datos a la red mediante alguna tecnología de comunicación inalámbrica.
+El concepto de internet de las cosas o IoT (del ingles Internet of Things) se refiere a la interconexión digital de dispositivos y objetos a través de una red, es decir, dispositivos como sensores y/o actuadores, equipados con una interfaz de comunicación, unidades de procesamiento y almacenamiento. Estos dispositivos tienen la capacidad de adquirir, intercambiar y transferir datos a la red mediante alguna tecnología de comunicación inalámbrica.
 
-El IoT puede usarse a favor de la sostenibilidad,no cabe duda de que Internet es un facilitador de iniciativas sostenibles.De acuerdo con el Foro Económico Mundial la mayoría de los proyectos con internet de las cosas se centran en la eficiencia energética en las ciudades, energías sostenibles y el consumo responsable. Por ejemplo:
+El IoT puede usarse a favor de la sostenibilidad, no cabe duda de que Internet es un facilitador de iniciativas sostenibles. De acuerdo con el Foro Económico Mundial la mayoría de los proyectos con internet de las cosas se centran en la eficiencia energética en las ciudades, energías sostenibles y el consumo responsable. Por ejemplo:
 \begin{itemize}
-  \item Eficiencia energética: En este sector se interconectan sensores, algoritmos y redes de comunicación para anticipar la demanda eléctrica y así realizar una distribución sostenible de la energía para reducir el precio del kW.
-  \item Uso del Agua: Esta tecnología pone en funcionamiento máquinas para recoger datos en tiempo real que permitan hacer uso eficiente del agua y reducir su consumo.
+  \item Eficiencia energética: en este sector se interconectan sensores, algoritmos y redes de comunicación para anticipar la demanda eléctrica y así realizar una distribución sostenible de la energía para reducir el precio del kW.
+  \item Uso del Agua: esta tecnología pone en funcionamiento máquinas para recoger datos en tiempo real que permitan hacer uso eficiente del agua y reducir su consumo.
   
 \end{itemize}
 
-\subsection{Sistemas de monitoreo de cultivos agricolas}
+\subsection{Sistemas de monitoreo de cultivos agrícolas}
 Los sistemas de monitoreo de cultivos agrícolas se encargan de monitorear
-las distintas variables ambientales a las que están expuestos los cultivos agrícolas, estos datos adquiridos nos ayudarán a tomar decisiones y a manejar de una manera eficiente los recursos con los que cuentan los agricultores.
+las distintas variables ambientales a las que están expuestos los cultivos agrícolas, los datos adquiridos ayudan a la toma de decisiones y a manejar de una manera eficiente los recursos con los que cuentan los agricultores.
 
-Los sistemas de monitoreo cuenta con tres partes fundamentales que son el nodo sensor en si que seria la parte física o hardware que mayormente es de bajo consumo, el firmware que abarca la lógica del sistema que se encarga de realizar la adquisición, procesamiento y transferencia de datos que puede o no estar sobre un sistema operativo de tiempo real, finalmente la parte de la nube o plataforma IoT, que ofrecen diferentes servicios como ser almacenamiento,procesamiento, análisis, visualización,etc esta parte del sistema permite al usuario del sistema poder ver los valores de las variables medidas y así poder tomar decisiones con respecto a las mediaciones.
-\vspace{4cm}
+Cuentan con tres partes fundamentales: 
+\begin{itemize}
+  \item El nodo sensor, que en sí sería la parte física o hardware, generalmente de bajo consumo.
+  \item El firmware que abarca la lógica del sistema y se encarga de realizar la adquisición, procesamiento y transferencia de datos que puede o no estar sobre un sistema operativo de tiempo real.
+  \item Nube o plataforma IoT, que ofrecen diferentes servicios como ser almacenamiento, procesamiento, análisis, visualización, etc. Esta parte del sistema permite al usuario del sistema poder visualizar los valores de las variables medidas y así poder tomar decisiones con respecto a las mediciones.
+\end{itemize}
 %----------------------------------------------------------------------------------------
 
 \section{Estado del arte}
 
 Durante la etapa de investigación del proyecto se realizó la búsqueda de productos comerciales en el mercado local e internacional.
-Se encontraron algunos productos parecidos al que se pretende realizar, un dato interesante a resaltar todos los productos encontrados son del mercado internacional , no se encontro ningun producto o empresa que ofrezca este tipo de soluciones
+Se encontraron algunos productos de similares características al que se pretende realizar, un dato interesante a resaltar todos los productos encontrados son del mercado internacional, no se encontró ningún producto o empresa que ofrezca este tipo de soluciones
 en el mercado local.
 
-A continuación se describen los productos encontrados, estas opciones varían con respectos la tecnología que utilizan.
+A continuación se describen los productos encontrados, estas opciones varían con respecto a la tecnología que utilizan.
 
 \subsection{Libelium}
 
-Smart Agriculture PRO figura 1.1 es un modulo de IoT que está diseñado para realizar monitoreo de viñedos para mejorar la calidad del vino, riego selectivo en campos de golf y control de condiciones en invernaderos, entre otros.
+Smart Agriculture PRO figura 1.1 es un módulo de IoT que está diseñado para realizar monitoreo de viñedos para mejorar la calidad del vino, riego selectivo en campos de golf y control de condiciones en invernaderos, entre otros.
 Permite monitorear múltiples parámetros ambientales que involucran una amplia gama de aplicaciones, desde el análisis del desarrollo en crecimiento hasta la observación del clima. Para ello se ha dotado de sensores de temperatura y humedad del aire y del suelo, luminosidad, radiación solar, velocidad y dirección del viento, precipitaciones, presión atmosférica, humedad de las hojas, distancia y diámetro del fruto o tronco.
 \vspace{1cm}
 
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[width=.4\textwidth]{./Figures/modulo_libelium.png}
-	\caption{Modulo Smart Agriculture PRO}
+	\caption{Modulo Smart Agriculture PRO.}
 	\label{fig:texmaker}
 \end{figure}
 
@@ -71,7 +75,7 @@ Permite monitorear múltiples parámetros ambientales que involucran una amplia 
 
 \subsection{Nodo RF-M1 DropControl}
 
-El nuevo nodo RF-M1 es adecuado para tareas de monitoreo simples como parte de una red DropControl o por sí solo. Posee una combinación de entradas que le permite realizar múltiples tareas de monitoreo y almacenarlas en la nube. En la figura 1.2 se muestra el modulo fisicamente.
+El nodo RF-M1 es adecuado para tareas de monitoreo simples como parte de una red DropControl o por sí solo. Posee una combinación de entradas que le permite realizar múltiples tareas de monitoreo y almacenarlas en la nube. En la figura 1.2 se muestra el módulo físicamente.
 
 Características del dispositivo: 
 \begin{itemize}
@@ -86,7 +90,7 @@ Características del dispositivo:
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[width=.3\textwidth]{./Figures/modulo_dropcontrol.png}
-	\caption{Modulo RF-M1 de DropControl}
+	\caption{Modulo RF-M1 de DropControl.}
 	\label{fig:texmaker}
 \end{figure}
 
@@ -101,8 +105,8 @@ El objetivo principal del trabajo es el diseño e implementación de un prototip
 \subsection{Alcances}
 
 \begin{itemize}
-  \item Implementacion de un prototipo funcional con hardware de bajo consumo 	
-  \item Desarrollo del firmware sobre un sistema operativo de tiempo real
-  \item Transmision de la informacion por red celular 
-  \item Visualizacion de los datos en una plataforma IoT
+  \item Implementación de un prototipo funcional con hardware de bajo consumo. 	
+  \item Desarrollo del firmware sobre un sistema operativo de tiempo real.
+  \item Transmisión de la información por red celular.
+  \item Visualización de los datos en Ubidots.
 \end{itemize}

@@ -56,4 +56,14 @@ La necesidad de la poblacion al manejo eficiente de las recursos que con el tiem
 Un sistema de monitoreo de cultivos agricolas se encargan de monitoreo o medir los distintos variables ambientales que nos ayudaran a manejar de una manejar eficiente de los recrso que los agricultores cuentan, los sistemas a alto nivel se basa en los siguientes pate o componente, un nodo sensor que se encarga de adquirir los datos fisicos procesarlos y mandarlos a la red o nube atraves de alguna tecnoligia inlambrica de comunicaccion, la plataforma o nube que puede ser de paga o gratis que nosa ayuda a almacenar los datos,crear interfaz grafica, analisar los datos ,etc  y finalmente el usuario que puede acceder y visualizar los datos de su cultivo atraves de una pagina web 
 
 
+RECOLECTAN LOS SENROERS 
+
+De acuerdo con el Foro Economico Mundial la mayoria de los proyectos con internet de las cosas se centran en la eficiencia de los recursos.Por ejemplo
+
+
+Los sistemas cuentan con tres partes funEl sistema cuenta con tres partes fundamentales que son el nodo sensor que contempla toda la parte física  sí que sería en todo el hardware que se utiliza para la recolección(sensores,procesador,módulos de comunicación ) de los datos, el firmware del nodo sensor que es la lógica del sistema que se encarga de realizar la adquisición , procesamiento, transferencia de datos que puede o no estar basado en un sistema operativo de tiempo real y finalmente la parte de la nube o plataforma iot , las diferentes plataformas ofrecen diferentes características como se el procesamientos, análisis, almacenamiento, visualizacion,etc lo que permite al usuario poder ver los valores de las variables medidas y así poder tomar decisiones con respectos a estas
+
+
+
+Los sistemas de monitoreo cuenta con tres partes fundamentales que son el nodo sensor en si que seria la parte fisica o hardware que mayormente es de bajo consumo, el firmware que abarca la logica del sistema que se encarga de realizar la adquisicion, procesamiento y tranferencia de datos que puede o no estar sobre un sistema operativo de tiempo real, finalmente la parte de la nube o plataforma IoT, que ofrecen diferentes servicios como ser almacenamiento,procesamiento, analisis, visualizacion,etc, esta parte del sistema permite al usuario del sistema porder ver los valores de las variables medidas y asi poder tomar decisiones con respecto a las mediaciones.  
 

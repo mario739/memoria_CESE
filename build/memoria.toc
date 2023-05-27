@@ -4,7 +4,7 @@
 \contentsline {chapter}{\numberline {1}Introducción general}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Introducción}{1}{section.1.1}%
 \contentsline {subsection}{\numberline {1.1.1}Internet de las cosas}{1}{subsection.1.1.1}%
-\contentsline {subsection}{\numberline {1.1.2}Sistemas de monitoreo de cultivos agricolas}{2}{subsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.1.2}Sistemas de monitoreo de cultivos agrícolas}{2}{subsection.1.1.2}%
 \contentsline {section}{\numberline {1.2}Estado del arte}{2}{section.1.2}%
 \contentsline {subsection}{\numberline {1.2.1}Libelium}{2}{subsection.1.2.1}%
 \contentsline {subsection}{\numberline {1.2.2}Nodo RF-M1 DropControl}{3}{subsection.1.2.2}%

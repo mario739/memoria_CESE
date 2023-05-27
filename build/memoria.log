@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2023.5.19)  23 MAY 2023 18:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2023.5.19)  27 MAY 2023 16:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -911,7 +911,7 @@ Cap\'{\i }tulo 1.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.44 
+l.38 
       [1
 
 
@@ -919,22 +919,22 @@ l.44
 <./Figures/modulo_libelium.png, id=216, 825.0825pt x 1068.99374pt>
 File: ./Figures/modulo_libelium.png Graphic file (type png)
 <use ./Figures/modulo_libelium.png>
-Package pdftex.def Info: ./Figures/modulo_libelium.png  used on input line 65.
+Package pdftex.def Info: ./Figures/modulo_libelium.png  used on input line 69.
 (pdftex.def)             Requested size: 155.91869pt x 202.00174pt.
-LaTeX Info: Redefining \. on input line 75.
-LaTeX Info: Redefining \% on input line 75.
+LaTeX Info: Redefining \. on input line 79.
+LaTeX Info: Redefining \% on input line 79.
 pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.75 
+l.79 
       [2]
 <./Figures/modulo_dropcontrol.png, id=222, 666.49pt x 1021.8175pt>
 File: ./Figures/modulo_dropcontrol.png Graphic file (type png)
 <use ./Figures/modulo_dropcontrol.png>
-Package pdftex.def Info: ./Figures/modulo_dropcontrol.png  used on input line 88.
+Package pdftex.def Info: ./Figures/modulo_dropcontrol.png  used on input line 92.
 (pdftex.def)             Requested size: 116.94199pt x 179.28848pt.
-LaTeX Info: Redefining \. on input line 97.
-LaTeX Info: Redefining \% on input line 97.
+LaTeX Info: Redefining \. on input line 101.
+LaTeX Info: Redefining \% on input line 101.
  [3 <./Figures/modulo_libelium.png> <./Figures/modulo_dropcontrol.png>])
 LaTeX Info: Redefining \. on input line 124.
 LaTeX Info: Redefining \% on input line 124.
@@ -1054,7 +1054,7 @@ LaTeX Info: Redefining \% on input line 31.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 153.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 153.
 Package rerunfilecheck Info: File `memoria.out' has not changed.
-(rerunfilecheck)             Checksum: 97A4747087A3303571AEEF68DA658FB0;1751.
+(rerunfilecheck)             Checksum: B2A92C10A8A1D3D0A558095390F357CE;1754.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -1066,7 +1066,7 @@ Package logreq Info: Writing requests to 'memoria.run.xml'.
 Here is how much of TeX's memory you used:
  26011 strings out of 481239
  546708 string characters out of 5920377
- 1213225 words of memory out of 5000000
+ 1213236 words of memory out of 5000000
  40776 multiletter control sequences out of 15000+600000
  586169 words of font info for 109 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
@@ -1074,7 +1074,7 @@ Here is how much of TeX's memory you used:
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on /home/mario/Documents/memoria_CESE/build/memoria.pdf (29 pages, 1543155 bytes).
+Output written on /home/mario/Documents/memoria_CESE/build/memoria.pdf (29 pages, 1543503 bytes).
 PDF statistics:
  424 PDF objects out of 1000 (max. 8388607)
  365 compressed objects within 4 object streams

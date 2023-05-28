@@ -17,6 +17,108 @@
 \endgroup
 
 \datalist[entry]{none/global//global/global}
+  \entry{Agriculture4.0}{inbook}{}
+    \name{author}{1}{}{%
+      {{hash=ycSOA}{%
+         prefix={y},
+         prefixi={y},
+         family={col},
+         familyi={c\bibinitperiod},
+         given={Sara Oleiro\bibnamedelima Araujo},
+         giveni={S\bibinitperiod\bibinitdelim O\bibinitperiod\bibinitdelim
+  A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Agronomy 11.4}%
+    }
+    \strng{namehash}{cSOAy1}
+    \strng{fullhash}{cSOAy1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{pages}{667}
+    \field{title}{Characterising the Agriculture 4.0}
+    \field{year}{2021}
+  \endentry
+
+  \entry{WirelessComunications}{inbook}{}
+    \name{author}{1}{}{%
+      {{hash=ycMC}{%
+         prefix={y},
+         prefixi={y},
+         family={col},
+         familyi={c\bibinitperiod},
+         given={Marco\bibnamedelima Centenaro},
+         giveni={M\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {IEEE Wireless Communications 23.5}%
+    }
+    \strng{namehash}{cMCy1}
+    \strng{fullhash}{cMCy1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{pages}{60\bibrangedash 67}
+    \field{title}{Long-range communications in unlicensed bands: The rising
+  stars in the IoT and smart city scenarios}
+    \field{year}{2016}
+  \endentry
+
+  \entry{InternetDeLasCosas}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=F}{%
+         family={{Ferrovial}},
+         familyi={F\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{F1}
+    \strng{fullhash}{F1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{note}{Visitado: 2023-06-27}
+    \field{title}{Internet de las cosas(IoT)}
+    \verb{url}
+    \verb https://www.ferrovial.com/es/recursos/internet-de-las-cosas/
+    \endverb
+  \endentry
+
+  \entry{ModuloAgriculture}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=L}{%
+         family={{Libelium}},
+         familyi={L\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{L1}
+    \strng{fullhash}{L1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{note}{Visitado: 2023-06-27}
+    \field{title}{Smart Agriculture PRO,TECHNICAL GUIDE}
+    \verb{url}
+    \verb https://development.libelium.com/agriculture-sensor-guide/
+    \endverb
+  \endentry
+
+  \entry{ModuloAgricultureDos}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=W}{%
+         family={{WiseConn}},
+         familyi={W\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{W1}
+    \strng{fullhash}{W1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{note}{Visitado: 2023-06-27}
+    \field{title}{Nodo RF-M1}
+    \verb{url}
+    \verb https://www.wiseconn.cl/dropcontrol/hardware/rf-m1/
+    \endverb
+  \endentry
+
   \entry{IEEE:citation}{book}{}
     \name{author}{1}{}{%
       {{hash=I}{%

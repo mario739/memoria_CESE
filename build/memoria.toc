@@ -12,12 +12,14 @@
 \contentsline {subsection}{\numberline {1.3.1}Objetivo}{4}{subsection.1.3.1}%
 \contentsline {subsection}{\numberline {1.3.2}Alcances}{4}{subsection.1.3.2}%
 \contentsline {chapter}{\numberline {2}Introducción específica}{5}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Estilo y convenciones}{5}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Uso de mayúscula inicial para los título de secciones}{5}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}Este es el título de una subsección}{5}{subsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.1.3}Figuras}{6}{subsection.2.1.3}%
-\contentsline {subsection}{\numberline {2.1.4}Tablas}{7}{subsection.2.1.4}%
-\contentsline {subsection}{\numberline {2.1.5}Ecuaciones}{8}{subsection.2.1.5}%
+\contentsline {section}{\numberline {2.1}Componentes principales de hardware}{5}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}STM32 NUCLEO-L432KC}{5}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Modulo Comunicacion LTE IOT 2 CLICK}{6}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}Sensor AHT10}{6}{subsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.1.4}Sensor ML8511}{7}{subsection.2.1.4}%
+\contentsline {subsection}{\numberline {2.1.5}Sensor de Humedad de Suelo HL-69 (Resistivo)}{7}{subsection.2.1.5}%
+\contentsline {subsection}{\numberline {2.1.6}Tablas}{8}{subsection.2.1.6}%
+\contentsline {subsection}{\numberline {2.1.7}Ecuaciones}{9}{subsection.2.1.7}%
 \contentsline {chapter}{\numberline {3}Diseño e implementación}{11}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Análisis del software}{11}{section.3.1}%
 \contentsline {chapter}{\numberline {4}Ensayos y resultados}{13}{chapter.4}%
@@ -25,4 +27,4 @@
 \contentsline {chapter}{\numberline {5}Conclusiones}{15}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Conclusiones generales }{15}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Próximos pasos}{15}{section.5.2}%
-\contentsline {chapter}{Bibliograf\'{\i }a}{17}{appendix*.14}%
+\contentsline {chapter}{Bibliograf\'{\i }a}{17}{appendix*.19}%

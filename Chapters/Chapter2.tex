@@ -7,49 +7,66 @@
 %----------------------------------------------------------------------------------------
 Todos los capítulos deben comenzar con un breve párrafo introductorio que indique cuál es el contenido que se encontrará al leerlo.  La redacción sobre el contenido de la memoria debe hacerse en presente y todo lo referido al proyecto en pasado, siempre de modo impersonal.
 
-\section{Estilo y convenciones}
+\section{Componentes principales de hardware}
 \label{sec:ejemplo}
 
-\subsection{Uso de mayúscula inicial para los título de secciones}
-
-Si en el texto se hace alusión a diferentes partes del trabajo referirse a ellas como capítulo, sección o subsección según corresponda. Por ejemplo: ``En el capítulo \ref{Chapter1} se explica tal cosa'', o ``En la sección \ref{sec:ejemplo} se presenta lo que sea'', o ``En la subsección \ref{subsec:ejemplo} se discute otra cosa''.
-
-Cuando se quiere poner una lista tabulada, se hace así:
-
+\subsection{STM32 NUCLEO-L432KC}
+La placa STM32 Nucleo-32 proporciona una forma asequible y flexible para que los usuarios prueben nuevos conceptos y construyan prototipos eligiendo entre las diversas combinaciones de funciones de rendimiento y consumo de energía que proporciona el microcontrolador STM32.
+\\Características:
 \begin{itemize}
-	\item Este es el primer elemento de la lista.
-	\item Este es el segundo elemento de la lista.
-\end{itemize}
+	\item Microcontrolador STM32L4KC en paquete 32 de pines.
+	\item 1 led de usuario.
+	\item 1 pulsador de reset.
+	\item Conector de expasion Arduino Nano V3.
+	\item Conector USB Micro-AB para ST-LINK.
+	\item Opciones flexibles de funete de alimentacion.
+	\item Depurador/Programador ST-LINK integrado.
+	\item Comtibilidad con una amplia variedad de entornos de desarrollo integrado.
+	\item Oscilador de cristal de 24MHz
+	\item Compatible con Arm Mbed Enabled  
+  \end{itemize}
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=.4\textwidth]{./Figures/nucleo-l432kc.jpg}
+	\caption{Modulo LTE IOT 2 CLICK.}
+\end{figure}
+\vspace{5cm}
 
-Notar el uso de las mayúsculas y el punto al final de cada elemento.
-
-Si se desea poner una lista numerada el formato es este:
-
-\begin{enumerate}
-	\item Este es el primer elemento de la lista.
-	\item Este es el segundo elemento de la lista.
-\end{enumerate}
-
-Notar el uso de las mayúsculas y el punto al final de cada elemento.
-
-\subsection{Este es el título de una subsección}
+\subsection{Modulo Comunicacion LTE IOT 2 CLICK}
 \label{subsec:ejemplo}
+LTE IoT 2 click está equipado con el módulo BG96 LTE de Quectel Wireless Solutions , que admite tecnologías LTE CAT M1 y NB1, desarrolladas con aplicaciones IoT en mente. Además, admite EGPRS a 850/900/1800/1900 MHz, lo que significa que se puede usar globalmente; no está restringido a ninguna región. El soporte para las tecnologías CAT M1 y NB1 y el consumo de energía ultra bajo hacen de este módulo una elección perfecta para la próxima tecnología 3GPP IoT.
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=.4\textwidth]{./Figures/moduloBG96.jpg}
+	\caption{Modulo LTE IOT 2 CLICK.}
+\end{figure}
 
-Se recomienda no utilizar \textbf{texto en negritas} en ningún párrafo, ni tampoco texto \underline{subrayado}. En cambio sí se debe utilizar \textit{texto en itálicas} para palabras en un idioma extranjero, al menos la primera vez que aparecen en el texto. En el caso de palabras que estamos inventando se deben utilizar ``comillas'', así como también para citas textuales. Por ejemplo, un \textit{digital filter} es una especie de ``selector'' que permite separar ciertos componentes armónicos en particular.
+\subsection{Sensor AHT10}
+AHT10 es un sensor que permite obtener lecturas de temperatura y humedad, es de bajo costo y excelente rendimiento. El sensor es muy versátil, puede sustituir a los sensores DHT11, SHT20 y AM2302, debido a su estabilidad en entornos más hostiles. Utiliza este sensor en aplicaciones de control automático de temperatura, aire acondicionado, estaciones meteorológicas, aplicaciones en el hogar, regulador de humedad y temperatura.
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=.4\textwidth]{./Figures/aht10.jpg}
+	\caption{Modulo LTE IOT 2 CLICK.}
+\end{figure}
 
-La escritura debe ser impersonal. Por ejemplo, no utilizar ``el diseño del firmware lo hice de acuerdo con tal principio'', sino ``el firmware fue diseñado utilizando tal principio''. 
+\subsection{Sensor ML8511}
 
-El trabajo es algo que al momento de escribir la memoria se supone que ya está concluido, entonces todo lo que se refiera a hacer el trabajo se narra en tiempo pasado, porque es algo que ya ocurrió. Por ejemplo, "se diseñó el firmware empleando la técnica de test driven development".
+El módulo ML8511 es un sensor de luz ultravioleta (UV), entrega una señal de voltaje analógica que depende de la cantidad de luz UV que detecta. Sensor ideal para proyectos de monitoreo de condiciones ambientales como el índice UV, Aplicaciones Meteorológicas, cuidado de la piel, medición industrial de nivel UV.
+El sensor ML8511 detecta luz con una longitud de onda entre 280-390 nm, este rango cubre tanto al espectro UV-B como al UV-A. La salida analógica está relacionada linealmente con la intensidad UV (mW/cm2). Esta señal analógica puede ser conectada a un microcontrolador para ser convertido por un ADC y así trabajar con la medición. 
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=.4\textwidth]{./Figures/ml8511.jpg}
+	\caption{Modulo LTE IOT 2 CLICK.}
+\end{figure}
+\subsection{Sensor de Humedad de Suelo HL-69 (Resistivo)} 
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=.4\textwidth]{./Figures/sensordehumedad.jpg}
+	\caption{Modulo LTE IOT 2 CLICK.}
+\end{figure}
 
-En cambio, la memoria es algo que está vivo cada vez que el lector la lee. Por eso transcurre siempre en tiempo presente, como por ejemplo:
 
-``En el presente capítulo se da una visión global sobre las distintas pruebas realizadas y los resultados obtenidos. Se explica el modo en que fueron llevados a cabo los test unitarios y las pruebas del sistema''.
 
-Se recomienda no utilizar una sección de glosario sino colocar la descripción de las abreviaturas como parte del mismo cuerpo del texto. Por ejemplo, RTOS (\textit{Real Time Operating System}, Sistema Operativo de Tiempo Real) o en caso de considerarlo apropiado mediante notas a pie de página.
-
-Si se desea indicar alguna página web utilizar el siguiente formato de referencias bibliográficas, dónde las referencias se detallan en la sección de bibliografía de la memoria, utilizado el formato establecido por IEEE en \citep{IEEE:citation}. Por ejemplo, ``el presente trabajo se basa en la plataforma EDU-CIAA-NXP \citep{CIAA}, la cual...''.
-
-\subsection{Figuras} 
 
 Al insertar figuras en la memoria se deben considerar determinadas pautas. Para empezar, usar siempre tipografía claramente legible. Luego, tener claro que \textbf{es incorrecto} escribir por ejemplo esto: ``El diseño elegido es un cuadrado, como se ve en la siguiente figura:''
 

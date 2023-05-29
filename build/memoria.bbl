@@ -118,49 +118,5 @@
     \verb https://www.wiseconn.cl/dropcontrol/hardware/rf-m1/
     \endverb
   \endentry
-
-  \entry{IEEE:citation}{book}{}
-    \name{author}{1}{}{%
-      {{hash=I}{%
-         family={IEEE},
-         familyi={I\bibinitperiod},
-      }}%
-    }
-    \list{publisher}{1}{%
-      {IEEE Publications}%
-    }
-    \strng{namehash}{I1}
-    \strng{fullhash}{I1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{edition}{1}
-    \field{title}{IEEE Citation Reference}
-    \verb{url}
-    \verb http://www.ieee.org/documents/ieeecitationref.pdf
-    \endverb
-    \field{year}{2016}
-    \field{urlday}{26}
-    \field{urlmonth}{09}
-    \field{urlyear}{2016}
-  \endentry
-
-  \entry{CIAA}{misc}{}
-    \name{author}{1}{}{%
-      {{hash=P}{%
-         family={{Proyecto CIAA}},
-         familyi={P\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{P1}
-    \strng{fullhash}{P1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{note}{Visitado el 2016-06-25}
-    \field{title}{Computadora Industrial Abierta Argentina}
-    \verb{url}
-    \verb http://proyecto-ciaa.com.ar/devwiki/doku.php?id=start
-    \endverb
-    \field{year}{2014}
-  \endentry
 \enddatalist
 \endinput

@@ -11,34 +11,49 @@ Todos los capítulos deben comenzar con un breve párrafo introductorio que indi
 \label{sec:ejemplo}
 
 \subsection{STM32 NUCLEO-L432KC}
-La placa STM32 Nucleo-32 proporciona una forma asequible y flexible para que los usuarios prueben nuevos conceptos y construyan prototipos eligiendo entre las diversas combinaciones de funciones de rendimiento y consumo de energía que proporciona el microcontrolador STM32.
+La placa STM32 Nucleo-32 que se muestra en la figura \ref{fig:nucleol432kc} proporciona una forma asequible y flexible para que los usuarios prueben nuevos conceptos y construyan prototipos eligiendo entre las diversas combinaciones de funciones de rendimiento y consumo de energía que proporciona el microcontrolador STM32\citep{NUCLEOL432KC}.
 \\Características:
 \begin{itemize}
 	\item Microcontrolador STM32L4KC en paquete 32 de pines.
 	\item 1 led de usuario.
 	\item 1 pulsador de reset.
-	\item Conector de expasion Arduino Nano V3.
+	\item Conector de expansión Arduino Nano V3.
 	\item Conector USB Micro-AB para ST-LINK.
-	\item Opciones flexibles de funete de alimentacion.
+	\item Opciones flexibles de fuente de alimentación.
 	\item Depurador/Programador ST-LINK integrado.
-	\item Comtibilidad con una amplia variedad de entornos de desarrollo integrado.
+	\item Compatibilidad con una amplia variedad de entornos de desarrollo integrado.
 	\item Oscilador de cristal de 24MHz
 	\item Compatible con Arm Mbed Enabled  
-  \end{itemize}
+\end{itemize}
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[width=.4\textwidth]{./Figures/nucleo-l432kc.jpg}
-	\caption{Modulo LTE IOT 2 CLICK.}
+	\caption{Placa NUCLEO-L432KC.}
+	\label{fig:nucleol432kc}
 \end{figure}
 \vspace{5cm}
 
-\subsection{Modulo Comunicacion LTE IOT 2 CLICK}
+\subsection{Módulo Comunicación LTE IOT 2 CLICK}
 \label{subsec:ejemplo}
+LTE IoT 2 Click es un Click board que permite la conexión a las redes LTE, con el módulo Quectel BG96 LTE , que ofrece dos tecnologías LTE destinadas a la comunicación Máquina a Máquina (M2M) e Internet de las Cosas. Este módulo es una solución de comunicación IoT integrada que admite las tecnologías LTE Cat M1 y NB1, y ofrece una alternativa a soluciones similares de red de área amplia de baja potencia (LPWAN).
 LTE IoT 2 click está equipado con el módulo BG96 LTE de Quectel Wireless Solutions , que admite tecnologías LTE CAT M1 y NB1, desarrolladas con aplicaciones IoT en mente. Además, admite EGPRS a 850/900/1800/1900 MHz, lo que significa que se puede usar globalmente; no está restringido a ninguna región. El soporte para las tecnologías CAT M1 y NB1 y el consumo de energía ultra bajo hacen de este módulo una elección perfecta para la próxima tecnología 3GPP IoT.
+\\Características:
+\begin{itemize}
+	\item Protocolos de internet integrados(TCP/UDP/PPP).
+	\item Conectores SMA integrados .
+	\item Leds de alimentación e indicación de estado.
+	\item Conector USB para conectarlo con la aplicación de software de quectel.
+	\item Interfaz UART para  intercambiar comandos. 
+	\item Voltaje de alimentación 5V o 3.3V.
+
+\end{itemize}
+
+
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[width=.4\textwidth]{./Figures/moduloBG96.jpg}
 	\caption{Modulo LTE IOT 2 CLICK.}
+	\label{fig:modulo LTE IOT}
 \end{figure}
 
 \subsection{Sensor AHT10}
@@ -58,162 +73,61 @@ El sensor ML8511 detecta luz con una longitud de onda entre 280-390 nm, este ran
 	\includegraphics[width=.4\textwidth]{./Figures/ml8511.jpg}
 	\caption{Modulo LTE IOT 2 CLICK.}
 \end{figure}
-\subsection{Sensor de Humedad de Suelo HL-69 (Resistivo)} 
+\subsection{Sensor de Humedad de Suelo HL-69 (Resistivo)}
+El módulo HL-69, un sensor de humedad de suelo resulta ser otro módulo que utiliza la conductividad entre dos terminales para determinar ciertos parámetros relacionados a agua, líquidos y humedad.
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[width=.4\textwidth]{./Figures/sensordehumedad.jpg}
 	\caption{Modulo LTE IOT 2 CLICK.}
 \end{figure}
 
+\section{Herramientas de software y testing utilizados}
+\subsection{STM CUBEIDE}
+STM32CubeIDE es una herramienta de desarrollo multi-OS todo en uno, que forma parte del ecosistema de software STM32Cube.STM32CubeIDE es una plataforma de desarrollo C/C++ avanzada con funciones de configuración de periféricos, generación de código, compilación de código y depuración para microcontroladores y microprocesadores STM32. Se basa en el marco Eclipse  y la cadena de herramientas GCC para el desarrollo y GDB para la depuración. Permite la integración de los cientos de plugins existentes que completan las funcionalidades del IDE de Eclipse .
 
+STM32CubeIDE integra las funcionalidades de configuración y creación de proyectos de STM32 de STM32CubeMX para ofrecer una experiencia de herramienta todo en uno y ahorrar tiempo de instalación y desarrollo.
 
-
-Al insertar figuras en la memoria se deben considerar determinadas pautas. Para empezar, usar siempre tipografía claramente legible. Luego, tener claro que \textbf{es incorrecto} escribir por ejemplo esto: ``El diseño elegido es un cuadrado, como se ve en la siguiente figura:''
-
-\begin{figure}[h]
-\centering
-\includegraphics[scale=.45]{./Figures/cuadradoAzul.png}
-\end{figure}
-
-La forma correcta de utilizar una figura es con referencias cruzadas, por ejemplo: ``Se eligió utilizar un cuadrado azul para el logo, como puede observarse en la figura \ref{fig:cuadradoAzul}''.
-
-\begin{figure}[ht]
+\subsection{FreeRTOS}
+\label{subsec:FreeRTOS}
+FreeRTOS es un sistema operativo en tiempo real (RTOS) líder en el mercado para microcontroladores y pequeños microprocesadores. Distribuido libremente bajo la licencia de código abierto del MIT, FreeRTOS incluye un núcleo y un conjunto creciente de bibliotecas adecuadas para su uso en todos los sectores de la industria.
+FreeRTOS está diseñado con énfasis en la confiabilidad, la accesibilidad y la facilidad de uso.
+\begin{figure}[htbp]
 	\centering
-	\includegraphics[scale=.45]{./Figures/cuadradoAzul.png}
-	\caption{Ilustración del cuadrado azul que se eligió para el diseño del logo.}
-	\label{fig:cuadradoAzul}
+	\includegraphics[width=0.6\textwidth]{./Figures/logo_FreeRTOS.jpg}
+	\caption{Logo FreeRTOS.}
+	\label{fig:FreeRTOS}
 \end{figure}
+\subsection{CEEDLING}
+eedling es un sistema de compilación para proyectos C que es algo así como una extensión del sistema de compilación Rake (make-ish) de Ruby. Ceedling está dirigido principalmente al desarrollo basado en pruebas en C y está diseñado para reunir CMock, Unity y CException, otros tres increíbles proyectos de código abierto sin los que no puede vivir si está creando maravillas en el lenguaje C. Con el fin de difundir la genialidad, Ceedling es un artilugio extensible con un buen mecanismo de complemento.
 
-El texto de las figuras debe estar siempre en español, excepto que se decida reproducir una figura original tomada de alguna referencia. En ese caso la referencia de la cual se tomó la figura debe ser indicada en el epígrafe de la figura e incluida como una nota al pie, como se ilustra en la figura \ref{fig:palabraIngles}.
+Ceedling es nuestra última pieza asombrosa diseñada para reunir todas nuestras ventajas para desarrolladores de C en algo más cohesivo.
+\section{Protocolos de Comunicación}
+\subsection{UART}
+UART (universal asynchronous receiver / transmitter, por sus siglas en inglés) define un protocolo o un conjunto de normas para el intercambio de datos en serie entre dos dispositivos. UART es sumamente simple y utiliza solo dos hilos entre el transmisor y el receptor para transmitir y recibir en ambas direcciones. Ambos extremos tienen una conexión a masa. La comunicación en UART puede ser simplex(los datos se envían en una sola dirección), semidúplex(cada extremo se comunica, pero solo uno al mismo tiempo), o dúplex completo(ambos extremos pueden transmitir simultáneamente). En UART, los datos se transmiten en forma de tramas.
+\subsection{I2C}
+El bus de comunicaciones I2C  es un protocolo que se efectúa por medio de dos hilos. A través de estos dos hilos pueden conectarse diferentes dispositivos donde algunos de ellos serán maestros en cuanto muchos otros dispositivos serán esclavos.
+\subsection{MQTT}
+MQTT es un protocolo de mensajería estándar de OASIS para Internet de las cosas (IoT). Está diseñado como un transporte de mensajería de publicación/suscripción extremadamente liviano que es ideal para conectar dispositivos remotos con un espacio de código pequeño y un ancho de banda de red mínimo. MQTT hoy en día se utiliza en una amplia variedad de industrias, como la automotriz, la manufactura, las telecomunicaciones, el petróleo y el gas, etc.
 
-\begin{figure}[htpb]
+\begin{figure}[htbp]
 	\centering
-	\includegraphics[scale=.3]{./Figures/word.jpeg}
-	\caption{Imagen tomada de la página oficial del procesador\protect\footnotemark.}
-	\label{fig:palabraIngles}
+	\includegraphics[width=1\textwidth]{./Figures/mqtt-publish-subscribe.png}
+	\caption{Arquitectura de publicación/suscripción de MQTT.}
 \end{figure}
-
-\footnotetext{Imagen tomada de \url{https://goo.gl/images/i7C70w}}
-
-La figura y el epígrafe deben conformar una unidad cuyo significado principal pueda ser comprendido por el lector sin necesidad de leer el cuerpo central de la memoria. Para eso es necesario que el epígrafe sea todo lo detallado que corresponda y si en la figura se utilizan abreviaturas entonces aclarar su significado en el epígrafe o en la misma figura.
-
-
-
-\begin{figure}[ht]
+\section{Plataformas IoT}
+\subsection{Ubidots}
+Ubidots una plataforma de IoT (Internet de las cosas) que habilita la toma de decisiones a empresas de integración de sistemas a nivel global. Este producto permite enviar datos de sensores a la nube, configurar tableros y alertas, conectarse con otras plataformas, usar herramientas de analítica y arrojar mapas de datos en tiempo real.
+Ubidots es una plataforma en la nube para el Internet de las Cosas (IoT) que ofrece todas las herramientas necesarias que permite a las empresas desplegar soluciones IoT, ahorrarse mucho tiempo y dinero a la hora de salir al mercado y poder tomar mejores decisiones basadas en datos.En la figura se muestra un ejemplo una interfaz gráfica en ubidots.
+\begin{figure}[htbp]
 	\centering
-	\includegraphics[scale=.37]{./Figures/questionMark.png}
-	\caption{¿Por qué de pronto aparece esta figura?}
-	\label{fig:questionMark}
+	\includegraphics[width=0.6\textwidth]{./Figures/ubidots.png}
+	\caption{Ejemplo Interfaz Gráfica Ubidots.}
 \end{figure}
-
-Nunca colocar una figura en el documento antes de hacer la primera referencia a ella, como se ilustra con la figura \ref{fig:questionMark}, porque sino el lector no comprenderá por qué de pronto aparece la figura en el documento, lo que distraerá su atención.
-
-Otra posibilidad es utilizar el entorno \textit{subfigure} para incluir más de una figura, como se puede ver en la figura \ref{fig:three graphs}. Notar que se pueden referenciar también las figuras internas individualmente de esta manera: \ref{fig:1de3}, \ref{fig:2de3} y \ref{fig:3de3}.
- 
-\begin{figure}[!htpb]
-     \centering
-     \begin{subfigure}[b]{0.3\textwidth}
-         \centering
-         \includegraphics[width=.65\textwidth]{./Figures/questionMark}
-         \caption{Un caption.}
-         \label{fig:1de3}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.3\textwidth}
-         \centering
-         \includegraphics[width=.65\textwidth]{./Figures/questionMark}
-         \caption{Otro.}
-         \label{fig:2de3}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.3\textwidth}
-         \centering
-         \includegraphics[width=.65\textwidth]{./Figures/questionMark}
-         \caption{Y otro más.}
-         \label{fig:3de3}
-     \end{subfigure}
-        \caption{Tres gráficos simples}
-        \label{fig:three graphs}
+\subsection{ThingsBoard}
+ThingsBoard es una plataforma IoT de código abierto para la recopilación, el procesamiento, la visualización y la gestión de dispositivos de datos.
+Permite la conectividad de dispositivos a través de protocolos IoT estándar de la industria: MQTT, CoAP y HTTP, y admite implementaciones en la nube y locales. ThingsBoard combina escalabilidad, tolerancia a fallas y rendimiento para que nunca pierda sus datos.
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.8\textwidth]{./Figures/thingsboard.png}
+	\caption{Ejemplo Interfaz Gráfica ThingsBoard.}
 \end{figure}
-
-El código para generar las imágenes se encuentra disponible para su reutilización en el archivo \file{Chapter2.tex}.
-
-\subsection{Tablas}
-
-Para las tablas utilizar el mismo formato que para las figuras, sólo que el epígrafe se debe colocar arriba de la tabla, como se ilustra en la tabla \ref{tab:peces}. Observar que sólo algunas filas van con líneas visibles y notar el uso de las negritas para los encabezados.  La referencia se logra utilizando el comando \verb|\ref{<label>}| donde label debe estar definida dentro del entorno de la tabla.
-
-\begin{verbatim}
-\begin{table}[h]
-	\centering
-	\caption[caption corto]{caption largo más descriptivo}
-	\begin{tabular}{l c c}    
-		\toprule
-		\textbf{Especie}     & \textbf{Tamaño} & \textbf{Valor}\\
-		\midrule
-		Amphiprion Ocellaris & 10 cm           & \$ 6.000 \\		
-		Hepatus Blue Tang    & 15 cm           & \$ 7.000 \\
-		Zebrasoma Xanthurus  & 12 cm           & \$ 6.800 \\
-		\bottomrule
-		\hline
-	\end{tabular}
-	\label{tab:peces}
-\end{table}
-\end{verbatim}
-
-
-\begin{table}[h]
-	\centering
-	\caption[caption corto]{caption largo más descriptivo}
-	\begin{tabular}{l c c}    
-		\toprule
-		\textbf{Especie} 	 & \textbf{Tamaño} 		& \textbf{Valor}  \\
-		\midrule
-		Amphiprion Ocellaris & 10 cm 				& \$ 6.000 \\		
-		Hepatus Blue Tang	 & 15 cm				& \$ 7.000 \\
-		Zebrasoma Xanthurus	 & 12 cm				& \$ 6.800 \\
-		\bottomrule
-		\hline
-	\end{tabular}
-	\label{tab:peces}
-\end{table}
-
-En cada capítulo se debe reiniciar el número de conteo de las figuras y las tablas, por ejemplo, figura 2.1 o tabla 2.1, pero no se debe reiniciar el conteo en cada sección. Por suerte la plantilla se encarga de esto por nosotros.
-
-\subsection{Ecuaciones}
-\label{sec:Ecuaciones}
-
-Al insertar ecuaciones en la memoria dentro de un entorno \textit{equation}, éstas se numeran en forma automática  y se pueden referir al igual que como se hace con las figuras y tablas, por ejemplo ver la ecuación \ref{eq:metric}.
-
-\begin{equation}
-	\label{eq:metric}
-	ds^2 = c^2 dt^2 \left( \frac{d\sigma^2}{1-k\sigma^2} + \sigma^2\left[ d\theta^2 + \sin^2\theta d\phi^2 \right] \right)
-\end{equation}
-                                                        
-Es importante tener presente que si bien las ecuaciones pueden ser referidas por su número, también es correcto utilizar los dos puntos, como por ejemplo ``la expresión matemática que describe este comportamiento es la siguiente:''
-
-\begin{equation}
-	\label{eq:schrodinger}
-	\frac{\hbar^2}{2m}\nabla^2\Psi + V(\mathbf{r})\Psi = -i\hbar \frac{\partial\Psi}{\partial t}
-\end{equation}
-
-Para generar la ecuación \ref{eq:metric} se utilizó el siguiente código:
-
-\begin{verbatim}
-\begin{equation}
-	\label{eq:metric}
-	ds^2 = c^2 dt^2 \left( \frac{d\sigma^2}{1-k\sigma^2} + 
-	\sigma^2\left[ d\theta^2 + 
-	\sin^2\theta d\phi^2 \right] \right)
-\end{equation}
-\end{verbatim}
-
-Y para la ecuación \ref{eq:schrodinger}:
-
-\begin{verbatim}
-\begin{equation}
-	\label{eq:schrodinger}
-	\frac{\hbar^2}{2m}\nabla^2\Psi + V(\mathbf{r})\Psi = 
-	-i\hbar \frac{\partial\Psi}{\partial t}
-\end{equation}
-
-\end{verbatim}

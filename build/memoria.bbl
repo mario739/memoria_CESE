@@ -76,7 +76,7 @@
     \strng{fullhash}{F1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{note}{Visitado: 2023-06-27}
+    \field{note}{Visitado: 2023-05-27}
     \field{title}{Internet de las cosas(IoT)}
     \verb{url}
     \verb https://www.ferrovial.com/es/recursos/internet-de-las-cosas/
@@ -94,7 +94,7 @@
     \strng{fullhash}{L1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{note}{Visitado: 2023-06-27}
+    \field{note}{Visitado: 2023-05-27}
     \field{title}{Smart Agriculture PRO,TECHNICAL GUIDE}
     \verb{url}
     \verb https://development.libelium.com/agriculture-sensor-guide/
@@ -112,10 +112,28 @@
     \strng{fullhash}{W1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{note}{Visitado: 2023-06-27}
+    \field{note}{Visitado: 2023-05-27}
     \field{title}{Nodo RF-M1}
     \verb{url}
     \verb https://www.wiseconn.cl/dropcontrol/hardware/rf-m1/
+    \endverb
+  \endentry
+
+  \entry{NUCLEOL432KC}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=S}{%
+         family={{STMicroelectronics}},
+         familyi={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{S1}
+    \strng{fullhash}{S1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{note}{Ultima actualizacion 2019-06-05 V8.0}
+    \field{title}{Especificacion de Producto,STM32 Nucleo-32 boards}
+    \verb{url}
+    \verb https://www.st.com/resource/en/data_brief/nucleo-l432kc.pdf
     \endverb
   \endentry
 \enddatalist

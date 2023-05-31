@@ -126,14 +126,235 @@
          familyi={S\bibinitperiod},
       }}%
     }
-    \strng{namehash}{S1}
-    \strng{fullhash}{S1}
+    \strng{namehash}{S2}
+    \strng{fullhash}{S2}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{note}{Ultima actualizacion 2019-06-05 V8.0}
     \field{title}{Especificacion de Producto,STM32 Nucleo-32 boards}
     \verb{url}
     \verb https://www.st.com/resource/en/data_brief/nucleo-l432kc.pdf
+    \endverb
+  \endentry
+
+  \entry{MonuloLTE-IOT}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=M}{%
+         family={{MikroElectronic}},
+         familyi={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{M1}
+    \strng{fullhash}{M1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{note}{Visitado: 2023-05-27}
+    \field{title}{Especificacion de Producto,LTE IOT 2 CLICK}
+    \verb{url}
+    \verb https://www.mikroe.com/lte-iot-2-click
+    \endverb
+  \endentry
+
+  \entry{ModuloAHT10}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=S}{%
+         family={{SSDIELECT ELECTRONICA SAS}},
+         familyi={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{S1}
+    \strng{fullhash}{S1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{note}{Visitado: 2023-05-27}
+    \field{title}{Especificacion de Producto,AHT10 SENSOR DE TEMPERATURA Y
+  HUMEDAD I2C}
+    \verb{url}
+    \verb https://ssdielect.com/temperatura/3885-aht10.html
+    \endverb
+  \endentry
+
+  \entry{ModuloML8511}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=n}{%
+         family={{naylampmechatronics}},
+         familyi={n\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{n1}
+    \strng{fullhash}{n1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{note}{Visitado: 2023-05-27}
+    \field{title}{Especificacion de Producto,MÓDULO SENSOR DE LUZ ULTRAVIOLETA
+  (UV) ML8511}
+    \verb{url}
+    \verb https://ssdielect.com/temperatura/3885-aht10.html
+    \endverb
+  \endentry
+
+  \entry{ModuloHL-69}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=P}{%
+         family={{PANAMAHITEK}},
+         familyi={P\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{P1}
+    \strng{fullhash}{P1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{note}{Visitado: 2023-05-27}
+    \field{title}{Especificacion de Producto,Módulo HL-69: Un sensor de
+  humedad de suelo}
+    \verb{url}
+    \verb https://panamahitek.com/modulo-hl-69-un-sensor-de-humedad-de-suelo/
+    \endverb
+  \endentry
+
+  \entry{STM32CUBEIDE}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=S}{%
+         family={{STMicroelectronics}},
+         familyi={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{S2}
+    \strng{fullhash}{S2}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{note}{Visitado: 2023-05-27}
+    \field{title}{Descripción del producto,Integrated Development Environment
+  for STM32}
+    \verb{url}
+    \verb https://www.st.com/en/development-tools/stm32cubeide.html
+    \endverb
+  \endentry
+
+  \entry{FreeRTOS}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=F}{%
+         family={{FreeRTOS}},
+         familyi={F\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{F2}
+    \strng{fullhash}{F2}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{note}{Visitado: 2023-05-27}
+    \field{title}{Acerca del Sistema Operativo,Descripción General}
+    \verb{url}
+    \verb https://www.freertos.org/RTOS.html
+    \endverb
+  \endentry
+
+  \entry{CEEDLING}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=C}{%
+         family={{CEEDLING}},
+         familyi={C\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{C1}
+    \strng{fullhash}{C1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{note}{Visitado: 2023-05-27}
+    \field{title}{Descripción del producto,Descripción General}
+    \verb{url}
+    \verb http://www.throwtheswitch.org/ceedling
+    \endverb
+  \endentry
+
+  \entry{UART}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=r}{%
+         family={{rohde-schwarz}},
+         familyi={r\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{r1}
+    \strng{fullhash}{r1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{note}{Visitado: 2023-05-27}
+    \field{title}{Descripción del protocolo,Qué es UART}
+    \verb{url}
+    \verb https://www.rohde-schwarz.com/es/productos/test-y-medida/essentials-t
+    \verb est-equipment/digital-oscilloscopes/que-es-uart_254524.html
+    \endverb
+  \endentry
+
+  \entry{I2C}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=s}{%
+         family={{sparkfun}},
+         familyi={s\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{s1}
+    \strng{fullhash}{s1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{note}{Visitado: 2023-05-27}
+    \field{title}{Definicion del Protocolo}
+    \verb{url}
+    \verb hhttps://learn.sparkfun.com/tutorials/i2c/all
+    \endverb
+  \endentry
+
+  \entry{MQTT}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=M}{%
+         family={{MQTT}},
+         familyi={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{M2}
+    \strng{fullhash}{M2}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{note}{Visitado: 2023-05-27}
+    \field{title}{Descripción del protocolo,Introduccion a MQTT}
+    \verb{url}
+    \verb https://mqtt.org/
+    \endverb
+  \endentry
+
+  \entry{InterfazIoTUbidots}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=c}{%
+         family={{connectamericas}},
+         familyi={c\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{c1}
+    \strng{fullhash}{c1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{note}{Visitado: 2023-05-27}
+    \field{title}{Descripción de la empresa,Definición de UBIDOTS}
+    \verb{url}
+    \verb https://connectamericas.com/es/company/ubidots
+    \endverb
+  \endentry
+
+  \entry{THINGSBOARD}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=T}{%
+         family={{ThingsBoard}},
+         familyi={T\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{T1}
+    \strng{fullhash}{T1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{note}{Visitado: 2023-05-27}
+    \field{title}{Descripción de la plataforma IoT,Definición de ThingsBoard}
+    \verb{url}
+    \verb https://thingsboard.io/
     \endverb
   \endentry
 \enddatalist

@@ -1,5 +1,5 @@
 # Fdb version 3
-["bibtex build/memoria"] 1686693227 "build/memoria.aux" "build/memoria.bbl" "build/memoria" 1686693230
+["bibtex build/memoria"] 1686693227 "build/memoria.aux" "build/memoria.bbl" "build/memoria" 1686693349
   "/home/mario/Documents/memoria_CESE/build/Chapters/Chapter1.aux" 1686693229 6055 9a76fd0853492c5d77067723206cd0c2 ""
   "/home/mario/Documents/memoria_CESE/build/Chapters/Chapter2.aux" 1686693230 9023 9f72cbeda61ed8e2c2a1b9312e982198 ""
   "/home/mario/Documents/memoria_CESE/build/Chapters/Chapter3.aux" 1686693230 4670 4f023b00510904093a7d0ce32f447233 ""
@@ -12,7 +12,7 @@
   (generated)
   "build/memoria.bbl"
   "build/memoria.blg"
-["pdflatex"] 1686693227 "/home/mario/Documents/memoria_CESE/memoria.tex" "/home/mario/Documents/memoria_CESE/build/memoria.pdf" "memoria" 1686693230
+["pdflatex"] 1686693227 "/home/mario/Documents/memoria_CESE/memoria.tex" "/home/mario/Documents/memoria_CESE/build/memoria.pdf" "memoria" 1686693349
   "/etc/texmf/web2c/texmf.cnf" 1668112840 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/mario/Documents/memoria_CESE/build/memoria.aux" 1686693230 5465 2ecfa58f85a66fb0d25feafae506968c ""
   "/home/mario/Documents/memoria_CESE/memoria.tex" 1685282838 7824 f33b660141291ef04ed670cd1cc67c70 ""
@@ -198,19 +198,19 @@
   "build/memoria.toc" 1686693230 3219 177478b37bb9abeed25e8e132a5c5415 "pdflatex"
   "memoria.tex" 1685282838 7824 f33b660141291ef04ed670cd1cc67c70 ""
   (generated)
-  "build/Chapters/Chapter2.aux"
-  "build/Chapters/Chapter1.aux"
-  "/home/mario/Documents/memoria_CESE/build/memoria.log"
-  "build/memoria.pdf"
-  "/home/mario/Documents/memoria_CESE/build/memoria.pdf"
-  "build/memoria.out"
-  "build/Chapters/Chapter3.aux"
-  "build/Chapters/Chapter4.aux"
-  "build/memoria-blx.bib"
-  "build/memoria.run.xml"
-  "build/memoria.lot"
-  "build/memoria.toc"
   "build/memoria.lof"
+  "build/memoria.lot"
   "build/memoria.log"
   "build/Chapters/Chapter5.aux"
+  "build/memoria.toc"
   "build/memoria.aux"
+  "build/Chapters/Chapter3.aux"
+  "build/memoria-blx.bib"
+  "build/memoria.out"
+  "/home/mario/Documents/memoria_CESE/build/memoria.log"
+  "build/Chapters/Chapter2.aux"
+  "build/memoria.run.xml"
+  "build/Chapters/Chapter1.aux"
+  "/home/mario/Documents/memoria_CESE/build/memoria.pdf"
+  "build/Chapters/Chapter4.aux"
+  "build/memoria.pdf"

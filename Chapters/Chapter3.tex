@@ -1,5 +1,5 @@
 \chapter{Diseño e implementación} % Main chapter title
-
+En este capitulo se abordara la descripcion de la arquitectura del sistema, arquitectura del firmware, detalles de los controladores desarrollados para el modulo de comunicaicon y los sensores, desarrollo del hardware y la configuracion de la plataforma IoT. 
 \label{Chapter3} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
 
 \definecolor{mygreen}{rgb}{0,0.6,0}
@@ -42,17 +42,32 @@
 %----------------------------------------------------------------------------------------
 %	SECTION 1
 %----------------------------------------------------------------------------------------
-\section{Análisis del software}
- 
-La idea de esta sección es resaltar los problemas encontrados, los criterios utilizados y la justificación de las decisiones que se hayan tomado.
+\section{Diagrama de bloques general del sistema}
 
-Se puede agregar código o pseudocódigo dentro de un entorno lstlisting con el siguiente código:
+En la figura \ref{fig:Diagrama general del sistema IoT} se muestra el diagrama en bloques general del sistema donde se describe la arquitectura IoT que consta de tres capas: percepción, red y aplicación.
 
+\begin{figure}[htbp]
+	\includegraphics[width=1\textwidth]{./Figures/DiagramaDelSistema.png}
+	\caption{Diagrama general del sistema IoT.}
+	\label{fig:Diagrama general del sistema IoT}
+\end{figure}
+
+En cada una de las capas, se despliegan tecnologias y componentes de hardware y software. A continuación se describe cada una de ellas.
+
+\begin{itemize}
+	\item Capa de percepción. En la capa de percepción, los nodos sensores son los encargados de medir variables ambientales, hacer un prepocesamiento y enviarlas a la capa de red. Para su desarrollo se utilizo la placa STM32L432KC que contiene el firmware del sistema,tambien consta de un sensor de humedad y temperatrua ambiente AHT10 que se comunica con la placa de desarrollo mediante el protocolo I2C, sensor de humedad de suelo HL-69 y el sensor de luz UV ML-18 que se comunicacion con el modulo mediante entradas analogicas.
+  \item Capa de red. En cuanto a la red, se utilizo un modulo quectel BG96 que puede conectarse a la red 2G, 4G, NB-IoT automaticamente dependiendo del nivel de la red en el lugar de la implementacion del modulo sensor, se comunica con el microcontrolador por comandos AT por puerto UART.
+  \item Capa de aplicación. En la capa de aplicacion, se utilizo una plataforma IoT como servidor, que nos brinda las funcionalidades de broker MQTT para mandar los datos a la plataforma, base de datos para el almacenamiento, nos brinda la interfaz grafica para la visualizacion de los datos y nos permite gestionar la alarmas del sistema.
+
+
+\end{itemize}
+
+\section{Arquitectura de firmware}
 \begin{verbatim}
-\begin{lstlisting}[caption= "un epígrafe descriptivo"]
-	las líneas de código irían aquí...
-\end{lstlisting}
-\end{verbatim}
+  \begin{lstlisting}[caption= "un epígrafe descriptivo"]
+    las líneas de código irían aquí...
+  \end{lstlisting}
+  \end{verbatim}
 
 A modo de ejemplo:
 

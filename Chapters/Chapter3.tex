@@ -57,12 +57,70 @@ En cada una de las capas, se despliegan tecnologias y componentes de hardware y 
 \begin{itemize}
 	\item Capa de percepción. En la capa de percepción, los nodos sensores son los encargados de medir variables ambientales, hacer un prepocesamiento y enviarlas a la capa de red. Para su desarrollo se utilizo la placa STM32L432KC que contiene el firmware del sistema,tambien consta de un sensor de humedad y temperatrua ambiente AHT10 que se comunica con la placa de desarrollo mediante el protocolo I2C, sensor de humedad de suelo HL-69 y el sensor de luz UV ML-18 que se comunicacion con el modulo mediante entradas analogicas.
   \item Capa de red. En cuanto a la red, se utilizo un modulo quectel BG96 que puede conectarse a la red 2G, 4G, NB-IoT automaticamente dependiendo del nivel de la red en el lugar de la implementacion del modulo sensor, se comunica con el microcontrolador por comandos AT por puerto UART.
-  \item Capa de aplicación. En la capa de aplicacion, se utilizo una plataforma IoT como servidor, que nos brinda las funcionalidades de broker MQTT para mandar los datos a la plataforma, base de datos para el almacenamiento, nos brinda la interfaz grafica para la visualizacion de los datos y nos permite gestionar la alarmas del sistema.
+  \item Capa de aplicación. En la capa de aplicacion, se utilizo ThingsBoard como plataforma IoT que nos brinda los microservicios de broker MQTT como puerta de entrada al servidor, base de datos para el almacenamiento, nos brinda la interfaz grafica para la visualizacion de los datos y nos permite gestionar la alarmas del sistema.
 
 
 \end{itemize}
 
 \section{Arquitectura de firmware}
+El desarrollo del firmware fue la tarea mas compleja del proyecto debido a que uno de los objetivos fue lograr 
+El firmware fue estructurado en capas como se muestra en la figura se dividio el firmware en capas para facilitar el desarrollo y reducir la complejidad del codigo escritolo separo en capas 
+\begin{figure}[htbp]
+  \centering
+	\includegraphics[width=0.7\textwidth]{./Figures/Capas del firmware.png}
+	\caption{Capas del firmware.}
+	\label{fig:Capas del firmware}
+\end{figure}
+
+ La capa Base es la mas baja del sistema y esta compuesta por la libreria HAL de STM, proporciona a las capas superiores la capacidad de interactuar con los perifericos del  microcontrolador STM32L432KC atraves de funciones en lenguaje C
+  \begin{itemize}
+    \item GPIO: La API proporciona funciones para definir el estado de los pines del microcontrolador.Fueron utilizadas por la capa de APP para el control de los leds de debug del sistema y para el encendido y reset del modulo de comunicacion. Las funciones de esta libreria fue utilizada por la capa de APP para gestionar las entradas y salidas del microcontrolador.
+    \item ADC: Proporcionan funciones para la configuracion, lectura y escritura de los pines de microcontroladora senales analogicas. Se utilizaron estas funciones para hacer la lectura de los sensores de humedad de suelo y el sensor de luz UV.
+    \item UART: Brinda funciones para la lectura y estritura por el puerto UART del microcontrolador.El firmware utiliza estas funciones para la comunicacion con el modulo BG96.
+    \item I2C:Proporciona funciones para la lectura y escritura por protocolo I2C.El driver del sensor de AHT10 utiliza estas funciones para hacer la lectura de los datos.Se utilizaron estas funciones para la lectura de los datos del sensor de AHT10.
+    
+  \end{itemize}
+
+
+La capa DRIVERS esta compuesta por los modulos que se desarrollaron para hardware externo al microcontrolador que permiten al microcontrolador enteractuar con hardware externo.Se desarrollaron drivers para el modulo de comunicacion BG96,AHT10,ML18 y HL69
+\begin{itemize}
+  \item Modulo BG96:Se desarrollo el driver para el modulo BG96, para establecer la comunicacion de este elemento con el microcontrolador a traves del puerto UART.Las funciones mas importantes que proporcionan son
+  \begin{itemize}
+    \item Estado del modulo.
+    \item Descripcion del modulo.
+    \item Configuracion APN de la red.
+    \item Conexion TCP.
+    \item Conexion a broker MQTT.
+  \end{itemize}
+  \item AHT10: Se desarrollo utilizando la hoja de datos del sensor, proporciona las funciones mas importante inicializacion y lectura de los valores obtenidos por el sensor.
+  \item ML18: Se escribio una funcion que permite convertir los datos obtenidos de forma analogica a valores significativos de humedad.
+  
+\end{itemize}
+
+La capa de APP es la de mayor nivel gerarquico.Se la desarrollo sobre freeRTOS que nos permite hacer un codigo mas escalable.
+Se implementaron cuatro tareas
+\begin{itemize}
+    \item Loop del sistema: Esta tarea es la que nos da la secuencialidad del sistema.
+    \item Conexion servidor: Se encarga de manejar la conexion a la red y al broker MQTT.
+    \item Adquisicion de datos: Se encarga de hacer la lectura de los sensores.
+    \item Manejador de eventos: Esta tarea se encarga de manejar todos lo eventos del sistema.
+  \end{itemize}
+
+\section{Desarrollo del firmware}
+Para el desarrollo del firmware se utilizo como IDE el IDE oficial de STM cubeIDE 
+En la figura se describe el diagrama de flujo de inicializacion del  firmware.
+
+El firmware fue desarrollado sobre freeRTOS, se utilizaron algunas de sus funcionanlidades como queue, semaforos, tareas, interrupciones.En la figura se describe las diferentes tareas que se crearon para el firmware y la comunicacion entre las mismas.
+
+
+
+\section{Controladores implementados}
+
+
+
+
+
+
 \begin{verbatim}
   \begin{lstlisting}[caption= "un epígrafe descriptivo"]
     las líneas de código irían aquí...

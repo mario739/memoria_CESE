@@ -1,5 +1,5 @@
 \chapter{Diseño e implementación} % Main chapter title
-En este capitulo se abordara la descripcion de la arquitectura del sistema, arquitectura del firmware, detalles de los controladores desarrollados para el modulo de comunicaicon y los sensores, desarrollo del hardware y la configuracion de la plataforma IoT. 
+En este capitulo se abordara la descripcion de la arquitectura general del sistema, arquitectura del firmware, detalles de los controladores desarrollados para el modulo de comunicaicon y los sensores, desarrollo del hardware y la configuracion de la plataforma IoT. 
 \label{Chapter3} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
 
 \definecolor{mygreen}{rgb}{0,0.6,0}
@@ -44,7 +44,7 @@ En este capitulo se abordara la descripcion de la arquitectura del sistema, arqu
 %----------------------------------------------------------------------------------------
 \section{Diagrama de bloques general del sistema}
 
-En la figura \ref{fig:Diagrama general del sistema IoT} se muestra el diagrama en bloques general del sistema donde se describe la arquitectura IoT que consta de tres capas: percepción, red y aplicación.
+En la figura \ref{fig:Diagrama general del sistema IoT} se muestra el diagrama en bloques general del sistema implementado donde se describe la arquitectura IoT la cual consta de tres capas: percepción, red y aplicación.
 
 \begin{figure}[htbp]
 	\includegraphics[width=1\textwidth]{./Figures/DiagramaDelSistema.png}
@@ -64,7 +64,8 @@ En cada una de las capas, se despliegan tecnologias y componentes de hardware y 
 
 \section{Arquitectura de firmware}
 El desarrollo del firmware fue la tarea mas compleja del proyecto debido a que uno de los objetivos fue lograr 
-El firmware fue estructurado en capas como se muestra en la figura se dividio el firmware en capas para facilitar el desarrollo y reducir la complejidad del codigo escritolo separo en capas 
+El firmware fue estructurado en capas como se muestra en la figura \ref{fig:Capas del firmware} se dividio el firmware en capas para facilitar el desarrollo y reducir la complejidad del codigo escritolo separo en capas 
+
 \begin{figure}[htbp]
   \centering
 	\includegraphics[width=0.7\textwidth]{./Figures/Capas del firmware.png}
@@ -107,59 +108,92 @@ Se implementaron cuatro tareas
   \end{itemize}
 
 \section{Desarrollo del firmware}
-Para el desarrollo del firmware se utilizo como IDE el IDE oficial de STM cubeIDE 
-En la figura se describe el diagrama de flujo de inicializacion del  firmware.
+Para el desarrollo del firmware se utilizo el IDE oficial de STMicroelectronic(STM32CubeIDE).
 
-El firmware fue desarrollado sobre freeRTOS, se utilizaron algunas de sus funcionanlidades como queue, semaforos, tareas, interrupciones.En la figura se describe las diferentes tareas que se crearon para el firmware y la comunicacion entre las mismas.
-
-
-
-\section{Controladores implementados}
+El firmware fue desarrollado sobre freeRTOS, se utilizaron algunas de sus funcionanlidades como queue, semaforos, tareas, interrupciones.
 
 
 
 
+En la figura se describe las diferentes tareas que se crearon para el firmware y la comunicacion entre las mismas.
 
 
-\begin{verbatim}
-  \begin{lstlisting}[caption= "un epígrafe descriptivo"]
-    las líneas de código irían aquí...
-  \end{lstlisting}
-  \end{verbatim}
+El firmware tiene una etapa de inicializacion en la figura podemos ver la secuancia de inicializacion del sistema.
 
-A modo de ejemplo:
+Luego el firmware da el control del sistema al sistema operativo y permanece ejecutando de forma continua las tareas creadas en la etapa de inicializacion del sistema 
 
-\begin{lstlisting}[label=cod:vControl,caption=Pseudocódigo del lazo principal de control.]  % Start your code-block
 
-#define MAX_SENSOR_NUMBER 3
-#define MAX_ALARM_NUMBER  6
-#define MAX_ACTUATOR_NUMBER 6
+En la figura \ref{fig:Df inicio firmware}  se muestra en diagrama de flujo de inicion del firmware.
 
-uint32_t sensorValue[MAX_SENSOR_NUMBER];		
-FunctionalState alarmControl[MAX_ALARM_NUMBER];	//ENABLE or DISABLE
-state_t alarmState[MAX_ALARM_NUMBER];						//ON or OFF
-state_t actuatorState[MAX_ACTUATOR_NUMBER];			//ON or OFF
+\begin{figure}[htbp]
+  \centering
+	\includegraphics[width=0.25\textwidth]{./Figures/DF inicio firmware.png}
+	\caption{Diagrama de flujo inicio firmware.}
+	\label{fig:Df inicio firmware}
+\end{figure}
 
-void vControl() {
+Descripcion de los bloques del diagrama.
 
-	initGlobalVariables();
-	
-	period = 500 ms;
-		
-	while(1) {
+Lo primero que el firmware realiza es la configuracion del hardware del microcontrolador, luego se inicializan los drivers del modulo de comunicacion celular BG96 y el driver del sensor de humedad AHT10, ejecutan las funciones de inicializacion de los sensores y del modulo de comunicacion celular,posteriormente se crean las tareas, queues y los semaforos del sistema y finalmente se da el contro del sistema al scheduler del sistema operativo. 
 
-		ticks = xTaskGetTickCount();
-		
-		updateSensors();
-		
-		updateAlarms();
-		
-		controlActuators();
-		
-		vTaskDelayUntil(&ticks, period);
-	}
-}
-\end{lstlisting}
+Para el control del sistema se crearon cuatro tareas sobre freeRTOS, que se comunican y sincronizan atraves de colas y semaforos en la figura la comunicacion entre tareas.
+
+A continuacion se desarrollara a implementacion de cada tarea del sistema.
+
+\begin{figure}[htbp]
+  \centering
+	\includegraphics[width=1\textwidth]{./Figures/DF task loop.png}
+	\caption{Diagrama de flujo tarea loop.}
+	\label{fig:Df tarea loop sistema}
+\end{figure}
+
+La secuencialidad del sistema es manejado por la tarea de loop que nos permite tener secuencia repetitiva, la figura muestra el diagrma de flujo de la tarea loop 
+La tarea comienza creando variables que se utilizaran localmente se inicia el timer del sistema, luego la tarea se blokea en el un semaforo esperando ser deblokeado por el un give que sera dado en el momento de la ejecucion del handler de la interrupcion del timer, luego se envia datos por las colas de adquisicion de datos y server mqtt para levantar el servidor y la tarea se vuelve a bloquear en el semaforos, cuando se desbloquea pregunta si se logro levantar el servidor si se logro se manda un mensaje por la cola de server mqtt con el evento de enviar datos y se bloquea nuevamente pero si no se logro levantar el servidor no se enviaran datos, luego se envia un evento a la cola de alarmas se bloquea nuevamente esperando que envien las alarmas, cuando se desbloquea el semaforo se manda un evento a la cola de server mqtt para desconectar el servidor y se bloquea la tarea en el semanforo esperando la desconexion  finalmente se inicia nuevamente el timer y mandamos al sistema a modo de bajo consumo. 
+
+
+La figura muestra la secuencia repetiva que realiza la tarea de adquisicion de datos, la tarea inicia creando algunas variables locales que se utilizara en la tarea, luego entra al bucle infinito donde lo que promero que hace es ver si hay algun dato en la cola de adquisicion de datos si no hay se bloquea la tarea pero si hay realiza la lectura de todos los sensores, con los datos recolectados los envia a las colas de data y alarmas y termina el ciclo.
+\begin{figure}[htbp]
+  \centering
+	\includegraphics[width=0.6\textwidth]{./Figures/DF task adquisicion.png}
+	\caption{Diagrama de flujo tarea de adquisicion de datos.}
+	\label{fig:Df tarea adquisicion}
+\end{figure}
+
+El manejo de las alarmas se realiza atraves de la tarea de alarmas la figura describe la secuencia de la tarea, 
+al entrar al bucle infinito lo primero que se realiza es revisar si existe algun dato en la cola de alarmas si no hay datos la tarea se bloquea hasta que alguien envie un dato a la cola, si hay dato se pregunta que evento contiene el dato resivido por la cola si es de monitorear lo que se hace es ver si el dato del sensor de humedad es menor al rango esperado si es asi se una variable en alto advirtiendo al sistema que hay una alarma, si se recicivio el evento de enviar se revisa si hay alarmas activas si hay se envia un mensaje de texto al 
+
+\begin{figure}[htbp]
+  \centering
+	\includegraphics[width=1\textwidth]{./Figures/DF_alarms.png}
+	\caption{Diagrama de flujo tarea alarmas.}
+	\label{fig:Df tarea alarms}
+\end{figure}
+
+La ultima tarea que implento es la tarea que maneja la conexion del servidor que se describe en la figura 
+La tarea comienza esperando datos en la cola de servidor mqtt si no hay datos la tarea se bloquea, si hay datos se revisa que evento es el que se recibio tenemos tres posibles eventos UP, DOWN y SEND ,
+si recivimos el evento de UP la tarea entra a una maquina de estados pra levantar el servidor la figura muestra la maquina de estados del evento UP, si el evento es de DOWN la tarea ejecuta la maquina de estados que se ve en la figura y el evento es SEND la tarea espera que existan datos en la cola de data para haci armar la trama y publicar los datos al borker MQTT.
+
+\begin{figure}[htbp]
+  \centering
+	\includegraphics[width=0.9\textwidth]{./Figures/DF general task conection.png}
+	\caption{Diagrama de flujo tarea general conexion.}
+	\label{fig:Df tarea conexion}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+	\includegraphics[width=0.9\textwidth]{./Figures/SM up server.png}
+	\caption{Maquina de estados up servidor.}
+	\label{fig:Maquina de estados up servidor}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+	\includegraphics[width=0.9\textwidth]{./Figures/SM down server.png}
+	\caption{Maquina de estados dowm servidor.}
+	\label{fig:Maquina de estados dowm servidor}
+\end{figure}
+
 
 
 

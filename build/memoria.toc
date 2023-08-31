@@ -33,9 +33,11 @@
 \contentsline {section}{\numberline {3.1}Diagrama de bloques general del sistema}{11}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Arquitectura de firmware}{12}{section.3.2}%
 \contentsline {section}{\numberline {3.3}Desarrollo del firmware}{13}{section.3.3}%
-\contentsline {chapter}{\numberline {4}Ensayos y resultados}{21}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Pruebas funcionales del hardware}{21}{section.4.1}%
-\contentsline {chapter}{\numberline {5}Conclusiones}{23}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Conclusiones generales }{23}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Próximos pasos}{23}{section.5.2}%
-\contentsline {chapter}{Bibliograf\'{\i }a}{25}{appendix*.26}%
+\contentsline {section}{\numberline {3.4}Desarrollo del hardware}{17}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Interfaz de usuario}{19}{section.3.5}%
+\contentsline {chapter}{\numberline {4}Ensayos y resultados}{23}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Pruebas funcionales del hardware}{23}{section.4.1}%
+\contentsline {chapter}{\numberline {5}Conclusiones}{25}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Conclusiones generales }{25}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Próximos pasos}{25}{section.5.2}%
+\contentsline {chapter}{Bibliograf\'{\i }a}{27}{appendix*.30}%

@@ -154,7 +154,7 @@ La tarea comienza creando variables que se utilizaran localmente se inicia el ti
 La figura muestra la secuencia repetiva que realiza la tarea de adquisicion de datos, la tarea inicia creando algunas variables locales que se utilizara en la tarea, luego entra al bucle infinito donde lo que promero que hace es ver si hay algun dato en la cola de adquisicion de datos si no hay se bloquea la tarea pero si hay realiza la lectura de todos los sensores, con los datos recolectados los envia a las colas de data y alarmas y termina el ciclo.
 \begin{figure}[htbp]
   \centering
-	\includegraphics[width=0.6\textwidth]{./Figures/DF task adquisicion.png}
+	\includegraphics[width=10cm, height=8cm]{./Figures/DF task adquisicion.png}
 	\caption{Diagrama de flujo tarea de adquisicion de datos.}
 	\label{fig:Df tarea adquisicion}
 \end{figure}
@@ -164,7 +164,7 @@ al entrar al bucle infinito lo primero que se realiza es revisar si existe algun
 
 \begin{figure}[htbp]
   \centering
-	\includegraphics[width=1\textwidth]{./Figures/DF_alarms.png}
+	\includegraphics[width=8cm, height=8cm]{./Figures/DF_alarms.png}
 	\caption{Diagrama de flujo tarea alarmas.}
 	\label{fig:Df tarea alarms}
 \end{figure}
@@ -175,25 +175,82 @@ si recivimos el evento de UP la tarea entra a una maquina de estados pra levanta
 
 \begin{figure}[htbp]
   \centering
-	\includegraphics[width=0.9\textwidth]{./Figures/DF general task conection.png}
+	\includegraphics[width=8cm, height=8cm]{./Figures/DF general task conection.png}
 	\caption{Diagrama de flujo tarea general conexion.}
 	\label{fig:Df tarea conexion}
 \end{figure}
 
 \begin{figure}[htbp]
   \centering
-	\includegraphics[width=0.9\textwidth]{./Figures/SM up server.png}
+	\includegraphics[width=10cm, height=15cm]{./Figures/SM up server.png}
 	\caption{Maquina de estados up servidor.}
 	\label{fig:Maquina de estados up servidor}
 \end{figure}
 
 \begin{figure}[htbp]
   \centering
-	\includegraphics[width=0.9\textwidth]{./Figures/SM down server.png}
+	\includegraphics[width=8cm, height=8cm]{./Figures/SM down server.png}
 	\caption{Maquina de estados dowm servidor.}
 	\label{fig:Maquina de estados dowm servidor}
 \end{figure}
 
+\section{Desarrollo del hardware}
+
+Lo que se hizo fue desarrollar un tarjeta donde se puedan conectar todos los modulos que se utilazaron para el prototipo
+Al ser un prototipo no se realizon el diseno de un tarjeta con, lo que se hizo fue desarrollar un tarjeta donde se puedan conectar nuestros modulos utilizados como se el modulo celular, tarjeta de desarrollo STM32L432KC, los modulos sensores.
+
+\begin{figure}[htbp]
+  \centering
+	\includegraphics[width=20cm, height=\textwidth, angle=90]{./Figures/esquematico.png}
+	\caption{Esquemaico del hardware.}
+	\label{fig:esquematico}
+\end{figure}
+
+Descripcion de las partes del esquematico: 
+
+\begin{itemize}
+  \item Conector bateria 3.7v: Conector de la bateria 3.7v que alimenta el modulo de comunicacion bg96.
+  \item Leds de debug: Se colocaron dos leds para debug, uno para senalizar si se logro conectar al servidor MQTT y el otro led para senalizar si el sistema entra en un estado de error.
+  \item UART2 debug: Pines de conexion de conector uart, el firmware manda por este uart todos los comandos que manda al modulo de comunicacion y las repuestas del mismo.
+  \item Conector modulo Nucleo-L432KC: Conectores para colocar el modulo a la tarjeta.
+  \item Modulo de comunicacion BG96: Conector para colocar el modulo BG96.
+  \item Conector de bateria 12v: Conector para la bateris de 12v que se utiliza para alimentar el modulo del microcontrolador.
+  \item Conectores sensores: Son los conectores para los sensores utilizados.  
+\end{itemize}
+
+En la figura se muestra del diseno de la tarjeta del circuito impreso en 3D.
+\begin{figure}[htbp]
+  \centering
+	\includegraphics[width=\textwidth]{./Figures/tarjeta3d.png}
+  \caption{3D del tarjeta desarrollada.}
+	\label{fig:3D del modulo}
+\end{figure}
 
 
+\section{Interfaz de usuario}
 
+Como plataforma IoT se utilizo ThingsBoard que nos permite hacer un desarrollo de una interfaz bastante completa y compleja, 
+
+Para tener una interfaz escalable y bien distribuida se crearon dos panesles 
+
+Panel principal 
+
+En la figura se aprecia el panel principal.A la izquierda, en la parte superior un listado de todos los nodos sensores que estan implementados o se estan monitoreando asiendo click en el dispositivo podemos navegar a otro panel para visualizar los datos del nodo sensor.En la parte inferior izquierda tenemos una grafica que muestra algunas variables de los sensores,
+y en l parte derecha del panel tenemos un mapa que muestra la ubicacion de los nodos sensores.
+
+
+Para tener un mayor detalle de todos los parametros de moitoreo de cada sensor se creo un panel secundario que se muestra en la figura .
+El panel secundario en la parte izquierda se tiene graficas de los valores que se van obteniendo de los sensores, en la aprte central tenemos el ultimo valor que se obtuvo de cada sensor, en la parte derecha superior del panel tenemos una tabla donde se muestran las alarmas que se activaron en el sistema y en la parte inferior derecha se tiene un mapa con la ubicacion donde se encuantra implementado el sensor.  
+\begin{figure}[htbp]
+  \centering
+	\includegraphics[width=\textwidth]{./Figures/panel_principal.png}
+  \caption{Panel principal de la interfaz grafica.}
+	\label{fig:Panel principal}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+	\includegraphics[width=\textwidth]{./Figures/panel_nodosensor.png}
+  \caption{Panel nodo sensor.}
+	\label{fig:Panel nodo sensor}
+\end{figure}

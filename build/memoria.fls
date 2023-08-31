@@ -403,6 +403,18 @@ INPUT ./Figures/SM up server.png
 INPUT ./Figures/SM down server.png
 INPUT ./Figures/SM down server.png
 INPUT ./Figures/SM down server.png
+INPUT ./Figures/esquematico.png
+INPUT ./Figures/esquematico.png
+INPUT ./Figures/esquematico.png
+INPUT ./Figures/tarjeta3d.png
+INPUT ./Figures/tarjeta3d.png
+INPUT ./Figures/tarjeta3d.png
+INPUT ./Figures/panel_principal.png
+INPUT ./Figures/panel_principal.png
+INPUT ./Figures/panel_principal.png
+INPUT ./Figures/panel_nodosensor.png
+INPUT ./Figures/panel_nodosensor.png
+INPUT ./Figures/panel_nodosensor.png
 OUTPUT /home/mario/Documents/memoria_CESE/build/Chapters/Chapter4.aux
 INPUT Chapters/Chapter4.tex
 INPUT Chapters/Chapter4.tex

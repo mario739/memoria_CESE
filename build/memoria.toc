@@ -33,11 +33,13 @@
 \contentsline {section}{\numberline {3.1}Diagrama de bloques general del sistema}{11}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Arquitectura de firmware}{12}{section.3.2}%
 \contentsline {section}{\numberline {3.3}Desarrollo del firmware}{13}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Desarrollo del hardware}{17}{section.3.4}%
-\contentsline {section}{\numberline {3.5}Interfaz de usuario}{19}{section.3.5}%
-\contentsline {chapter}{\numberline {4}Ensayos y resultados}{23}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Pruebas funcionales del hardware}{23}{section.4.1}%
-\contentsline {chapter}{\numberline {5}Conclusiones}{25}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Conclusiones generales }{25}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Próximos pasos}{25}{section.5.2}%
-\contentsline {chapter}{Bibliograf\'{\i }a}{27}{appendix*.30}%
+\contentsline {section}{\numberline {3.4}Desarrollo del hardware}{20}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Paneles de visualizacion}{23}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Panel principal}{23}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Panel nodo sensor}{24}{subsection.3.5.2}%
+\contentsline {chapter}{\numberline {4}Ensayos y resultados}{25}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Pruebas funcionales del hardware}{25}{section.4.1}%
+\contentsline {chapter}{\numberline {5}Conclusiones}{27}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Conclusiones generales }{27}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Próximos pasos}{27}{section.5.2}%
+\contentsline {chapter}{Bibliograf\'{\i }a}{29}{appendix*.30}%

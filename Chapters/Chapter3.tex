@@ -1,3 +1,4 @@
+
 \chapter{Diseño e implementación} % Main chapter title
 En este capitulo se abordara la descripcion de la arquitectura general del sistema, arquitectura del firmware, detalles de los controladores desarrollados para el modulo de comunicaicon y los sensores, desarrollo del hardware y la configuracion de la plataforma IoT. 
 \label{Chapter3} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
@@ -194,11 +195,15 @@ si recivimos el evento de UP la tarea entra a una maquina de estados pra levanta
 	\label{fig:Maquina de estados dowm servidor}
 \end{figure}
 
+\clearpage
+
 \section{Desarrollo del hardware}
+
+Para el desarrollo del diseño del hardware se decidio utilizar como herramienta de diseño KICAD 6.0 por que es la herramienta que se aprendio a utilizar en la especializacion.
 
 Lo que se hizo fue desarrollar un tarjeta donde se puedan conectar todos los modulos que se utilazaron para el prototipo
 Al ser un prototipo no se realizon el diseno de un tarjeta con, lo que se hizo fue desarrollar un tarjeta donde se puedan conectar nuestros modulos utilizados como se el modulo celular, tarjeta de desarrollo STM32L432KC, los modulos sensores.
-
+ 
 \begin{figure}[htbp]
   \centering
 	\includegraphics[width=20cm, height=\textwidth, angle=90]{./Figures/esquematico.png}
@@ -218,39 +223,42 @@ Descripcion de las partes del esquematico:
   \item Conectores sensores: Son los conectores para los sensores utilizados.  
 \end{itemize}
 
+\clearpage
 En la figura se muestra del diseno de la tarjeta del circuito impreso en 3D.
-\begin{figure}[htbp]
+\begin{figure}[h!]
   \centering
-	\includegraphics[width=\textwidth]{./Figures/tarjeta3d.png}
+	\includegraphics[width=\textwidth, height=9cm]{./Figures/tarjeta3d.png}
   \caption{3D del tarjeta desarrollada.}
 	\label{fig:3D del modulo}
 \end{figure}
 
 
-\section{Interfaz de usuario}
+\clearpage
+\section{Paneles de visualizacion}
+La herramienta de visualizacion de ThingsBoard es muy versatil para el armado de paneles de visualizacion escalables y altamente configurables.
 
-Como plataforma IoT se utilizo ThingsBoard que nos permite hacer un desarrollo de una interfaz bastante completa y compleja, 
+Se armaron dos paneles de visualizacion un panel principal que muestra todos los nodos sensores implementados y un panel secundario o panel de nodo sensor que muestra de forma detallada las variables monitoreadas por el nodo sensor.
+\subsection{Panel principal} 
 
-Para tener una interfaz escalable y bien distribuida se crearon dos panesles 
+En la figura \ref{fig:Panel principal} se aprecia el panel principal de la interfaz grafica.A la izquierda en la parte superior hay un listado de todos los nodos sensores que estan implementados o se estan monitoreando, asiendo click en el dispositivo podemos navegar al panel de visualizacion del nodo sensor seleccionado.En la parte inferior izquierda tenemos una grafica que muestra algunas variables de los sensores,
+y en la parte derecha del panel tenemos un mapa que muestra la ubicacion de los nodos sensores inplementados.
 
-Panel principal 
-
-En la figura se aprecia el panel principal.A la izquierda, en la parte superior un listado de todos los nodos sensores que estan implementados o se estan monitoreando asiendo click en el dispositivo podemos navegar a otro panel para visualizar los datos del nodo sensor.En la parte inferior izquierda tenemos una grafica que muestra algunas variables de los sensores,
-y en l parte derecha del panel tenemos un mapa que muestra la ubicacion de los nodos sensores.
-
-
-Para tener un mayor detalle de todos los parametros de moitoreo de cada sensor se creo un panel secundario que se muestra en la figura .
-El panel secundario en la parte izquierda se tiene graficas de los valores que se van obteniendo de los sensores, en la aprte central tenemos el ultimo valor que se obtuvo de cada sensor, en la parte derecha superior del panel tenemos una tabla donde se muestran las alarmas que se activaron en el sistema y en la parte inferior derecha se tiene un mapa con la ubicacion donde se encuantra implementado el sensor.  
-\begin{figure}[htbp]
+\begin{figure}[h!]
   \centering
-	\includegraphics[width=\textwidth]{./Figures/panel_principal.png}
+	\includegraphics[width=\textwidth, height=9cm]{./Figures/panel_principal.png}
   \caption{Panel principal de la interfaz grafica.}
 	\label{fig:Panel principal}
 \end{figure}
 
-\begin{figure}[htbp]
+\clearpage
+\subsection{Panel nodo sensor} 
+
+Para tener un mayor detalle de todos los parametros de monitoreo de cada nodo sensor se creo un panel secundario que se muestra en la figura \ref{fig:Panel nodo sensor}.
+El panel secundario tiene en la parte izquierda graficas de los valores que se van obteniendo del nodo sensor, en la parte central tenemos un widget que nos muestra el ultimo valor que se obtuvo de las variables monitoreadas, en la parte derecha superior del panel tenemos una tabla para mostrae las alarmas que se activaron en el sistema y en la parte inferior derecha inferior se tiene un mapa con la ubicacion del nodo sensor.  
+
+\begin{figure}[h!]
   \centering
-	\includegraphics[width=\textwidth]{./Figures/panel_nodosensor.png}
+	\includegraphics[width=\textwidth, height=8cm]{./Figures/panel_nodosensor.png}
   \caption{Panel nodo sensor.}
 	\label{fig:Panel nodo sensor}
 \end{figure}

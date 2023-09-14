@@ -189,6 +189,10 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/koma-script/scrlayer-scrpage.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/koma-script/scrlayer-scrpage.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/koma-script/scrlayer.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/koma-script/scrlayer.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/lscape.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/lscape.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/koma-script/lscape.hak
+INPUT /usr/share/texlive/texmf-dist/tex/latex/koma-script/lscape.hak
 INPUT /home/mario/Documents/memoria_CESE/build/memoria.aux
 INPUT /home/mario/Documents/memoria_CESE/build/memoria.aux
 INPUT /home/mario/Documents/memoria_CESE/build/Chapters/Chapter1.aux
@@ -215,8 +219,6 @@ INPUT /usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT /usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT /usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
-INPUT /usr/share/texlive/texmf-dist/tex/latex/grfext/grfext.sty
-INPUT /usr/share/texlive/texmf-dist/tex/latex/grfext/grfext.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 INPUT /usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 INPUT /usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/spanish.lbx
@@ -403,12 +405,36 @@ INPUT ./Figures/SM up server.png
 INPUT ./Figures/SM down server.png
 INPUT ./Figures/SM down server.png
 INPUT ./Figures/SM down server.png
-INPUT ./Figures/esquematico.png
-INPUT ./Figures/esquematico.png
-INPUT ./Figures/esquematico.png
+INPUT ./Figures/esquematico_root.png
+INPUT ./Figures/esquematico_root.png
+INPUT ./Figures/esquematico_root.png
+INPUT ./Figures/esquematico_modulos.png
+INPUT ./Figures/esquematico_modulos.png
+INPUT ./Figures/esquematico_modulos.png
+INPUT ./Figures/esquematico_debug.png
+INPUT ./Figures/esquematico_debug.png
+INPUT ./Figures/esquematico_debug.png
+INPUT ./Figures/esquematico_conectores_sensores.png
+INPUT ./Figures/esquematico_conectores_sensores.png
+INPUT ./Figures/esquematico_conectores_sensores.png
+INPUT ./Figures/esquematico_alimentacion.png
+INPUT ./Figures/esquematico_alimentacion.png
+INPUT ./Figures/esquematico_alimentacion.png
+INPUT ./Figures/pcb_top.png
+INPUT ./Figures/pcb_top.png
+INPUT ./Figures/pcb_top.png
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplr8t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplrc8t.tfm
+INPUT ./Figures/pcb_bot.png
+INPUT ./Figures/pcb_bot.png
+INPUT ./Figures/pcb_bot.png
 INPUT ./Figures/tarjeta3d.png
 INPUT ./Figures/tarjeta3d.png
 INPUT ./Figures/tarjeta3d.png
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/palatino/pplrc8t.vf
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplr8r.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplr8r.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/palatino/pplr8t.vf
 INPUT ./Figures/panel_principal.png
 INPUT ./Figures/panel_principal.png
 INPUT ./Figures/panel_principal.png

@@ -48,7 +48,7 @@ En este capitulo se abordara la descripcion de la arquitectura general del siste
 En la figura \ref{fig:Diagrama general del sistema IoT} se muestra el diagrama en bloques general del sistema implementado donde se describe la arquitectura IoT la cual consta de tres capas: percepción, red y aplicación.
 
 \begin{figure}[htbp]
-	\includegraphics[width=1\textwidth]{./Figures/DiagramaDelSistema.png}
+	\includegraphics[width=\textwidth, height=8cm]{./Figures/DiagramaDelSistema.png}
 	\caption{Diagrama general del sistema IoT.}
 	\label{fig:Diagrama general del sistema IoT}
 \end{figure}
@@ -141,21 +141,21 @@ Para el control del sistema se crearon cuatro tareas sobre freeRTOS, que se comu
 
 A continuacion se desarrollara a implementacion de cada tarea del sistema.
 
-\begin{figure}[htbp]
+
+La secuencialidad del sistema es manejado por la tarea de loop que nos permite tener secuencia repetitiva, la figura muestra el diagrma de flujo de la tarea loop 
+La tarea comienza creando variables que se utilizaran localmente se inicia el timer del sistema, luego la tarea se blokea en el un semaforo esperando ser deblokeado por el un give que sera dado en el momento de la ejecucion del handler de la interrupcion del timer, luego se envia datos por las colas de adquisicion de datos y server mqtt para levantar el servidor y la tarea se vuelve a bloquear en el semaforos, cuando se desbloquea pregunta si se logro levantar el servidor si se logro se manda un mensaje por la cola de server mqtt con el evento de enviar datos y se bloquea nuevamente pero si no se logro levantar el servidor no se enviaran datos, luego se envia un evento a la cola de alarmas se bloquea nuevamente esperando que envien las alarmas, cuando se desbloquea el semaforo se manda un evento a la cola de server mqtt para desconectar el servidor y se bloquea la tarea en el semanforo esperando la desconexion  finalmente se inicia nuevamente el timer y mandamos al sistema a modo de bajo consumo. 
+\begin{figure}[h]
   \centering
-	\includegraphics[width=1\textwidth]{./Figures/DF task loop.png}
+	\includegraphics[width=12cm, height=12cm]{./Figures/DF task loop.png}
 	\caption{Diagrama de flujo tarea loop.}
 	\label{fig:Df tarea loop sistema}
 \end{figure}
 
-La secuencialidad del sistema es manejado por la tarea de loop que nos permite tener secuencia repetitiva, la figura muestra el diagrma de flujo de la tarea loop 
-La tarea comienza creando variables que se utilizaran localmente se inicia el timer del sistema, luego la tarea se blokea en el un semaforo esperando ser deblokeado por el un give que sera dado en el momento de la ejecucion del handler de la interrupcion del timer, luego se envia datos por las colas de adquisicion de datos y server mqtt para levantar el servidor y la tarea se vuelve a bloquear en el semaforos, cuando se desbloquea pregunta si se logro levantar el servidor si se logro se manda un mensaje por la cola de server mqtt con el evento de enviar datos y se bloquea nuevamente pero si no se logro levantar el servidor no se enviaran datos, luego se envia un evento a la cola de alarmas se bloquea nuevamente esperando que envien las alarmas, cuando se desbloquea el semaforo se manda un evento a la cola de server mqtt para desconectar el servidor y se bloquea la tarea en el semanforo esperando la desconexion  finalmente se inicia nuevamente el timer y mandamos al sistema a modo de bajo consumo. 
-
-
+\clearpage
 La figura muestra la secuencia repetiva que realiza la tarea de adquisicion de datos, la tarea inicia creando algunas variables locales que se utilizara en la tarea, luego entra al bucle infinito donde lo que promero que hace es ver si hay algun dato en la cola de adquisicion de datos si no hay se bloquea la tarea pero si hay realiza la lectura de todos los sensores, con los datos recolectados los envia a las colas de data y alarmas y termina el ciclo.
 \begin{figure}[htbp]
   \centering
-	\includegraphics[width=10cm, height=8cm]{./Figures/DF task adquisicion.png}
+	\includegraphics[width=8cm, height=9cm]{./Figures/DF task adquisicion.png}
 	\caption{Diagrama de flujo tarea de adquisicion de datos.}
 	\label{fig:Df tarea adquisicion}
 \end{figure}
@@ -165,9 +165,9 @@ al entrar al bucle infinito lo primero que se realiza es revisar si existe algun
 
 \begin{figure}[htbp]
   \centering
-	\includegraphics[width=8cm, height=8cm]{./Figures/DF_alarms.png}
+	\includegraphics[width=8cm, height=6cm]{./Figures/DF_alarms.png}
 	\caption{Diagrama de flujo tarea alarmas.}
-	\label{fig:Df tarea alarms}
+	\label{fig:Df tarea alarmas}
 \end{figure}
 
 La ultima tarea que implento es la tarea que maneja la conexion del servidor que se describe en la figura 
@@ -195,35 +195,81 @@ si recivimos el evento de UP la tarea entra a una maquina de estados pra levanta
 	\label{fig:Maquina de estados dowm servidor}
 \end{figure}
 
-\clearpage
 
+
+\clearpage
 \section{Desarrollo del hardware}
 
 Para el desarrollo del diseño del hardware se decidio utilizar como herramienta de diseño KICAD 6.0 por que es la herramienta que se aprendio a utilizar en la especializacion.
 
-Lo que se hizo fue desarrollar un tarjeta donde se puedan conectar todos los modulos que se utilazaron para el prototipo
-Al ser un prototipo no se realizon el diseno de un tarjeta con, lo que se hizo fue desarrollar un tarjeta donde se puedan conectar nuestros modulos utilizados como se el modulo celular, tarjeta de desarrollo STM32L432KC, los modulos sensores.
- 
-\begin{figure}[htbp]
+\subsection{Esquematico} 
+Lo que se hizo fue desarrollar un tarjeta donde se puedan conectar todos los modulos que se utilizaron para el prototipo
+Al ser un prototipo no se realizon el diseño de un tarjeta con los compenentes mismo sino que se utlizaron modulo de desarrollo, lo que se hizo fue desarrollar un tarjeta donde se puedan conectar nuestros modulos utilizados como se el modulo celular, tarjeta de desarrollo STM32L432KC, los modulos sensores.
+
+En la figura se muestra la pagina raiz del esquematico del proyecto donde se puede ver la division del esquematico en 4 hojas, en la parte izquierda superior se ve el titulo de cada hoja en la parte derecha se ve la conexion entre las diferentes hojas, y en la parte izquierda inferior se ve el 3d del la tarjeta. 
+
+\begin{figure}[h]
   \centering
-	\includegraphics[width=20cm, height=\textwidth, angle=90]{./Figures/esquematico.png}
-	\caption{Esquemaico del hardware.}
-	\label{fig:esquematico}
+	\includegraphics[width=\textwidth, height=10cm]{./Figures/esquematico_root.png}
+	\caption{Esquematico pagina root.}
+	\label{fig:esquematico root}
+\end{figure}
+\clearpage
+Para el diseño del shield se consideraron las medidads de la modulos que se conectarian,en la figura se muestra los dos conectores de los modulos mas importantes el modulo de comuicacion BG96, modulo NUCLEO-L432KC y las conexiones entre ellos.
+
+\begin{figure}[h]
+  \centering
+	\includegraphics[width=\textwidth, height=8cm]{./Figures/esquematico_modulos.png}
+	\caption{Esquematico conectores modulos.}
+	\label{fig:esquematico modulos}
 \end{figure}
 
-Descripcion de las partes del esquematico: 
-
-\begin{itemize}
-  \item Conector bateria 3.7v: Conector de la bateria 3.7v que alimenta el modulo de comunicacion bg96.
-  \item Leds de debug: Se colocaron dos leds para debug, uno para senalizar si se logro conectar al servidor MQTT y el otro led para senalizar si el sistema entra en un estado de error.
-  \item UART2 debug: Pines de conexion de conector uart, el firmware manda por este uart todos los comandos que manda al modulo de comunicacion y las repuestas del mismo.
-  \item Conector modulo Nucleo-L432KC: Conectores para colocar el modulo a la tarjeta.
-  \item Modulo de comunicacion BG96: Conector para colocar el modulo BG96.
-  \item Conector de bateria 12v: Conector para la bateris de 12v que se utiliza para alimentar el modulo del microcontrolador.
-  \item Conectores sensores: Son los conectores para los sensores utilizados.  
-\end{itemize}
-
+Se colocaron dos leds para debug, uno para senalizar si se logro conectar al servidor MQTT y el otro led para senalizar si el sistema entra en un estado de error y se coloco un conector para una puerto serial por donde el modulo manda la secuancia de comandos que manda y recive al modulo de comunicacion.En la figura se puede ver el circuito.
+En la figura se puede ver las interfaz que tenemos para hacer debug del sistema, se colocar dos leds de estado del nodo sensor: led verde señaliza si el modulo se conecto al servidor y led rojo se enciende cuando el sistema entre en un error que necesita reinicarse. 
+\begin{figure}[h!]
+  \centering
+	\includegraphics[width=\textwidth, height=5cm]{./Figures/esquematico_debug.png}
+	\caption{Esquematico interfaz de debug.}
+	\label{fig:esquematico conectores de debug}
+\end{figure}
 \clearpage
+En la figura se pueden ver los conectores que se pusieron a la placa para conectar los sensores del nodo: sensor de humedad 1, sensor de humedad 2, sensor de luz UV y el sensor de humedad y temperatura ambiente AHT-10.
+
+\begin{figure}[h]
+  \centering
+	\includegraphics[width=\textwidth, height=8cm]{./Figures/esquematico_conectores_sensores.png}
+	\caption{Esquematico conectores sensores.}
+	\label{fig:esquematico conectores sensores}
+\end{figure}
+
+Se colocaron dos colectores de alimentacion como se muestra en la figura ,el conector de 12 v para alimentar al modulo del microcontroaldor y el otro conector para alimentar al modulo de comunicacion.
+\begin{figure}[h]
+  \centering
+	\includegraphics[width=\textwidth, height=8cm]{./Figures/esquematico_alimentacion.png}
+	\caption{Esquematico conectores alimentacion.}
+	\label{fig:esquematico conectores alimentacion}
+\end{figure}
+Pines de conexion de conector uart, el firmware manda por este uart todos los comandos que manda al modulo de comunicacion y las repuestas del mismo
+\clearpage
+\subsection{PCB del hardware} 
+La figura muestra el circuito impreso diseñado para el proyecto.
+
+\begin{figure}[h!]
+  \centering
+  \begin{subfigure}[b]{0.45\linewidth}
+  \includegraphics[width=\linewidth]{./Figures/pcb_top.png}
+  \caption{Capa top PCB}
+  \label{fig:Capa top PCB}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.44\linewidth}
+  \includegraphics[width=\linewidth]{./Figures/pcb_bot.png}
+  \caption{Capa bot PCB}
+  \label{fig:Capa bot PCB}
+  \end{subfigure}
+  \caption{PCB del proyecto.}
+  \label{fig:PCB del proyecto}
+  \end{figure}
+
 En la figura se muestra del diseno de la tarjeta del circuito impreso en 3D.
 \begin{figure}[h!]
   \centering

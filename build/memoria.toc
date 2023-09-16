@@ -33,15 +33,16 @@
 \contentsline {section}{\numberline {3.1}Diagrama de bloques general del sistema}{11}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Arquitectura de firmware}{12}{section.3.2}%
 \contentsline {section}{\numberline {3.3}Desarrollo del firmware}{14}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Desarrollo del hardware}{20}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Esquematico}{20}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}PCB del hardware}{23}{subsection.3.4.2}%
-\contentsline {section}{\numberline {3.5}Paneles de visualizacion}{24}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}Panel principal}{24}{subsection.3.5.1}%
-\contentsline {subsection}{\numberline {3.5.2}Panel nodo sensor}{25}{subsection.3.5.2}%
-\contentsline {chapter}{\numberline {4}Ensayos y resultados}{27}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Pruebas funcionales del hardware}{27}{section.4.1}%
-\contentsline {chapter}{\numberline {5}Conclusiones}{29}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Conclusiones generales }{29}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Próximos pasos}{29}{section.5.2}%
-\contentsline {chapter}{Bibliograf\'{\i }a}{31}{appendix*.35}%
+\contentsline {section}{\numberline {3.4}Controladores implementados}{19}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Desarrollo del hardware}{25}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Esquematico}{25}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}PCB del hardware}{28}{subsection.3.5.2}%
+\contentsline {section}{\numberline {3.6}Paneles de visualizacion}{29}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Panel principal}{29}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2}Panel nodo sensor}{30}{subsection.3.6.2}%
+\contentsline {chapter}{\numberline {4}Ensayos y resultados}{31}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Pruebas funcionales del hardware}{31}{section.4.1}%
+\contentsline {chapter}{\numberline {5}Conclusiones}{33}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Conclusiones generales }{33}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Próximos pasos}{33}{section.5.2}%
+\contentsline {chapter}{Bibliograf\'{\i }a}{35}{appendix*.35}%

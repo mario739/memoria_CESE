@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2023.5.31)  14 SEP 2023 19:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2023.5.31)  15 SEP 2023 17:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -672,7 +672,11 @@ Package csquotes Info: ... found 'babel' package.
  (/home/mario/Documents/memoria_CESE/build/memoria.aux
 LaTeX Info: Redefining \. on input line 31.
 LaTeX Info: Redefining \% on input line 31.
- (/home/mario/Documents/memoria_CESE/build/Chapters/Chapter1.aux) (/home/mario/Documents/memoria_CESE/build/Chapters/Chapter2.aux) (/home/mario/Documents/memoria_CESE/build/Chapters/Chapter3.aux) (/home/mario/Documents/memoria_CESE/build/Chapters/Chapter4.aux) (/home/mario/Documents/memoria_CESE/build/Chapters/Chapter5.aux))
+ (/home/mario/Documents/memoria_CESE/build/Chapters/Chapter1.aux) (/home/mario/Documents/memoria_CESE/build/Chapters/Chapter2.aux) (/home/mario/Documents/memoria_CESE/build/Chapters/Chapter3.aux
+
+LaTeX Warning: Label `cod:vControl' multiply defined.
+
+) (/home/mario/Documents/memoria_CESE/build/Chapters/Chapter4.aux) (/home/mario/Documents/memoria_CESE/build/Chapters/Chapter5.aux))
 \openout1 = `memoria.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 61.
@@ -802,7 +806,7 @@ LaTeX Info: Redefining \nameref on input line 61.
 
 Package scrlayer Info: Setting magic \footheight to \baselineskip while
 (scrlayer)             \begin{document} on input line 61.
-<./Figures/logoFIUBA.pdf, id=184, 460.9062pt x 153.61644pt>
+<./Figures/logoFIUBA.pdf, id=188, 460.9062pt x 153.61644pt>
 File: ./Figures/logoFIUBA.pdf Graphic file (type pdf)
 <use ./Figures/logoFIUBA.pdf>
 Package pdftex.def Info: ./Figures/logoFIUBA.pdf  used on input line 61.
@@ -914,7 +918,7 @@ l.39
 
 
 ]
-<./Figures/modulo_libelium.png, id=362, 825.0825pt x 1068.99374pt>
+<./Figures/modulo_libelium.png, id=367, 825.0825pt x 1068.99374pt>
 File: ./Figures/modulo_libelium.png Graphic file (type png)
 <use ./Figures/modulo_libelium.png>
 Package pdftex.def Info: ./Figures/modulo_libelium.png  used on input line 70.
@@ -926,7 +930,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has b
                    \relax 
 l.80 
       [2]
-<./Figures/modulo_dropcontrol.png, id=371, 666.49pt x 1021.8175pt>
+<./Figures/modulo_dropcontrol.png, id=376, 666.49pt x 1021.8175pt>
 File: ./Figures/modulo_dropcontrol.png Graphic file (type png)
 <use ./Figures/modulo_dropcontrol.png>
 Package pdftex.def Info: ./Figures/modulo_dropcontrol.png  used on input line 93.
@@ -946,7 +950,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 14--17
 
  []
 
-<./Figures/nucleo-l432kc.jpg, id=385, 285.065pt x 376.40625pt>
+<./Figures/nucleo-l432kc.jpg, id=390, 285.065pt x 376.40625pt>
 File: ./Figures/nucleo-l432kc.jpg Graphic file (type jpg)
 <use ./Figures/nucleo-l432kc.jpg>
 Package pdftex.def Info: ./Figures/nucleo-l432kc.jpg  used on input line 31.
@@ -961,12 +965,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 39--42
 
  []
 
-<./Figures/moduloBG96.jpg, id=393, 943.525pt x 943.525pt>
+<./Figures/moduloBG96.jpg, id=398, 943.525pt x 943.525pt>
 File: ./Figures/moduloBG96.jpg Graphic file (type jpg)
 <use ./Figures/moduloBG96.jpg>
 Package pdftex.def Info: ./Figures/moduloBG96.jpg  used on input line 55.
 (pdftex.def)             Requested size: 155.91869pt x 155.91965pt.
-<./Figures/aht10.jpg, id=396, 1003.75pt x 835.12pt>
+<./Figures/aht10.jpg, id=401, 1003.75pt x 835.12pt>
 File: ./Figures/aht10.jpg Graphic file (type jpg)
 <use ./Figures/aht10.jpg>
 Package pdftex.def Info: ./Figures/aht10.jpg  used on input line 63.
@@ -974,12 +978,12 @@ Package pdftex.def Info: ./Figures/aht10.jpg  used on input line 63.
 LaTeX Info: Redefining \. on input line 67.
 LaTeX Info: Redefining \% on input line 67.
 [6 <./Figures/nucleo-l432kc.jpg> <./Figures/moduloBG96.jpg>]
-<./Figures/ml8511.jpg, id=404, 501.875pt x 501.875pt>
+<./Figures/ml8511.jpg, id=409, 501.875pt x 501.875pt>
 File: ./Figures/ml8511.jpg Graphic file (type jpg)
 <use ./Figures/ml8511.jpg>
 Package pdftex.def Info: ./Figures/ml8511.jpg  used on input line 73.
 (pdftex.def)             Requested size: 116.94199pt x 116.93744pt.
-<./Figures/sensordehumedad.jpg, id=407, 376.40625pt x 376.40625pt>
+<./Figures/sensordehumedad.jpg, id=412, 376.40625pt x 376.40625pt>
 File: ./Figures/sensordehumedad.jpg Graphic file (type jpg)
 <use ./Figures/sensordehumedad.jpg>
 Package pdftex.def Info: ./Figures/sensordehumedad.jpg  used on input line 81.
@@ -987,7 +991,7 @@ Package pdftex.def Info: ./Figures/sensordehumedad.jpg  used on input line 81.
 LaTeX Info: Redefining \. on input line 89.
 LaTeX Info: Redefining \% on input line 89.
  [7 <./Figures/aht10.jpg> <./Figures/ml8511.jpg>]
-<./Figures/logo_FreeRTOS.jpg, id=423, 414.54875pt x 157.58875pt>
+<./Figures/logo_FreeRTOS.jpg, id=428, 414.54875pt x 157.58875pt>
 File: ./Figures/logo_FreeRTOS.jpg Graphic file (type jpg)
 <use ./Figures/logo_FreeRTOS.jpg>
 Package pdftex.def Info: ./Figures/logo_FreeRTOS.jpg  used on input line 98.
@@ -995,7 +999,7 @@ Package pdftex.def Info: ./Figures/logo_FreeRTOS.jpg  used on input line 98.
 LaTeX Info: Redefining \. on input line 104.
 LaTeX Info: Redefining \% on input line 104.
  [8 <./Figures/sensordehumedad.jpg> <./Figures/logo_FreeRTOS.jpg>]
-<./Figures/mqtt-publish-subscribe.png, id=435, 1027.84pt x 321.2pt>
+<./Figures/mqtt-publish-subscribe.png, id=440, 1027.84pt x 321.2pt>
 File: ./Figures/mqtt-publish-subscribe.png Graphic file (type png)
 <use ./Figures/mqtt-publish-subscribe.png>
 Package pdftex.def Info: ./Figures/mqtt-publish-subscribe.png  used on input line 117.
@@ -1003,12 +1007,12 @@ Package pdftex.def Info: ./Figures/mqtt-publish-subscribe.png  used on input lin
 LaTeX Info: Redefining \. on input line 124.
 LaTeX Info: Redefining \% on input line 124.
  [9 <./Figures/mqtt-publish-subscribe.png>]
-<./Figures/ubidots.png, id=447, 2119.92pt x 1626.075pt>
+<./Figures/ubidots.png, id=452, 2119.92pt x 1626.075pt>
 File: ./Figures/ubidots.png Graphic file (type png)
 <use ./Figures/ubidots.png>
 Package pdftex.def Info: ./Figures/ubidots.png  used on input line 127.
 (pdftex.def)             Requested size: 292.352pt x 224.22491pt.
-<./Figures/thingsboard.png, id=450, 1927.2pt x 869.2475pt>
+<./Figures/thingsboard.png, id=455, 1927.2pt x 869.2475pt>
 File: ./Figures/thingsboard.png Graphic file (type png)
 <use ./Figures/thingsboard.png>
 Package pdftex.def Info: ./Figures/thingsboard.png  used on input line 136.
@@ -1026,7 +1030,7 @@ File: lstlang1.sty 2019/09/10 1.8c listings language file
 ) (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
 )
-<./Figures/DiagramaDelSistema.png, id=461, 607.068pt x 244.81462pt>
+<./Figures/DiagramaDelSistema.png, id=466, 607.068pt x 244.81462pt>
 File: ./Figures/DiagramaDelSistema.png Graphic file (type png)
 <use ./Figures/DiagramaDelSistema.png>
 Package pdftex.def Info: ./Figures/DiagramaDelSistema.png  used on input line 51.
@@ -1038,7 +1042,7 @@ Package pdftex.def Info: ./Figures/DiagramaDelSistema.png  used on input line 51
 
 
  <./Figures/DiagramaDelSistema.png>]
-<./Figures/Capas del firmware.png, id=468, 263.7855pt x 286.36987pt>
+<./Figures/Capas del firmware.png, id=473, 263.7855pt x 286.36987pt>
 File: ./Figures/Capas del firmware.png Graphic file (type png)
 <use ./Figures/Capas del firmware.png>
 Package pdftex.def Info: ./Figures/Capas del firmware.png  used on input line 72.
@@ -1057,156 +1061,181 @@ Overfull \hbox (57.49913pt too wide) in paragraph at lines 112--113
 LaTeX Info: Redefining \. on input line 114.
 LaTeX Info: Redefining \% on input line 114.
 [13]
-<./Figures/DF inicio firmware.png, id=480, 108.405pt x 334.70044pt>
+<./Figures/DF inicio firmware.png, id=486, 108.405pt x 334.70044pt>
 File: ./Figures/DF inicio firmware.png Graphic file (type png)
 <use ./Figures/DF inicio firmware.png>
-Package pdftex.def Info: ./Figures/DF inicio firmware.png  used on input line 131.
+Package pdftex.def Info: ./Figures/DF inicio firmware.png  used on input line 125.
 (pdftex.def)             Requested size: 97.45067pt x 300.89565pt.
-LaTeX Info: Redefining \. on input line 142.
-LaTeX Info: Redefining \% on input line 142.
- [14 <./Figures/DF inicio firmware.png>]
-<./Figures/DF task loop.png, id=486, 454.39763pt x 714.11794pt>
+<./Figures/DF task loop.png, id=487, 454.39763pt x 714.11794pt>
 File: ./Figures/DF task loop.png Graphic file (type png)
 <use ./Figures/DF task loop.png>
-Package pdftex.def Info: ./Figures/DF task loop.png  used on input line 149.
-(pdftex.def)             Requested size: 341.44913pt x 341.44333pt.
-LaTeX Info: Redefining \. on input line 154.
-LaTeX Info: Redefining \% on input line 154.
+Package pdftex.def Info: ./Figures/DF task loop.png  used on input line 143.
+(pdftex.def)             Requested size: 341.44913pt x 398.34511pt.
+LaTeX Info: Redefining \. on input line 147.
+LaTeX Info: Redefining \% on input line 147.
+ [14 <./Figures/DF inicio firmware.png>]
+LaTeX Info: Redefining \. on input line 148.
+LaTeX Info: Redefining \% on input line 148.
  [15 <./Figures/DF task loop.png>]
-<./Figures/DF task adquisicion.png, id=492, 201.90431pt x 341.02406pt>
+<./Figures/DF task adquisicion.png, id=499, 201.90431pt x 341.02406pt>
 File: ./Figures/DF task adquisicion.png Graphic file (type png)
 <use ./Figures/DF task adquisicion.png>
-Package pdftex.def Info: ./Figures/DF task adquisicion.png  used on input line 158.
-(pdftex.def)             Requested size: 227.6347pt x 256.09003pt.
-<./Figures/DF_alarms.png, id=493, 321.14981pt x 310.30931pt>
+Package pdftex.def Info: ./Figures/DF task adquisicion.png  used on input line 152.
+(pdftex.def)             Requested size: 170.72603pt x 199.17303pt.
+<./Figures/DF_alarms.png, id=501, 321.14981pt x 310.30931pt>
 File: ./Figures/DF_alarms.png Graphic file (type png)
 <use ./Figures/DF_alarms.png>
-Package pdftex.def Info: ./Figures/DF_alarms.png  used on input line 168.
-(pdftex.def)             Requested size: 227.62593pt x 170.72273pt.
-<./Figures/DF general task conection.png, id=494, 359.54324pt x 447.62231pt>
-File: ./Figures/DF general task conection.png Graphic file (type png)
-<use ./Figures/DF general task conection.png>
-Package pdftex.def Info: ./Figures/DF general task conection.png  used on input line 179.
-(pdftex.def)             Requested size: 227.62712pt x 227.62183pt.
-<./Figures/SM up server.png, id=495, 463.43138pt x 650.88168pt>
-File: ./Figures/SM up server.png Graphic file (type png)
-<use ./Figures/SM up server.png>
-Package pdftex.def Info: ./Figures/SM up server.png  used on input line 186.
-(pdftex.def)             Requested size: 284.53836pt x 426.79243pt.
-<./Figures/SM down server.png, id=496, 406.06706pt x 390.258pt>
-File: ./Figures/SM down server.png Graphic file (type png)
-<use ./Figures/SM down server.png>
-Package pdftex.def Info: ./Figures/SM down server.png  used on input line 193.
-(pdftex.def)             Requested size: 227.61905pt x 227.62413pt.
-LaTeX Info: Redefining \. on input line 200.
-LaTeX Info: Redefining \% on input line 200.
+Package pdftex.def Info: ./Figures/DF_alarms.png  used on input line 162.
+(pdftex.def)             Requested size: 170.71822pt x 170.72273pt.
+LaTeX Info: Redefining \. on input line 170.
+LaTeX Info: Redefining \% on input line 170.
  [16
 
- <./Figures/DF task adquisicion.png>]
-LaTeX Info: Redefining \. on input line 200.
-LaTeX Info: Redefining \% on input line 200.
- [17 <./Figures/DF_alarms.png> <./Figures/DF general task conection.png>]
-LaTeX Info: Redefining \. on input line 200.
-LaTeX Info: Redefining \% on input line 200.
+ <./Figures/DF task adquisicion.png> <./Figures/DF_alarms.png>]
+<./Figures/DF general task conection.png, id=508, 359.54324pt x 447.62231pt>
+File: ./Figures/DF general task conection.png Graphic file (type png)
+<use ./Figures/DF general task conection.png>
+Package pdftex.def Info: ./Figures/DF general task conection.png  used on input line 173.
+(pdftex.def)             Requested size: 227.62712pt x 227.62183pt.
+<./Figures/SM down server.png, id=509, 406.06706pt x 390.258pt>
+File: ./Figures/SM down server.png Graphic file (type png)
+<use ./Figures/SM down server.png>
+Package pdftex.def Info: ./Figures/SM down server.png  used on input line 180.
+(pdftex.def)             Requested size: 227.61905pt x 227.62413pt.
+<./Figures/SM up server.png, id=510, 463.43138pt x 650.88168pt>
+File: ./Figures/SM up server.png Graphic file (type png)
+<use ./Figures/SM up server.png>
+Package pdftex.def Info: ./Figures/SM up server.png  used on input line 187.
+(pdftex.def)             Requested size: 284.53836pt x 426.79243pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+LaTeX Info: Redefining \. on input line 192.
+LaTeX Info: Redefining \% on input line 192.
+[17 <./Figures/DF general task conection.png> <./Figures/SM down server.png>]
+LaTeX Info: Redefining \. on input line 192.
+LaTeX Info: Redefining \% on input line 192.
  [18 <./Figures/SM up server.png>]
-LaTeX Info: Redefining \. on input line 200.
-LaTeX Info: Redefining \% on input line 200.
- [19 <./Figures/SM down server.png>]
-<./Figures/esquematico_root.png, id=519, 1177.39874pt x 813.0375pt>
-File: ./Figures/esquematico_root.png Graphic file (type png)
-<use ./Figures/esquematico_root.png>
-Package pdftex.def Info: ./Figures/esquematico_root.png  used on input line 213.
-(pdftex.def)             Requested size: 389.80038pt x 284.51776pt.
-LaTeX Info: Redefining \. on input line 217.
-LaTeX Info: Redefining \% on input line 217.
- [20
-
- <./Figures/esquematico_root.png>]
-<./Figures/esquematico_modulos.png, id=525, 1154.3125pt x 526.96875pt>
-File: ./Figures/esquematico_modulos.png Graphic file (type png)
-<use ./Figures/esquematico_modulos.png>
-Package pdftex.def Info: ./Figures/esquematico_modulos.png  used on input line 222.
-(pdftex.def)             Requested size: 389.80144pt x 227.62137pt.
-<./Figures/esquematico_debug.png, id=526, 952.55875pt x 581.17125pt>
-File: ./Figures/esquematico_debug.png Graphic file (type png)
-<use ./Figures/esquematico_debug.png>
-Package pdftex.def Info: ./Figures/esquematico_debug.png  used on input line 231.
-(pdftex.def)             Requested size: 389.81033pt x 142.25961pt.
-LaTeX Info: Redefining \. on input line 235.
-LaTeX Info: Redefining \% on input line 235.
- [21
-
- <./Figures/esquematico_modulos.png> <./Figures/esquematico_debug.png>]
-<./Figures/esquematico_conectores_sensores.png, id=533, 1315.91624pt x 406.51875pt>
-File: ./Figures/esquematico_conectores_sensores.png Graphic file (type png)
-<use ./Figures/esquematico_conectores_sensores.png>
-Package pdftex.def Info: ./Figures/esquematico_conectores_sensores.png  used on input line 240.
-(pdftex.def)             Requested size: 389.79826pt x 227.61792pt.
-<./Figures/esquematico_alimentacion.png, id=534, 1129.21875pt x 359.3425pt>
-File: ./Figures/esquematico_alimentacion.png Graphic file (type png)
-<use ./Figures/esquematico_alimentacion.png>
-Package pdftex.def Info: ./Figures/esquematico_alimentacion.png  used on input line 248.
-(pdftex.def)             Requested size: 389.80489pt x 227.62614pt.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 211.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 211.
 LaTeX Info: Redefining \. on input line 253.
 LaTeX Info: Redefining \% on input line 253.
- [22
+ [19
+
+]
+LaTeX Info: Redefining \. on input line 315.
+LaTeX Info: Redefining \% on input line 315.
+ [20]
+LaTeX Info: Redefining \. on input line 374.
+LaTeX Info: Redefining \% on input line 374.
+ [21]
+LaTeX Info: Redefining \. on input line 429.
+LaTeX Info: Redefining \% on input line 429.
+ [22]
+LaTeX Info: Redefining \. on input line 482.
+LaTeX Info: Redefining \% on input line 482.
+ [23]
+LaTeX Info: Redefining \. on input line 508.
+LaTeX Info: Redefining \% on input line 508.
+ [24]
+<./Figures/esquematico_root.png, id=852, 1177.39874pt x 813.0375pt>
+File: ./Figures/esquematico_root.png Graphic file (type png)
+<use ./Figures/esquematico_root.png>
+Package pdftex.def Info: ./Figures/esquematico_root.png  used on input line 521.
+(pdftex.def)             Requested size: 389.80038pt x 284.51776pt.
+LaTeX Info: Redefining \. on input line 525.
+LaTeX Info: Redefining \% on input line 525.
+ [25
+
+ <./Figures/esquematico_root.png>]
+<./Figures/esquematico_modulos.png, id=860, 1154.3125pt x 526.96875pt>
+File: ./Figures/esquematico_modulos.png Graphic file (type png)
+<use ./Figures/esquematico_modulos.png>
+Package pdftex.def Info: ./Figures/esquematico_modulos.png  used on input line 530.
+(pdftex.def)             Requested size: 389.80144pt x 227.62137pt.
+<./Figures/esquematico_debug.png, id=862, 952.55875pt x 581.17125pt>
+File: ./Figures/esquematico_debug.png Graphic file (type png)
+<use ./Figures/esquematico_debug.png>
+Package pdftex.def Info: ./Figures/esquematico_debug.png  used on input line 538.
+(pdftex.def)             Requested size: 389.81033pt x 199.16524pt.
+LaTeX Info: Redefining \. on input line 542.
+LaTeX Info: Redefining \% on input line 542.
+ [26
+
+ <./Figures/esquematico_modulos.png> <./Figures/esquematico_debug.png>]
+<./Figures/esquematico_conectores_sensores.png, id=870, 1315.91624pt x 406.51875pt>
+File: ./Figures/esquematico_conectores_sensores.png Graphic file (type png)
+<use ./Figures/esquematico_conectores_sensores.png>
+Package pdftex.def Info: ./Figures/esquematico_conectores_sensores.png  used on input line 547.
+(pdftex.def)             Requested size: 389.79826pt x 227.61792pt.
+<./Figures/esquematico_alimentacion.png, id=872, 1129.21875pt x 359.3425pt>
+File: ./Figures/esquematico_alimentacion.png Graphic file (type png)
+<use ./Figures/esquematico_alimentacion.png>
+Package pdftex.def Info: ./Figures/esquematico_alimentacion.png  used on input line 555.
+(pdftex.def)             Requested size: 389.80489pt x 227.62614pt.
+LaTeX Info: Redefining \. on input line 559.
+LaTeX Info: Redefining \% on input line 559.
+ [27
 
  <./Figures/esquematico_conectores_sensores.png> <./Figures/esquematico_alimentacion.png>]
-<./Figures/pcb_top.png, id=541, 623.32875pt x 829.0975pt>
+<./Figures/pcb_top.png, id=879, 623.32875pt x 829.0975pt>
 File: ./Figures/pcb_top.png Graphic file (type png)
 <use ./Figures/pcb_top.png>
-Package pdftex.def Info: ./Figures/pcb_top.png  used on input line 260.
+Package pdftex.def Info: ./Figures/pcb_top.png  used on input line 566.
 (pdftex.def)             Requested size: 175.41002pt x 233.30962pt.
-<./Figures/pcb_bot.png, id=542, 608.2725pt x 830.10126pt>
+<./Figures/pcb_bot.png, id=880, 608.2725pt x 830.10126pt>
 File: ./Figures/pcb_bot.png Graphic file (type png)
 <use ./Figures/pcb_bot.png>
-Package pdftex.def Info: ./Figures/pcb_bot.png  used on input line 265.
+Package pdftex.def Info: ./Figures/pcb_bot.png  used on input line 571.
 (pdftex.def)             Requested size: 171.51413pt x 234.06071pt.
-<./Figures/tarjeta3d.png, id=543, 767.86874pt x 627.34375pt>
+<./Figures/tarjeta3d.png, id=881, 767.86874pt x 627.34375pt>
 File: ./Figures/tarjeta3d.png Graphic file (type png)
 <use ./Figures/tarjeta3d.png>
-Package pdftex.def Info: ./Figures/tarjeta3d.png  used on input line 276.
-(pdftex.def)             Requested size: 389.8035pt x 256.08304pt.
-LaTeX Info: Redefining \. on input line 282.
-LaTeX Info: Redefining \% on input line 282.
- [23
+Package pdftex.def Info: ./Figures/tarjeta3d.png  used on input line 582.
+(pdftex.def)             Requested size: 389.8035pt x 227.62405pt.
+LaTeX Info: Redefining \. on input line 588.
+LaTeX Info: Redefining \% on input line 588.
+ [28
 
  <./Figures/pcb_top.png> <./Figures/pcb_bot.png> <./Figures/tarjeta3d.png>]
-<./Figures/panel_principal.png, id=552, 1850.915pt x 976.64874pt>
-File: ./Figures/panel_principal.png Graphic file (type png)
-<use ./Figures/panel_principal.png>
-Package pdftex.def Info: ./Figures/panel_principal.png  used on input line 294.
-(pdftex.def)             Requested size: 389.77684pt x 256.06863pt.
-LaTeX Info: Redefining \. on input line 299.
-LaTeX Info: Redefining \% on input line 299.
- [24
+<./Figures/panel_principal_editado.png, id=890, 746.63943pt x 391.61307pt>
+File: ./Figures/panel_principal_editado.png Graphic file (type png)
+<use ./Figures/panel_principal_editado.png>
+Package pdftex.def Info: ./Figures/panel_principal_editado.png  used on input line 605.
+(pdftex.def)             Requested size: 389.80417pt x 312.9921pt.
+LaTeX Info: Redefining \. on input line 610.
+LaTeX Info: Redefining \% on input line 610.
+ [29
 
- <./Figures/panel_principal.png>]
-<./Figures/panel_nodosensor.png, id=559, 1837.86626pt x 963.6pt>
-File: ./Figures/panel_nodosensor.png Graphic file (type png)
-<use ./Figures/panel_nodosensor.png>
-Package pdftex.def Info: ./Figures/panel_nodosensor.png  used on input line 307.
-(pdftex.def)             Requested size: 389.80527pt x 227.6223pt.
+ <./Figures/panel_principal_editado.png>]
+<./Figures/panel_nodosensor_editado.png, id=898, 733.99219pt x 387.99956pt>
+File: ./Figures/panel_nodosensor_editado.png Graphic file (type png)
+<use ./Figures/panel_nodosensor_editado.png>
+Package pdftex.def Info: ./Figures/panel_nodosensor_editado.png  used on input line 625.
+(pdftex.def)             Requested size: 389.80919pt x 227.6271pt.
 )
 LaTeX Info: Redefining \. on input line 126.
 LaTeX Info: Redefining \% on input line 126.
- [25
+ [30
 
- <./Figures/panel_nodosensor.png>]
+ <./Figures/panel_nodosensor_editado.png>]
 \openout2 = `Chapters/Chapter4.aux'.
 
- (./Chapters/Chapter4.tex [26
+ (./Chapters/Chapter4.tex
+Cap\'{\i }tulo 4.
+)
+1: section
+[31
 
 
 
 ]
-Cap\'{\i }tulo 4.
-)
-1: section
-[27]
 \openout2 = `Chapters/Chapter5.aux'.
 
- (./Chapters/Chapter5.tex [28
+ (./Chapters/Chapter5.tex [32
 
 
 
@@ -1214,16 +1243,16 @@ Cap\'{\i }tulo 4.
 Cap\'{\i }tulo 5.
 )
 1: section
-[29] [30
+[33] [34
 
 
 ]
 1: section
-[31]
+[35]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 153.
 LaTeX Info: Redefining \. on input line 153.
 LaTeX Info: Redefining \% on input line 153.
- [32]
+ [36]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 153.
  (/home/mario/Documents/memoria_CESE/build/memoria.aux
 LaTeX Info: Redefining \. on input line 31.
@@ -1232,24 +1261,28 @@ LaTeX Info: Redefining \% on input line 31.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 153.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 153.
 Package rerunfilecheck Info: File `memoria.out' has not changed.
-(rerunfilecheck)             Checksum: 5656FAEA38BC7DE4A956D478E48D1826;3096.
+(rerunfilecheck)             Checksum: 33A67AADB14AEAC7004C71477269C1CA;3170.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package logreq Info: Writing requests to 'memoria.run.xml'.
 \openout1 = `memoria.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 25864 strings out of 481239
- 550916 string characters out of 5920377
- 1184098 words of memory out of 5000000
- 40581 multiletter control sequences out of 15000+600000
- 577615 words of font info for 88 fonts, out of 8000000 for 9000
+ 26756 strings out of 481239
+ 563433 string characters out of 5920377
+ 1366223 words of memory out of 5000000
+ 41161 multiletter control sequences out of 15000+600000
+ 581628 words of font info for 99 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
- 60i,20n,86p,1089b,2637s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on /home/mario/Documents/memoria_CESE/build/memoria.pdf (44 pages, 3117940 bytes).
+ 64i,20n,86p,1089b,3671s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on /home/mario/Documents/memoria_CESE/build/memoria.pdf (48 pages, 3356795 bytes).
 PDF statistics:
- 674 PDF objects out of 1000 (max. 8388607)
- 559 compressed objects within 6 object streams
- 139 named destinations out of 1000 (max. 500000)
- 516 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1073 PDF objects out of 1200 (max. 8388607)
+ 949 compressed objects within 10 object streams
+ 444 named destinations out of 1000 (max. 500000)
+ 524 words of extra memory for PDF output out of 10000 (max. 10000000)
 

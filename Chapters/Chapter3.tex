@@ -113,13 +113,7 @@ Para el desarrollo del firmware se utilizo el IDE oficial de STMicroelectronic(S
 
 El firmware fue desarrollado sobre freeRTOS, se utilizaron algunas de sus funcionanlidades como queue, semaforos, tareas, interrupciones.
 
-
-
-
-En la figura se describe las diferentes tareas que se crearon para el firmware y la comunicacion entre las mismas.
-
-
-El firmware tiene una etapa de inicializacion en la figura podemos ver la secuancia de inicializacion del sistema.
+El firmware tiene una etapa de inicializacion en la figura \ref{fig:Df inicio firmware} podemos ver la secuancia de inicializacion del sistema.
 
 Luego el firmware da el control del sistema al sistema operativo y permanece ejecutando de forma continua las tareas creadas en la etapa de inicializacion del sistema 
 
@@ -146,26 +140,26 @@ La secuencialidad del sistema es manejado por la tarea de loop que nos permite t
 La tarea comienza creando variables que se utilizaran localmente se inicia el timer del sistema, luego la tarea se blokea en el un semaforo esperando ser deblokeado por el un give que sera dado en el momento de la ejecucion del handler de la interrupcion del timer, luego se envia datos por las colas de adquisicion de datos y server mqtt para levantar el servidor y la tarea se vuelve a bloquear en el semaforos, cuando se desbloquea pregunta si se logro levantar el servidor si se logro se manda un mensaje por la cola de server mqtt con el evento de enviar datos y se bloquea nuevamente pero si no se logro levantar el servidor no se enviaran datos, luego se envia un evento a la cola de alarmas se bloquea nuevamente esperando que envien las alarmas, cuando se desbloquea el semaforo se manda un evento a la cola de server mqtt para desconectar el servidor y se bloquea la tarea en el semanforo esperando la desconexion  finalmente se inicia nuevamente el timer y mandamos al sistema a modo de bajo consumo. 
 \begin{figure}[h]
   \centering
-	\includegraphics[width=12cm, height=12cm]{./Figures/DF task loop.png}
+	\includegraphics[width=12cm, height=14cm]{./Figures/DF task loop.png}
 	\caption{Diagrama de flujo tarea loop.}
 	\label{fig:Df tarea loop sistema}
 \end{figure}
 
 \clearpage
-La figura muestra la secuencia repetiva que realiza la tarea de adquisicion de datos, la tarea inicia creando algunas variables locales que se utilizara en la tarea, luego entra al bucle infinito donde lo que promero que hace es ver si hay algun dato en la cola de adquisicion de datos si no hay se bloquea la tarea pero si hay realiza la lectura de todos los sensores, con los datos recolectados los envia a las colas de data y alarmas y termina el ciclo.
+La figura \ref{fig:Df tarea adquisicion} muestra la secuencia repetiva que realiza la tarea de adquisicion de datos, la tarea inicia creando algunas variables locales que se utilizara en la tarea, luego entra al bucle infinito donde lo que promero que hace es ver si hay algun dato en la cola de adquisicion de datos si no hay se bloquea la tarea pero si hay realiza la lectura de todos los sensores, con los datos recolectados los envia a las colas de data y alarmas y termina el ciclo.
 \begin{figure}[htbp]
   \centering
-	\includegraphics[width=8cm, height=9cm]{./Figures/DF task adquisicion.png}
+	\includegraphics[width=6cm, height=7cm]{./Figures/DF task adquisicion.png}
 	\caption{Diagrama de flujo tarea de adquisicion de datos.}
 	\label{fig:Df tarea adquisicion}
 \end{figure}
 
-El manejo de las alarmas se realiza atraves de la tarea de alarmas la figura describe la secuencia de la tarea, 
+El manejo de las alarmas se realiza atraves de la tarea de alarmas la figura \ref{fig:Df tarea alarmas} describe la secuencia de la tarea, 
 al entrar al bucle infinito lo primero que se realiza es revisar si existe algun dato en la cola de alarmas si no hay datos la tarea se bloquea hasta que alguien envie un dato a la cola, si hay dato se pregunta que evento contiene el dato resivido por la cola si es de monitorear lo que se hace es ver si el dato del sensor de humedad es menor al rango esperado si es asi se una variable en alto advirtiendo al sistema que hay una alarma, si se recicivio el evento de enviar se revisa si hay alarmas activas si hay se envia un mensaje de texto al 
 
 \begin{figure}[htbp]
   \centering
-	\includegraphics[width=8cm, height=6cm]{./Figures/DF_alarms.png}
+	\includegraphics[width=6cm, height=6cm]{./Figures/DF_alarms.png}
 	\caption{Diagrama de flujo tarea alarmas.}
 	\label{fig:Df tarea alarmas}
 \end{figure}
@@ -174,39 +168,353 @@ La ultima tarea que implento es la tarea que maneja la conexion del servidor que
 La tarea comienza esperando datos en la cola de servidor mqtt si no hay datos la tarea se bloquea, si hay datos se revisa que evento es el que se recibio tenemos tres posibles eventos UP, DOWN y SEND ,
 si recivimos el evento de UP la tarea entra a una maquina de estados pra levantar el servidor la figura muestra la maquina de estados del evento UP, si el evento es de DOWN la tarea ejecuta la maquina de estados que se ve en la figura y el evento es SEND la tarea espera que existan datos en la cola de data para haci armar la trama y publicar los datos al borker MQTT.
 
-\begin{figure}[htbp]
+\begin{figure}[h]
   \centering
 	\includegraphics[width=8cm, height=8cm]{./Figures/DF general task conection.png}
 	\caption{Diagrama de flujo tarea general conexion.}
 	\label{fig:Df tarea conexion}
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=8cm, height=8cm]{./Figures/SM down server.png}
+  \caption{Maquina de estados dowm servidor.}
+  \label{fig:Maquina de estados dowm servidor}
+\end{figure}
+
+\begin{figure}[h]
   \centering
 	\includegraphics[width=10cm, height=15cm]{./Figures/SM up server.png}
 	\caption{Maquina de estados up servidor.}
 	\label{fig:Maquina de estados up servidor}
 \end{figure}
 
-\begin{figure}[htbp]
-  \centering
-	\includegraphics[width=8cm, height=8cm]{./Figures/SM down server.png}
-	\caption{Maquina de estados dowm servidor.}
-	\label{fig:Maquina de estados dowm servidor}
-\end{figure}
+\clearpage
+\section{Controladores implementados}
+Se implementaron dos controladores para el modulo de comunicacion BG96 y para el sensor de humedad y temperatura ambiente AHT-10
+En el codigo se ven las funciones mas itilizadas del driver en el firmware.
+
+\begin{lstlisting}[label=cod:vControl,caption=Funciones principales del driver del sensor AHT10.]  % Start your code-block
+
+//!< Estructura para manejar los datos del driver del sensor    
+typedef struct 
+{
+  aht10WriteFcn_t  writeI2C;
+  aht10ReadFcn_t  readI2C;
+  delay1ms_t      delay_ms_I2C;    
+  aht10_status_fnc status_fun;
+}aht10_config_t;
+
+//!< Funcion para inicializar el driver 
+void aht10Init(aht10_config_t *obj, aht10WriteFcn_t fncWritePort, aht10ReadFcn_t fncReadPort, delay1ms_t fncDelayPort)
+{
+  obj->writeI2C=fncWritePort;
+  obj->readI2C=fncReadPort;
+  obj->delay_ms_I2C=fncDelayPort;
+}
+//!< Funcion para lanzar una medicion
+aht10_status_fnc aht10_launch_measurement(aht10_config_t *obj)
+{
+  uint8_t cmd[3] = {AHT10_CMD_TRIGGER_MEASUREMENT,AHT10_CMD_DATO_0,AHT10_CMD_DATO_1};
+  obj->status_fun=AHT10_ERROR;
+  obj->status_fun = obj->writeI2C(AHT10_ADDRESS_SLAVE ,cmd,3);
+  if (obj->status_fun==AHT10_OK)
+  {
+    obj->delay_ms_I2C(AHT10_DELAY_LAUNCH_MEASUREMENT);
+    if (aht10_get_status(obj)==SENSOR_IDLE)
+    {
+      obj->status_fun=obj->writeI2C(AHT10_ADDRESS_SLAVE,cmd,3);
+      obj->delay_ms_I2C(AHT10_DELAY_LAUNCH_MEASUREMENT);
+      return obj->status_fun;
+    }
+    else obj->status_fun=AHT10_ERROR;
+  }
+  return  obj->status_fun;
+}
+//!< Funcion para obtener el valor de la humedad del sensor 
+aht10_status_fnc aht10_get_humedity(aht10_config_t*obj, uint8_t *data)
+{
+  
+  if (obj== NULL)
+  {
+    return AHT10_ERROR;
+  }
+  obj->status_fun=AHT10_ERROR;
+  uint8_t bufferRead[6]={0};
+  uint32_t data_humedity=0;
+  obj->status_fun=aht10_launch_measurement(obj);
+  if (obj->status_fun==AHT10_OK)
+  {
+    obj->status_fun= obj->readI2C(AHT10_ADDRESS_SLAVE,bufferRead,6);
+    if (obj->status_fun==AHT10_OK)
+    {
+      data_humedity=(((uint32_t)bufferRead[1]<<16) | ((uint16_t)bufferRead[2]<<8) | (bufferRead[3]))>>4;
+      *data= HUMEDITY(data_humedity);
+    }
+  }
+  return obj->status_fun;
+}
+//Funcion para obtener la temperatura obtenida por el sensor 
+aht10_status_fnc aht10_get_temperature(aht10_config_t*obj, int8_t *data)
+{
+  if (obj== NULL)
+  {
+    return AHT10_ERROR;
+  } 
+  uint8_t buffer_read[6]={0};
+  uint32_t data_temperature=0;
+  obj->status_fun=AHT10_ERROR;
+  obj->status_fun=aht10_launch_measurement(obj);
+  if (obj->status_fun==AHT10_OK)
+  {
+    obj->status_fun=obj->readI2C(AHT10_ADDRESS_SLAVE ,buffer_read,6);
+    if (obj->status_fun==AHT10_OK)
+    {
+      data_temperature=((uint32_t)(buffer_read[3] & 0x0F)<<16) | ((uint16_t) buffer_read[4]<<8)| buffer_read[5];
+      *data= TEMPERATURE(data_temperature);
+    }
+  }
+  return obj->status_fun;
+}
+\end{lstlisting}
 
 
+Se implemento el driver del modulo de comunicacion.En el codigo se muestran las funciones mas utilizadas por el firmware del driver que son las de configuracion y activacion del APN, conexion y desconexion al servidor MQTT.
 
+
+\begin{lstlisting}[label=cod:vControl,caption=Funciones principales del driver del sensor AHT10.]  % Start your code-block
+
+typedef struct 
+{
+  em_status_modem  status_modem;
+  em_state_server_mqtt_conection status_mqtt_server;
+  pf_send_data    send_data_device;
+  pf_reset_modem  f_reset_modem; 
+  st_config_parameters_mqtt self_mqtt;
+  st_config_context_tcp self_tcp;
+  st_info_product info_product;
+  uint8_t           last_error;
+  char buffer_resp [100];
+  char *current_cmd;
+  em_bg96_error_handling ft_resp;
+}st_bg96_config;
+  
+em_bg96_error_handling init_driver(st_bg96_config *self,pf_send_data ft_send_data_device,pf_reset_modem ft_reset_modem)
+{
+  if (ft_send_data_device!=NULL) {
+    self->send_data_device=ft_send_data_device;
+}
+  if (ft_reset_modem!=NULL) {
+    self->f_reset_modem=ft_reset_modem;
+}
+    self->status_modem=OFF;
+    self->ft_resp=FT_BG96_OK;
+    self->last_error=BG96_NO_ERROR;
+    self->self_tcp.context_id=1;
+    self->self_tcp.context_type=1;
+    self->self_tcp.method_authentication=1;
+    self->self_tcp.tcp_password="";
+    self->self_tcp.tcp_username="";
+    self->self_mqtt.identifier_socket_mqtt=0;
+    self->self_mqtt.quality_service=0;
+    self->self_mqtt.port=1883;
+    self->self_mqtt.mqtt_client_id="123a56cb9";
+    self->status_mqtt_server=SERVER_MQTT_DOWN;
+    #ifdef UBIDOTS
+    self->self_mqtt.host_name="\"industrial.api.ubidots.com\"";
+    self->self_mqtt.mqtt_username="";
+    self->self_mqtt.mqtt_password="";
+    #endif
+    #ifdef THINGS_BOARD
+    self->self_mqtt.host_name="\"mqtt.thingsboard.cloud\"";
+    self->self_mqtt.mqtt_username="";
+    self->self_mqtt.mqtt_password="";
+    #endif
+    #ifdef MOSQUITTO
+    self->self_mqtt.host_name="\"test.mosquitto.org\"";
+    self->self_mqtt.mqtt_username="";
+    self->self_mqtt.mqtt_password="";
+    #endif
+    #ifdef ENTEL
+    self->self_tcp.tcp_apn="4g.entel";
+    #endif
+    #ifdef TIGO
+    self->self_tcp.tcp_apn="internet.tigo.bol";
+    #endif
+  
+    return self->ft_resp;
+  }
+  em_bg96_error_handling get_status_modem(st_bg96_config* self)
+  {
+      self->ft_resp=FT_BG96_OK;
+      self->current_cmd="AT\r";
+      self->ft_resp=self->send_data_device(self->current_cmd,RS_BG96_OK,self->buffer_resp,1000);
+      if (self->ft_resp!=FT_BG96_OK)
+      {
+          self->last_error=BG96_ERROR_STATUS_MODEM;
+      }
+      return self->ft_resp;
+  }
+  
+  
+  
+  em_bg96_error_handling send_sms_bg96(st_bg96_config *self,char*number,char*message)
+  {
+      self->ft_resp=FT_BG96_OK;
+      char buffer_message[256];
+      char buffer_number[20];
+      sprintf(buffer_number,"AT+CMGS=\"%s\"\r",number);
+      sprintf(buffer_message,"%s\x1a\r",message);
+  
+      self->ft_resp=self->send_data_device(buffer_number,RS_BG96_SIGNAL,self->buffer_resp,12000);
+      if (FT_BG96_OK==self->ft_resp)
+      {
+          self->ft_resp=self->send_data_device(buffer_message,RS_BG96_OK,self->buffer_resp,12000);
+          if (FT_BG96_OK!=self->ft_resp)
+          {
+              self->last_error=BG96_ERROR_SEND_SMS;
+          }
+      }
+      return self->ft_resp;
+  }
+  
+  em_bg96_error_handling set_parameter_context_tcp(st_bg96_config *self)
+  {   
+      self->ft_resp=FT_BG96_OK;
+      char cmd[100];
+      sprintf(cmd,"AT+QICSGP=%u,%u,\"%s\",\"%s\",\"%s\",%u\r",self->self_tcp.context_id,self->self_tcp.context_type,self->self_tcp.tcp_apn,self->self_tcp.tcp_username,self->self_tcp.tcp_password,self->self_tcp.method_authentication);
+      self->ft_resp=self->send_data_device(cmd,RS_BG96_OK,self->buffer_resp,3000);
+      if (self->ft_resp!=FT_BG96_OK)
+      {
+          self->last_error=BG96_ERROR_SET_PARAMETER_CONTEXT_TCP;
+      }
+      return self->ft_resp;
+  }
+  
+  em_bg96_error_handling activate_context_pdp(st_bg96_config *self)
+  {
+      self->ft_resp=FT_BG96_OK;
+      char cmd[30];
+      sprintf(cmd,"AT+QIACT=%u\r",self->self_tcp.context_id);
+      self->ft_resp=self->send_data_device(cmd,RS_BG96_OK,self->buffer_resp,15000);
+      if (self->ft_resp!=FT_BG96_OK)
+      {
+          self->last_error=BG96_ERROR_ACTIVATE_CONTEXT_PDP;
+      }
+      return self->ft_resp;
+  }
+  
+  em_bg96_error_handling desactivate_context_pdp(st_bg96_config *self)
+  {
+      self->ft_resp=FT_BG96_OK;
+      char cmd[15];
+      sprintf(cmd,"AT+QIDEACT=%u\r",self->self_tcp.context_id);
+      self->ft_resp=self->send_data_device(cmd,RS_BG96_OK,self->buffer_resp,4000);
+      if (self->ft_resp!=FT_BG96_OK)
+      {
+          self->last_error=BG96_ERROR_DESACTIVATE_CONTEXT_PDP;
+      }
+      return self->ft_resp;
+  }
+  em_bg96_error_handling set_parameters_mqtt(st_bg96_config *self)
+  {
+      self->ft_resp=FT_BG96_ERROR;
+      char cmd_pdpid[30];
+      sprintf(cmd_pdpid,"AT+QMTCFG=\"pdpid\",%u,%u\r",self->self_mqtt.identifier_socket_mqtt,self->self_tcp.context_id);
+      self->ft_resp=self->send_data_device(cmd_pdpid,RS_BG96_OK,self->buffer_resp,300);
+      if (self->ft_resp!=FT_BG96_OK)
+      {
+          self->last_error=BG96_ERROR_SET_PARAMETER_MQTT;
+      }
+      return self->ft_resp;
+  }
+  
+  em_bg96_error_handling open_client_mqtt(st_bg96_config *self)
+  {
+      self->ft_resp=FT_BG96_ERROR;
+      char cmd[100];
+      sprintf(cmd,"AT+QMTOPEN=%u,%s,%u\r",self->self_mqtt.identifier_socket_mqtt,self->self_mqtt.host_name,self->self_mqtt.port);
+      self->ft_resp=self->send_data_device(cmd,RS_BG96_CERO,self->buffer_resp,75000);
+      if (self->ft_resp!=FT_BG96_OK)
+      {
+          self->last_error=BG96_ERROR_OPEN_CLIENT_MQTT;
+  
+      }
+  
+      return self->ft_resp;
+  }
+  em_bg96_error_handling close_client_mqtt(st_bg96_config *self)
+  {
+      self->ft_resp=FT_BG96_ERROR;
+      char cmd[50];
+      sprintf(cmd,"AT+QMTCLOSE=%u\r",self->self_mqtt.identifier_socket_mqtt);
+      self->ft_resp=self->send_data_device(cmd,RS_BG96_OK,self->buffer_resp,3000);
+      if (self->ft_resp!=FT_BG96_OK)
+      {
+          self->last_error=BG96_ERROR_CLOSE_CLIENT_MQTT;
+      }
+      return self->ft_resp;
+  }
+  
+  em_bg96_error_handling connect_server_mqtt(st_bg96_config *self)
+  {
+      self->ft_resp=FT_BG96_ERROR;
+      char cmd[150]={0};
+      sprintf(cmd,"AT+QMTCONN=%u,\"%s\",\"%s\",\"%s\"\r",self->self_mqtt.identifier_socket_mqtt,self->self_mqtt.mqtt_client_id,self->self_mqtt.mqtt_username,self->self_mqtt.mqtt_password);
+      self->ft_resp=self->send_data_device(cmd,RS_BG96_CERO,self->buffer_resp,10000);
+      if (self->ft_resp!=FT_BG96_OK)
+      {
+          self->last_error=BG96_ERROR_CONNECT_SERVER_MQTT;
+      }
+     return self->ft_resp;
+  }
+  
+  em_bg96_error_handling disconnect_server_mqtt(st_bg96_config *self)
+  {
+      self->ft_resp=FT_BG96_ERROR;
+      char cmd[50]={0};
+      sprintf(cmd,"AT+QMTDISC=%u\r",self->self_mqtt.identifier_socket_mqtt);
+      self->ft_resp=self->send_data_device(cmd,RS_BG96_OK,self->buffer_resp,5000);
+      if (self->ft_resp!=FT_BG96_OK)
+      {
+          self->last_error=BG96_ERROR_DISCONNECT_SERVER_MQTT;
+      }
+      return self->ft_resp;
+  }
+  
+  
+  em_bg96_error_handling publish_message(st_bg96_config *self,char *topic,char *data)
+  {
+      self->ft_resp=FT_BG96_ERROR;
+      char cmd[50]={0};
+      char buffer_data[220]={0};
+      sprintf(buffer_data,"%s\x1a\r",data);
+      sprintf(cmd,"AT+QMTPUB=%u,0,0,0,\"%s\"\r",self->self_mqtt.identifier_socket_mqtt,topic);
+      self->ft_resp=self->send_data_device(cmd,RS_BG96_SIGNAL,self->buffer_resp,3000);
+      if (FT_BG96_OK==self->ft_resp)
+      {
+          self->ft_resp=self->send_data_device(buffer_data,RS_BG96_CERO,self->buffer_resp,15000);
+          if (self->ft_resp!=FT_BG96_OK)
+          {
+              self->last_error=BG96_ERROR_PUBLISH_MESSAGE;
+          }   
+      }
+      else self->last_error=BG96_ERROR_PUBLISH_MESSAGE;
+      return self->ft_resp;
+  }
+
+
+\end{lstlisting}
 \clearpage
 \section{Desarrollo del hardware}
 
-Para el desarrollo del diseño del hardware se decidio utilizar como herramienta de diseño KICAD 6.0 por que es la herramienta que se aprendio a utilizar en la especializacion.
+Para el desarrollo del diseño del hardware se decidio utilizar como herramienta de diseño KICAD 6.0 por que es la herramienta que se aprendio en la especializacion.
 
 \subsection{Esquematico} 
 Lo que se hizo fue desarrollar un tarjeta donde se puedan conectar todos los modulos que se utilizaron para el prototipo
 Al ser un prototipo no se realizon el diseño de un tarjeta con los compenentes mismo sino que se utlizaron modulo de desarrollo, lo que se hizo fue desarrollar un tarjeta donde se puedan conectar nuestros modulos utilizados como se el modulo celular, tarjeta de desarrollo STM32L432KC, los modulos sensores.
 
-En la figura se muestra la pagina raiz del esquematico del proyecto donde se puede ver la division del esquematico en 4 hojas, en la parte izquierda superior se ve el titulo de cada hoja en la parte derecha se ve la conexion entre las diferentes hojas, y en la parte izquierda inferior se ve el 3d del la tarjeta. 
+En la figura \ref{fig:esquematico root} se muestra la pagina raiz del esquematico del proyecto donde se puede ver la division del esquematico en 4 hojas, en la parte izquierda superior se ve el titulo de cada hoja en la parte derecha se ve la conexion entre las diferentes hojas, y en la parte izquierda inferior se ve el 3d del la tarjeta. 
 
 \begin{figure}[h]
   \centering
@@ -215,7 +523,7 @@ En la figura se muestra la pagina raiz del esquematico del proyecto donde se pue
 	\label{fig:esquematico root}
 \end{figure}
 \clearpage
-Para el diseño del shield se consideraron las medidads de la modulos que se conectarian,en la figura se muestra los dos conectores de los modulos mas importantes el modulo de comuicacion BG96, modulo NUCLEO-L432KC y las conexiones entre ellos.
+Para el diseño del shield se consideraron las medidas de la modulos que se conectarian,en la figura \ref{fig:esquematico modulos} se muestra los dos conectores de los modulos mas importantes el modulo de comuicacion BG96, modulo NUCLEO-L432KC y las conexiones entre ellos.
 
 \begin{figure}[h]
   \centering
@@ -224,16 +532,15 @@ Para el diseño del shield se consideraron las medidads de la modulos que se con
 	\label{fig:esquematico modulos}
 \end{figure}
 
-Se colocaron dos leds para debug, uno para senalizar si se logro conectar al servidor MQTT y el otro led para senalizar si el sistema entra en un estado de error y se coloco un conector para una puerto serial por donde el modulo manda la secuancia de comandos que manda y recive al modulo de comunicacion.En la figura se puede ver el circuito.
-En la figura se puede ver las interfaz que tenemos para hacer debug del sistema, se colocar dos leds de estado del nodo sensor: led verde señaliza si el modulo se conecto al servidor y led rojo se enciende cuando el sistema entre en un error que necesita reinicarse. 
+Se colocaron dos leds para debug, uno para senalizar si se logro conectar al servidor MQTT y el otro led para senalizar si el sistema entra en un estado de error, se coloco un conector para una puerto serial por donde el modulo manda la secuencias de comandos que manda y recive al modulo de comunicacion.En la figura \ref{fig:esquematico conectores de debug} se puede ver el circuito.
 \begin{figure}[h!]
   \centering
-	\includegraphics[width=\textwidth, height=5cm]{./Figures/esquematico_debug.png}
+	\includegraphics[width=\textwidth, height=7cm]{./Figures/esquematico_debug.png}
 	\caption{Esquematico interfaz de debug.}
 	\label{fig:esquematico conectores de debug}
 \end{figure}
 \clearpage
-En la figura se pueden ver los conectores que se pusieron a la placa para conectar los sensores del nodo: sensor de humedad 1, sensor de humedad 2, sensor de luz UV y el sensor de humedad y temperatura ambiente AHT-10.
+En la figura \ref{fig:esquematico conectores sensores} se pueden ver los conectores que se pusieron a la placa para conectar los sensores del nodo: sensor de humedad 1, sensor de humedad 2, sensor de luz UV y el sensor de humedad y temperatura ambiente AHT-10.
 
 \begin{figure}[h]
   \centering
@@ -242,14 +549,13 @@ En la figura se pueden ver los conectores que se pusieron a la placa para conect
 	\label{fig:esquematico conectores sensores}
 \end{figure}
 
-Se colocaron dos colectores de alimentacion como se muestra en la figura ,el conector de 12 v para alimentar al modulo del microcontroaldor y el otro conector para alimentar al modulo de comunicacion.
+Se colocaron dos colectores de alimentacion como se muestra en la figura \ref{fig:esquematico conectores alimentacion}, el conector de 12 v para alimentar al modulo del microcontroaldor y el otro conector para alimentar al modulo de comunicacion.
 \begin{figure}[h]
   \centering
 	\includegraphics[width=\textwidth, height=8cm]{./Figures/esquematico_alimentacion.png}
 	\caption{Esquematico conectores alimentacion.}
 	\label{fig:esquematico conectores alimentacion}
 \end{figure}
-Pines de conexion de conector uart, el firmware manda por este uart todos los comandos que manda al modulo de comunicacion y las repuestas del mismo
 \clearpage
 \subsection{PCB del hardware} 
 La figura muestra el circuito impreso diseñado para el proyecto.
@@ -273,7 +579,7 @@ La figura muestra el circuito impreso diseñado para el proyecto.
 En la figura se muestra del diseno de la tarjeta del circuito impreso en 3D.
 \begin{figure}[h!]
   \centering
-	\includegraphics[width=\textwidth, height=9cm]{./Figures/tarjeta3d.png}
+	\includegraphics[width=\textwidth, height=8cm]{./Figures/tarjeta3d.png}
   \caption{3D del tarjeta desarrollada.}
 	\label{fig:3D del modulo}
 \end{figure}
@@ -286,12 +592,17 @@ La herramienta de visualizacion de ThingsBoard es muy versatil para el armado de
 Se armaron dos paneles de visualizacion un panel principal que muestra todos los nodos sensores implementados y un panel secundario o panel de nodo sensor que muestra de forma detallada las variables monitoreadas por el nodo sensor.
 \subsection{Panel principal} 
 
-En la figura \ref{fig:Panel principal} se aprecia el panel principal de la interfaz grafica.A la izquierda en la parte superior hay un listado de todos los nodos sensores que estan implementados o se estan monitoreando, asiendo click en el dispositivo podemos navegar al panel de visualizacion del nodo sensor seleccionado.En la parte inferior izquierda tenemos una grafica que muestra algunas variables de los sensores,
-y en la parte derecha del panel tenemos un mapa que muestra la ubicacion de los nodos sensores inplementados.
+En la figura \ref{fig:Panel principal} se aprecia el panel principal de la interfaz grafica.A continuación se describira cada zona del panel principal.
+El panel esta dividido en las siguientes zonas:
+\begin{itemize}
+  \item Zona 1: Listado de todos los nodos sensores implementados y activos, asiendo click en el dispositivo podemos navegar al panel de visualizacion del nodo donde podemos ver con mas detalle las variables medidas.
+  \item Zona 2: Graficas que muestra los cambios que van teniendo los valores de las variables medidas por los sensores con respecto al tiempo.
+  \item Zona 3: Mapa con la ubicacion de los nodo sensores implmentados.
+\end{itemize}
 
-\begin{figure}[h!]
+\begin{figure}[h]
   \centering
-	\includegraphics[width=\textwidth, height=9cm]{./Figures/panel_principal.png}
+	\includegraphics[width=\textwidth, height=11cm]{./Figures/panel_principal_editado.png}
   \caption{Panel principal de la interfaz grafica.}
 	\label{fig:Panel principal}
 \end{figure}
@@ -300,11 +611,18 @@ y en la parte derecha del panel tenemos un mapa que muestra la ubicacion de los 
 \subsection{Panel nodo sensor} 
 
 Para tener un mayor detalle de todos los parametros de monitoreo de cada nodo sensor se creo un panel secundario que se muestra en la figura \ref{fig:Panel nodo sensor}.
-El panel secundario tiene en la parte izquierda graficas de los valores que se van obteniendo del nodo sensor, en la parte central tenemos un widget que nos muestra el ultimo valor que se obtuvo de las variables monitoreadas, en la parte derecha superior del panel tenemos una tabla para mostrae las alarmas que se activaron en el sistema y en la parte inferior derecha inferior se tiene un mapa con la ubicacion del nodo sensor.  
+
+El panel esta dividido en las siguientes zonas:
+\begin{itemize}
+  \item Zona 1: Graficas que muestra los cambios que van teniendo los valores de las variables medidas por los sensores con respecto al tiempo.
+  \item Zona 2: Widgets que muestran el ultimo valor obtenido por el nodo sensor de cada variable monitoreada.
+  \item Zona 3: Tabla que monitorea las alarmas implementadas. 
+  \item Zona 4: Se tiene un mapa que muestra la ubicacion del nodo sensor.
+\end{itemize}
 
 \begin{figure}[h!]
   \centering
-	\includegraphics[width=\textwidth, height=8cm]{./Figures/panel_nodosensor.png}
+	\includegraphics[width=\textwidth, height=8cm]{./Figures/panel_nodosensor_editado.png}
   \caption{Panel nodo sensor.}
 	\label{fig:Panel nodo sensor}
 \end{figure}

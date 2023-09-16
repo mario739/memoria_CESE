@@ -31,15 +31,16 @@
 \BOOKMARK [1][-]{section.3.1}{Diagrama de bloques general del sistema}{chapter.3}% 31
 \BOOKMARK [1][-]{section.3.2}{Arquitectura de firmware}{chapter.3}% 32
 \BOOKMARK [1][-]{section.3.3}{Desarrollo del firmware}{chapter.3}% 33
-\BOOKMARK [1][-]{section.3.4}{Desarrollo del hardware}{chapter.3}% 34
-\BOOKMARK [2][-]{subsection.3.4.1}{Esquematico}{section.3.4}% 35
-\BOOKMARK [2][-]{subsection.3.4.2}{PCB del hardware}{section.3.4}% 36
-\BOOKMARK [1][-]{section.3.5}{Paneles de visualizacion}{chapter.3}% 37
-\BOOKMARK [2][-]{subsection.3.5.1}{Panel principal}{section.3.5}% 38
-\BOOKMARK [2][-]{subsection.3.5.2}{Panel nodo sensor}{section.3.5}% 39
-\BOOKMARK [0][-]{chapter.4}{Ensayos y resultados}{}% 40
-\BOOKMARK [1][-]{section.4.1}{Pruebas funcionales del hardware}{chapter.4}% 41
-\BOOKMARK [0][-]{chapter.5}{Conclusiones}{}% 42
-\BOOKMARK [1][-]{section.5.1}{Conclusiones generales }{chapter.5}% 43
-\BOOKMARK [1][-]{section.5.2}{Pr\363ximos pasos}{chapter.5}% 44
-\BOOKMARK [0][-]{appendix*.35}{Bibliograf\355a}{}% 45
+\BOOKMARK [1][-]{section.3.4}{Controladores implementados}{chapter.3}% 34
+\BOOKMARK [1][-]{section.3.5}{Desarrollo del hardware}{chapter.3}% 35
+\BOOKMARK [2][-]{subsection.3.5.1}{Esquematico}{section.3.5}% 36
+\BOOKMARK [2][-]{subsection.3.5.2}{PCB del hardware}{section.3.5}% 37
+\BOOKMARK [1][-]{section.3.6}{Paneles de visualizacion}{chapter.3}% 38
+\BOOKMARK [2][-]{subsection.3.6.1}{Panel principal}{section.3.6}% 39
+\BOOKMARK [2][-]{subsection.3.6.2}{Panel nodo sensor}{section.3.6}% 40
+\BOOKMARK [0][-]{chapter.4}{Ensayos y resultados}{}% 41
+\BOOKMARK [1][-]{section.4.1}{Pruebas funcionales del hardware}{chapter.4}% 42
+\BOOKMARK [0][-]{chapter.5}{Conclusiones}{}% 43
+\BOOKMARK [1][-]{section.5.1}{Conclusiones generales }{chapter.5}% 44
+\BOOKMARK [1][-]{section.5.2}{Pr\363ximos pasos}{chapter.5}% 45
+\BOOKMARK [0][-]{appendix*.35}{Bibliograf\355a}{}% 46

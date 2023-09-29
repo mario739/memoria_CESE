@@ -30,17 +30,27 @@
 \BOOKMARK [0][-]{chapter.3}{Dise\361o e implementaci\363n}{}% 30
 \BOOKMARK [1][-]{section.3.1}{Diagrama de bloques general del sistema}{chapter.3}% 31
 \BOOKMARK [1][-]{section.3.2}{Arquitectura de firmware}{chapter.3}% 32
-\BOOKMARK [1][-]{section.3.3}{Desarrollo del firmware}{chapter.3}% 33
-\BOOKMARK [1][-]{section.3.4}{Controladores implementados}{chapter.3}% 34
-\BOOKMARK [1][-]{section.3.5}{Desarrollo del hardware}{chapter.3}% 35
-\BOOKMARK [2][-]{subsection.3.5.1}{Esquematico}{section.3.5}% 36
-\BOOKMARK [2][-]{subsection.3.5.2}{PCB del hardware}{section.3.5}% 37
-\BOOKMARK [1][-]{section.3.6}{Paneles de visualizacion}{chapter.3}% 38
-\BOOKMARK [2][-]{subsection.3.6.1}{Panel principal}{section.3.6}% 39
-\BOOKMARK [2][-]{subsection.3.6.2}{Panel nodo sensor}{section.3.6}% 40
-\BOOKMARK [0][-]{chapter.4}{Ensayos y resultados}{}% 41
-\BOOKMARK [1][-]{section.4.1}{Pruebas funcionales del hardware}{chapter.4}% 42
-\BOOKMARK [0][-]{chapter.5}{Conclusiones}{}% 43
-\BOOKMARK [1][-]{section.5.1}{Conclusiones generales }{chapter.5}% 44
-\BOOKMARK [1][-]{section.5.2}{Pr\363ximos pasos}{chapter.5}% 45
-\BOOKMARK [0][-]{appendix*.35}{Bibliograf\355a}{}% 46
+\BOOKMARK [2][-]{subsection.3.2.1}{Capa HAL}{section.3.2}% 33
+\BOOKMARK [2][-]{subsection.3.2.2}{Capa drivers}{section.3.2}% 34
+\BOOKMARK [2][-]{subsection.3.2.3}{Capa aplicaci\363n}{section.3.2}% 35
+\BOOKMARK [1][-]{section.3.3}{Desarrollo del firmware}{chapter.3}% 36
+\BOOKMARK [2][-]{subsection.3.3.1}{Tarea loop del sistema}{section.3.3}% 37
+\BOOKMARK [2][-]{subsection.3.3.2}{Tarea adquisicion de datos}{section.3.3}% 38
+\BOOKMARK [2][-]{subsection.3.3.3}{Tarea manejador de alarmas}{section.3.3}% 39
+\BOOKMARK [2][-]{subsection.3.3.4}{Tarea manejador del servidor }{section.3.3}% 40
+\BOOKMARK [1][-]{section.3.4}{Controladores implementados}{chapter.3}% 41
+\BOOKMARK [2][-]{subsection.3.4.1}{Controlador sensor AHT10}{section.3.4}% 42
+\BOOKMARK [2][-]{subsection.3.4.2}{Controlador modulo de comunicacion BG96 }{section.3.4}% 43
+\BOOKMARK [1][-]{section.3.5}{Desarrollo del hardware}{chapter.3}% 44
+\BOOKMARK [2][-]{subsection.3.5.1}{Esquematico}{section.3.5}% 45
+\BOOKMARK [2][-]{subsection.3.5.2}{PCB del hardware}{section.3.5}% 46
+\BOOKMARK [2][-]{subsection.3.5.3}{Fabricacion circuito impreso}{section.3.5}% 47
+\BOOKMARK [1][-]{section.3.6}{Paneles de visualizacion}{chapter.3}% 48
+\BOOKMARK [2][-]{subsection.3.6.1}{Panel principal}{section.3.6}% 49
+\BOOKMARK [2][-]{subsection.3.6.2}{Panel nodo sensor}{section.3.6}% 50
+\BOOKMARK [0][-]{chapter.4}{Ensayos y resultados}{}% 51
+\BOOKMARK [1][-]{section.4.1}{Pruebas funcionales del hardware}{chapter.4}% 52
+\BOOKMARK [0][-]{chapter.5}{Conclusiones}{}% 53
+\BOOKMARK [1][-]{section.5.1}{Conclusiones generales }{chapter.5}% 54
+\BOOKMARK [1][-]{section.5.2}{Pr\363ximos pasos}{chapter.5}% 55
+\BOOKMARK [0][-]{appendix*.36}{Bibliograf\355a}{}% 56

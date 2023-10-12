@@ -460,6 +460,12 @@ INPUT ./Figures/panel_nodosensor_editado.png
 OUTPUT /home/mario/Documents/memoria_CESE/build/Chapters/Chapter4.aux
 INPUT Chapters/Chapter4.tex
 INPUT Chapters/Chapter4.tex
+INPUT ./Figures/cobertura_aht10.png
+INPUT ./Figures/cobertura_aht10.png
+INPUT ./Figures/cobertura_aht10.png
+INPUT ./Figures/cobertura_bg96.png
+INPUT ./Figures/cobertura_bg96.png
+INPUT ./Figures/cobertura_bg96.png
 OUTPUT /home/mario/Documents/memoria_CESE/build/Chapters/Chapter5.aux
 INPUT Chapters/Chapter5.tex
 INPUT Chapters/Chapter5.tex

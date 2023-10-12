@@ -51,8 +51,18 @@
 \contentsline {subsection}{\numberline {3.6.1}Panel principal}{26}{subsection.3.6.1}%
 \contentsline {subsection}{\numberline {3.6.2}Panel nodo sensor}{27}{subsection.3.6.2}%
 \contentsline {chapter}{\numberline {4}Ensayos y resultados}{29}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Pruebas funcionales del hardware}{29}{section.4.1}%
-\contentsline {chapter}{\numberline {5}Conclusiones}{31}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Conclusiones generales }{31}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Próximos pasos}{31}{section.5.2}%
-\contentsline {chapter}{Bibliograf\'{\i }a}{33}{appendix*.36}%
+\contentsline {section}{\numberline {4.1}Pruebas Unitarias}{29}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Pruebas De Hardware}{30}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Prueba sensor de humedad AHT10}{30}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Pruebas sensor analogicos}{30}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Pruebas comunicacion por UART con modulo de comunicacion}{30}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}Pruebas bajo consumo }{30}{subsection.4.2.4}%
+\contentsline {section}{\numberline {4.3}Pruebas del firmware}{30}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Pruebas de conexion con broker mqtt}{30}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Pruebas de alarmas}{31}{subsection.4.3.2}%
+\contentsline {section}{\numberline {4.4}Pruebas de la plataforma IoT}{31}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Pruebas de inyeccion de mensajes}{31}{subsection.4.4.1}%
+\contentsline {chapter}{\numberline {5}Conclusiones}{33}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Conclusiones generales }{33}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Próximos pasos}{33}{section.5.2}%
+\contentsline {chapter}{Bibliograf\'{\i }a}{35}{appendix*.38}%

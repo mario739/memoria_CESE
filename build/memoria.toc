@@ -51,21 +51,22 @@
 \contentsline {subsection}{\numberline {3.6.1}Panel principal}{26}{subsection.3.6.1}%
 \contentsline {subsection}{\numberline {3.6.2}Panel nodo sensor}{27}{subsection.3.6.2}%
 \contentsline {chapter}{\numberline {4}Ensayos y resultados}{29}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Pruebas Unitarias}{29}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Pruebas De Hardware}{32}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Prueba sensor de humedad AHT10}{32}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Pruebas comunicacion por UART con modulo de comunicacion BG96}{33}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3}Pruebas bajo consumo }{33}{subsection.4.2.3}%
-\contentsline {subsection}{\numberline {4.2.4}Pruebas de alimetaccion del modulorealzado}{33}{subsection.4.2.4}%
-\contentsline {section}{\numberline {4.3}Pruebas del firmware}{34}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Pruebas de conexion con broker mqtt}{34}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Pruebas de alarmas}{34}{subsection.4.3.2}%
-\contentsline {section}{\numberline {4.4}Pruebas de la plataforma IoT}{36}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Pruebas de inyeccion de mensajes}{36}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Pruebas notificaciones en thingsboard}{37}{subsection.4.4.2}%
-\contentsline {subsection}{\numberline {4.4.3}Pruebas de la witget}{37}{subsection.4.4.3}%
-\contentsline {section}{\numberline {4.5}Pruebas Funcionales}{38}{section.4.5}%
-\contentsline {chapter}{\numberline {5}Conclusiones}{39}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Conclusiones generales }{39}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Próximos pasos}{39}{section.5.2}%
-\contentsline {chapter}{Bibliograf\'{\i }a}{41}{appendix*.49}%
+\contentsline {section}{\numberline {4.1}Pruebas unitarias drivers}{29}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Pruebas de la plataforma IoT}{32}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Pruebas de inyeccion de mensajes}{32}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Prueba de la tabla de alarmas en thingsboard}{33}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Prueba del widget de mapa}{34}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}Prueba de persistencia de datos}{34}{subsection.4.2.4}%
+\contentsline {section}{\numberline {4.3}Pruebas De Hardware}{35}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Prueba comunicación sensor de humedad AHT10}{35}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Pruebas comunicación modulo BG96}{35}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Pruebas de alimentacion }{36}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.4}Prueba microcontrolador en bajo consumo }{36}{subsection.4.3.4}%
+\contentsline {section}{\numberline {4.4}Pruebas Funcionales del sistema}{37}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Prueba de lectura de sensores}{37}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Prueba de envío de datos al broker mqtt}{37}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}Pruebas de alarmas}{37}{subsection.4.4.3}%
+\contentsline {chapter}{\numberline {5}Conclusiones}{41}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Conclusiones generales }{41}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Próximos pasos}{41}{section.5.2}%
+\contentsline {chapter}{Bibliograf\'{\i }a}{43}{appendix*.48}%

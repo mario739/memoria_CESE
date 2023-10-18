@@ -52,15 +52,18 @@
 \BOOKMARK [1][-]{section.4.1}{Pruebas Unitarias}{chapter.4}% 52
 \BOOKMARK [1][-]{section.4.2}{Pruebas De Hardware}{chapter.4}% 53
 \BOOKMARK [2][-]{subsection.4.2.1}{Prueba sensor de humedad AHT10}{section.4.2}% 54
-\BOOKMARK [2][-]{subsection.4.2.2}{Pruebas sensor analogicos}{section.4.2}% 55
-\BOOKMARK [2][-]{subsection.4.2.3}{Pruebas comunicacion por UART con modulo de comunicacion}{section.4.2}% 56
-\BOOKMARK [2][-]{subsection.4.2.4}{Pruebas bajo consumo }{section.4.2}% 57
+\BOOKMARK [2][-]{subsection.4.2.2}{Pruebas comunicacion por UART con modulo de comunicacion BG96}{section.4.2}% 55
+\BOOKMARK [2][-]{subsection.4.2.3}{Pruebas bajo consumo }{section.4.2}% 56
+\BOOKMARK [2][-]{subsection.4.2.4}{Pruebas de alimetaccion del modulorealzado}{section.4.2}% 57
 \BOOKMARK [1][-]{section.4.3}{Pruebas del firmware}{chapter.4}% 58
 \BOOKMARK [2][-]{subsection.4.3.1}{Pruebas de conexion con broker mqtt}{section.4.3}% 59
 \BOOKMARK [2][-]{subsection.4.3.2}{Pruebas de alarmas}{section.4.3}% 60
 \BOOKMARK [1][-]{section.4.4}{Pruebas de la plataforma IoT}{chapter.4}% 61
 \BOOKMARK [2][-]{subsection.4.4.1}{Pruebas de inyeccion de mensajes}{section.4.4}% 62
-\BOOKMARK [0][-]{chapter.5}{Conclusiones}{}% 63
-\BOOKMARK [1][-]{section.5.1}{Conclusiones generales }{chapter.5}% 64
-\BOOKMARK [1][-]{section.5.2}{Pr\363ximos pasos}{chapter.5}% 65
-\BOOKMARK [0][-]{appendix*.38}{Bibliograf\355a}{}% 66
+\BOOKMARK [2][-]{subsection.4.4.2}{Pruebas notificaciones en thingsboard}{section.4.4}% 63
+\BOOKMARK [2][-]{subsection.4.4.3}{Pruebas de la witget}{section.4.4}% 64
+\BOOKMARK [1][-]{section.4.5}{Pruebas Funcionales}{chapter.4}% 65
+\BOOKMARK [0][-]{chapter.5}{Conclusiones}{}% 66
+\BOOKMARK [1][-]{section.5.1}{Conclusiones generales }{chapter.5}% 67
+\BOOKMARK [1][-]{section.5.2}{Pr\363ximos pasos}{chapter.5}% 68
+\BOOKMARK [0][-]{appendix*.49}{Bibliograf\355a}{}% 69

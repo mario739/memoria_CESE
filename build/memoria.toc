@@ -37,12 +37,12 @@
 \contentsline {subsection}{\numberline {3.2.3}Capa aplicación}{13}{subsection.3.2.3}%
 \contentsline {section}{\numberline {3.3}Desarrollo del firmware}{14}{section.3.3}%
 \contentsline {subsection}{\numberline {3.3.1}Tarea loop del sistema}{14}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Tarea adquisicion de datos}{15}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.2}Tarea adquisición de datos}{15}{subsection.3.3.2}%
 \contentsline {subsection}{\numberline {3.3.3}Tarea manejador de alarmas}{16}{subsection.3.3.3}%
 \contentsline {subsection}{\numberline {3.3.4}Tarea manejador del servidor }{16}{subsection.3.3.4}%
 \contentsline {section}{\numberline {3.4}Controladores implementados}{18}{section.3.4}%
 \contentsline {subsection}{\numberline {3.4.1}Controlador sensor AHT10}{18}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Controlador modulo de comunicacion BG96 }{19}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.2} Controlador módulo de comunicación BG96 }{19}{subsection.3.4.2}%
 \contentsline {section}{\numberline {3.5}Desarrollo del hardware}{23}{section.3.5}%
 \contentsline {subsection}{\numberline {3.5.1}Esquematico}{23}{subsection.3.5.1}%
 \contentsline {subsection}{\numberline {3.5.2}PCB del hardware}{25}{subsection.3.5.2}%
@@ -69,4 +69,4 @@
 \contentsline {chapter}{\numberline {5}Conclusiones}{41}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Conclusiones generales }{41}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Próximos pasos}{41}{section.5.2}%
-\contentsline {chapter}{Bibliograf\'{\i }a}{43}{appendix*.48}%
+\contentsline {chapter}{Bibliograf\'{\i }a}{43}{appendix*.49}%

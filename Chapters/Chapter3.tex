@@ -78,7 +78,7 @@ La capa HAL(\textit{Hardware Abstraction Layer}) proporcionada por el fabricante
   \item GPIO: La API proporciona funciones  para gestionar las entradas y salidas del microcontrolador. Fueron utilizadas por la capa de APP para el control de los leds de debug y para el encendido y reset del módulo de comunicación.
   \item ADC: Proporcionan funciones para la configuración, lectura y escritura de los pines de microcontroladora para trabajar con señales analógicas. Se utilizaron estas funciones para hacer la lectura de los sensores de humedad del suelo y el sensor de luz UV.
   \item UART: Brinda funciones para la lectura y escritura del puerto UART del microcontrolador. El firmware utiliza estas funciones para la comunicación con el módulo BG96.
-  \item I2C: sProporciona funciones para la lectura y escritura por protocolo I2C. El driver del sensor de AHT10 utiliza estas funciones para hacer la lectura de los datos.
+  \item I2C: Proporciona funciones para la lectura y escritura por protocolo I2C. El driver del sensor de AHT10 utiliza estas funciones para hacer la lectura de los datos.
     
 \end{itemize}
 
@@ -88,19 +88,18 @@ La capa drivers(\textit{manejador de dispositivos}) está compuesta por los mane
   \item Driver BG96: Las funciones más importantes que proporciona el driver:
   \begin{itemize}
     \item Estado del módulo.
-    \item Descripcion del modulo.
+    \item Descripcion del módulo.
     \item Configuración APN de la red.
     \item Conexión TCP.
     \item Conexión al broker MQTT.
   \end{itemize}
   \item Driver AHT10: Se desarrollo utilizando la hoja de datos del sensor, proporciona las funciones mas importante de inicializacion y lectura de humedad y temperatura obtenidos por el sensor.
-  \item ML8511: Se escribio una funcion que permite convertir los datos obtenidos de forma analogica a valores significativos de radiacion UV.
-  \item HL-69: Se escribio una funcion que permite convertir los datos obtenidos de forma analogica a valores significativos humedad del suelo. 
 \end{itemize}
-
+Para los sensores ML8511 y HL-69 que son sensores analógicos no se desarrollaron drivers, sino que se crearon funciones para convertir el valor analógico entregado a un valor significativo para el usuario con respecto a la variable física medida.
 \subsection{Capa aplicación} 
 La capa de APP o aplicación  es la de mayor nivel jerárquico. Se desarrolló sobre freeRTOS 
 que nos permite hacer un código más escalable.
+
 Se implementaron cuatro tareas.
 \begin{itemize}
     \item Loop del sistema: Esta tarea es la que nos da la secuencialidad del sistema.
@@ -112,15 +111,15 @@ Se implementaron cuatro tareas.
 
 \section{Desarrollo del firmware}
 
-Para el desarrollo del firmware se utilizo STM32CubeIDE que es el entorno de desarrollo oficial de STMicroelectronic.
+Para el desarrollo del firmware se utilizó STM32CubeIDE que es el entorno de desarrollo oficial de STMicroelectronic.
 
-El firmware fue desarrollado sobre freeRTOS, se utilizaron algunas de sus funcionanlidades como colas, semaforos, tareas, interrupciones.
+El firmware fue desarrollado sobre freeRTOS, se utilizaron algunas de sus funcionalidades como colas, semáforos, tareas, interrupciones.
 
-En la figura \ref{fig:Df inicio firmware}  se muestra en diagrama de flujo de inicion del firmware.
+En la figura \ref{fig:Df inicio firmware}  se muestra en diagrama de flujo de inicialización del firmware.
 
 \begin{figure}[htbp]
   \centering
-	\includegraphics[width=3cm]{./Figures/DF inicio firmware.png}
+	\includegraphics[width=2.5cm, height=9.5cm]{./Figures/DF inicio firmware.png}
 	\caption{Diagrama de flujo inicio firmware.}
 	\label{fig:Df inicio firmware}
 \end{figure}
@@ -132,7 +131,7 @@ Para el control del sistema se crearon cuatro tareas sobre freeRTOS, que se comu
 \subsection{Tarea loop del sistema} 
 
 La secuencialidad del sistema es manejada por la tarea loop, la figura \ref{fig:Df tarea loop sistema} muestra el diagrama de flujo de la tarea loop.
-La tarea comienza iniciando el timer del sistema el cual es el encargado de manejar el tiempo en que se repetira el ciclo de la tarea loop, luego la tarea se bloquea en el un semáforo que sera desbloqueada en el momento de la ejecución del handler de la interrupción del timer, luego se envia datos por la cola de adquisición de datos y server mqtt para levantar el servidor y la tarea se vuelve a bloquear en el semáforo, cuando se desbloquea pregunta si se logró levantar el servidor si se logró se manda un mensaje por la cola de server mqtt con el evento de enviar datos y se bloquea nuevamente pero si no se logró levantar el servidor no se enviaran datos, luego se envía un evento a la cola de alarmas y  se bloquea nuevamente esperando que envíen las alarmas, cuando se desbloquea se manda un evento a la cola de server mqtt para desconectar el servidor y se bloquea la tarea en el semáforo esperando la desconexión  finalmente se inicia nuevamente el timer y mandamos al sistema a modo de bajo consumo.
+La tarea comienza iniciando el timer del sistema el cual es el encargado de manejar el tiempo en que se repetira el ciclo de la tarea loop, luego la tarea se bloquea en el un semáforo que sera desbloqueada en el momento de la ejecución del handler de la interrupción del timer, luego se envia datos por la cola de adquisición de datos y server mqtt para levantar el servidor y la tarea se vuelve a bloquear en el semáforo, cuando se desbloquea pregunta si se logró levantar el servidor, si se logró se manda un mensaje por la cola de server mqtt con el evento de enviar datos y se bloquea nuevamente pero si no se logró levantar el servidor no se enviaran datos, luego se envía un evento a la cola de alarmas y  se bloquea nuevamente esperando que envíen las alarmas, cuando se desbloquea se manda un evento a la cola de server mqtt para desconectar el servidor y se bloquea la tarea en el semáforo esperando la desconexión  finalmente se inicia nuevamente el timer y mandamos al sistema a modo de bajo consumo.
 
 \begin{figure}[h]  
 \centering
@@ -141,8 +140,8 @@ La tarea comienza iniciando el timer del sistema el cual es el encargado de mane
 	\label{fig:Df tarea loop sistema}
 \end{figure}
 
-\subsection{Tarea adquisicion de datos} 
-La figura \ref{fig:Df tarea adquisicion} muestra la secuencia repetitiva que realiza la tarea de adquisición de datos, la tarea inicia creando algunas variables locales que se utilizara en la tarea,luego revisa si hay algún dato en la cola de adquisición de datos si no hay datos la tarea se bloquea pero si existen datos en la cola se realiza la lectura de todos los sensores para posteriormente enviar los datos recolectados por la cola de data y alarmas.
+\subsection{Tarea adquisición de datos} 
+La figura \ref{fig:Df tarea adquisicion} muestra la secuencia repetitiva que realiza la tarea de adquisición de datos, la tarea inicia creando algunas variables locales que se utilizara en la tarea,luego revisa si hay algún dato en la cola de adquisición de datos si no hay datos la tarea se bloquea pero si existen datos se realiza la lectura de todos los sensores para posteriormente enviar los datos recolectados por la cola de data y alarmas.
 
 \begin{figure}[h]
   \centering
@@ -174,7 +173,7 @@ La tarea comienza esperando datos en la cola de servidor mqtt si no hay datos la
 \begin{figure}[h]
   \centering
   \includegraphics[width=8cm, height=8cm]{./Figures/SM down server.png}
-  \caption{Maquina de estados down servidor.}
+  \caption{Máquina de estados down servidor.}
   \label{fig:Maquina de estados dowm servidor}
 \end{figure}
 \clearpage
@@ -183,7 +182,7 @@ La tarea comienza esperando datos en la cola de servidor mqtt si no hay datos la
 \begin{figure}[t!]
   \centering
 	\includegraphics[width=10cm, height=14cm]{./Figures/SM up server.png}
-	\caption{Maquina de estados up servidor.}
+	\caption{Máquina de estados up servidor.}
 	\label{fig:Maquina de estados up servidor}
 \end{figure}
 
@@ -211,7 +210,7 @@ void aht10Init(aht10_config_t *obj, aht10WriteFcn_t fncWritePort, aht10ReadFcn_t
   obj->readI2C=fncReadPort;
   obj->delay_ms_I2C=fncDelayPort;
 }
-//Funcion para obtener el valor de la humedad leida por el sensor 
+//Funcion para obtener el valor de la humedad
 aht10_status_fnc aht10_get_humedity(aht10_config_t*obj, uint8_t *data)
 {
   if (obj== NULL)
@@ -233,7 +232,7 @@ aht10_status_fnc aht10_get_humedity(aht10_config_t*obj, uint8_t *data)
   }
   return obj->status_fun;
 }
-//Funcion para obtener el valor de la temperatura leida por el sensor 
+//Funcion para obtener el valor de la temperatura 
 aht10_status_fnc aht10_get_temperature(aht10_config_t*obj, int8_t *data)
 {
   if (obj== NULL)
@@ -258,7 +257,7 @@ aht10_status_fnc aht10_get_temperature(aht10_config_t*obj, int8_t *data)
 \end{lstlisting}
 
 
-\subsection{Controlador modulo de comunicacion BG96 } 
+\subsection{ Controlador módulo de comunicación BG96 } 
 En el codigo \ref{cod:driver bg96} se muestran las funciones mas utilizadas por el firmware del driver que son las de configuracion y activacion del APN, conexion y desconexion al servidor MQTT.
 
 \begin{lstlisting}[label=cod:driver bg96,caption=Funciones principales del driver del sensor AHT10.]  % Start your code-block
@@ -307,7 +306,7 @@ em_bg96_error_handling init_driver(st_bg96_config *self,pf_send_data ft_send_dat
     self->self_tcp.tcp_apn="internet.tigo.bol";
     return self->ft_resp;
 }
-//Funcion para saber el estado del modulo
+//Funcion para obtener el estado del modulo
 em_bg96_error_handling get_status_modem(st_bg96_config* self)
 {
   self->ft_resp=FT_BG96_OK;
@@ -417,7 +416,7 @@ em_bg96_error_handling publish_message(st_bg96_config *self,char *topic,char *da
 \clearpage
 \section{Desarrollo del hardware}
 
-Para diseño del hardware se utilizo KICAD 6.0 herramienta de diseño aprendida en transcurso de  la especialización.
+Para diseño del hardware se utilizó KICAD 6.0 herramienta de diseño aprendida en el transcurso de  la especialización.
 
 \subsection{Esquematico} 
 Al ser un prototipo lo que se hizo fue desarrollar un tarjeta donde se puedan ensamblar y conectar nuestros módulos utilizados en el proyecto: módulo de comunicación celular, tarjeta de desarrollo con el microcontrolador y  los módulos sensores.
@@ -427,7 +426,7 @@ En la figura \ref{fig:esquematico root} se muestra la página raíz del esquemá
 \begin{figure}[h]
   \centering
 	\includegraphics[width=\textwidth, height=8cm]{./Figures/esquematico_root.png}
-	\caption{Esquematico pagina raiz.}
+	\caption{Esquemático página raíz.}
 	\label{fig:esquematico root}
 \end{figure}
 
@@ -436,7 +435,7 @@ En figura \ref{fig:esquematico modulos} se muestra los conectores de los módulo
 \begin{figure}[h]
   \centering
 	\includegraphics[width=10cm, height=5cm]{./Figures/esquematico_modulos.png}
-	\caption{Esquematico conectores modulos.}
+	\caption{Esquemático conectores modulos.}
 	\label{fig:esquematico modulos}
 \end{figure}
 
@@ -444,7 +443,7 @@ Se colocaron dos leds para debug, uno para señalizar si se logró conectar al s
 \begin{figure}[h!]
   \centering
 	\includegraphics[width=10cm, height=4cm]{./Figures/esquematico_debug.png}
-	\caption{Esquematico interfaz de debug.}
+	\caption{Esquemático interfaz de debug.}
 	\label{fig:esquematico conectores de debug}
 \end{figure}
 
@@ -452,7 +451,7 @@ En la figura \ref{fig:esquematico conectores sensores} se pueden ver los conecto
 \begin{figure}[h]
   \centering
 	\includegraphics[width=10cm, height=4.5cm]{./Figures/esquematico_conectores_sensores.png}
-	\caption{Esquematico conectores sensores.}
+	\caption{Esquemático conectores sensores.}
 	\label{fig:esquematico conectores sensores}
 \end{figure}
 
@@ -460,7 +459,7 @@ Se colocaron dos colectores de alimentación como se muestra en la figura \ref{f
 \begin{figure}[h]
   \centering
 	\includegraphics[width=10cm, height=4.5cm]{./Figures/esquematico_alimentacion.png}
-	\caption{Esquematico conectores alimentacion.}
+	\caption{Esquemático conectores alimentación.}
 	\label{fig:esquematico conectores alimentacion}
 \end{figure}
 
@@ -517,7 +516,7 @@ El panel está dividido en las siguientes zonas:
 
 \begin{figure}[h]
   \centering
-	\includegraphics[width=\textwidth, height=11cm]{./Figures/panel_principal_editado.png}
+	\includegraphics[width=\textwidth, height=10cm]{./Figures/panel_principal_editado.png}
   \caption{Panel principal de la interfaz grafica.}
 	\label{fig:Panel principal}
 \end{figure}
@@ -529,10 +528,10 @@ Para tener un mayor detalle de todos los parámetros de monitoreo de cada nodo s
 
 El panel esta dividido en las siguientes zonas:
 \begin{itemize}
-  \item Zona 1: Graficas que muestra los cambios que van teniendo los valores de las variables medidas por los sensores con respecto al tiempo.
+  \item Zona 1: Gráficas que muestran los cambios que van teniendo los valores de las variables medidas por los sensores con respecto al tiempo.
   \item Zona 2: Widgets que muestran el último valor obtenido por el nodo sensor de cada variable monitoreada.
-  \item Zona 3: Tabla que monitorea las alarmas implementadas. 
-  \item Zona 4: Se tiene un mapa que muestra la ubicación del nodo sensor.
+  \item Zona 3: Tabla que muestra las alarmas que se activaron. 
+  \item Zona 4: Se tiene un mapa que muestra la ubicación del nodo sensor implementado.
 \end{itemize}
 
 \begin{figure}[h!]

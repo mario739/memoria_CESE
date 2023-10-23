@@ -35,12 +35,12 @@
 \BOOKMARK [2][-]{subsection.3.2.3}{Capa aplicaci\363n}{section.3.2}% 35
 \BOOKMARK [1][-]{section.3.3}{Desarrollo del firmware}{chapter.3}% 36
 \BOOKMARK [2][-]{subsection.3.3.1}{Tarea loop del sistema}{section.3.3}% 37
-\BOOKMARK [2][-]{subsection.3.3.2}{Tarea adquisicion de datos}{section.3.3}% 38
+\BOOKMARK [2][-]{subsection.3.3.2}{Tarea adquisici\363n de datos}{section.3.3}% 38
 \BOOKMARK [2][-]{subsection.3.3.3}{Tarea manejador de alarmas}{section.3.3}% 39
 \BOOKMARK [2][-]{subsection.3.3.4}{Tarea manejador del servidor }{section.3.3}% 40
 \BOOKMARK [1][-]{section.3.4}{Controladores implementados}{chapter.3}% 41
 \BOOKMARK [2][-]{subsection.3.4.1}{Controlador sensor AHT10}{section.3.4}% 42
-\BOOKMARK [2][-]{subsection.3.4.2}{Controlador modulo de comunicacion BG96 }{section.3.4}% 43
+\BOOKMARK [2][-]{subsection.3.4.2}{ Controlador m\363dulo de comunicaci\363n BG96 }{section.3.4}% 43
 \BOOKMARK [1][-]{section.3.5}{Desarrollo del hardware}{chapter.3}% 44
 \BOOKMARK [2][-]{subsection.3.5.1}{Esquematico}{section.3.5}% 45
 \BOOKMARK [2][-]{subsection.3.5.2}{PCB del hardware}{section.3.5}% 46
@@ -67,4 +67,4 @@
 \BOOKMARK [0][-]{chapter.5}{Conclusiones}{}% 67
 \BOOKMARK [1][-]{section.5.1}{Conclusiones generales }{chapter.5}% 68
 \BOOKMARK [1][-]{section.5.2}{Pr\363ximos pasos}{chapter.5}% 69
-\BOOKMARK [0][-]{appendix*.48}{Bibliograf\355a}{}% 70
+\BOOKMARK [0][-]{appendix*.49}{Bibliograf\355a}{}% 70

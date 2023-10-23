@@ -9,7 +9,7 @@ En este capítulo se explican las pruebas realizadas al hardware, firmware , con
 %----------------------------------------------------------------------------------------
 
 \section{Pruebas unitarias drivers}
-Para el desarrollo de los drivers del módulo BG 96 y el sensor AHT10 se utilizó la metodología de desarrollo TDD. Esto implica que se escribieron pruebas unitarias para los drivers utilizando ceedling herramienta para el desarrollo de pruebas automáticas. En las figuras \ref{cod:codigo test driver AHT10} y \ref{cod:codigo test driver bg96} se pueden ver algunas pruebas para los drivers desarrollados.
+Para el desarrollo de los drivers del módulo BG96 y el sensor AHT10 se utilizó la metodología de desarrollo TDD. Esto implica que se escribieron pruebas unitarias para los drivers utilizando ceedling herramienta para el desarrollo de pruebas automáticas. En el código  \ref{cod:codigo test driver AHT10} y \ref{cod:codigo test driver bg96} se pueden ver algunas pruebas unitarias para los drivers desarrollados.
 \begin{lstlisting}[label=cod:codigo test driver AHT10,caption=Tests del driver sensor AHT10.]
 //Prueba de funcion para obtener el estado del sensor AHT10
 void test_estado_del_sensor(void)
@@ -127,8 +127,8 @@ En la figura \ref{fig:Cobertura BG96} también se observa el informe de cobertur
 
 \section{Pruebas de la plataforma IoT}
 \subsection{Pruebas de inyeccion de mensajes}
-El objetivo de las pruebas de inyección de mensajes a la plataforma IoT es evaluar la llegada de los mensajes por protocolo MQTT.
-Para realizar el envío de datos a broker MQTT, se utiliza el cliente MQTT de mosquitto utilizando el comando que se muestra en la figura \ref{fig:mosquitto pub}.
+El objetivo de las pruebas de inyección de mensajes a la plataforma IoT es evaluar la llegada de los mensajes por protocolo MQTT al servidor.
+Para realizar el envío de datos a broker MQTT, se utiliza el cliente MQTT de mosquitto ejecutando el comando que se muestra en la figura \ref{fig:mosquitto pub}.
 
 \begin{figure}[h!]
   \centering
@@ -151,13 +151,13 @@ Para comprobar la llegada de los valores al broker de ThingsBoard tenemos que ir
 
 \begin{figure}[h!]
   \centering
-    \includegraphics[width=7cm, height=10cm]{./Figures/tb_recepcion.png}
-  \caption{Recepcion de datos en el broker MQTT.}
+    \includegraphics[width=6cm, height=9.5cm]{./Figures/tb_recepcion.png}
+  \caption{Recepción de datos en el broker MQTT.}
     \label{fig:tb recepcion}
 \end{figure}
 
 \subsection{Prueba de la tabla de alarmas en thingsboard}
-La plataforma permite configurar alarmas, en el panel de cada sensor tenemos una tabla de alarmas donde aparecen notificaciones de las alarmas activadas.
+La plataforma permite configurar alarmas con respecto a las variables monitoreadas, en el panel de visualización de cada sensor se tiene una tabla de alarmas que muestran las notificaciones de las alarmas que se activaron.
 En la figura \ref{fig:alarmas tb} podemos ver la notificación de una alarma cuando la temperatura ambiente del sistema sobrepasa los 43 grados centígrados.
 
 \begin{figure}[h!]
@@ -168,7 +168,7 @@ En la figura \ref{fig:alarmas tb} podemos ver la notificación de una alarma cua
 \end{figure}
 
 \subsection{Prueba del widget de mapa}
-En los paneles de visualización tenemos mapas para poder visualizar la ubicación donde se implementó el dispositivo.
+En los paneles de visualización tenemos mapas con la ubicación del lugar donde se implementó el dispositivo.
 En la figura \ref{fig:map thingsboard}  podemos ver la ubicación del sensor implementado para el proyecto.
 
 \begin{figure}[h!]
@@ -180,9 +180,14 @@ En la figura \ref{fig:map thingsboard}  podemos ver la ubicación del sensor imp
 
 \subsection{Prueba de persistencia de datos}
 Para realizar la prueba de persistencia de datos se configuró en el panel de visualización, las gráficas con un entorno de tiempo más amplio.
-En las gráficas se estableció un rango de tiempo de 7 días. El resultado se muestra en la figura .
+En las gráficas se estableció un rango de tiempo de 7 días. El resultado se muestra en la figura \ref{fig:Persistencia de datos}.
 
-
+\begin{figure}[h!]
+  \centering
+    \includegraphics[width=10cm, height=6cm]{./Figures/historial_sensores.png}
+  \caption{Persistencia de datos.}
+    \label{fig:Persistencia de datos}
+\end{figure}
 
 \clearpage 
 \section{Pruebas De Hardware}
@@ -212,12 +217,12 @@ En la figura \ref{fig:trama uart1} vemos dos canales del analizador  lógico el 
 \begin{figure}[h!]
   \centering
     \includegraphics[width=\linewidth, height=3.5cm]{./Figures/trama_uart1.png}
-  \caption{Informe de cobertura driver aht10.}
+  \caption{Envío y recepción de comandos por puerto UART.}
     \label{fig:trama uart1}
 \end{figure}
 
 \subsection{Pruebas de alimentacion }
-Se probaron las fuentes de alimentación del sistema, la batería de 12v para el microcontrolador y la batería de 3.7v para el módulo de comunicación bg 96.
+Se probaron las fuentes de alimentación del sistema, la batería de 12V para el microcontrolador y la batería de 3.7V para el módulo de comunicación bg96.
 En la figuras muestran las pruebas de alimentación del sistema.
 
 
@@ -230,7 +235,7 @@ En la figura podemos ver el consumo del sistema normalmente y en la figura el co
 
 \clearpage 
 \section{Pruebas Funcionales del sistema}
-Para realizar las pruebas funcionales del todo el sistema se implementó el dispositivo en un lugar donde se tiene un cultivo de tomate como se muestra en la figura.
+Para realizar las pruebas funcionales de todo el sistema se implementó el dispositivo en un lugar donde se tiene un cultivo de tomate como se muestra en la figura.
 
 \subsection{Prueba de lectura de sensores}
 Se realizó la lectura de todos los sensores y se mando los datos obtenidos al servidor mqtt .La figura muestra la lectura de los datos adquiridos.

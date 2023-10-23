@@ -478,6 +478,9 @@ INPUT ./Figures/alarmas_tb.png
 INPUT ./Figures/map.png
 INPUT ./Figures/map.png
 INPUT ./Figures/map.png
+INPUT ./Figures/historial_sensores.png
+INPUT ./Figures/historial_sensores.png
+INPUT ./Figures/historial_sensores.png
 INPUT ./Figures/write_i2c.png
 INPUT ./Figures/write_i2c.png
 INPUT ./Figures/write_i2c.png

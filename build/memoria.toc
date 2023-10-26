@@ -2,7 +2,7 @@
 \babel@toc {spanish}{}
 \contentsline {chapter}{Resumen}{\es@scroman {i}}{section*.1}%
 \contentsline {chapter}{\numberline {1}Introducción general}{1}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Introducción}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.1}IoT en la agricultura}{1}{section.1.1}%
 \contentsline {subsection}{\numberline {1.1.1}Internet de las cosas}{1}{subsection.1.1.1}%
 \contentsline {subsection}{\numberline {1.1.2}Sistemas de monitoreo de cultivos agrícolas}{2}{subsection.1.1.2}%
 \contentsline {section}{\numberline {1.2}Estado del arte}{2}{section.1.2}%
@@ -14,14 +14,14 @@
 \contentsline {chapter}{\numberline {2}Introducción específica}{5}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Componentes principales de hardware}{5}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}Plataforma de desarrollo STM32 NUCLEO-L432KC}{5}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}Módulo De Comunicación LTE IOT 2 CLICK}{6}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.2}Módulo de comunicación LTE IOT 2 CLICK}{6}{subsection.2.1.2}%
 \contentsline {subsection}{\numberline {2.1.3}Sensor AHT10}{7}{subsection.2.1.3}%
 \contentsline {subsection}{\numberline {2.1.4}Sensor ML8511}{7}{subsection.2.1.4}%
-\contentsline {subsection}{\numberline {2.1.5}Sensor de Humedad de Suelo HL-69 (Resistivo)}{7}{subsection.2.1.5}%
+\contentsline {subsection}{\numberline {2.1.5}Sensor de humedad de suelo HL-69 (Resistivo)}{7}{subsection.2.1.5}%
 \contentsline {section}{\numberline {2.2}Herramientas de software y testing utilizados}{8}{section.2.2}%
 \contentsline {subsection}{\numberline {2.2.1}STM32 CubeIDE}{8}{subsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.2.2}FreeRTOS}{8}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}CEEDLING}{9}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.3}CEEDLING}{8}{subsection.2.2.3}%
 \contentsline {section}{\numberline {2.3}Protocolos de Comunicación}{9}{section.2.3}%
 \contentsline {subsection}{\numberline {2.3.1}UART}{9}{subsection.2.3.1}%
 \contentsline {subsection}{\numberline {2.3.2}I2C}{9}{subsection.2.3.2}%
@@ -44,10 +44,10 @@
 \contentsline {subsection}{\numberline {3.4.1}Controlador sensor AHT10}{18}{subsection.3.4.1}%
 \contentsline {subsection}{\numberline {3.4.2} Controlador módulo de comunicación BG96 }{19}{subsection.3.4.2}%
 \contentsline {section}{\numberline {3.5}Desarrollo del hardware}{23}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}Esquematico}{23}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.1}Esquemático}{23}{subsection.3.5.1}%
 \contentsline {subsection}{\numberline {3.5.2}PCB del hardware}{25}{subsection.3.5.2}%
-\contentsline {subsection}{\numberline {3.5.3}Fabricacion circuito impreso}{25}{subsection.3.5.3}%
-\contentsline {section}{\numberline {3.6}Paneles de visualizacion}{26}{section.3.6}%
+\contentsline {subsection}{\numberline {3.5.3}Fabricación circuito impreso}{25}{subsection.3.5.3}%
+\contentsline {section}{\numberline {3.6}Paneles de visualización}{26}{section.3.6}%
 \contentsline {subsection}{\numberline {3.6.1}Panel principal}{26}{subsection.3.6.1}%
 \contentsline {subsection}{\numberline {3.6.2}Panel nodo sensor}{27}{subsection.3.6.2}%
 \contentsline {chapter}{\numberline {4}Ensayos y resultados}{29}{chapter.4}%
@@ -60,13 +60,13 @@
 \contentsline {section}{\numberline {4.3}Pruebas De Hardware}{35}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1}Prueba comunicación sensor de humedad AHT10}{35}{subsection.4.3.1}%
 \contentsline {subsection}{\numberline {4.3.2}Pruebas comunicación modulo BG96}{35}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}Pruebas de alimentacion }{36}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.3}Pruebas de alimentación }{36}{subsection.4.3.3}%
 \contentsline {subsection}{\numberline {4.3.4}Prueba microcontrolador en bajo consumo }{36}{subsection.4.3.4}%
 \contentsline {section}{\numberline {4.4}Pruebas Funcionales del sistema}{37}{section.4.4}%
 \contentsline {subsection}{\numberline {4.4.1}Prueba de lectura de sensores}{37}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Prueba de envío de datos al broker mqtt}{37}{subsection.4.4.2}%
-\contentsline {subsection}{\numberline {4.4.3}Pruebas de alarmas}{37}{subsection.4.4.3}%
+\contentsline {subsection}{\numberline {4.4.2}Prueba de envío de datos al broker mqtt}{38}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}Pruebas de alarmas}{38}{subsection.4.4.3}%
 \contentsline {chapter}{\numberline {5}Conclusiones}{41}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Conclusiones generales }{41}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Próximos pasos}{41}{section.5.2}%
-\contentsline {chapter}{Bibliograf\'{\i }a}{43}{appendix*.49}%
+\contentsline {chapter}{Bibliograf\'{\i }a}{43}{appendix*.53}%

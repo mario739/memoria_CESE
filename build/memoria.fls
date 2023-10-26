@@ -421,18 +421,18 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmtt9.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmtt8.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/palatino/pplr8c.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mathpazo/fplmr.tfm
-INPUT ./Figures/esquematico_root.png
-INPUT ./Figures/esquematico_root.png
-INPUT ./Figures/esquematico_root.png
+INPUT ./Figures/esquematico_raiz.png
+INPUT ./Figures/esquematico_raiz.png
+INPUT ./Figures/esquematico_raiz.png
 INPUT ./Figures/esquematico_modulos.png
 INPUT ./Figures/esquematico_modulos.png
 INPUT ./Figures/esquematico_modulos.png
 INPUT ./Figures/esquematico_debug.png
 INPUT ./Figures/esquematico_debug.png
 INPUT ./Figures/esquematico_debug.png
-INPUT ./Figures/esquematico_conectores_sensores.png
-INPUT ./Figures/esquematico_conectores_sensores.png
-INPUT ./Figures/esquematico_conectores_sensores.png
+INPUT ./Figures/conectores_sensores.png
+INPUT ./Figures/conectores_sensores.png
+INPUT ./Figures/conectores_sensores.png
 INPUT ./Figures/esquematico_alimentacion.png
 INPUT ./Figures/esquematico_alimentacion.png
 INPUT ./Figures/esquematico_alimentacion.png
@@ -490,9 +490,24 @@ INPUT ./Figures/read_i2c..png
 INPUT ./Figures/trama_uart1.png
 INPUT ./Figures/trama_uart1.png
 INPUT ./Figures/trama_uart1.png
-INPUT ./Figures/Qcom_enviodedatos.png
-INPUT ./Figures/Qcom_enviodedatos.png
-INPUT ./Figures/Qcom_enviodedatos.png
+INPUT ./Figures/voltaje3v.jpg
+INPUT ./Figures/voltaje3v.jpg
+INPUT ./Figures/voltaje3v.jpg
+INPUT ./Figures/voltaje3v.jpg
+INPUT ./Figures/voltaje3v.jpg
+INPUT ./Figures/voltaje3v.jpg
+INPUT ./Figures/voltaje3v.jpg
+INPUT ./Figures/voltaje3v.jpg
+INPUT ./Figures/voltaje3v.jpg
+INPUT ./Figures/prototipo_implementado_casa.jpg
+INPUT ./Figures/prototipo_implementado_casa.jpg
+INPUT ./Figures/prototipo_implementado_casa.jpg
+INPUT ./Figures/lecutra_sensores_prueba.png
+INPUT ./Figures/lecutra_sensores_prueba.png
+INPUT ./Figures/lecutra_sensores_prueba.png
+INPUT ./Figures/secuencia de comandos shell.png
+INPUT ./Figures/secuencia de comandos shell.png
+INPUT ./Figures/secuencia de comandos shell.png
 INPUT ./Figures/humedad_menor2.png
 INPUT ./Figures/humedad_menor2.png
 INPUT ./Figures/humedad_menor2.png

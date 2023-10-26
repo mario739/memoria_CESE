@@ -1,6 +1,6 @@
 \BOOKMARK [0][-]{section*.1}{Resumen}{}% 1
 \BOOKMARK [0][-]{chapter.1}{Introducci\363n general}{}% 2
-\BOOKMARK [1][-]{section.1.1}{Introducci\363n}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.1}{IoT en la agricultura}{chapter.1}% 3
 \BOOKMARK [2][-]{subsection.1.1.1}{Internet de las cosas}{section.1.1}% 4
 \BOOKMARK [2][-]{subsection.1.1.2}{Sistemas de monitoreo de cultivos agr\355colas}{section.1.1}% 5
 \BOOKMARK [1][-]{section.1.2}{Estado del arte}{chapter.1}% 6
@@ -12,10 +12,10 @@
 \BOOKMARK [0][-]{chapter.2}{Introducci\363n espec\355fica}{}% 12
 \BOOKMARK [1][-]{section.2.1}{Componentes principales de hardware}{chapter.2}% 13
 \BOOKMARK [2][-]{subsection.2.1.1}{Plataforma de desarrollo STM32 NUCLEO-L432KC}{section.2.1}% 14
-\BOOKMARK [2][-]{subsection.2.1.2}{M\363dulo De Comunicaci\363n LTE IOT 2 CLICK}{section.2.1}% 15
+\BOOKMARK [2][-]{subsection.2.1.2}{M\363dulo de comunicaci\363n LTE IOT 2 CLICK}{section.2.1}% 15
 \BOOKMARK [2][-]{subsection.2.1.3}{Sensor AHT10}{section.2.1}% 16
 \BOOKMARK [2][-]{subsection.2.1.4}{Sensor ML8511}{section.2.1}% 17
-\BOOKMARK [2][-]{subsection.2.1.5}{Sensor de Humedad de Suelo HL-69 \(Resistivo\)}{section.2.1}% 18
+\BOOKMARK [2][-]{subsection.2.1.5}{Sensor de humedad de suelo HL-69 \(Resistivo\)}{section.2.1}% 18
 \BOOKMARK [1][-]{section.2.2}{Herramientas de software y testing utilizados}{chapter.2}% 19
 \BOOKMARK [2][-]{subsection.2.2.1}{STM32 CubeIDE}{section.2.2}% 20
 \BOOKMARK [2][-]{subsection.2.2.2}{FreeRTOS}{section.2.2}% 21
@@ -42,10 +42,10 @@
 \BOOKMARK [2][-]{subsection.3.4.1}{Controlador sensor AHT10}{section.3.4}% 42
 \BOOKMARK [2][-]{subsection.3.4.2}{ Controlador m\363dulo de comunicaci\363n BG96 }{section.3.4}% 43
 \BOOKMARK [1][-]{section.3.5}{Desarrollo del hardware}{chapter.3}% 44
-\BOOKMARK [2][-]{subsection.3.5.1}{Esquematico}{section.3.5}% 45
+\BOOKMARK [2][-]{subsection.3.5.1}{Esquem\341tico}{section.3.5}% 45
 \BOOKMARK [2][-]{subsection.3.5.2}{PCB del hardware}{section.3.5}% 46
-\BOOKMARK [2][-]{subsection.3.5.3}{Fabricacion circuito impreso}{section.3.5}% 47
-\BOOKMARK [1][-]{section.3.6}{Paneles de visualizacion}{chapter.3}% 48
+\BOOKMARK [2][-]{subsection.3.5.3}{Fabricaci\363n circuito impreso}{section.3.5}% 47
+\BOOKMARK [1][-]{section.3.6}{Paneles de visualizaci\363n}{chapter.3}% 48
 \BOOKMARK [2][-]{subsection.3.6.1}{Panel principal}{section.3.6}% 49
 \BOOKMARK [2][-]{subsection.3.6.2}{Panel nodo sensor}{section.3.6}% 50
 \BOOKMARK [0][-]{chapter.4}{Ensayos y resultados}{}% 51
@@ -58,7 +58,7 @@
 \BOOKMARK [1][-]{section.4.3}{Pruebas De Hardware}{chapter.4}% 58
 \BOOKMARK [2][-]{subsection.4.3.1}{Prueba comunicaci\363n sensor de humedad AHT10}{section.4.3}% 59
 \BOOKMARK [2][-]{subsection.4.3.2}{Pruebas comunicaci\363n modulo BG96}{section.4.3}% 60
-\BOOKMARK [2][-]{subsection.4.3.3}{Pruebas de alimentacion }{section.4.3}% 61
+\BOOKMARK [2][-]{subsection.4.3.3}{Pruebas de alimentaci\363n }{section.4.3}% 61
 \BOOKMARK [2][-]{subsection.4.3.4}{Prueba microcontrolador en bajo consumo }{section.4.3}% 62
 \BOOKMARK [1][-]{section.4.4}{Pruebas Funcionales del sistema}{chapter.4}% 63
 \BOOKMARK [2][-]{subsection.4.4.1}{Prueba de lectura de sensores}{section.4.4}% 64
@@ -67,4 +67,4 @@
 \BOOKMARK [0][-]{chapter.5}{Conclusiones}{}% 67
 \BOOKMARK [1][-]{section.5.1}{Conclusiones generales }{chapter.5}% 68
 \BOOKMARK [1][-]{section.5.2}{Pr\363ximos pasos}{chapter.5}% 69
-\BOOKMARK [0][-]{appendix*.49}{Bibliograf\355a}{}% 70
+\BOOKMARK [0][-]{appendix*.53}{Bibliograf\355a}{}% 70

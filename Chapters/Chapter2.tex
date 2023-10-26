@@ -34,7 +34,7 @@ La placa STM32 Nucleo-L432KC que se muestra en la figura \ref{fig:nucleol432kc} 
 \end{figure}
 \vspace{5cm}
 
-\subsection{Módulo De Comunicación LTE IOT 2 CLICK}
+\subsection{Módulo de comunicación LTE IOT 2 CLICK}
 \label{subsec:ejemplo}
 LTE IoT 2 click que se muestra en la \ref{fig:modulo LTE IOT} está equipado con el módulo BG96 LTE de Quectel Wireless Solutions, que admite tecnologías LTE CAT M1 y NB1, desarrolladas para aplicaciones IoT. Además, admite EGPRS a 850/900/1800/1900 MHz, lo que significa que se puede usar globalmente; no está restringido a ninguna región \citep{MonuloLTE-IOT}.
 \\ 
@@ -74,18 +74,18 @@ El sensor ML8511 detecta luz con una longitud de onda entre 280-390 nm, este ran
 	\caption{Módulo Sensor ML8511.}
 	\label{fig:SensorML8511}
 \end{figure}
-\subsection{Sensor de Humedad de Suelo HL-69 (Resistivo)}
-El módulo HL-69 presentado en la figura \ref{fig:SensorHL-69}, un sensor de humedad de suelo que utiliza la conductividad entre dos terminales para determinar parámetros relacionados a agua, líquidos y humedad \citep{ModuloHL-69}.
+\subsection{Sensor de humedad de suelo HL-69 (Resistivo)}
+El módulo HL-69 presentado en la figura \ref{fig:SensorHL-69}, un sensor de humedad de suelo que utiliza la conductividad entre dos terminales para determinar parámetros relacionados al agua, líquidos y humedad \citep{ModuloHL-69}.
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[width=.4\textwidth]{./Figures/sensordehumedad.jpg}
-	\caption{Módulo Sensor HL-69.}
+	\caption{Módulo sensor HL-69.}
 	\label{fig:SensorHL-69}
 \end{figure}
 
 \section{Herramientas de software y testing utilizados}
 \subsection{STM32 CubeIDE}
-STM32CubeIDE es una herramienta de desarrollo multi-OS todo en uno, que forma parte del ecosistema de software STM32Cube. Se trata de una plataforma de desarrollo C/C++ avanzada con funciones de configuración de periféricos, generación de código, compilación de código y depuración para microcontroladores y microprocesadores STM32. Se basa en el marco Eclipse  y la cadena de herramientas GCC para el desarrollo y GDB para la depuración. Permite la integración de los cientos de plugins existentes que completan las funcionalidades del IDE de Eclipse \citep{STM32CUBEIDE}.
+STM32CubeIDE es una herramienta de desarrollo multi-OS todo en uno, que forma parte del ecosistema de software STM32Cube. Se trata de una plataforma de desarrollo C/C++ que permite compilar y depurar código para los microcontroladores STM32. Se basa en el marco Eclipse  y la cadena de herramientas GCC para el desarrollo y GDB para la depuración. Permite la integración de los cientos de plugins existentes que completan las funcionalidades del IDE de Eclipse \citep{STM32CUBEIDE}.
 
 Integra las funcionalidades de configuración y creación de proyectos de STM32 de STM32CubeMX para ofrecer una experiencia de herramienta todo en uno y ahorrar tiempo de instalación y desarrollo \citep{STM32CUBEIDE}.
 
@@ -104,10 +104,10 @@ Ceedling es un sistema de compilación diseñado para proyectos en lenguaje C, q
 
 \section{Protocolos de Comunicación}
 \subsection{UART}
-UART (\textit{universal asynchronous receiver / transmitter}, por sus siglas en inglés) define un protocolo o un conjunto de normas para el intercambio de datos en serie entre dos dispositivos. UART es sumamente simple y utiliza solo dos hilos entre el transmisor y el receptor para transmitir y recibir en ambas direcciones. Ambos extremos tienen una conexión a masa. La comunicación en UART puede ser simplex (los datos se envían en una sola dirección), semidúplex (cada extremo se comunica, pero solo uno al mismo tiempo), o dúplex completo (ambos extremos pueden transmitir simultáneamente). Los datos se transmiten en forma de tramas \citep{UART}.
+UART (\textit{Universal Asynchronous Receiver / transmitter}, por sus siglas en inglés) define un protocolo o un conjunto de normas para el intercambio de datos en serie entre dos dispositivos. UART es sumamente simple y utiliza solo dos hilos entre el transmisor y el receptor para transmitir y recibir en ambas direcciones. Ambos extremos tienen una conexión a masa. La comunicación en UART puede ser simplex (los datos se envían en una sola dirección), semidúplex (cada extremo se comunica, pero solo uno al mismo tiempo), o dúplex completo (ambos extremos pueden transmitir simultáneamente). Los datos se transmiten en forma de tramas \citep{UART}.
 \subsection{I2C}
 
-El protocolo I2C (Inter-Integrated Circuit) es un protocolo diseñado para permitir la comunicación entre múltiples circuitos integrados digitales y uno o más chips controladores. Similar a la interfaz periférica en serie, está destinado a comunicaciones de corta distancia dentro de un solo dispositivo. Al igual que las interfaces seriales asíncronas, solo requiere dos cables de señal para el intercambio de información \citep{I2C}.
+El protocolo I2C (\textit {Inter-Integrated Circuit}) es un protocolo diseñado para permitir la comunicación entre múltiples circuitos integrados digitales y uno o más chips controladores. Similar a la interfaz periférica en serie, está destinado a comunicaciones de corta distancia dentro de un solo dispositivo. Al igual que las interfaces seriales asíncronas, solo requiere dos cables de señal para el intercambio de información \citep{I2C}.
 
 \subsection{MQTT}
 MQTT es un protocolo de mensajería estándar de OASIS para IoT. Está diseñado como un transporte de mensajería de publicación/suscripción extremadamente liviano que es ideal para conectar dispositivos remotos con un espacio de código pequeño y un ancho de banda de red mínimo. MQTT hoy en día se utiliza en una amplia variedad de industrias, como la automotriz, la manufactura, las telecomunicaciones, el petróleo y el gas, etc \citep{MQTT}. En la figura \ref{fig:ArquitecturaMQTT} se muestra la arquitectura del protocolo MQTT.
@@ -120,7 +120,7 @@ MQTT es un protocolo de mensajería estándar de OASIS para IoT. Está diseñado
 \end{figure}
 \section{Plataformas IoT}
 \subsection{Ubidots}
-Ubidots una plataforma de IoT que habilita la toma de decisiones a empresas de integración de sistemas a nivel global. Este producto permite enviar datos de sensores a la nube, configurar tableros y alertas, conectarse con otras plataformas, usar herramientas de analítica y arrojar mapas de datos en tiempo real \citep{InterfazIoTUbidots}. En la figura \ref{fig:InterfazUBIDOTS} se muestra un ejemplo de interfaz gráfica en Ubidots.
+Ubidots es una plataforma de IoT que habilita la toma de decisiones a empresas de integración de sistemas a nivel global. Este producto permite enviar datos de sensores a la nube, configurar tableros y alertas, conectarse con otras plataformas, usar herramientas de analítica y arrojar mapas de datos en tiempo real \citep{InterfazIoTUbidots}. En la figura \ref{fig:InterfazUBIDOTS} se muestra un ejemplo de interfaz gráfica en Ubidots.
 
 \begin{figure}[htbp]
 	\centering
@@ -130,7 +130,7 @@ Ubidots una plataforma de IoT que habilita la toma de decisiones a empresas de i
 \end{figure}
 \subsection{ThingsBoard}
 ThingsBoard es una plataforma IoT de código abierto para la recopilación, el procesamiento, la visualización y la gestión de dispositivos de datos.
-Permite la conectividad de dispositivos a través de protocolos IoT estándar de la industria: MQTT, CoAP y HTTP, y admite implementaciones en la nube y locales. ThingsBoard combina escalabilidad, tolerancia a fallas y rendimiento \citep{THINGSBOARD}. En la figura \ref{fig:InterfazThingsBoard} se muestra un ejemplo de una interfaz grafica desarrollada en ThingsBoard. 
+Permite la conectividad de dispositivos a través de protocolos IoT estándar de la industria: MQTT, CoAP y HTTP, y admite implementaciones en la nube y locales. ThingsBoard combina escalabilidad, tolerancia a fallas y rendimiento \citep{THINGSBOARD}. En la figura \ref{fig:InterfazThingsBoard} se muestra un ejemplo de una interfaz gráfica desarrollada en ThingsBoard. 
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[width=0.9\textwidth]{./Figures/thingsboard.png}

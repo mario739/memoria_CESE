@@ -45,7 +45,7 @@ En este capítulo se abordará la descripción de la arquitectura general del si
 %----------------------------------------------------------------------------------------
 \section{Diagrama de bloques general del sistema}
 
-En la figura \ref{fig:Diagrama general del sistema IoT} se muestra el diagrama en bloques general del sistema donde se describe la arquitectura IoT aplicada al proyecto que consta de tres capas: percepción, red y aplicación.
+En la figura \ref{fig:Diagrama general del sistema IoT} se muestra el diagrama en bloques general del sistema donde se describe la arquitectura IoT aplicada al trabajo que consta de tres capas: percepción, red y aplicación.
 
 \begin{figure}[h]
 	\includegraphics[width=\textwidth, height=8cm]{./Figures/DiagramaDelSistema.png}
@@ -56,14 +56,13 @@ En la figura \ref{fig:Diagrama general del sistema IoT} se muestra el diagrama e
 En cada una de las capas se despliegan tecnologías y componentes de hardware y software. A continuación se describe cada una de las capas.
 
 \begin{itemize}
-	\item \textbf{Capa de percepción}: En la capa de percepción se encuentra el nodo sensor que es el encargado de medir las variables físicas, hacer un preprocesamiento y posteriormente enviar los datos a la capa de red. Para su desarrollo se utilizó la tarjeta de prueba STM32L432KC que contiene el firmware del sistema, se utilizaron los siguientes sensores: sensor de humedad y temperatura ambiente AHT10, sensor de humedad de suelo HL-69 y el sensor de luz UV ML8511.
-  \item \textbf{Capa de red}: En cuanto a la red se utilizó un módulo quectel BG96 que puede conectarse a la red 2G, 4G, NB-IoT automáticamente dependiendo del nivel de la red en el lugar de la implementación del nodo sensor, se comunica con el microcontrolador por comandos AT por puerto UART.
-  \item \textbf{Capa de aplicación}: En la capa de aplicación, se utilizó ThingsBoard como plataforma IoT que nos brinda los microservicios de broker MQTT como puerta de entrada al servidor, base de datos para el almacenamiento, nos brinda la interfaz gráfica para la visualización de los datos y nos permite gestionar las alarmas del sistema.
-
+	\item Capa de percepción: en la capa de percepción se encuentra el nodo sensor que es el encargado de medir las variables físicas, hacer un preprocesamiento y posteriormente enviar los datos a la capa de red. Para su desarrollo se utilizó la tarjeta de prueba STM32L432KC que contiene el firmware del sistema, además, se utilizaron los siguientes sensores: sensor de humedad y temperatura ambiente AHT10, sensor de humedad de suelo HL-69 y el sensor de luz UV ML8511.
+  \item Capa de red: en lo que respecta a la conectividad de red, se empleó un módulo Quectel BG96 que es capaz de establecer conexión de manera automática con las redes 2G, 4G y NB-IoT, según las condiciones de red en el lugar de implementación del nodo sensor. Este módulo se comunica con el microcontrolador mediante comandos AT a través del puerto UART.
+  \item Capa de aplicación: en la capa de aplicación, se utilizó ThingsBoard como plataforma IoT que brinda los microservicios de broker MQTT como puerta de entrada al servidor, base de datos para el almacenamiento, interfaz gráfica para la visualización de los datos y permite gestionar las alarmas del sistema.
 \end{itemize}
 
 \section{Arquitectura de firmware}
-El desarrollo del firmware fue la tarea más compleja del proyecto debido a que uno de los objetivos fue lograr un firmware estructurado en capas para facilitar el desarrollo y reducir la complejidad del código como se muestra en la figura \ref{fig:Capas del firmware}.
+El desarrollo del firmware fue la tarea más compleja del trabajo debido a que uno de los objetivos fue lograr un firmware estructurado en capas para facilitar el desarrollo y reducir la complejidad del código. La figura \ref{fig:Capas del firmware} muestra la división en capas del firmware desarrollado.
 
 \begin{figure}[h]
   \centering
@@ -73,39 +72,38 @@ El desarrollo del firmware fue la tarea más compleja del proyecto debido a que 
 \end{figure}
 
 \subsection{Capa HAL} 
-La capa HAL(\textit{Hardware Abstraction Layer}) proporcionada por el fabricante del microcontrolador  es la más baja del sistema, proporciona a las capas superiores la capacidad de interactuar con los periféricos del  microcontrolador a través de funciones en lenguaje C.
+La capa HAL (\textit{Hardware Abstraction Layer}) proporcionada por el fabricante del microcontrolador  es la más baja del sistema, proporciona a las capas superiores la capacidad de interactuar con los periféricos del  microcontrolador a través de funciones en lenguaje C.
 \begin{itemize}
-  \item GPIO: La API proporciona funciones  para gestionar las entradas y salidas del microcontrolador. Fueron utilizadas por la capa de APP para el control de los leds de debug y para el encendido y reset del módulo de comunicación.
-  \item ADC: Proporcionan funciones para la configuración, lectura y escritura de los pines de microcontroladora para trabajar con señales analógicas. Se utilizaron estas funciones para hacer la lectura de los sensores de humedad del suelo y el sensor de luz UV.
-  \item UART: Brinda funciones para la lectura y escritura del puerto UART del microcontrolador. El firmware utiliza estas funciones para la comunicación con el módulo BG96.
-  \item I2C: Proporciona funciones para la lectura y escritura por protocolo I2C. El driver del sensor de AHT10 utiliza estas funciones para hacer la lectura de los datos.
-    
+  \item GPIO: la API proporciona funciones  para gestionar las entradas y salidas del microcontrolador. Fueron utilizadas por la capa de APP para el control de los leds de debug y para el encendido y reset del módulo de comunicación.
+  \item ADC: proporcionan funciones para la configuración, lectura y escritura de los pines del microcontrolador para trabajar con señales analógicas. Se utilizaron estas funciones para hacer la lectura de los sensores de humedad del suelo y el sensor de luz UV.
+  \item UART: brinda funciones para la lectura y escritura del puerto UART del microcontrolador. El firmware utiliza estas funciones para la comunicación con el módulo BG96.
+  \item I2C: proporciona funciones para la lectura y escritura por protocolo I2C. El driver del sensor AHT10 utiliza estas funciones para hacer la lectura de los datos.
 \end{itemize}
 
 \subsection{Capa drivers} 
-La capa drivers(\textit{manejador de dispositivos}) está compuesta por los manejadores que se desarrollaron para interactuar con el hardware externo al microcontrolador. Se desarrollaron drivers para el modulo de comunicacion BG96, AHT10.
+La capa drivers (manejador de dispositivos) está compuesta por los manejadores que se desarrollaron para interactuar con el hardware externo al microcontrolador. Se desarrollaron dos drivers que se describen a continuación:
 \begin{itemize}
-  \item Driver BG96: Las funciones más importantes que proporciona el driver:
+  \item Driver BG96: las funciones más importantes que proporciona el driver son:
   \begin{itemize}
     \item Estado del módulo.
-    \item Descripcion del módulo.
+    \item Descripción del módulo.
     \item Configuración APN de la red.
     \item Conexión TCP.
     \item Conexión al broker MQTT.
   \end{itemize}
-  \item Driver AHT10: Se desarrollo utilizando la hoja de datos del sensor, proporciona las funciones mas importante de inicializacion y lectura de humedad y temperatura obtenidos por el sensor.
+  \item Driver AHT10: se desarrollo utilizando la hoja de datos del sensor, proporciona funciones de inicialización y lectura de humedad y temperatura obtenidos por el sensor.
 \end{itemize}
 Para los sensores ML8511 y HL-69 que son sensores analógicos no se desarrollaron drivers, sino que se crearon funciones para convertir el valor analógico entregado a un valor significativo para el usuario con respecto a la variable física medida.
 \subsection{Capa aplicación} 
 La capa de APP o aplicación  es la de mayor nivel jerárquico. Se desarrolló sobre freeRTOS 
-que nos permite hacer un código más escalable.
+que permite hacer un código más escalable.
 
 Se implementaron cuatro tareas.
 \begin{itemize}
-    \item Loop del sistema: Esta tarea es la que nos da la secuencialidad del sistema.
-    \item Manejador del  servidor: Se encarga de manejar la conexión a la red y al broker MQTT.
-    \item Adquisición de datos: Se encarga de hacer la lectura de los sensores.
-    \item Manejador de alarmas: Esta tarea se encarga de hacer el control de las alarmas del sistema.
+    \item Loop del sistema: esta tarea es la que brinda la secuencialidad del sistema.
+    \item Manejador del  servidor: se encarga de manejar la conexión a la red y al broker MQTT.
+    \item Adquisición de datos: se encarga de hacer la lectura de los sensores.
+    \item Manejador de alarmas: esta tarea se encarga de hacer el control de las alarmas del sistema.
 \end{itemize}
 \clearpage
 
@@ -113,18 +111,18 @@ Se implementaron cuatro tareas.
 
 Para el desarrollo del firmware se utilizó STM32CubeIDE que es el entorno de desarrollo oficial de STMicroelectronic.
 
-El firmware fue desarrollado sobre freeRTOS, se utilizaron algunas de sus funcionalidades como colas, semáforos, tareas, interrupciones.
+El firmware fue desarrollado sobre freeRTOS, se utilizaron algunas de sus funcionalidades como colas, semáforos, tareas e interrupciones.
 
 En la figura \ref{fig:Df inicio firmware}  se muestra en diagrama de flujo de inicialización del firmware.
 
 \begin{figure}[htbp]
   \centering
 	\includegraphics[width=2.5cm, height=9.5cm]{./Figures/DF inicio firmware.png}
-	\caption{Diagrama de flujo inicio firmware.}
+	\caption{Diagrama de flujo de inicialización del firmware.}
 	\label{fig:Df inicio firmware}
 \end{figure}
 
-Lo primero que el firmware realiza es la configuración del hardware del microcontrolador, luego se inicializan los drivers del modulo de comunicacion celular BG96 y el driver del sensor de humedad y temperatura AHT10, posteriormente se crean las tareas, colas y los semáforos del sistema y finalmente se da el control del sistema al scheduler del sistema operativo. 
+Al iniciar el  firmware realiza la configuración del hardware del microcontrolador, inicializa los drivers del hardware externo, luego se crean los recursos del sistema operativo como tareas,colas y semáforos, finalmente se da el control del sistema al scheduler de freeRTOS. 
 
 Para el control del sistema se crearon cuatro tareas sobre freeRTOS, que se comunican y sincronizan a través de colas y semáforos.
 
@@ -136,37 +134,40 @@ La tarea comienza iniciando el timer del sistema el cual es el encargado de mane
 \begin{figure}[h]  
 \centering
 	\includegraphics[width=12cm, height=16cm]{./Figures/DF task loop.png}
-	\caption{Diagrama de flujo tarea loop.}
+	\caption{Diagrama de flujo de la tarea loop.}
 	\label{fig:Df tarea loop sistema}
 \end{figure}
 
 \subsection{Tarea adquisición de datos} 
-La figura \ref{fig:Df tarea adquisicion} muestra la secuencia repetitiva que realiza la tarea de adquisición de datos, la tarea inicia creando algunas variables locales que se utilizara en la tarea,luego revisa si hay algún dato en la cola de adquisición de datos si no hay datos la tarea se bloquea pero si existen datos se realiza la lectura de todos los sensores para posteriormente enviar los datos recolectados por la cola de data y alarmas.
+La figura \ref{fig:Df tarea adquisicion} muestra el diagrama de flujo de la tarea de adquisición de datos. La tarea inicia revisando si hay datos en la cola de adquisición. Si existen datos, se realiza la lectura de todos los sensores para posteriormente enviar los  valores leídos por la cola de datos y alarmas. Si no hay datos en la cola la tarea se bloquea. 
 
 \begin{figure}[h]
   \centering
 	\includegraphics[width=5cm, height=7cm]{./Figures/DF task adquisicion.png}
-	\caption{Diagrama de flujo tarea de adquisicion de datos.}
+	\caption{Diagrama de flujo tarea de adquisición de datos.}
 	\label{fig:Df tarea adquisicion}
 \end{figure}
 
 \subsection{Tarea manejador de alarmas} 
-El control de las alarmas se realiza a través de la tarea de manejador de alarmas la figura \ref{fig:Df tarea alarmas} describe la secuencia de la tarea, al entrar al bucle infinito lo primero que se realiza es revisar si existe algún dato en la cola de alarmas si no hay datos la tarea se bloquea hasta que alguien envíe un dato a la cola, si hay datos se pregunta qué evento contiene el dato recibido, si el evento es de MONITOREAR lo que se hace es ver si el dato del sensor de humedad es menor al valor minimo aceptado si es así se pone  una variable en alto advirtiendo al sistema que hay una alarma, si se recibió el evento de SEND se revisa si hay alarmas activas si hay se envía un mensaje de alarma por mensaje de texto al número configurado al inicio del sistema.
+El control de las alarmas se realiza a través una tarea del sistema operativo la figura \ref{fig:Df tarea alarmas} muestra el diagrama de flujo de la tarea de alarmas.
+
+Al entrar al bucle infinito lo primero que realiza la tarea es revisar la cola de alarmas. Si existen datos se analiza el evento que contiene el dato recibido. Se tiene dos posibles eventos monitorear y enviar. Si el evento es monitorear se compara el valor del sensor de humedad con un valor mínimo permitido, si es menor se activa una alarma advierte al sistema que ocurrió esto a través de una variable. Si el evento es enviar se revisa si hay alarmas activas, enviando un mensaje de texto si así fuera. Si no hay datos en la cola de alarmas la tarea se bloquea. 
+
 \begin{figure}[h]
   \centering
 	\includegraphics[width=6cm, height=6cm]{./Figures/DF_alarms.png}
-	\caption{Diagrama de flujo tarea manejador de alarmas.}
+	\caption{Diagrama de flujo de la tarea manejador de alarmas.}
 	\label{fig:Df tarea alarmas}
 \end{figure}
 
 \subsection{Tarea manejador del servidor } 
-La última tarea que se implementó es la tarea que maneja la conexión del servidor que se describe en la figura \ref{fig:Df tarea conexion}.
-La tarea comienza esperando datos en la cola de servidor mqtt si no hay datos la tarea se bloquea, si hay datos se revisa que evento es el que se recibió tenemos tres posibles eventos UP, DOWN y SEND, si recibimos el evento de UP la tarea entra a una máquina de estados para levantar el servidor la figura \ref{fig:Maquina de estados up servidor} muestra la máquina de estados del evento UP, si el evento es de DOWN la tarea ejecuta la máquina de estados que se ve en la figura \ref{fig:Maquina de estados dowm servidor} y el evento es SEND la tarea espera que existan datos en la cola de data para así armar la trama y publicar los datos al broker MQTT.
+La última tarea que se implementó es la tarea que maneja la conexión del servidor la figura \ref{fig:Df tarea conexion} muestra su diagrama flujo.
 
+La tarea comienza esperando datos en la cola del servidor, al llegar datos se analiza el evento que se recibe. Se tiene tres posibles eventos UP, DOWN y SEND. Si el evento es UP la tarea entra a la máquina de estados que se muestra en la figura \ref{fig:Maquina de estados up servidor} que se utiliza para levantar una conexión con el servidor. Si el evento es DOWN la tarea ejecuta la máquina de estados que se ve en la figura \ref{fig:Maquina de estados dowm servidor} que se encarga de terminar la conexión con el servidor. Si el evento es SEND la tarea obtiene los últimos datos leídos por los sensores, armar la trama y publica los datos al broker MQTT. 
 \begin{figure}[h]
   \centering
 	\includegraphics[width=8cm, height=8.5cm]{./Figures/DF general task conection.png}
-	\caption{Diagrama de flujo tarea conexion server MQTT.}
+	\caption{Diagrama de flujo de la tarea conexion server MQTT.}
 	\label{fig:Df tarea conexion}
 \end{figure}
 
@@ -416,30 +417,35 @@ em_bg96_error_handling publish_message(st_bg96_config *self,char *topic,char *da
 \clearpage
 \section{Desarrollo del hardware}
 
-Para diseño del hardware se utilizó KICAD 6.0 herramienta de diseño aprendida en el transcurso de  la especialización.
+Para el diseño del hardware se empleó KiCad 6.0, una herramienta de diseño que se utilizó durante el desarrollo de la especialización.
 
-\subsection{Esquematico} 
-Al ser un prototipo lo que se hizo fue desarrollar un tarjeta donde se puedan ensamblar y conectar nuestros módulos utilizados en el proyecto: módulo de comunicación celular, tarjeta de desarrollo con el microcontrolador y  los módulos sensores.
+\subsection{Esquemático} 
+Al ser un prototipo lo que se hizo fue desarrollar un tarjeta donde se puedan ensamblar y conectar los módulos utilizados en el trabajo: módulo de comunicación celular, tarjeta de desarrollo con el microcontrolador y  los módulos sensores.
 
-En la figura \ref{fig:esquematico root} se muestra la página raíz del esquemático del proyecto, en la parte izquierda superior se  ven la número de hojas en las que se dividió el esquemático, en la parte izquierda inferior se ve el 3d del la tarjeta desarrollada y en parte derecha se ve la conexión entre las diferentes hojas del proyecto.
+En la figura \ref{fig:esquematico root} se muestra la página raíz del esquemático del trabajo, está dividida en tres zonas:
+\begin{itemize}
+  \item Zona 1: índice de las hojas esquemáticas del trabajo.
+  \item Zona 2: modelo 3D de la tarjeta desarrollada.
+  \item Zona 3: conexiones entre los diferentes hojas esquemáticas .
+\end{itemize}
 
 \begin{figure}[h]
   \centering
-	\includegraphics[width=\textwidth, height=8cm]{./Figures/esquematico_root.png}
+	\includegraphics[width=\textwidth, height=8.5cm]{./Figures/esquematico_raiz.png}
 	\caption{Esquemático página raíz.}
 	\label{fig:esquematico root}
 \end{figure}
 
-En figura \ref{fig:esquematico modulos} se muestra los conectores de los módulos más importantes: el módulo de comunicación BG96, módulo NUCLEO-L432KC y la conexión entre ellos.
+En figura \ref{fig:esquematico modulos} se muestran los conectores de los módulos más importantes: el módulo de comunicación BG96, módulo NUCLEO-L432KC y la conexión entre ellos.
 
 \begin{figure}[h]
   \centering
-	\includegraphics[width=10cm, height=5cm]{./Figures/esquematico_modulos.png}
-	\caption{Esquemático conectores modulos.}
+	\includegraphics[width=10cm, height=3.5cm]{./Figures/esquematico_modulos.png}
+	\caption{Conector módulo BG96 y NUCLEO-L432KC.}
 	\label{fig:esquematico modulos}
 \end{figure}
 
-Se colocaron dos leds para debug, uno para señalizar si se logró conectar al servidor MQTT y el otro led para señalizar si el sistema entra en un estado de error, se colocó un conector para una puerto serial por donde el módulo manda la secuencias de comandos que manda y recibe del módulo de comunicación. En la figura \ref{fig:esquematico conectores de debug} se puede ver el circuito.
+Se colocaron dos leds para debug, uno para señalizar si se logró conectar al servidor MQTT y el otro led para señalizar si el sistema entra en un estado de error. Se colocó un conector para una puerto serial por donde el módulo manda la secuencias de comandos que manda y recibe del módulo de comunicación. En la figura \ref{fig:esquematico conectores de debug} se puede ver el circuito.
 \begin{figure}[h!]
   \centering
 	\includegraphics[width=10cm, height=4cm]{./Figures/esquematico_debug.png}
@@ -450,12 +456,12 @@ Se colocaron dos leds para debug, uno para señalizar si se logró conectar al s
 En la figura \ref{fig:esquematico conectores sensores} se pueden ver los conectores que se colocaron a la placa para conectar los sensores del nodo: sensor de humedad 1, sensor de humedad 2, sensor de luz UV y el sensor de humedad y temperatura ambiente AHT-10.
 \begin{figure}[h]
   \centering
-	\includegraphics[width=10cm, height=4.5cm]{./Figures/esquematico_conectores_sensores.png}
+	\includegraphics[width=10cm, height=4.5cm]{./Figures/conectores_sensores.png}
 	\caption{Esquemático conectores sensores.}
 	\label{fig:esquematico conectores sensores}
 \end{figure}
 
-Se colocaron dos colectores de alimentación como se muestra en la figura \ref{fig:esquematico conectores alimentacion}, el conector de 12v para alimentar al módulo del microcontrolador y el otro conector para alimentar al módulo de comunicación.
+Se colocaron dos colectores de alimentación como se muestra en la figura \ref{fig:esquematico conectores alimentacion}, el conector de 12V para alimentar al módulo del microcontrolador y el otro conector para alimentar al módulo de comunicación.
 \begin{figure}[h]
   \centering
 	\includegraphics[width=10cm, height=4.5cm]{./Figures/esquematico_alimentacion.png}
@@ -480,58 +486,58 @@ La figura \ref{fig:PCB del proyecto} muestra el circuito impreso diseñado para 
   \end{subfigure}
   \caption{PCB del proyecto.}
   \label{fig:PCB del proyecto}
-  \end{figure}
+\end{figure}
 
-En la figura \ref{fig:3D del modulo} se muestra del diseño de la tarjeta del circuito impreso en 3D.
+En la figura \ref{fig:3D del modulo} se muestra el diseño de la tarjeta del circuito impreso en 3D.
 \begin{figure}[h!]
   \centering
 	\includegraphics[width=8cm, height=4.5cm]{./Figures/tarjeta3d.png}
-  \caption{3D del tarjeta desarrollada.}
+  \caption{Modelo 3D de la tarjeta.}
 	\label{fig:3D del modulo}
 \end{figure}
-\subsection{Fabricacion circuito impreso} 
-Una vez completado y validado el diseño, se generaron los archivos de fabricación para su posterior producción por la empresa JLCPCB figura \ref{fig:PCB ensamblado}. 
+\subsection{Fabricación circuito impreso} 
+Una vez completado y validado el diseño, se generaron los archivos de fabricación y se mandaron a la empresa JLCPCB parar su producción. La figura \ref{fig:PCB ensamblado} muestra la tarjeta ya ensamblada con los módulos. 
 \begin{figure}[h!]
   \centering
-	\includegraphics[width=8cm, height=5.5cm]{./Figures/hardware_vistalateral.jpg}
+	\includegraphics[width=8cm, height=5cm]{./Figures/hardware_vistalateral.jpg}
   \caption{PCB ensamblado.}
 	\label{fig:PCB ensamblado}
 \end{figure}
 
 \clearpage
-\section{Paneles de visualizacion}
+\section{Paneles de visualización}
 La herramienta de visualización de ThingsBoard es muy versátil para el armado de paneles de visualización escalables y altamente configurables.
 
-Se armaron dos paneles de visualización un panel principal que muestra todos los nodos sensores implementados y un panel secundario o panel de nodo sensor que muestra de forma detallada las variables monitoreadas por el nodo sensor.
+Se armó un panel de visualización principal que muestra los nodos sensores monitoreados por el sistema y un panel secundario que muestra las variables monitoreadas por cada nodo sensor a través gráficas, tablas, etc.
 
 \subsection{Panel principal} 
 
-En la figura \ref{fig:Panel principal} se aprecia el panel principal de la interfaz gráfica.A continuación se describirán cada zona del panel principal.
+En la figura \ref{fig:Panel principal} se aprecia el panel principal de la interfaz gráfica. A continuación se describirán cada zona del panel principal.
 El panel está dividido en las siguientes zonas:
 \begin{itemize}
-  \item Zona 1: Listado de todos los nodos sensores implementados y activos, asiendo click en el dispositivo podemos navegar al panel de visualización del nodo donde podemos ver con mas detalle las variables medidas.
-  \item Zona 2: Gráficas que muestra los cambios que van teniendo los valores de las variables medidas por los sensores con respecto al tiempo.
-  \item Zona 3: Mapa con la ubicación de los nodo sensores implementados.
+  \item Zona 1: listado de todos los nodos sensores implementados y activos, haciendo click en el sensor se navega al panel de visualización secundario.
+  \item Zona 2: gráficas que muestra los cambios que van teniendo los valores de las variables medidas por los sensores con respecto al tiempo.
+  \item Zona 3: mapa con la ubicación de los nodos sensores implementados.
 \end{itemize}
 
 \begin{figure}[h]
   \centering
 	\includegraphics[width=\textwidth, height=10cm]{./Figures/panel_principal_editado.png}
-  \caption{Panel principal de la interfaz grafica.}
+  \caption{Panel principal de la interfaz gráfica.}
 	\label{fig:Panel principal}
 \end{figure}
 
 \clearpage
 \subsection{Panel nodo sensor} 
 
-Para tener un mayor detalle de todos los parámetros de monitoreo de cada nodo sensor se creo un panel secundario que se muestra en la figura \ref{fig:Panel nodo sensor}.
+Para tener un mayor detalle de todos los parámetros de monitoreo de cada nodo sensor se creó un panel secundario que se muestra en la figura \ref{fig:Panel nodo sensor}.
 
-El panel esta dividido en las siguientes zonas:
+El panel está dividido en las siguientes zonas:
 \begin{itemize}
-  \item Zona 1: Gráficas que muestran los cambios que van teniendo los valores de las variables medidas por los sensores con respecto al tiempo.
-  \item Zona 2: Widgets que muestran el último valor obtenido por el nodo sensor de cada variable monitoreada.
-  \item Zona 3: Tabla que muestra las alarmas que se activaron. 
-  \item Zona 4: Se tiene un mapa que muestra la ubicación del nodo sensor implementado.
+  \item Zona 1: gráficas que muestran los cambios que van teniendo los valores de las variables medidas por los sensores con respecto al tiempo.
+  \item Zona 2: widgets que muestran el último valor obtenido por el nodo sensor de cada variable monitoreada.
+  \item Zona 3: tabla que muestra las alarmas que se activaron. 
+  \item Zona 4: se tiene un mapa que muestra la ubicación del nodo sensor implementado.
 \end{itemize}
 
 \begin{figure}[h!]

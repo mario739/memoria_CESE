@@ -173,7 +173,7 @@ En la figura \ref{fig:map thingsboard}  podemos ver la ubicación del sensor imp
 
 \begin{figure}[h!]
   \centering
-    \includegraphics[width=12cm, height=8cm]{./Figures/map.png}
+    \includegraphics[width=10cm, height=6cm]{./Figures/map.png}
   \caption{Ubicación del nodo sensor implementado.}
     \label{fig:map thingsboard}
 \end{figure}
@@ -221,24 +221,66 @@ En la figura \ref{fig:trama uart1} vemos dos canales del analizador  lógico el 
     \label{fig:trama uart1}
 \end{figure}
 
-\subsection{Pruebas de alimentacion }
-Se probaron las fuentes de alimentación del sistema, la batería de 12V para el microcontrolador y la batería de 3.7V para el módulo de comunicación bg96.
-En la figuras muestran las pruebas de alimentación del sistema.
+\subsection{Pruebas de alimentación }
+Se realizaron pruebas a las fuentes de alimentación del sistema, se midió el voltaje que recibe el microcontrolador que debería ser 12V como se muestra en la figura  \ref{fig:Medicion de voltaje 12v}, tambien se probo la alimentación al módulo de comunicación que debería se 3.7V como se muestra en la figura \ref{fig:Medicion de voltaje 3.7v}.
 
+\begin{figure}[h!]
+  \centering
+  \begin{subfigure}[b]{0.28\linewidth}
+  \includegraphics[width=\linewidth]{./Figures/voltaje3v.jpg}
+  \caption{Voltaje 3.7V.}
+  \label{fig:Medicion de voltaje 3.7v}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.28\linewidth}
+  \includegraphics[width=\linewidth]{./Figures/voltaje3v.jpg}
+  \caption{Voltaje 12V.}
+  \label{fig:Medicion de voltaje 12v}
+  \end{subfigure}
+  \caption{Medición de voltaje.}
+  \label{fig:Medicion de voltaje}
+\end{figure}
 
 \subsection{Prueba microcontrolador en bajo consumo }
 Al ser un dispositivo que funciona a batería lo que busca el firmware es consumir lo menos posible, por lo tanto el sistema entra en bajo consumo en los momentos en que el microcontrolador no realiza ninguna función. 
-En la figura podemos ver el consumo del sistema normalmente y en la figura el consumo bajo consumo.
+En la figura \ref{fig:Consumo normal} podemos ver el consumo del sistema normalmente y en la figura \ref{fig:Bajo consumo}el consumo bajo consumo.
 
-
+\begin{figure}[h!]
+  \centering
+  \begin{subfigure}[b]{0.28\linewidth}
+  \includegraphics[width=\linewidth]{./Figures/voltaje3v.jpg}
+  \caption{Modo normal.}
+  \label{fig:Consumo normal}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.28\linewidth}
+  \includegraphics[width=\linewidth]{./Figures/voltaje3v.jpg}
+  \caption{Modo bajo consumo.}
+  \label{fig:Bajo consumo}
+  \end{subfigure}
+  \caption{Modos de consumo.}
+  \label{fig:Medicion consumo de corriente}
+\end{figure}
 
 
 \clearpage 
 \section{Pruebas Funcionales del sistema}
-Para realizar las pruebas funcionales de todo el sistema se implementó el dispositivo en un lugar donde se tiene un cultivo de tomate como se muestra en la figura.
+Para realizar las pruebas funcionales de todo el sistema se implementó el prototipo en un cultivo de tomate como se muestra en la figura \ref{fig:implementacion del prototipo}.
+
+\begin{figure}[h!]
+  \centering
+    \includegraphics[width=4cm, height=6cm]{./Figures/prototipo_implementado_casa.jpg}
+  \caption{Implementación del prototipo.}
+    \label{fig:implementacion del prototipo}
+\end{figure}
 
 \subsection{Prueba de lectura de sensores}
-Se realizó la lectura de todos los sensores y se mando los datos obtenidos al servidor mqtt .La figura muestra la lectura de los datos adquiridos.
+Se realizó la lectura de todos los sensores y se mando los datos obtenidos al servidor mqtt .La figura \ref{fig:lectura de todos los sensores} muestra la lectura de los datos adquiridos.
+
+\begin{figure}[h!]
+  \centering
+    \includegraphics[width=\linewidth, height=8cm]{./Figures/lecutra_sensores_prueba.png}
+  \caption{Lectura de todos los sensores.}
+    \label{fig:lectura de todos los sensores}
+\end{figure}
 
 Las figuras muestran las pruebas que se realizaron a las lecturas del sensor de humedad se suelo en diferentes casos, cuando el suelo está húmedo la lectura del sensor es  45 por ciento y cuando el suelo está seco la lectura del sensor es 10.
 
@@ -248,30 +290,30 @@ La lectura del sensor de radiación es de 3 que significa que la radiación es m
 \subsection{Prueba de envío de datos al broker mqtt}
 Una de las tareas más importante del firmware es la del manejo del servidor, para verificar el correcto funcionamiento de esta tarea tenemos que ver la secuencia de comandos que son mandados del microcontrolador al módulo de comunicación por el puerto UART.
 Para realizar esta prueba se conectó un convertidor UART a USB al conector de debug que tiene nuestro dispositivo, con este convertidor podemos ver todos los comandos que el microcontrolador manda al módulo de comunicación.
-En la figura podemos observar toda la secuencia de comandos que realiza el firmware para realizar el envío de datos a la plataforma IoT, como vemos  primeramente se verifica si el módulo está activo, luego se configura el apn de la red, luego se conecta al broker mqtt , se publican  los datos al servidor y finalmente el realizar el proceso de desconexión.
+En la figura \ref{fig:secuencia de comandos shell} podemos observar toda la secuencia de comandos que realiza el firmware para realizar el envío de datos a la plataforma IoT, como vemos  primeramente se verifica si el módulo está activo, luego se configura el apn de la red, luego se conecta al broker mqtt , se publican  los datos al servidor y finalmente el realizar el proceso de desconexión.
 
 \begin{figure}[h]
   \centering
-    \includegraphics[width=8cm, height=12cm]{./Figures/Qcom_enviodedatos.png}
+    \includegraphics[width=12cm, height=10cm]{./Figures/secuencia de comandos shell.png}
   \caption{Comandos para enviar datos al broker mqtt.}
-    \label{fig:conexion broker}
+    \label{fig:secuencia de comandos shell}
 \end{figure}
 
 \subsection{Pruebas de alarmas}
 El objetivo de esta prueba es comprobar el buen funcionamiento de las alarmas del sistema.
-Cuando la humedad del suelo baja por debajo del rango permitido por el sistema, el firmware manda un sms al usuario con la alarma ocurrida.En la figura podemos ver que la humedad bajo de 10\% y en la figura se ve que se recibió el sms.
+Cuando la humedad del suelo baja por debajo del rango permitido por el sistema, el firmware manda un sms al usuario con la alarma ocurrida.En la figura \ref{fig:humedad menor} podemos ver que la humedad bajo de 10\% y en la figura \ref{fig:sms alarma} se ve que se recibió el sms.
 
 \begin{figure}[h!]
   \centering
     \includegraphics[width=\linewidth, height=7cm]{./Figures/humedad_menor2.png}
-  \caption{Informe de cobertura driver aht10.}
+  \caption{Humedad menor y activación de la alarma.}
     \label{fig:humedad menor}
 \end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[htbp]
   \centering
-    \includegraphics[width=8cm, height=12cm]{./Figures/sms_alarma.jpg}
-  \caption{Informe de cobertura driver aht10.}
+    \includegraphics[width=7cm, height=8cm]{./Figures/sms_alarma.jpg}
+  \caption{Recepción de sms por la alarma.}
     \label{fig:sms alarma}
 \end{figure}
 

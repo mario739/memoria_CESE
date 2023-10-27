@@ -122,7 +122,7 @@ En la figura \ref{fig:Df inicio firmware}  se muestra en diagrama de flujo de in
 	\label{fig:Df inicio firmware}
 \end{figure}
 
-Al iniciar el  firmware realiza la configuración del hardware del microcontrolador, inicializa los drivers del hardware externo, luego se crean los recursos del sistema operativo como tareas,colas y semáforos, finalmente se da el control del sistema al scheduler de freeRTOS. 
+El firmware comienza realizando la siguiente secuencia de acciones: configuración del hardware del microcontrolador, inicialización de los drivers del hardware externo, creación de los recursos del sistema operativo y finalmente inicialización del scheduler.
 
 Para el control del sistema se crearon cuatro tareas sobre freeRTOS, que se comunican y sincronizan a través de colas y semáforos.
 
@@ -139,7 +139,7 @@ La tarea comienza iniciando el timer del sistema el cual es el encargado de mane
 \end{figure}
 
 \subsection{Tarea adquisición de datos} 
-La figura \ref{fig:Df tarea adquisicion} muestra el diagrama de flujo de la tarea de adquisición de datos. La tarea inicia revisando si hay datos en la cola de adquisición. Si existen datos, se realiza la lectura de todos los sensores para posteriormente enviar los  valores leídos por la cola de datos y alarmas. Si no hay datos en la cola la tarea se bloquea. 
+La figura \ref{fig:Df tarea adquisicion} muestra el diagrama de flujo de la tarea de adquisición de datos. La tarea inicia revisando si hay datos en la cola de adquisición. Si existen datos se realiza la lectura de todos los sensores, para posteriormente enviar los  valores leídos por la cola de datos y alarmas. Si no hay datos en la cola la tarea se bloquea. 
 
 \begin{figure}[h]
   \centering
@@ -149,9 +149,9 @@ La figura \ref{fig:Df tarea adquisicion} muestra el diagrama de flujo de la tare
 \end{figure}
 
 \subsection{Tarea manejador de alarmas} 
-El control de las alarmas se realiza a través una tarea del sistema operativo la figura \ref{fig:Df tarea alarmas} muestra el diagrama de flujo de la tarea de alarmas.
+El control de las alarmas se realiza a través una tarea del sistema operativo, la figura \ref{fig:Df tarea alarmas} muestra el diagrama de flujo de la tarea que maneja las alarmas.
 
-Al entrar al bucle infinito lo primero que realiza la tarea es revisar la cola de alarmas. Si existen datos se analiza el evento que contiene el dato recibido. Se tiene dos posibles eventos monitorear y enviar. Si el evento es monitorear se compara el valor del sensor de humedad con un valor mínimo permitido, si es menor se activa una alarma advierte al sistema que ocurrió esto a través de una variable. Si el evento es enviar se revisa si hay alarmas activas, enviando un mensaje de texto si así fuera. Si no hay datos en la cola de alarmas la tarea se bloquea. 
+Al entrar al bucle infinito lo primero que realiza la tarea es revisar la cola de alarmas. Si existen datos en la cola, se analiza el evento que contiene el dato recibido. Se tiene dos posibles eventos: monitorear y enviar. Si el evento es monitorear se compara el valor del sensor de humedad con un valor mínimo permitido, si es menor se activa una alarma advierte al sistema que ocurrió esto a través de una variable. Si el evento es enviar se revisa si hay alarmas activas, enviando un mensaje de texto si así fuera. Si no hay datos en la cola de alarmas la tarea se bloquea. 
 
 \begin{figure}[h]
   \centering
@@ -161,9 +161,7 @@ Al entrar al bucle infinito lo primero que realiza la tarea es revisar la cola d
 \end{figure}
 
 \subsection{Tarea manejador del servidor } 
-La última tarea que se implementó es la tarea que maneja la conexión del servidor la figura \ref{fig:Df tarea conexion} muestra su diagrama flujo.
-
-La tarea comienza esperando datos en la cola del servidor, al llegar datos se analiza el evento que se recibe. Se tiene tres posibles eventos UP, DOWN y SEND. Si el evento es UP la tarea entra a la máquina de estados que se muestra en la figura \ref{fig:Maquina de estados up servidor} que se utiliza para levantar una conexión con el servidor. Si el evento es DOWN la tarea ejecuta la máquina de estados que se ve en la figura \ref{fig:Maquina de estados dowm servidor} que se encarga de terminar la conexión con el servidor. Si el evento es SEND la tarea obtiene los últimos datos leídos por los sensores, armar la trama y publica los datos al broker MQTT. 
+La tarea comienza esperando datos en la cola del servidor, al llegar datos se analiza el evento que se recibe. Se tiene tres posibles eventos: UP, DOWN y SEND. Si el evento es UP la tarea entra a la máquina de estados que se muestra en la figura \ref{fig:Maquina de estados up servidor} encargada de levantar una conexión con el servidor. Si el evento es DOWN la tarea ejecuta la máquina de estados que se ve en la figura \ref{fig:Maquina de estados dowm servidor} que se encarga de terminar la conexión con el servidor. Si el evento es SEND la tarea obtiene los últimos datos leídos por los sensores, armar la trama y publica los datos al broker MQTT. 
 \begin{figure}[h]
   \centering
 	\includegraphics[width=8cm, height=8.5cm]{./Figures/DF general task conection.png}

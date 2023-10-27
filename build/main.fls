@@ -21,6 +21,10 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
 INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+INPUT /usr/share/texlive/texmf-dist/tex/latex/ftnxtra/ftnxtra.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/ftnxtra/ftnxtra.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/yafoot/fnpos.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/yafoot/fnpos.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 INPUT /usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 INPUT /home/mario/Documents/memoria_CESE/build/main.aux

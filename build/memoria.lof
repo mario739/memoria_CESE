@@ -4,15 +4,15 @@
 \contentsline {figure}{\numberline {1.1}{\ignorespaces Módulo Smart Agriculture PRO.\relax }}{3}{figure.caption.6}%
 \contentsline {figure}{\numberline {1.2}{\ignorespaces Módulo RF-M1 de DropControl.\relax }}{3}{figure.caption.7}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Plataforma de desarrollo NUCLEO-L432KC.\relax }}{6}{figure.caption.8}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Módulo LTE IOT 2 CLICK.\relax }}{6}{figure.caption.9}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Sensor AHT10.\relax }}{7}{figure.caption.10}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Módulo Sensor ML8511.\relax }}{7}{figure.caption.11}%
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Módulo sensor HL-69.\relax }}{8}{figure.caption.12}%
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Logo FreeRTOS.\relax }}{8}{figure.caption.13}%
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Arquitectura de publicación/suscripción de MQTT.\relax }}{9}{figure.caption.14}%
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Ejemplo interfaz gráfica Ubidots.\relax }}{10}{figure.caption.15}%
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Ejemplo interfaz gráfica ThingsBoard.\relax }}{10}{figure.caption.16}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Plataforma de desarrollo NUCLEO-L432KC\footnotemark .\relax }}{6}{figure.caption.8}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Módulo LTE IOT 2 CLICK\footnotemark .\relax }}{6}{figure.caption.9}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Sensor AHT10\footnotemark .\relax }}{7}{figure.caption.10}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Módulo Sensor ML8511}}{7}{figure.caption.11}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Módulo sensor HL-69\footnotemark .\relax }}{8}{figure.caption.12}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Logo FreeRTOS\footnotemark .\relax }}{8}{figure.caption.13}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Arquitectura de publicación/suscripción de MQTT\footnotemark .\relax }}{9}{figure.caption.14}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Ejemplo interfaz gráfica Ubidots\footnotemark .\relax }}{10}{figure.caption.15}%
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Ejemplo interfaz gráfica ThingsBoard\footnotemark .\relax }}{10}{figure.caption.16}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Diagrama general del sistema IoT.\relax }}{11}{figure.caption.17}%
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Capas del firmware.\relax }}{12}{figure.caption.18}%

@@ -119,6 +119,24 @@
     \endverb
   \endentry
 
+  \entry{InterfazIoTUbidots}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=c}{%
+         family={{connectamericas}},
+         familyi={c\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{c1}
+    \strng{fullhash}{c1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{note}{Visitado: 2023-05-27}
+    \field{title}{Descripción de la empresa,Definición de UBIDOTS}
+    \verb{url}
+    \verb https://connectamericas.com/es/company/ubidots
+    \endverb
+  \endentry
+
   \entry{NUCLEOL432KC}{misc}{}
     \name{author}{1}{}{%
       {{hash=S}{%
@@ -319,24 +337,6 @@
     \field{title}{Descripción del protocolo,Introduccion a MQTT}
     \verb{url}
     \verb https://mqtt.org/
-    \endverb
-  \endentry
-
-  \entry{InterfazIoTUbidots}{misc}{}
-    \name{author}{1}{}{%
-      {{hash=c}{%
-         family={{connectamericas}},
-         familyi={c\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{c1}
-    \strng{fullhash}{c1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{note}{Visitado: 2023-05-27}
-    \field{title}{Descripción de la empresa,Definición de UBIDOTS}
-    \verb{url}
-    \verb https://connectamericas.com/es/company/ubidots
     \endverb
   \endentry
 

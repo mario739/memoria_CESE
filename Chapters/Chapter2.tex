@@ -28,12 +28,12 @@ La placa STM32 Nucleo-L432KC que se muestra en la figura \ref{fig:nucleol432kc} 
 \end{itemize}
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=.35\textwidth]{./Figures/nucleo-l432kc.jpg}
-	\caption{Plataforma de desarrollo NUCLEO-L432KC.}
+	\includegraphics[width=4cm, height=5.5cm]{./Figures/nucleo-l432kc.jpg}
+	\caption{Plataforma de desarrollo NUCLEO-L432KC\protect\footnotemark.}
 	\label{fig:nucleol432kc}
 \end{figure}
 \vspace{5cm}
-
+\footnotetext[1]{Datasheet \url{https://www.st.com/resource/en/user_manual/um1956-stm32-nucleo32-boards-mb1180-stmicroelectronics.pdf}}
 \subsection{Módulo de comunicación LTE IOT 2 CLICK}
 \label{subsec:ejemplo}
 LTE IoT 2 click que se muestra en la \ref{fig:modulo LTE IOT} está equipado con el módulo BG96 LTE de Quectel Wireless Solutions, que admite tecnologías LTE CAT M1 y NB1, desarrolladas para aplicaciones IoT. Además, admite EGPRS a 850/900/1800/1900 MHz, lo que significa que se puede usar globalmente; no está restringido a ninguna región \citep{MonuloLTE-IOT}.
@@ -46,40 +46,41 @@ LTE IoT 2 click que se muestra en la \ref{fig:modulo LTE IOT} está equipado con
 	\item Conector USB para conectarlo con la aplicación de software de Quectel.
 	\item Interfaz UART. 
 	\item Tensión de alimentación 5 V o 3,3 V.
-
 \end{itemize}
-
-
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[width=.4\textwidth]{./Figures/moduloBG96.jpg}
-	\caption{Módulo LTE IOT 2 CLICK.}
+	\caption{Módulo LTE IOT 2 CLICK\protect\footnotemark.}
 	\label{fig:modulo LTE IOT}
 \end{figure}
+
+\footnotetext[2]{Imagen tomada de la página \url{https://www.mikroe.com/lte-iot-2-click}}
 \subsection{Sensor AHT10}
 El sensor AHT10 presentado en la figura \ref{fig:SensorAHT10} permite obtener lecturas de temperatura y humedad, es de bajo costo y excelente rendimiento. Se utiliza este sensor en aplicaciones de control automático de temperatura, aire acondicionado, estaciones meteorológicas, aplicaciones en el hogar, regulador de humedad y temperatura \citep{ModuloAHT10}.
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[width=.3\textwidth]{./Figures/aht10.jpg}
-	\caption{Sensor AHT10.}
+	\caption{Sensor AHT10\protect\footnotemark.}
 	\label{fig:SensorAHT10}
 \end{figure}
-
+\footnotetext[3]{Imagen tomada de la página \url{https://esphome.io/components/sensor/aht10.html}}
 \subsection{Sensor ML8511}
 El módulo ML8511 presentado en la figura \ref{fig:SensorML8511} es un sensor de luz ultravioleta (UV), entrega una señal de tensión analógica que depende de la cantidad de luz UV que detecta. Sensor ideal para proyectos de monitoreo de condiciones ambientales como el índice UV, aplicaciones meteorológicas, cuidado de la piel, medición industrial de nivel UV.
 El sensor ML8511 detecta luz con una longitud de onda entre 280-390 nm, este rango cubre tanto al espectro UV-B como al UV-A. La salida analógica está relacionada linealmente con la intensidad UV $(mW/cm^2)$ \citep{ModuloML8511}.
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[width=.3\textwidth]{./Figures/ml8511.jpg}
-	\caption{Módulo Sensor ML8511.}
+	\caption[Módulo Sensor ML8511]{Módulo Sensor ML8511. \footnotemark }
 	\label{fig:SensorML8511}
 \end{figure}
+
+\footnotetext[4]{Manual del sensor \url{https://learn.sparkfun.com/tutorials/ml8511-uv-sensor-hookup-guide/all}}
 \subsection{Sensor de humedad de suelo HL-69 (Resistivo)}
 El módulo HL-69 presentado en la figura \ref{fig:SensorHL-69}, un sensor de humedad de suelo que utiliza la conductividad entre dos terminales para determinar parámetros relacionados al agua, líquidos y humedad \citep{ModuloHL-69}.
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=.4\textwidth]{./Figures/sensordehumedad.jpg}
-	\caption{Módulo sensor HL-69.}
+	\includegraphics[width=4.5cm, height=4.5cm]{./Figures/sensordehumedad.jpg}
+	\caption{Módulo sensor HL-69\protect\footnotemark.}
 	\label{fig:SensorHL-69}
 \end{figure}
 
@@ -95,10 +96,12 @@ FreeRTOS es un sistema operativo en tiempo real (RTOS) líder en el mercado para
 FreeRTOS está diseñado con énfasis en la confiabilidad, la accesibilidad y la facilidad de uso \citep{FreeRTOS}. El logo de FreeRTOS se muestra en la figura \ref{fig:FreeRTOS}.
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=0.4\textwidth]{./Figures/logo_FreeRTOS.jpg}
-	\caption{Logo FreeRTOS.}
+	\includegraphics[width=6cm, height=2cm]{./Figures/logo_FreeRTOS.jpg}
+	\caption{Logo FreeRTOS\protect\footnotemark.}
 	\label{fig:FreeRTOS}
 \end{figure}
+\footnotetext[5]{Tienda \url{https://tienda.sawers.com.bo/hl-69-modulo-sensor-humedad-suelo}}
+\footnotetext[6]{Imagen tomada de la página \url{https://www.freertos.org/}}
 \subsection{CEEDLING}
 Ceedling es un sistema de compilación diseñado para proyectos en lenguaje C, que podría describirse como una extensión del sistema de compilación Rake (similar a make) de Ruby. Ceedling está dirigido principalmente al desarrollo basado en pruebas en C y está diseñado para reunir CMock, Unity y CException \citep{CEEDLING}.
 
@@ -111,29 +114,33 @@ El protocolo I2C (\textit {Inter-Integrated Circuit}) es un protocolo diseñado 
 
 \subsection{MQTT}
 MQTT es un protocolo de mensajería estándar de OASIS para IoT. Está diseñado como un transporte de mensajería de publicación/suscripción extremadamente liviano que es ideal para conectar dispositivos remotos con un espacio de código pequeño y un ancho de banda de red mínimo. MQTT hoy en día se utiliza en una amplia variedad de industrias, como la automotriz, la manufactura, las telecomunicaciones, el petróleo y el gas, etc \citep{MQTT}. En la figura \ref{fig:ArquitecturaMQTT} se muestra la arquitectura del protocolo MQTT.
-
+\footnotetext[7]{Imagen tomada de la página \url{https://mqtt.org/}}
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=1\textwidth]{./Figures/mqtt-publish-subscribe.png}
-	\caption{Arquitectura de publicación/suscripción de MQTT.}
+	\includegraphics[width=\textwidth, height=3.3cm]{./Figures/mqtt-publish-subscribe.png}
+	\caption{Arquitectura de publicación/suscripción de MQTT\protect\footnotemark.}
 	\label{fig:ArquitecturaMQTT}
 \end{figure}
+
 \section{Plataformas IoT}
 \subsection{Ubidots}
-Ubidots es una plataforma de IoT que habilita la toma de decisiones a empresas de integración de sistemas a nivel global. Este producto permite enviar datos de sensores a la nube, configurar tableros y alertas, conectarse con otras plataformas, usar herramientas de analítica y arrojar mapas de datos en tiempo real \citep{InterfazIoTUbidots}. En la figura \ref{fig:InterfazUBIDOTS} se muestra un ejemplo de interfaz gráfica en Ubidots.
+Ubidots permite enviar datos de sensores a la nube, configurar tableros y alertas, conectarse con otras plataformas, usar herramientas de analítica y arrojar mapas de datos en tiempo real \citep{InterfazIoTUbidots}. En la figura \ref{fig:InterfazUBIDOTS} se muestra un ejemplo de interfaz gráfica en Ubidots.
+\footnotetext[8]{Imagen tomada de la página \url{https://ubidots.com/platform/time-series}}
+\footnotetext[9]{Imagen tomada de la página \url{https://thingsboard.io/smart-farming/}}
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=0.75\textwidth]{./Figures/ubidots.png}
-	\caption{Ejemplo interfaz gráfica Ubidots.}
+	\includegraphics[width=10cm, height=6cm]{./Figures/ubidots.png}
+	\caption{Ejemplo interfaz gráfica Ubidots\protect\footnotemark.}
 	\label{fig:InterfazUBIDOTS}
 \end{figure}
 \subsection{ThingsBoard}
-ThingsBoard es una plataforma IoT de código abierto para la recopilación, el procesamiento, la visualización y la gestión de dispositivos de datos.
-Permite la conectividad de dispositivos a través de protocolos IoT estándar de la industria: MQTT, CoAP y HTTP, y admite implementaciones en la nube y locales. ThingsBoard combina escalabilidad, tolerancia a fallas y rendimiento \citep{THINGSBOARD}. En la figura \ref{fig:InterfazThingsBoard} se muestra un ejemplo de una interfaz gráfica desarrollada en ThingsBoard. 
+ThingsBoard es una plataforma IoT de código abierto para la recopilación, el procesamiento, la visualización y la gestión de dispositivos.
+Permite la conectividad de dispositivos a través de protocolos estándares de la industria IoT: MQTT, CoAP y HTTP. ThingsBoard combina escalabilidad, tolerancia a fallas y rendimiento \citep{THINGSBOARD}. En la figura \ref{fig:InterfazThingsBoard} se muestra un ejemplo de una interfaz gráfica desarrollada en ThingsBoard. 
+
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=0.9\textwidth]{./Figures/thingsboard.png}
-	\caption{Ejemplo interfaz gráfica ThingsBoard.}
+	\includegraphics[width=10cm, height=5.5cm]{./Figures/thingsboard.png}
+	\caption{Ejemplo interfaz gráfica ThingsBoard\protect\footnotemark.}
 	\label{fig:InterfazThingsBoard}
 \end{figure}

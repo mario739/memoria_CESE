@@ -38,35 +38,19 @@
 \contentsline {section}{\numberline {3.3}Desarrollo del firmware}{14}{section.3.3}%
 \contentsline {subsection}{\numberline {3.3.1}Tarea loop del sistema}{14}{subsection.3.3.1}%
 \contentsline {subsection}{\numberline {3.3.2}Tarea adquisición de datos}{15}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Tarea manejador de alarmas}{16}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.3}Tarea manejador de alarmas}{15}{subsection.3.3.3}%
 \contentsline {subsection}{\numberline {3.3.4}Tarea manejador del servidor }{16}{subsection.3.3.4}%
 \contentsline {section}{\numberline {3.4}Controladores implementados}{18}{section.3.4}%
 \contentsline {subsection}{\numberline {3.4.1}Controlador sensor AHT10}{18}{subsection.3.4.1}%
 \contentsline {subsection}{\numberline {3.4.2} Controlador módulo de comunicación BG96 }{19}{subsection.3.4.2}%
-\contentsline {section}{\numberline {3.5}Desarrollo del hardware}{23}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}Esquemático}{23}{subsection.3.5.1}%
-\contentsline {subsection}{\numberline {3.5.2}PCB del hardware}{25}{subsection.3.5.2}%
-\contentsline {subsection}{\numberline {3.5.3}Fabricación circuito impreso}{25}{subsection.3.5.3}%
-\contentsline {section}{\numberline {3.6}Paneles de visualización}{26}{section.3.6}%
-\contentsline {subsection}{\numberline {3.6.1}Panel principal}{26}{subsection.3.6.1}%
-\contentsline {subsection}{\numberline {3.6.2}Panel nodo sensor}{27}{subsection.3.6.2}%
-\contentsline {chapter}{\numberline {4}Ensayos y resultados}{29}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Pruebas unitarias drivers}{29}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Pruebas de la plataforma IoT}{32}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Pruebas de inyeccion de mensajes}{32}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Prueba de la tabla de alarmas en thingsboard}{33}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3}Prueba del widget de mapa}{34}{subsection.4.2.3}%
-\contentsline {subsection}{\numberline {4.2.4}Prueba de persistencia de datos}{34}{subsection.4.2.4}%
-\contentsline {section}{\numberline {4.3}Pruebas De Hardware}{35}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Prueba comunicación sensor de humedad AHT10}{35}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Pruebas comunicación modulo BG96}{35}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}Pruebas de alimentación }{36}{subsection.4.3.3}%
-\contentsline {subsection}{\numberline {4.3.4}Prueba microcontrolador en bajo consumo }{36}{subsection.4.3.4}%
-\contentsline {section}{\numberline {4.4}Pruebas Funcionales del sistema}{37}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Prueba de lectura de sensores}{37}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Prueba de envío de datos al broker mqtt}{38}{subsection.4.4.2}%
-\contentsline {subsection}{\numberline {4.4.3}Pruebas de alarmas}{38}{subsection.4.4.3}%
-\contentsline {chapter}{\numberline {5}Conclusiones}{41}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Conclusiones generales }{41}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Próximos pasos}{41}{section.5.2}%
-\contentsline {chapter}{Bibliograf\'{\i }a}{43}{appendix*.53}%
+\contentsline {section}{\numberline {3.5}Desarrollo del hardware}{21}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Esquemático}{21}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}PCB del hardware}{23}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.5.3}Fabricación circuito impreso}{23}{subsection.3.5.3}%
+\contentsline {section}{\numberline {3.6}Paneles de visualización}{24}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Panel principal}{24}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2}Panel nodo sensor}{25}{subsection.3.6.2}%
+\contentsline {chapter}{\numberline {4}Conclusiones}{27}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Conclusiones generales }{27}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Próximos pasos}{27}{section.4.2}%
+\contentsline {chapter}{Bibliograf\'{\i }a}{29}{appendix*.36}%

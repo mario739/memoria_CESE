@@ -50,7 +50,23 @@
 \contentsline {section}{\numberline {3.6}Paneles de visualización}{24}{section.3.6}%
 \contentsline {subsection}{\numberline {3.6.1}Panel principal}{24}{subsection.3.6.1}%
 \contentsline {subsection}{\numberline {3.6.2}Panel nodo sensor}{25}{subsection.3.6.2}%
-\contentsline {chapter}{\numberline {4}Conclusiones}{27}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Conclusiones generales }{27}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Próximos pasos}{27}{section.4.2}%
-\contentsline {chapter}{Bibliograf\'{\i }a}{29}{appendix*.36}%
+\contentsline {chapter}{\numberline {4}Ensayos y resultados}{27}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Pruebas unitarias drivers}{27}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Pruebas de la plataforma IoT}{30}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Pruebas de inyeccion de mensajes}{30}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Prueba de la tabla de alarmas en thingsboard}{31}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Prueba del widget de mapa}{32}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}Prueba de persistencia de datos}{32}{subsection.4.2.4}%
+\contentsline {section}{\numberline {4.3}Pruebas De Hardware}{33}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Prueba comunicación sensor de humedad AHT10}{33}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Pruebas comunicación modulo BG96}{33}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Pruebas de alimentación }{34}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.4}Prueba microcontrolador en bajo consumo }{34}{subsection.4.3.4}%
+\contentsline {section}{\numberline {4.4}Pruebas Funcionales del sistema}{35}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Prueba de lectura de sensores}{35}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Prueba de envío de datos al broker mqtt}{36}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}Pruebas de alarmas}{36}{subsection.4.4.3}%
+\contentsline {chapter}{\numberline {5}Conclusiones}{39}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Conclusiones generales }{39}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Próximos pasos}{39}{section.5.2}%
+\contentsline {chapter}{Bibliograf\'{\i }a}{41}{appendix*.53}%

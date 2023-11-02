@@ -1,8 +1,8 @@
 # Fdb version 3
-["pdflatex"] 1698425643 "/home/mario/Documents/memoria_CESE/main.tex" "/home/mario/Documents/memoria_CESE/build/main.pdf" "main" 1698425643
+["pdflatex"] 1698954452 "/home/mario/Documents/memoria_CESE/main.tex" "/home/mario/Documents/memoria_CESE/build/main.pdf" "main" 1698954452
   "/etc/texmf/web2c/texmf.cnf" 1668112840 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/mario/Documents/memoria_CESE/build/main.aux" 1698425643 8 a94a2480d3289e625eea47cd1b285758 ""
-  "/home/mario/Documents/memoria_CESE/main.tex" 1698425643 584 98e35844d9ac15e520594aed3e6e180e ""
+  "/home/mario/Documents/memoria_CESE/build/main.aux" 1698954452 8 a94a2480d3289e625eea47cd1b285758 ""
+  "/home/mario/Documents/memoria_CESE/main.tex" 1698954452 584 98e35844d9ac15e520594aed3e6e180e ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm0600.tfm" 1136768653 1536 12e8c510d3e158fdd0e9a42e75118bd9 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm0800.tfm" 1136768653 1536 05df9db6aeccc4eea94fec15c9024f79 ""
@@ -45,11 +45,11 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1581979058 38841 ce3692aa899bb693b90b87eaa5d4d84e ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1684526090 4770781 1ed1abab22da9c3e2cc82e4db562318b ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1685537101 8259216 ff171c2b80cf3e3aa22829f3c5a3f5f1 ""
-  "build/main.aux" 1698425643 8 a94a2480d3289e625eea47cd1b285758 "pdflatex"
-  "main.tex" 1698425643 584 98e35844d9ac15e520594aed3e6e180e ""
+  "build/main.aux" 1698954452 8 a94a2480d3289e625eea47cd1b285758 "pdflatex"
+  "main.tex" 1698954452 584 98e35844d9ac15e520594aed3e6e180e ""
   (generated)
-  "/home/mario/Documents/memoria_CESE/build/main.log"
-  "build/main.log"
   "build/main.aux"
   "/home/mario/Documents/memoria_CESE/build/main.pdf"
+  "build/main.log"
   "build/main.pdf"
+  "/home/mario/Documents/memoria_CESE/build/main.log"

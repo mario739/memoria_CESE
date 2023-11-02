@@ -142,7 +142,6 @@ En la figura \ref{fig:write aht10} podemos ver la trama capturada por el analiza
 
 En la figura \ref{fig:read aht10} tenemos la trama capturada cuando se leen los registros del sensor. Se obtienen 6 bytes en los que se encuentra la información de la humedad y la temperatura.
 
-
 \begin{figure}[h!]
   \centering
     \includegraphics[width=\linewidth, height=3.2cm]{./Figures/write_i2c.png}
@@ -170,15 +169,14 @@ En la figura \ref{fig:trama uart1} vemos dos canales del analizador  lógico: el
 \end{figure}
 
 \section{Pruebas funcionales del sistema}
-Para realizar las pruebas funcionales de todo el sistema, se implementó el prototipo en un cultivo agrícola como se muestra en la figura \ref{fig:implementacion del prototipo}.
-
+Para realizar las pruebas funcionales de todo el sistema, se implementó el prototipo en un cultivo agrícola como se muestra en la figura \ref{fig:Condicionales ambientales prueba 1}.
 \begin{figure}[h!]
   \centering
-    \includegraphics[width=5cm, height=7cm]{./Figures/prot_implementacion.jpg}
+    \includegraphics[width=5cm, height=5cm]{./Figures/prototipo_implementacion.png}
   \caption{Implementación del prototipo.}
-    \label{fig:implementacion del prototipo}
+    \label{fig:Condicionales ambientales prueba 1}
 \end{figure}
-
+  
 \subsection{Pruebas de lectura de los sensores}
 Se realizaron varias pruebas al prototipo en diferentes escenarios a continuación se desarrollaran algunas de las pruebas realizadas.
 \subsubsection{Prueba uno}
@@ -188,19 +186,11 @@ La prueba consistió en realizar la lectura de los sensores en un momento donde 
   \item Temperatura ambiente alta 
   \item Horario de la lectura: 3 p.m
 \end{itemize}
-En la figura \ref{fig:Condicionales ambientales prueba 1} se puede apreciar las condiciones ambientales en el momento de la prueba.
-\begin{figure}[h!]
-  \centering
-    \includegraphics[width=5cm, height=5cm]{./Figures/protopito_sol.jpg}
-  \caption{Condiciones ambientales prueba 1.}
-    \label{fig:Condicionales ambientales prueba 1}
-\end{figure}
-
-En la figura \ref{fig:Lectura tierra seca tb} se muestran los resultados de la lectura de los sensores en las condiciones anteriormente mencionadas. Se tiene una lectura de humedad de suelo de 19\%, radiación moderada de 5UV y temperatura ambiente del 32\textcelsius.
+En la figura \ref{fig:Lectura tierra seca tb} se muestran los resultados de la lectura de los sensores en las condiciones anteriormente mencionadas. Se tiene una lectura de humedad de suelo de 19\%, radiación moderada de 5 y temperatura ambiente del 32\textcelsius.
 
 \begin{figure}[h!]
   \centering
-    \includegraphics[width=\linewidth, height=7cm]{./Figures/tb_prueba1.png}
+    \includegraphics[width=\linewidth, height=6.5cm]{./Figures/tb_prueba1.png}
   \caption{Panel de visualización con las lecturas obtenidas en la prueba 1.}
     \label{fig:Lectura tierra seca tb}
 \end{figure}
@@ -212,19 +202,12 @@ Para la prueba dos se tenian las siguiente condiciones:
   \item Temperatura moderada
   \item Horario de la lectura: 8 a.m
 \end{itemize}
-En la figura \ref{fig:Humedad en el suelo} se puede apreciar las condiciones ambientales en el momento de la prueba.
-En la figura \ref{fig:Humedad alta ThingsBoard} se muestran los resultado de la lectura. Como resultado tenemos: humedad del suelo del 75\%, radiación baja de 2UV, humedad ambiente de 54\% y temperatura ambiente de 23\textcelsius.
+
+En la figura \ref{fig:Humedad alta ThingsBoard} se muestran los resultado de la lectura. Como resultado tenemos: humedad del suelo del 75\%, nivel de radiación baja de 2, humedad ambiente de 54\% y temperatura ambiente de 23\textcelsius.
 
 \begin{figure}[h!]
   \centering
-    \includegraphics[width=5cm, height=5cm]{./Figures/prototipo_con_humedad.jpg}
-  \caption{Condiciones ambientales prueba 2.}
-    \label{fig:Humedad en el suelo}
-\end{figure}
-
-\begin{figure}[h!]
-  \centering
-    \includegraphics[width=\linewidth, height=7cm]{./Figures/humedad_alta_tb.png}
+    \includegraphics[width=\linewidth, height=6.5cm]{./Figures/humedad_alta_tb.png}
   \caption{Panel de visualización con las lecturas obtenidas en la prueba 2.}
     \label{fig:Humedad alta ThingsBoard}
 \end{figure}
@@ -243,18 +226,11 @@ En la figura \ref{fig:secuencia de comandos shell} podemos observar toda la secu
 
 \subsection{Prueba de envio de alarmas por SMS}
 El objetivo de esta prueba es verificar el funcionamiento de la alarma que monitorea la humedad del suelo.
-Cuando la humedad del suelo baja por debajo del rango permitido. El firmware manda un SMS al usuario con el mensaje de "Humedad de suelo muy baja". En la figura \ref{fig:humedad menor} podemos ver que la humedad bajó de 10\% y en la figura \ref{fig:sms alarma} que se recibió el SMS de alarma.
+Cuando la humedad del suelo baja por debajo del rango permitido. El firmware manda un SMS al usuario con el mensaje de "Humedad de suelo muy baja". En la figura \ref{fig:sms alarma} vemos que se recibió un SMS de alarma cuando la humedad bajó de 10\%.
 
 \begin{figure}[h!]
   \centering
-    \includegraphics[width=\linewidth, height=4.6cm]{./Figures/humedad_menor2.png}
-  \caption{Humedad del suelo menor al 10\%.}
-    \label{fig:humedad menor}
-\end{figure}
-
-\begin{figure}[h!]
-  \centering
-    \includegraphics[width=5cm, height=3.5cm]{./Figures/sms_alarma2.jpg}
+    \includegraphics[width=5cm, height=3.5cm]{./Figures/sms_alarma2.png}
   \caption{Recepción del SMS con el mensaje  de alarma.}
     \label{fig:sms alarma}
 \end{figure}

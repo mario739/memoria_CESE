@@ -2,7 +2,7 @@
 \babel@toc {spanish}{}
 \contentsline {chapter}{Resumen}{\es@scroman {i}}{section*.1}%
 \contentsline {chapter}{\numberline {1}Introducción general}{1}{chapter.1}%
-\contentsline {section}{\numberline {1.1}IoT en la agricultura}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.1}Internet de las cosas en la agricultura}{1}{section.1.1}%
 \contentsline {subsection}{\numberline {1.1.1}Internet de las cosas}{1}{subsection.1.1.1}%
 \contentsline {subsection}{\numberline {1.1.2}Sistemas de monitoreo de cultivos agrícolas}{2}{subsection.1.1.2}%
 \contentsline {section}{\numberline {1.2}Estado del arte}{2}{section.1.2}%
@@ -41,32 +41,32 @@
 \contentsline {subsection}{\numberline {3.3.3}Tarea manejador de alarmas}{15}{subsection.3.3.3}%
 \contentsline {subsection}{\numberline {3.3.4}Tarea manejador del servidor }{16}{subsection.3.3.4}%
 \contentsline {section}{\numberline {3.4}Controladores implementados}{18}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Controlador sensor AHT10}{18}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2} Controlador módulo de comunicación BG96 }{19}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.1}Controlador para el sensor AHT10}{18}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2} Controlador para el módulo de comunicación BG96 }{19}{subsection.3.4.2}%
 \contentsline {section}{\numberline {3.5}Desarrollo del hardware}{21}{section.3.5}%
 \contentsline {subsection}{\numberline {3.5.1}Esquemático}{21}{subsection.3.5.1}%
 \contentsline {subsection}{\numberline {3.5.2}PCB del hardware}{23}{subsection.3.5.2}%
-\contentsline {subsection}{\numberline {3.5.3}Fabricación circuito impreso}{23}{subsection.3.5.3}%
+\contentsline {subsection}{\numberline {3.5.3}Fabricación del circuito impreso}{23}{subsection.3.5.3}%
 \contentsline {section}{\numberline {3.6}Paneles de visualización}{24}{section.3.6}%
 \contentsline {subsection}{\numberline {3.6.1}Panel principal}{24}{subsection.3.6.1}%
 \contentsline {subsection}{\numberline {3.6.2}Panel nodo sensor}{25}{subsection.3.6.2}%
 \contentsline {chapter}{\numberline {4}Ensayos y resultados}{27}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Pruebas unitarias drivers}{27}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Pruebas de la plataforma IoT}{30}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Pruebas de inyeccion de mensajes}{30}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Prueba de la tabla de alarmas en thingsboard}{31}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3}Prueba del widget de mapa}{32}{subsection.4.2.3}%
-\contentsline {subsection}{\numberline {4.2.4}Prueba de persistencia de datos}{32}{subsection.4.2.4}%
-\contentsline {section}{\numberline {4.3}Pruebas De Hardware}{33}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Prueba comunicación sensor de humedad AHT10}{33}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Pruebas comunicación modulo BG96}{33}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}Pruebas de alimentación }{34}{subsection.4.3.3}%
-\contentsline {subsection}{\numberline {4.3.4}Prueba microcontrolador en bajo consumo }{34}{subsection.4.3.4}%
-\contentsline {section}{\numberline {4.4}Pruebas Funcionales del sistema}{35}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Prueba de lectura de sensores}{35}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Prueba de envío de datos al broker mqtt}{36}{subsection.4.4.2}%
-\contentsline {subsection}{\numberline {4.4.3}Pruebas de alarmas}{36}{subsection.4.4.3}%
-\contentsline {chapter}{\numberline {5}Conclusiones}{39}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Conclusiones generales }{39}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Próximos pasos}{39}{section.5.2}%
-\contentsline {chapter}{Bibliograf\'{\i }a}{41}{appendix*.53}%
+\contentsline {section}{\numberline {4.1}Pruebas unitarias}{27}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Pruebas de la plataforma IoT}{29}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Prueba de inyección de mensajes}{29}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Prueba de la tabla de alarmas del panel visualización}{30}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Prueba del widget de mapa}{30}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}Prueba de persistencia de datos}{30}{subsection.4.2.4}%
+\contentsline {section}{\numberline {4.3}Pruebas de hardware}{31}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Prueba de comunicación entre el sensor AHT10 y el microcontrolador}{31}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Prueba de comunicación entre el módulo BG96 y el microcontrolador}{32}{subsection.4.3.2}%
+\contentsline {section}{\numberline {4.4}Pruebas funcionales del sistema}{32}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Pruebas de lectura de los sensores}{32}{subsection.4.4.1}%
+\contentsline {subsubsection}{Prueba uno}{32}{section*.47}%
+\contentsline {subsubsection}{Prueba dos}{33}{section*.50}%
+\contentsline {subsection}{\numberline {4.4.2}Prueba del envío de datos al broker MQTT}{34}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}Prueba de envio de alarmas por SMS}{35}{subsection.4.4.3}%
+\contentsline {chapter}{\numberline {5}Conclusiones}{37}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Conclusiones generales }{37}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Próximos pasos}{37}{section.5.2}%
+\contentsline {chapter}{Bibliograf\'{\i }a}{39}{appendix*.56}%

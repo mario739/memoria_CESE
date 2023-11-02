@@ -91,14 +91,14 @@ La capa drivers (manejador de dispositivos) está compuesta por los manejadores 
     \item Conexión TCP.
     \item Conexión al broker MQTT.
   \end{itemize}
-  \item Driver AHT10: se desarrollo utilizando la hoja de datos del sensor, proporciona funciones de inicialización y lectura de humedad y temperatura obtenidos por el sensor.
+  \item Driver AHT10: se desarrolló utilizando la hoja de datos del sensor, proporciona funciones de inicialización y lectura de humedad y temperatura obtenidos por el sensor.
 \end{itemize}
 Para los sensores ML8511 y HL-69 que son sensores analógicos no se desarrollaron drivers, sino que se crearon funciones para convertir el valor analógico entregado a un valor significativo para el usuario con respecto a la variable física medida.
 \subsection{Capa aplicación} 
 La capa de APP o aplicación  es la de mayor nivel jerárquico. Se desarrolló sobre freeRTOS 
 que permite hacer un código más escalable.
 
-Se implementaron cuatro tareas.
+Se implementaron cuatro tareas, que se describen a continuación:
 \begin{itemize}
     \item Loop del sistema: esta tarea es la que brinda la secuencialidad del sistema.
     \item Manejador del  servidor: se encarga de manejar la conexión a la red y al broker MQTT.
@@ -129,7 +129,7 @@ Para el control del sistema se crearon cuatro tareas sobre freeRTOS, que se comu
 \subsection{Tarea loop del sistema} 
 
 La tarea loop comienza iniciando un timer que se encarga controlar el tiempo de repetición del ciclo de la tarea. Luego la tarea se bloquea. 
-Cuando se termina el tiempo del timer, se ejecuta el handler de la interrupción desbloqueando la tarea loop. La tarea envía un evento a cola de adquisición de datos para realizar la lectura  de  los sensores y un evento a cola que maneja la conexión  para levantar el servidor. Posteriormente la tarea comprueba si se logró levantar una conexión. Si la conexión existe la tarea manda un evento  por la cola del servidor para que se envíen los datos al broker MQTT. Luego la tarea  envía un evento a la cola de alarmas para mandar los sms de las alarmas activas del sistema. Finalmente después de monitorear  las alarmas la tarea manda un evento a la cola de servidor para la desconexión. Al finalizar el ciclo de la tarea, inicia el timer nuevamente y manda al microcontrolador a modo de bajo consumo para ahorrar energía.
+Cuando se termina el tiempo del timer, se ejecuta el handler de la interrupción desbloqueando la tarea loop. La tarea envía un evento a la cola de adquisición de datos para realizar la lectura  de  los sensores y un evento a la cola que maneja la conexión  para levantar el servidor. Posteriormente la tarea comprueba si se logró levantar una conexión. Si la conexión existe la tarea manda un evento  por la cola del servidor para que se envíen los datos al broker MQTT. Luego la tarea  envía un evento a la cola de alarmas para mandar los SMS(Mensaje de texto) de las alarmas activas del sistema. Finalmente, después de monitorear  las alarmas la tarea manda un evento a la cola de servidor para la desconexión. Al finalizar el ciclo de la tarea, inicia el timer nuevamente y manda al microcontrolador a modo de bajo consumo para ahorrar energía.
 
 \begin{figure}[h]  
 \centering
@@ -149,9 +149,9 @@ La figura \ref{fig:Df tarea adquisicion} muestra el diagrama de flujo de la tare
 \end{figure}
 
 \subsection{Tarea manejador de alarmas} 
-El control de las alarmas se realiza a través una tarea del sistema operativo, la figura \ref{fig:Df tarea alarmas} muestra el diagrama de flujo de la tarea que maneja las alarmas.
+El control de las alarmas se realiza a través de una tarea del sistema operativo, la figura \ref{fig:Df tarea alarmas} muestra el diagrama de flujo de la tarea que maneja las alarmas.
 
-Al entrar al bucle infinito lo primero que realiza la tarea es revisar la cola de alarmas. Si existen datos en la cola, se analiza el evento que contiene el dato recibido. Se tiene dos posibles eventos: monitorear y enviar. Si el evento es monitorear se compara el valor del sensor de humedad con un valor mínimo permitido, si es menor se activa una alarma advierte al sistema que ocurrió esto a través de una variable. Si el evento es enviar se revisa si hay alarmas activas, enviando un mensaje de texto si así fuera. Si no hay datos en la cola de alarmas la tarea se bloquea. 
+Al entrar al bucle infinito lo primero que realiza la tarea es revisar la cola de alarmas. Si existen datos en la cola, se analiza el evento que contiene el dato recibido. Se tiene dos posibles eventos: monitorear y enviar. Si el evento es monitorear, se compara si el valor del sensor de humedad es menor a 10. Aumentando en uno la variable que cuenta las alarmas activas si esto fuera verdadero. Si el evento es enviar se revisa si hay alarmas activas, enviando un mensaje de texto si así fuera. Si no hay datos en la cola de alarmas la tarea se bloquea. 
 
 \begin{figure}[h]
   \centering
@@ -161,7 +161,7 @@ Al entrar al bucle infinito lo primero que realiza la tarea es revisar la cola d
 \end{figure}
 
 \subsection{Tarea manejador del servidor } 
-La tarea comienza esperando datos en la cola del servidor, al llegar datos se analiza el evento que se recibe. Se tiene tres posibles eventos: UP, DOWN y SEND. Si el evento es UP la tarea entra a la máquina de estados que se muestra en la figura \ref{fig:Maquina de estados up servidor} encargada de levantar una conexión con el servidor. Si el evento es DOWN la tarea ejecuta la máquina de estados que se ve en la figura \ref{fig:Maquina de estados dowm servidor} que se encarga de terminar la conexión con el servidor. Si el evento es SEND la tarea obtiene los últimos datos leídos por los sensores, armar la trama y publica los datos al broker MQTT. 
+La tarea comienza esperando datos en la cola del servidor, al llegar datos se analiza el evento que se recibe. Se tiene tres posibles eventos: UP, DOWN y SEND. Si el evento es UP, la tarea ingresa a la máquina de estados que se muestra en la figura \ref{fig:Maquina de estados up servidor}, la que se encarga de establecer una conexión con el servidor. Si el evento es DOWN, la tarea ejecuta la máquina de estados que se ve en la figura \ref{fig:Maquina de estados dowm servidor}, que se encarga de terminar la conexión con el servidor. Si el evento es SEND, la tarea obtiene los últimos datos leídos por los sensores, arma la trama y publica los datos al broker MQTT. 
 \begin{figure}[h]
   \centering
 	\includegraphics[width=8cm, height=8.5cm]{./Figures/DF general task conection.png}
@@ -171,27 +171,26 @@ La tarea comienza esperando datos en la cola del servidor, al llegar datos se an
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=8cm, height=8cm]{./Figures/SM down server.png}
+  \includegraphics[width=8cm, height=7.5cm]{./Figures/SM down server.png}
   \caption{Máquina de estados down servidor.}
   \label{fig:Maquina de estados dowm servidor}
 \end{figure}
 \clearpage
-\hspace{0.5cm}
 
 \begin{figure}[t!]
   \centering
-	\includegraphics[width=10cm, height=14cm]{./Figures/SM up server.png}
+	\includegraphics[width=10cm, height=13cm]{./Figures/SM up server.png}
 	\caption{Máquina de estados up servidor.}
 	\label{fig:Maquina de estados up servidor}
 \end{figure}
 
 \section{Controladores implementados}
-Se implementaron dos controladores: para el modulo de comunicacion BG96 y para el sensor de humedad y temperatura ambiente AHT10.
+Se implementaron dos controladores: para el módulo de comunicación BG96 y para el sensor de humedad y temperatura ambiente AHT10.
 
-\subsection{Controlador sensor AHT10} 
+\subsection{Controlador para el sensor AHT10} 
 
 Para la lectura de humedad y temperatura, se desarrolló en el driver las funciones de \emph{aht10\_get\_humedity()} y \emph{aht10\_get\_temperature()} que se muestran en el código \ref{cod:codigo funciones lectura}.
-Las funciones comienzan iniciando una medición en el sensor con la función \emph{aht10\_launch\_measurement()}, luego realizan la lectura de los registros del sensor, almacenando los valores de retorno en un buffer. Con los bytes obtenidos se realiza un corrimiento para  obtener los bytes que contienen la información de humedad y temperatura. Finalmente se aplican las fórmulas de las líneas 1 y 2 del código \ref{cod:codigo funciones lectura} para convertir los bytes en valores significativos de las variables físicas.
+Las funciones comienzan iniciando una medición en el sensor con la función \emph{aht10\_launch\_measurement()}, luego realizan la lectura de los registros del sensor, almacenando los valores de retorno en un buffer. Con los bytes obtenidos se realiza un corrimiento para  obtener los bytes que contienen la información de humedad y temperatura. Finalmente, se aplican las fórmulas de las líneas 1 y 2 del código \ref{cod:codigo funciones lectura} para convertir los bytes en valores significativos de las variables físicas.
  
 \begin{lstlisting}[label=cod:codigo funciones lectura ,caption=Funciones de lectura de humedad y temperatura.]  % Start your code-block
 
@@ -243,10 +242,12 @@ aht10_status_fnc aht10_get_temperature(aht10_config_t*obj, int8_t *data)
 }
 \end{lstlisting}
 
-\subsection{ Controlador módulo de comunicación BG96 } 
-Se desarrollaron varias funciones para el driver BG96, que permiten configurar el módulo, configurar la red y las más importantes para el trabajo las de conexión, publicación y desconexión al servidor MQTT.
+\subsection{ Controlador para el módulo de comunicación BG96 } 
+Se han creado diversas funciones destinadas al controlador BG96, las que posibilitan la configuración del módulo, la configuración de la red, y las más cruciales para el funcionamiento: las relacionadas con la conexión, publicación y desconexión del servidor MQTT.
 
-El código \ref{cod:driver bg96} muestra dos funciones desarrolladas en el driver BG96. La función \emph{connect\_server\_mqtt()} utilizada para conectarse al servidor MQTT, internamente lo que hace es mandar el comando que se ve en la línea 6 y esperar la respuesta del módulo, que puede ser un OK o ERROR. La función \emph{publish\_message()} es una de las más utilizadas por el firmware, es la encargada de publicar la trama JSON que contiene los datos de los sensores al tópico configurado inicialmente. 
+El código \ref{cod:driver bg96} presenta dos funciones implementadas en el controlador BG96. La función \emph{connect\_server\_mqtt()} se emplea para establecer la conexión con el servidor MQTT. En su interior, esta función envía el comando visible en la línea 6 y aguarda la respuesta del módulo, que puede ser \emph{OK} o \emph{ERROR}.
+
+La función \emph{publish\_message()} es una de las más utilizadas por el firmware, es la encargada de publicar la trama JSON que contiene los datos de los sensores al tópico configurado inicialmente. 
 \begin{lstlisting}[label=cod:driver bg96,caption=Función de conexión y publicación al broker MQTT.]  % Start your code-block
 
 //Funcion para conectarse al servidor MQTT
@@ -286,8 +287,8 @@ em_bg96_error_handling connect_server_mqtt(st_bg96_config *self)
 
 
 Para el envío de mensajes de texto se desarrolló en el driver la función \emph{send\_sms\_bg96()} que recibe como parámetros el número al que se desea mandar el mensaje y el texto del mensaje a enviar. El firmware utiliza esta función para mandar mensajes de alarma al usuario.
-El código \ref{cod:funcion de sms} muestra la implementación de la funcion \emph{send\_sms\_bg96()}
-\begin{lstlisting}[label=cod:funcion de sms,caption=Función para enviar sms.]  % Start your code-block
+El código \ref{cod:funcion de sms} muestra la implementación de la función \emph{send\_sms\_bg96()}
+\begin{lstlisting}[label=cod:funcion de sms,caption=Función para enviar SMS.]  % Start your code-block
 
 //Funcion para enviar mensaje de texto 
 em_bg96_error_handling send_sms_bg96(st_bg96_config *self,char*number,char*message)
@@ -316,7 +317,7 @@ em_bg96_error_handling send_sms_bg96(st_bg96_config *self,char*number,char*messa
 Para el diseño del hardware se empleó KiCad 6.0, una herramienta de diseño que se utilizó durante el desarrollo de la especialización.
 
 \subsection{Esquemático} 
-Al ser un prototipo lo que se hizo fue desarrollar un tarjeta donde se puedan ensamblar y conectar los módulos utilizados en el trabajo: módulo de comunicación celular, tarjeta de desarrollo con el microcontrolador y  los módulos sensores.
+Dado que se trata de un prototipo, se diseñó una tarjeta que permite la integración y conexión de los componentes utilizados en el trabajo, incluyendo el módulo de comunicación celular, la tarjeta de desarrollo con el microcontrolador y los módulos sensores.
 
 En la figura \ref{fig:esquematico root} se muestra la página raíz del esquemático del trabajo, está dividida en tres zonas:
 \begin{itemize}
@@ -336,15 +337,15 @@ En figura \ref{fig:esquematico modulos} se muestran los conectores de los módul
 
 \begin{figure}[h]
   \centering
-	\includegraphics[width=10cm, height=3.5cm]{./Figures/esquematico_modulos.png}
+	\includegraphics[width=10cm, height=4.5cm]{./Figures/esquematico_modulos.png}
 	\caption{Conector módulo BG96 y NUCLEO-L432KC.}
 	\label{fig:esquematico modulos}
 \end{figure}
 
-Se colocaron dos leds para debug, uno para señalizar si se logró conectar al servidor MQTT y el otro led para señalizar si el sistema entra en un estado de error. Se colocó un conector para una puerto serial por donde el módulo manda la secuencias de comandos que manda y recibe del módulo de comunicación. En la figura \ref{fig:esquematico conectores de debug} se puede ver el circuito.
+Se incorporaron dos leds con fines de depuración: uno para indicar si se logró la  conexión al servidor MQTT y el otro para señalar cualquier estado de error del sistema. También se incluyó un conector para un puerto serial a través del cual el módulo transmite las secuencias de comandos enviadas y recibidas del módulo de comunicación. En la \ref{fig:esquematico conectores de debug} se puede ver el circuito implementado.
 \begin{figure}[h!]
   \centering
-	\includegraphics[width=10cm, height=4cm]{./Figures/esquematico_debug.png}
+	\includegraphics[width=10cm, height=4.5cm]{./Figures/esquematico_debug.png}
 	\caption{Esquemático interfaz de debug.}
 	\label{fig:esquematico conectores de debug}
 \end{figure}
@@ -360,13 +361,13 @@ En la figura \ref{fig:esquematico conectores sensores} se pueden ver los conecto
 Se colocaron dos colectores de alimentación como se muestra en la figura \ref{fig:esquematico conectores alimentacion}, el conector de 12V para alimentar al módulo del microcontrolador y el otro conector para alimentar al módulo de comunicación.
 \begin{figure}[h]
   \centering
-	\includegraphics[width=9cm, height=4cm]{./Figures/esquematico_alimentacion.png}
-	\caption{Esquemático conectores alimentación.}
+	\includegraphics[width=9cm, height=3.5cm]{./Figures/esquematico_alimentacion.png}
+	\caption{Esquemático conectores de alimentación.}
 	\label{fig:esquematico conectores alimentacion}
 \end{figure}
 
 \subsection{PCB del hardware} 
-La figura \ref{fig:PCB del proyecto} muestra el circuito impreso diseñado para el proyecto.
+La figura \ref{fig:PCB del proyecto} muestra el circuito impreso diseñado para el trabajo.
 
 \begin{figure}[h!]
   \centering
@@ -380,7 +381,7 @@ La figura \ref{fig:PCB del proyecto} muestra el circuito impreso diseñado para 
   \caption{Capa bot PCB}
   \label{fig:Capa bot PCB}
   \end{subfigure}
-  \caption{PCB del proyecto.}
+  \caption{PCB del trabajo.}
   \label{fig:PCB del proyecto}
 \end{figure}
 
@@ -391,8 +392,8 @@ En la figura \ref{fig:3D del modulo} se muestra el diseño de la tarjeta del cir
   \caption{Modelo 3D de la tarjeta.}
 	\label{fig:3D del modulo}
 \end{figure}
-\subsection{Fabricación circuito impreso} 
-Una vez completado y validado el diseño, se generaron los archivos de fabricación y se mandaron a la empresa JLCPCB parar su producción. La figura \ref{fig:PCB ensamblado} muestra la tarjeta ya ensamblada con los módulos. 
+\subsection{Fabricación del circuito impreso} 
+Una vez completado y validado el diseño, se generaron los archivos de fabricación y se mandaron a la empresa JLCPCB para su producción. La figura \ref{fig:PCB ensamblado} muestra la tarjeta ya ensamblada con los módulos. 
 \begin{figure}[h!]
   \centering
 	\includegraphics[width=6.5cm, height=4cm]{./Figures/hardware_vistalateral.jpg}
@@ -403,15 +404,14 @@ Una vez completado y validado el diseño, se generaron los archivos de fabricaci
 \section{Paneles de visualización}
 La herramienta de visualización de ThingsBoard es muy versátil para el armado de paneles de visualización escalables y altamente configurables.
 
-Se armó un panel de visualización principal que muestra los nodos sensores monitoreados por el sistema y un panel secundario que muestra las variables monitoreadas por cada nodo sensor a través gráficas, tablas, etc.
+Se armó un panel de visualización principal que muestra los nodos sensores monitoreados por el sistema y un panel secundario que muestra las variables monitoreadas por cada nodo sensor a través de gráfica, tablas, etc.
 
 \subsection{Panel principal} 
+La Figura \ref{fig:Panel principal} muestra el panel principal de la interfaz gráfica. A continuación, se detallarán las distintas áreas que componen este panel. Este se divide en las siguientes zonas:
 
-En la figura \ref{fig:Panel principal} se aprecia el panel principal de la interfaz gráfica. A continuación se describirán cada zona del panel principal.
-El panel está dividido en las siguientes zonas:
 \begin{itemize}
   \item Zona 1: listado de todos los nodos sensores implementados y activos, haciendo click en el sensor se navega al panel de visualización secundario.
-  \item Zona 2: gráficas que muestra los cambios que van teniendo los valores de las variables medidas por los sensores con respecto al tiempo.
+  \item Zona 2: gráficas que representan la evolución en el tiempo de los valores de las variables registradas por los sensores.
   \item Zona 3: mapa con la ubicación de los nodos sensores implementados.
 \end{itemize}
 

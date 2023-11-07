@@ -129,7 +129,7 @@ Para el control del sistema se crearon cuatro tareas sobre freeRTOS, que se comu
 \subsection{Tarea loop del sistema} 
 
 La tarea loop comienza iniciando un timer que se encarga controlar el tiempo de repetición del ciclo de la tarea. Luego la tarea se bloquea. 
-Cuando se termina el tiempo del timer, se ejecuta el handler de la interrupción desbloqueando la tarea loop. La tarea envía un evento a la cola de adquisición de datos para realizar la lectura  de  los sensores y un evento a la cola que maneja la conexión  para levantar el servidor. Posteriormente la tarea comprueba si se logró levantar una conexión. Si la conexión existe la tarea manda un evento  por la cola del servidor para que se envíen los datos al broker MQTT. Luego la tarea  envía un evento a la cola de alarmas para mandar los SMS(Mensaje de texto) de las alarmas activas del sistema. Finalmente, después de monitorear  las alarmas la tarea manda un evento a la cola de servidor para la desconexión. Al finalizar el ciclo de la tarea, inicia el timer nuevamente y manda al microcontrolador a modo de bajo consumo para ahorrar energía.
+Cuando se termina el tiempo del timer, se ejecuta el handler de la interrupción desbloqueando la tarea loop. La tarea envía un evento a la cola de adquisición de datos para realizar la lectura  de  los sensores y un evento a la cola que maneja la conexión  para levantar el servidor. Posteriormente la tarea comprueba si se logró levantar una conexión. Si la conexión existe la tarea manda un evento  por la cola del servidor para que se envíen los datos al broker MQTT. Luego la tarea  envía un evento a la cola de alarmas para mandar los SMS(Short Message Service) de las alarmas activas del sistema. Finalmente, después de monitorear  las alarmas la tarea manda un evento a la cola de servidor para la desconexión. Al finalizar el ciclo de la tarea, inicia el timer nuevamente y manda al microcontrolador a modo de bajo consumo para ahorrar energía.
 
 \begin{figure}[h]  
 \centering
@@ -148,10 +148,16 @@ La figura \ref{fig:Df tarea adquisicion} muestra el diagrama de flujo de la tare
 	\label{fig:Df tarea adquisicion}
 \end{figure}
 
+\vspace{5cm}
 \subsection{Tarea manejador de alarmas} 
 El control de las alarmas se realiza a través de una tarea del sistema operativo, la figura \ref{fig:Df tarea alarmas} muestra el diagrama de flujo de la tarea que maneja las alarmas.
 
-Al entrar al bucle infinito lo primero que realiza la tarea es revisar la cola de alarmas. Si existen datos en la cola, se analiza el evento que contiene el dato recibido. Se tiene dos posibles eventos: monitorear y enviar. Si el evento es monitorear, se compara si el valor del sensor de humedad es menor a 10. Aumentando en uno la variable que cuenta las alarmas activas si esto fuera verdadero. Si el evento es enviar se revisa si hay alarmas activas, enviando un mensaje de texto si así fuera. Si no hay datos en la cola de alarmas la tarea se bloquea. 
+Al ingresar al bucle infinito, la tarea comienza por inspeccionar la cola de alarmas. Si se encuentran datos en dicha cola, procede a analizar el evento que contiene la información recibida.
+
+Existen dos tipos posibles de eventos: "monitorear" y "enviar". En caso de que el evento sea "monitorear", se verifica si el valor del sensor de humedad es menor a 10. En caso afirmativo, se incrementa en uno la variable que lleva el registro de las alarmas activas. Si, por otro lado, el evento es "enviar", se verifica si existen alarmas activas y, de ser así, se envía un mensaje de texto.
+
+En caso de no haber datos en la cola de alarmas, la tarea entra en un estado de bloqueo.
+
 
 \begin{figure}[h]
   \centering
@@ -407,7 +413,7 @@ La herramienta de visualización de ThingsBoard es muy versátil para el armado 
 Se armó un panel de visualización principal que muestra los nodos sensores monitoreados por el sistema y un panel secundario que muestra las variables monitoreadas por cada nodo sensor a través de gráfica, tablas, etc.
 
 \subsection{Panel principal} 
-La Figura \ref{fig:Panel principal} muestra el panel principal de la interfaz gráfica. A continuación, se detallarán las distintas áreas que componen este panel. Este se divide en las siguientes zonas:
+La figura \ref{fig:Panel principal} muestra el panel principal de la interfaz gráfica. A continuación, se detallarán las distintas áreas que componen este panel. Este se divide en las siguientes zonas:
 
 \begin{itemize}
   \item Zona 1: listado de todos los nodos sensores implementados y activos, haciendo click en el sensor se navega al panel de visualización secundario.

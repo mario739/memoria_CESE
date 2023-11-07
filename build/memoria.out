@@ -60,8 +60,8 @@
 \BOOKMARK [2][-]{subsection.4.3.2}{Prueba de comunicaci\363n entre el m\363dulo BG96 y el microcontrolador}{section.4.3}% 60
 \BOOKMARK [1][-]{section.4.4}{Pruebas funcionales del sistema}{chapter.4}% 61
 \BOOKMARK [2][-]{subsection.4.4.1}{Pruebas de lectura de los sensores}{section.4.4}% 62
-\BOOKMARK [3][-]{section*.47}{Prueba uno}{subsection.4.4.1}% 63
-\BOOKMARK [3][-]{section*.49}{Prueba dos}{subsection.4.4.1}% 64
+\BOOKMARK [3][-]{section*.47}{Caso de uso 1}{subsection.4.4.1}% 63
+\BOOKMARK [3][-]{section*.49}{Caso de uso 2}{subsection.4.4.1}% 64
 \BOOKMARK [2][-]{subsection.4.4.2}{Prueba del env\355o de datos al broker MQTT}{section.4.4}% 65
 \BOOKMARK [2][-]{subsection.4.4.3}{Prueba de envio de alarmas por SMS}{section.4.4}% 66
 \BOOKMARK [0][-]{chapter.5}{Conclusiones}{}% 67

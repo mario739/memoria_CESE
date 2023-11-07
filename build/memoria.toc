@@ -38,8 +38,8 @@
 \contentsline {section}{\numberline {3.3}Desarrollo del firmware}{14}{section.3.3}%
 \contentsline {subsection}{\numberline {3.3.1}Tarea loop del sistema}{14}{subsection.3.3.1}%
 \contentsline {subsection}{\numberline {3.3.2}Tarea adquisición de datos}{15}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Tarea manejador de alarmas}{15}{subsection.3.3.3}%
-\contentsline {subsection}{\numberline {3.3.4}Tarea manejador del servidor }{16}{subsection.3.3.4}%
+\contentsline {subsection}{\numberline {3.3.3}Tarea manejador de alarmas}{16}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}Tarea manejador del servidor }{17}{subsection.3.3.4}%
 \contentsline {section}{\numberline {3.4}Controladores implementados}{18}{section.3.4}%
 \contentsline {subsection}{\numberline {3.4.1}Controlador para el sensor AHT10}{18}{subsection.3.4.1}%
 \contentsline {subsection}{\numberline {3.4.2} Controlador para el módulo de comunicación BG96 }{19}{subsection.3.4.2}%
@@ -62,11 +62,11 @@
 \contentsline {subsection}{\numberline {4.3.2}Prueba de comunicación entre el módulo BG96 y el microcontrolador}{32}{subsection.4.3.2}%
 \contentsline {section}{\numberline {4.4}Pruebas funcionales del sistema}{32}{section.4.4}%
 \contentsline {subsection}{\numberline {4.4.1}Pruebas de lectura de los sensores}{32}{subsection.4.4.1}%
-\contentsline {subsubsection}{Prueba uno}{32}{section*.47}%
-\contentsline {subsubsection}{Prueba dos}{33}{section*.49}%
+\contentsline {subsubsection}{Caso de uso 1}{32}{section*.47}%
+\contentsline {subsubsection}{Caso de uso 2}{33}{section*.49}%
 \contentsline {subsection}{\numberline {4.4.2}Prueba del envío de datos al broker MQTT}{34}{subsection.4.4.2}%
 \contentsline {subsection}{\numberline {4.4.3}Prueba de envio de alarmas por SMS}{34}{subsection.4.4.3}%
-\contentsline {chapter}{\numberline {5}Conclusiones}{35}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Conclusiones generales }{35}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Próximos pasos}{35}{section.5.2}%
-\contentsline {chapter}{Bibliograf\'{\i }a}{37}{appendix*.53}%
+\contentsline {chapter}{\numberline {5}Conclusiones}{37}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Conclusiones generales }{37}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Próximos pasos}{37}{section.5.2}%
+\contentsline {chapter}{Bibliograf\'{\i }a}{39}{appendix*.53}%

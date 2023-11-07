@@ -9,9 +9,12 @@ En este capítulo se explican las pruebas realizadas al hardware, firmware, cont
 %----------------------------------------------------------------------------------------
 
 \section{Pruebas unitarias}
-Para la implementación de los drivers se utilizó la metodología de desarrollo TDD. Esto implica que se escribieron pruebas unitarias para los drivers. Se utilizó ceedling como herramienta de desarrollo de pruebas automáticas.
+Para la implementación de los drivers se utilizó la metodología de desarrollo TDD\protect\footnotemark. Esto implica que se escribieron pruebas unitarias para los drivers. Se utilizó Ceedling como herramienta de desarrollo de pruebas automáticas.
 
-En el código \ref{cod:codigo test driver AHT10} se muestra la prueba implementada para la función de \emph{aht10\_get\_status()} del driver del sensor AHT10. Internamente utiliza funciones mock para la lectura y escritura por protocolo I2C, líneas 6,11 y 15. Se prueban dos casos: cuando la lectura de los registros es 0 y cuando es 255.
+\footnotetext[1]{Definición de la abreviatura \url{https://www.browserstack.com/guide/what-is-test-driven-development}}
+
+En el código \ref{cod:codigo test driver AHT10} se muestra la prueba implementada para la función de \emph{aht10\_get\_status()} del driver del sensor AHT10. Internamente utiliza funciones mock para la lectura y escritura por protocolo I2C, líneas 6,11 y 15. 
+Se prueban dos casos: cuando la lectura de los registros de estado del sensor es 0 y cuando es 255.
 \begin{lstlisting}[label=cod:codigo test driver AHT10,caption=Tests del driver del sensor AHT10.]
 //Prueba de funcion para obtener el estado del sensor AHT10
 void test_estado_del_sensor(void)
@@ -32,8 +35,8 @@ void test_estado_del_sensor(void)
 }
 \end{lstlisting}
 
-En el código \ref{cod:codigo test driver bg96} se muestra la prueba desarrollada para la función \emph{send\_sms\_bg96()} encargada de mandar los mensajes de texto del driver BG96. Se probaron varios casos, cuando la función de envío de comandos responde con un OK y cuando responde con errores.
-\begin{lstlisting}[label=cod:codigo test driver bg96,caption=Tests del driver del modulo bg96.] 
+En el código \ref{cod:codigo test driver BG96} se muestra la prueba desarrollada para la función \emph{send\_sms\_bg96()} encargada de mandar los mensajes de texto del driver BG96. Se probaron varios casos, cuando la función de envío de comandos responde con un OK y cuando responde con errores.
+\begin{lstlisting}[label=cod:codigo test driver BG96,caption=Tests del driver del módulo BG96.] 
 //Prueba de la funcion para mandar sms  
 void test_send_sms_bg96(void)
 {
@@ -51,22 +54,22 @@ void test_send_sms_bg96(void)
 }
 \end{lstlisting}
 
-Una forma cuantitativa de evaluar estas pruebas son los informes de cobertura generados por ceedling.
+Una forma cuantitativa de evaluar estas pruebas son los informes de cobertura generados por Ceedling.
 
-En la figura \ref{fig:Cobertura aht10} se puede observar el informe de cobertura del driver aht10, donde se puede apreciar que las pruebas ejecutan el 100\% de las líneas de código escritas y explora el 100\% de las combinaciones en los saltos de condicionales.
+La figura \ref{fig:Cobertura aht10} presenta el informe de cobertura del driver AHT10, en el cual se evidencia que las pruebas abarcan el 100\% de las líneas de código implementadas, así como exploran la totalidad de las posibles combinaciones en las estructuras condicionales.
 
-En la figura \ref{fig:Cobertura BG96} también se observa el informe de cobertura del driver de bg96, con 98.4\% de líneas ejecutadas y explora más del 98.3\% de combinaciones posibles. 
+En la figura \ref{fig:Cobertura BG96}, también se puede apreciar el informe de cobertura del driver BG96, el cual abarca un 98,4\% de las líneas de código ejecutadas y explora más del 98,3\% de las combinaciones posibles en el flujo de ejecución.
 
 \begin{figure}[h!]
     \centering
-      \includegraphics[width=\linewidth, height=4cm]{./Figures/cobertura_aht10.png}
-    \caption{Informe de cobertura driver aht10.}
+      \includegraphics[width=\linewidth, height=3cm]{./Figures/cobertura_aht10_2.png}
+    \caption{Informe de cobertura driver AHT10.}
       \label{fig:Cobertura aht10}
   \end{figure}
 
 \begin{figure}[h!]
     \centering
-      \includegraphics[width=\linewidth, height=4cm]{./Figures/cobertura_bg96.png}
+      \includegraphics[width=\linewidth, height=3cm]{./Figures/cobertura_bg96_2.png}
     \caption{Informe de cobertura driver BG96.}
       \label{fig:Cobertura BG96}
 \end{figure}
@@ -78,7 +81,7 @@ Para realizar el envío de datos al broker, se utilizó el programa mosquitto. P
 
 \begin{figure}[h!]
   \centering
-    \includegraphics[width=\linewidth, height=3cm]{./Figures/mosquito_enviodatos.png}
+    \includegraphics[width=\linewidth, height=2cm]{./Figures/mosquito_enviodatos.png}
   \caption{Envio de datos por el cliente MQTT de mosquitto.}
     \label{fig:mosquitto pub}
 \end{figure}
@@ -93,18 +96,18 @@ Donde:
 
 Al ejecutar el comando de la figura \ref{fig:mosquitto pub}, el cliente de mosquitto primeramente se conecta al broker MQTT, luego publica el mensaje en el tópico y finalmente, se desconecta del servidor.
 
-Para comprobar la llegada de los datos al broker de ThingsBoard, se tiene que ir a la sección dispositivos, seleccionar el dispositivo al que se le envio los datos y entrar a la pestaña de última telemetría. En la figura \ref{fig:tb recepcion} podemos ver que los datos enviados llegan correctamente.
+Para comprobar la llegada de los datos al broker de ThingsBoard, se tiene que ir a la sección dispositivos, seleccionar el dispositivo al que se le envio los datos y entrar a la pestaña de última telemetría. En la figura \ref{fig:tb recepcion} se puede ver que los datos enviados llegan correctamente.
 
 \begin{figure}[h!]
   \centering
-    \includegraphics[width=5cm, height=6.5cm]{./Figures/tb_recepcion.png}
+    \includegraphics[width=9cm, height=8cm]{./Figures/tb_recepcion2.png}
   \caption{Recepción de datos en el broker MQTT.}
     \label{fig:tb recepcion}
 \end{figure}
 
 \subsection{Prueba de la tabla de alarmas del panel visualización}
 ThingsBoard permite configurar alarmas con respecto a las variables monitoreadas por el sistema. En el panel de visualización de cada sensor se tiene una tabla de alarmas, que muestra las notificaciones de las alarmas que se activaron.
-En la figura \ref{fig:alarmas tb} podemos ver la notificación de una alarma cuando la temperatura ambiente sobrepasa los 43\textcelsius.
+En la figura \ref{fig:alarmas tb} se puede ver la notificación de una alarma cuando la temperatura ambiente sobrepasa los 43\textcelsius.
 
 \begin{figure}[h!]
   \centering
@@ -114,12 +117,11 @@ En la figura \ref{fig:alarmas tb} podemos ver la notificación de una alarma cua
 \end{figure}
 
 \subsection{Prueba del widget de mapa}
-En los paneles de visualización tenemos mapas que muestran la ubicación del dispositivo implementado.
-En la figura \ref{fig:map thingsboard}  podemos ver la ubicación del prototipo implementado para el trabajo.
+Dentro de los paneles de visualización, se encuentran mapas que ilustran la ubicación del dispositivo en funcionamiento. En la figura \ref{fig:map thingsboard}, se presenta el mapa que indica la posición del prototipo empleado en el trabajo.
 
 \begin{figure}[h!]
   \centering
-    \includegraphics[width=10cm, height=6.5cm]{./Figures/map.png}
+    \includegraphics[width=11cm, height=6.5cm]{./Figures/map2.png}
   \caption{Ubicación del nodo sensor implementado.}
     \label{fig:map thingsboard}
 \end{figure}
@@ -130,7 +132,7 @@ En las gráficas se estableció un rango de tiempo de 7 días. El resultado se m
 
 \begin{figure}[h!]
   \centering
-    \includegraphics[width=10cm, height=6cm]{./Figures/persistencia_datos.png}
+    \includegraphics[width=\linewidth, height=7cm]{./Figures/persistencia_datos.png}
   \caption{Persistencia de datos.}
     \label{fig:Persistencia de datos}
 \end{figure}
@@ -138,9 +140,9 @@ En las gráficas se estableció un rango de tiempo de 7 días. El resultado se m
 \section{Pruebas de hardware}
 \subsection{Prueba de comunicación entre el sensor AHT10 y el microcontrolador}
 Para comprobar la comunicación por I2C entre el sensor y el microcontrolador se utilizó un analizador lógico.
-En la figura \ref{fig:write aht10} podemos ver la trama capturada por el analizador lógico cuando el firmware escribe en un registro del sensor. 
+En la figura \ref{fig:write aht10} se puede ver la trama capturada por el analizador lógico cuando el firmware escribe en un registro del sensor. 
 
-En la figura \ref{fig:read aht10} tenemos la trama capturada cuando se leen los registros del sensor. Se obtienen 6 bytes en los que se encuentra la información de la humedad y la temperatura.
+En la figura \ref{fig:read aht10} se puede apreciar la trama capturada cuando se leen los registros del sensor. Se obtienen 6 bytes en los que se encuentra la información de la humedad y la temperatura.
 
 \begin{figure}[h!]
   \centering
@@ -158,8 +160,8 @@ En la figura \ref{fig:read aht10} tenemos la trama capturada cuando se leen los 
 
 \subsection{Prueba de comunicación entre el módulo BG96 y el microcontrolador}
 
-Para probar la comunicación del microcontrolador con el módulo bg96, se utilizó un analizador lógico, que nos permite ver los comandos que envía el microcontrolador y la respuestas del módulo a estos comandos por protocolo serial.
-En la figura \ref{fig:trama uart1} vemos dos canales del analizador  lógico: el canal 2 muestra un comando mandado por el microcontrolador al módulo de comunicación y en el canal 3 la respuesta del módulo al comando enviado.
+Para probar la comunicación del microcontrolador con el módulo BG96, se utilizó un analizador lógico, que nos permite ver los comandos que envía el microcontrolador y la respuesta del módulo a estos comandos por protocolo serial.
+En la figura \ref{fig:trama uart1} se puede ver dos canales del analizador  lógico: el canal 2 muestra un comando mandado por el microcontrolador al módulo de comunicación y en el canal 3 la respuesta del módulo al comando enviado.
 
 \begin{figure}[h!]
   \centering
@@ -169,17 +171,17 @@ En la figura \ref{fig:trama uart1} vemos dos canales del analizador  lógico: el
 \end{figure}
 
 \section{Pruebas funcionales del sistema}
-Para realizar las pruebas funcionales de todo el sistema, se implementó el prototipo en un cultivo agrícola como se muestra en la figura \ref{fig:Condicionales ambientales prueba 1}.
+Con el propósito de llevar a cabo las pruebas funcionales de todo el sistema, se instaló el prototipo en un campo agrícola, tal como se ilustra en la figura \ref{fig:Condicionales ambientales prueba 1}.
 \begin{figure}[h!]
   \centering
     \includegraphics[width=5cm, height=5cm]{./Figures/prototipo_implementacion.png}
-  \caption{Implementación del prototipo.}
+  \caption{Instalación del prototipo.}
     \label{fig:Condicionales ambientales prueba 1}
 \end{figure}
   
 \subsection{Pruebas de lectura de los sensores}
 Se realizaron varias pruebas al prototipo en diferentes escenarios a continuación se desarrollaran algunas de las pruebas realizadas.
-\subsubsection{Prueba uno}
+\subsubsection{Caso de uso 1}
 La prueba consistió en realizar la lectura de los sensores en un momento donde se tenían las siguientes condiciones:
 \begin{itemize}
   \item Tierra con poca humedad
@@ -191,42 +193,41 @@ En la figura \ref{fig:Lectura tierra seca tb} se muestran los resultados de la l
 \begin{figure}[h!]
   \centering
     \includegraphics[width=\linewidth, height=6.5cm]{./Figures/tb_prueba1.png}
-  \caption{Panel de visualización con las lecturas obtenidas en la prueba 1.}
+  \caption{Panel de visualización con las lecturas obtenidas en el caso de uso 1.}
     \label{fig:Lectura tierra seca tb}
 \end{figure}
 
-\subsubsection{Prueba dos}
-Para la prueba dos se tenian las siguiente condiciones:
+\subsubsection{Caso de uso 2}
+Esta prueba se realiza bajo las siguientes condiciones:
 \begin{itemize}
   \item Tierra con humedad
   \item Temperatura moderada
   \item Horario de la lectura: 8 a.m
 \end{itemize}
 
-En la figura \ref{fig:Humedad alta ThingsBoard} se muestran los resultado de la lectura. Como resultado tenemos: humedad del suelo del 75\%, nivel de radiación baja de 2, humedad ambiente de 54\% y temperatura ambiente de 23\textcelsius.
+En la figura \ref{fig:Humedad alta ThingsBoard} se muestran los resultados de la lectura. Como resultado tenemos: humedad del suelo del 75\%, nivel de radiación baja de 2, humedad ambiente de 54\% y temperatura ambiente de 23\textcelsius.
 
 \begin{figure}[h!]
   \centering
     \includegraphics[width=\linewidth, height=6.5cm]{./Figures/humedad_alta_tb.png}
-  \caption{Panel de visualización con las lecturas obtenidas en la prueba 2.}
+  \caption{Panel de visualización con las lecturas obtenidas en el caso de uso 2.}
     \label{fig:Humedad alta ThingsBoard}
 \end{figure}
 
 \subsection{Prueba del envío de datos al broker MQTT}
-Una de las tareas más importante del firmware, es la del manejo de la comunicación con el servidor. Para verificar el funcionamiento de esta tarea, tenemos que ver la secuencia de comandos que manda el microcontrolador al módulo de comunicación.
-Para realizar esta prueba se conectó un convertidor UART a USB al conector de depuración que tiene nuestro dispositivo.
-En la figura \ref{fig:secuencia de comandos shell} podemos observar toda la secuencia de comandos que realiza el firmware para realizar el envío de datos a la plataforma IoT. Primeramente se envía el comando que verifica si el módulo está activo, luego se configura el apn de la red, se conecta al broker MQTT, se publican los datos y finalmente, se realiza el proceso de desconexión del broker.
+Una de las tareas más importantes del firmware, es la del manejo de la comunicación con el servidor. Para verificar el funcionamiento de esta tarea, es necesario ver la secuencia de comandos que envía el microcontrolador al módulo de comunicación.
+Para realizar esta prueba se conectó un convertidor UART a USB al conector de depuración que tiene el dispositivo.
+En la figura \ref{fig:secuencia de comandos shell} se puede observar toda la secuencia de comandos que realiza el firmware para realizar el envío de datos a la plataforma IoT. Primeramente, se envía el comando que verifica si el módulo está activo, luego se configura el APN de la red, se conecta al broker MQTT, se publican los datos y finalmente, se realiza el proceso de desconexión del broker.
 
 \begin{figure}[h]
   \centering
-    \includegraphics[width=12cm, height=9cm]{./Figures/secuencia de comandos shell.png}
+    \includegraphics[width=\linewidth, height=12cm]{./Figures/secuencia de comandos shell.png}
   \caption{Comandos para enviar datos al broker MQTT.}
     \label{fig:secuencia de comandos shell}
 \end{figure}
 
 \subsection{Prueba de envio de alarmas por SMS}
-El objetivo de esta prueba es verificar el funcionamiento de la alarma que monitorea la humedad del suelo.
-Cuando la humedad del suelo baja por debajo del rango permitido. El firmware manda un SMS al usuario con el mensaje de "Humedad de suelo muy baja". En la figura \ref{fig:sms alarma} vemos que se recibió un SMS de alarma cuando la humedad bajó de 10\%.
+El propósito de esta prueba radica en comprobar la eficacia de la alarma encargada de supervisar el nivel de humedad del suelo. Cuando la humedad del suelo disminuye por debajo del rango aceptable, el firmware envía un mensaje de texto al usuario con la notificación "Humedad de suelo muy baja". En la figura \ref{fig:sms alarma}, se observa que se ha recibido un mensaje de alarma cuando el nivel de humedad descendió por debajo del 10\%.
 
 \begin{figure}[h!]
   \centering

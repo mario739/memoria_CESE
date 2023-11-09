@@ -1,7 +1,7 @@
 % Chapter Template
 
 \chapter{Conclusiones} % Main chapter title
-
+En este capítulo se presentan los resultados obtenidos sobre el trabajo realizado, las herramientas aprendidas durante el transcurso de la carrera que fueron fundamentales para la ejecución y se proponen ideas que permitan mejorar lo desarrollado.
 \label{Chapter5} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
 
   
@@ -11,24 +11,46 @@
 %	SECTION 1
 %----------------------------------------------------------------------------------------
 
-\section{Conclusiones generales }
-
-La idea de esta sección es resaltar cuáles son los principales aportes del trabajo realizado y cómo se podría continuar. Debe ser especialmente breve y concisa. Es buena idea usar un listado para enumerar los logros obtenidos.
-
-Algunas preguntas que pueden servir para completar este capítulo:
-
+\section{Resultados obtenidos}
+En el trabajo realizado se logró implementar de forma exitosa un prototipo correspondiente a un sistema de monitoreo de cultivos agrícolas. A través de las pruebas realizadas se pudo validar y demostrar su correcto funcionamiento.
+Se pueden nombrar los siguientes logros obtenidos:
 \begin{itemize}
-\item ¿Cuál es el grado de cumplimiento de los requerimientos?
-\item ¿Cuán fielmente se puedo seguir la planificación original (cronograma incluido)?
-\item ¿Se manifestó algunos de los riesgos identificados en la planificación? ¿Fue efectivo el plan de mitigación? ¿Se debió aplicar alguna otra acción no contemplada previamente?
-\item Si se debieron hacer modificaciones a lo planificado ¿Cuáles fueron las causas y los efectos?
-\item ¿Qué técnicas resultaron útiles para el desarrollo del proyecto y cuáles no tanto?
+\item Se fabricó un prototipo funcional y se lo instaló en un cultivo agrícola para la realización de pruebas integrales del sistema, garantizando cumplir todas los requerimientos funcionales.
+\item Se diseñó el esquemático y el PCB de la tarjeta electrónica para el prototipo.
+\item Se desarrolló el firmware sobre un sistema operativo de tiempo real, para optimizar los recursos del microcontrolador y hacer un código más modular y escalable.
+\item Se configuraron paneles de visualización en ThingsBoard. Permitiendo visualizar las variables ambientales adquiridas por el prototipo instalado en el  cultivo agrícola.
+\item Envío de alarmas del sistema por SMS al usuario.
+\item Se utilizó git para control de versiones, ayudó a tener la trazabilidad y flexibilidad necesaria para llevar a cabo el desarrollo de manera ordenada.
 \end{itemize}
 
+Los requerimientos del trabajo fueron cubiertos de acuerdo con la planificación, con la siguiente modificación:
+
+\begin{itemize}
+    \item Se cambió el requerimiento de utilizar HTTP como protocolo de envío de datos a la nube. Se utilizó MQTT porque es un protocolo más rápido, liviano y utiliza el modelo publicador/suscriptor.
+\end{itemize}
+
+En el desarrollo del trabajo se aplicaron muchos de los conocimientos adquiridos a lo largo de la Carrera de Especialización en Sistemas Embebidos. Entre los conocimientos aplicados, se pueden destacar los adquiridos en las siguientes asignaturas:
+
+\begin{itemize}
+    \item Programación de Microcontroladores: se utilizaron conceptos básicos de programación, conceptos de modularización y uso de patrones de diseño. 
+    \item Protocolos de Comunicación en Sistemas Embebidos: se utilizaron protocolos de comunicación I2C, UART y MQTT.
+    \item Sistemas Operativos de Tiempo Real: se implementó el firmware sobre freeRTOS. Se utilizaron colas y semáforos, para la comunicación y sincronización entre tareas.    
+    \item Testing de Software en Sistemas Embebidos: uso de TDD para el desarrollo de los drivers. Se utilizó Ceedling para el desarrollo de pruebas automáticas.
+    \item Diseño de Circuitos Impresos: se utilizaron buenas prácticas de diseño electrónico para desarrollar el esquemático y el circuito impreso del prototipo. Se utilizó KICAD como herramienta de diseño electrónico.
+\end{itemize}
 
 %----------------------------------------------------------------------------------------
 %	SECTION 2
 %----------------------------------------------------------------------------------------
 \section{Próximos pasos}
 
-Acá se indica cómo se podría continuar el trabajo más adelante.
+Si bien se lograron obtener los resultados esperados, a futuro se puede continuar
+con el desarrollo en varias medidas. A continuación se listan los puntos que sería
+deseable considerar:
+
+\begin{itemize}
+    \item Realizar un nuevo diseño del hardware que integre a todo el sistema y no utilice módulos por separado.
+    \item Implementar un mecanismo de actualización de firmware remoto.
+    \item Incluir soporte para trabajar con energías renovables.
+    \item Aumentar la seguridad al enviar los datos al servidor utilizando SSL.
+\end{itemize}

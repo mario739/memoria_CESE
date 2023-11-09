@@ -67,6 +67,6 @@
 \contentsline {subsection}{\numberline {4.4.2}Prueba del envío de datos al broker MQTT}{34}{subsection.4.4.2}%
 \contentsline {subsection}{\numberline {4.4.3}Prueba de envio de alarmas por SMS}{34}{subsection.4.4.3}%
 \contentsline {chapter}{\numberline {5}Conclusiones}{35}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Conclusiones generales }{35}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Próximos pasos}{35}{section.5.2}%
+\contentsline {section}{\numberline {5.1}Resultados obtenidos}{35}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Próximos pasos}{36}{section.5.2}%
 \contentsline {chapter}{Bibliograf\'{\i }a}{37}{appendix*.53}%

@@ -119,21 +119,21 @@
     \endverb
   \endentry
 
-  \entry{InterfazIoTUbidots}{misc}{}
+  \entry{THINGSBOARD}{misc}{}
     \name{author}{1}{}{%
-      {{hash=c}{%
-         family={{connectamericas}},
-         familyi={c\bibinitperiod},
+      {{hash=T}{%
+         family={{ThingsBoard}},
+         familyi={T\bibinitperiod},
       }}%
     }
-    \strng{namehash}{c1}
-    \strng{fullhash}{c1}
+    \strng{namehash}{T1}
+    \strng{fullhash}{T1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{note}{Visitado: 2023-05-27}
-    \field{title}{Descripción de la empresa,Definición de UBIDOTS}
+    \field{title}{Descripción de la plataforma IoT,Definición de ThingsBoard}
     \verb{url}
-    \verb https://connectamericas.com/es/company/ubidots
+    \verb https://thingsboard.io/
     \endverb
   \endentry
 
@@ -340,21 +340,21 @@
     \endverb
   \endentry
 
-  \entry{THINGSBOARD}{misc}{}
+  \entry{InterfazIoTUbidots}{misc}{}
     \name{author}{1}{}{%
-      {{hash=T}{%
-         family={{ThingsBoard}},
-         familyi={T\bibinitperiod},
+      {{hash=c}{%
+         family={{connectamericas}},
+         familyi={c\bibinitperiod},
       }}%
     }
-    \strng{namehash}{T1}
-    \strng{fullhash}{T1}
+    \strng{namehash}{c1}
+    \strng{fullhash}{c1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{note}{Visitado: 2023-05-27}
-    \field{title}{Descripción de la plataforma IoT,Definición de ThingsBoard}
+    \field{title}{Descripción de la empresa,Definición de UBIDOTS}
     \verb{url}
-    \verb https://thingsboard.io/
+    \verb https://connectamericas.com/es/company/ubidots
     \endverb
   \endentry
 \enddatalist

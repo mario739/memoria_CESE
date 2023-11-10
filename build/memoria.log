@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2023.5.31)  10 NOV 2023 16:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2023.5.31)  10 NOV 2023 16:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1198,15 +1198,15 @@ Package pdftex.def Info: ./Figures/panel_principal_editado.png  used on input li
 LaTeX Info: Redefining \. on input line 434.
 LaTeX Info: Redefining \% on input line 434.
  [24 <./Figures/hardware_vistalateral.png> <./Figures/panel_principal_editado.png>]
-<./Figures/panel_nodosensor_editado.png, id=903, 733.99219pt x 387.99956pt>
-File: ./Figures/panel_nodosensor_editado.png Graphic file (type png)
-<use ./Figures/panel_nodosensor_editado.png>
-Package pdftex.def Info: ./Figures/panel_nodosensor_editado.png  used on input line 444.
-(pdftex.def)             Requested size: 389.80919pt x 241.8538pt.
+<./Figures/panel_nodosensor_editado2.png, id=903, 907.89188pt x 471.56175pt>
+File: ./Figures/panel_nodosensor_editado2.png Graphic file (type png)
+<use ./Figures/panel_nodosensor_editado2.png>
+Package pdftex.def Info: ./Figures/panel_nodosensor_editado2.png  used on input line 444.
+(pdftex.def)             Requested size: 389.80406pt x 241.85324pt.
 )
 LaTeX Info: Redefining \. on input line 126.
 LaTeX Info: Redefining \% on input line 126.
- [25 <./Figures/panel_nodosensor_editado.png>]
+ [25 <./Figures/panel_nodosensor_editado2.png>]
 \openout2 = `Chapters/Chapter4.aux'.
 
  (./Chapters/Chapter4.tex [26
@@ -1367,7 +1367,7 @@ Package logreq Info: Writing requests to 'memoria.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
  26703 strings out of 481239
- 563321 string characters out of 5920377
+ 563327 string characters out of 5920377
  1326495 words of memory out of 5000000
  41196 multiletter control sequences out of 15000+600000
  585106 words of font info for 106 fonts, out of 8000000 for 9000
@@ -1408,7 +1408,7 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on /home/mario/Documents/memoria_CESE/build/memoria.pdf (50 pages, 9559682 bytes).
+Output written on /home/mario/Documents/memoria_CESE/build/memoria.pdf (50 pages, 9778590 bytes).
 PDF statistics:
  1171 PDF objects out of 1200 (max. 8388607)
  1001 compressed objects within 11 object streams

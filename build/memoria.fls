@@ -463,9 +463,9 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplr8r.tfm
 INPUT ./Figures/panel_principal_editado.png
 INPUT ./Figures/panel_principal_editado.png
 INPUT ./Figures/panel_principal_editado.png
-INPUT ./Figures/panel_nodosensor_editado.png
-INPUT ./Figures/panel_nodosensor_editado.png
-INPUT ./Figures/panel_nodosensor_editado.png
+INPUT ./Figures/panel_nodosensor_editado2.png
+INPUT ./Figures/panel_nodosensor_editado2.png
+INPUT ./Figures/panel_nodosensor_editado2.png
 OUTPUT /home/mario/Documents/memoria_CESE/build/Chapters/Chapter4.aux
 INPUT Chapters/Chapter4.tex
 INPUT Chapters/Chapter4.tex

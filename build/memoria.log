@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2023.5.31)  9 NOV 2023 10:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2023.5.31)  10 NOV 2023 16:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1216,117 +1216,112 @@ LaTeX Info: Redefining \% on input line 126.
 ]
 Cap\'{\i }tulo 4.
 
-Underfull \hbox (badness 10000) in paragraph at lines 14--14
-[][]\T1/ppl/m/n/9 Definición de la abre-via-tu-ra [][]$https : / / www . browserstack . com / guide /
- []
-
-
-Overfull \hbox (30.63983pt too wide) in paragraph at lines 16--18
+Overfull \hbox (30.63983pt too wide) in paragraph at lines 14--16
 []\T1/ppl/m/n/10.95 En el có-di-go [][]4.1[][] se mues-tra la prue-ba im-ple-men-ta-da pa-ra la fun-ción de \T1/ppl/m/it/10.95 aht10_get_status()
  []
 
 
-Overfull \hbox (0.29778pt too wide) in paragraph at lines 38--39
+Overfull \hbox (0.29778pt too wide) in paragraph at lines 36--37
 []\T1/ppl/m/n/10.95 En el có-di-go [][]4.2[][] se mues-tra la prue-ba desa-rro-lla-da pa-ra la fun-ción \T1/ppl/m/it/10.95 send_sms_bg96()
  []
 
 1: section
 [27]
-<./Figures/cobertura_aht10_2.png, id=945, 1829.83624pt x 393.47pt>
+<./Figures/cobertura_aht10_2.png, id=946, 1829.83624pt x 393.47pt>
 File: ./Figures/cobertura_aht10_2.png Graphic file (type png)
 <use ./Figures/cobertura_aht10_2.png>
-Package pdftex.def Info: ./Figures/cobertura_aht10_2.png  used on input line 65.
+Package pdftex.def Info: ./Figures/cobertura_aht10_2.png  used on input line 63.
 (pdftex.def)             Requested size: 389.80531pt x 91.04854pt.
-<./Figures/cobertura_bg96_2.png, id=946, 1829.83624pt x 392.46625pt>
+<./Figures/cobertura_bg96_2.png, id=947, 1829.83624pt x 392.46625pt>
 File: ./Figures/cobertura_bg96_2.png Graphic file (type png)
 <use ./Figures/cobertura_bg96_2.png>
-Package pdftex.def Info: ./Figures/cobertura_bg96_2.png  used on input line 72.
+Package pdftex.def Info: ./Figures/cobertura_bg96_2.png  used on input line 70.
 (pdftex.def)             Requested size: 389.80531pt x 91.04384pt.
-LaTeX Info: Redefining \. on input line 81.
-LaTeX Info: Redefining \% on input line 81.
+LaTeX Info: Redefining \. on input line 79.
+LaTeX Info: Redefining \% on input line 79.
  [28 <./Figures/cobertura_aht10_2.png> <./Figures/cobertura_bg96_2.png>]
-<./Figures/mosquito_enviodatos.png, id=969, 818.30719pt x 83.5622pt>
+<./Figures/mosquito_enviodatos.png, id=967, 818.30719pt x 83.5622pt>
 File: ./Figures/mosquito_enviodatos.png Graphic file (type png)
 <use ./Figures/mosquito_enviodatos.png>
-Package pdftex.def Info: ./Figures/mosquito_enviodatos.png  used on input line 84.
+Package pdftex.def Info: ./Figures/mosquito_enviodatos.png  used on input line 82.
 (pdftex.def)             Requested size: 389.81123pt x 56.90695pt.
-<./Figures/tb_recepcion2.png, id=972, 1031.855pt x 816.04875pt>
+<./Figures/tb_recepcion2.png, id=970, 1031.855pt x 816.04875pt>
 File: ./Figures/tb_recepcion2.png Graphic file (type png)
 <use ./Figures/tb_recepcion2.png>
-Package pdftex.def Info: ./Figures/tb_recepcion2.png  used on input line 103.
+Package pdftex.def Info: ./Figures/tb_recepcion2.png  used on input line 101.
 (pdftex.def)             Requested size: 256.07373pt x 213.38795pt.
-LaTeX Info: Redefining \. on input line 111.
-LaTeX Info: Redefining \% on input line 111.
+LaTeX Info: Redefining \. on input line 109.
+LaTeX Info: Redefining \% on input line 109.
  [29 <./Figures/mosquito_enviodatos.png> <./Figures/tb_recepcion2.png>]
-<./Figures/alarmas_tb.png, id=980, 840.89156pt x 359.84438pt>
+<./Figures/alarmas_tb.png, id=977, 840.89156pt x 359.84438pt>
 File: ./Figures/alarmas_tb.png Graphic file (type png)
 <use ./Figures/alarmas_tb.png>
-Package pdftex.def Info: ./Figures/alarmas_tb.png  used on input line 114.
+Package pdftex.def Info: ./Figures/alarmas_tb.png  used on input line 112.
 (pdftex.def)             Requested size: 389.80441pt x 199.1724pt.
-<./Figures/map2.png, id=982, 1116.17pt x 584.1825pt>
+<./Figures/map2.png, id=979, 1116.17pt x 584.1825pt>
 File: ./Figures/map2.png Graphic file (type png)
 <use ./Figures/map2.png>
-Package pdftex.def Info: ./Figures/map2.png  used on input line 124.
+Package pdftex.def Info: ./Figures/map2.png  used on input line 122.
 (pdftex.def)             Requested size: 312.96828pt x 184.9455pt.
-<./Figures/persistencia_datos.png, id=984, 919.435pt x 536.0025pt>
+<./Figures/persistencia_datos.png, id=981, 919.435pt x 536.0025pt>
 File: ./Figures/persistencia_datos.png Graphic file (type png)
 <use ./Figures/persistencia_datos.png>
-Package pdftex.def Info: ./Figures/persistencia_datos.png  used on input line 135.
+Package pdftex.def Info: ./Figures/persistencia_datos.png  used on input line 133.
 (pdftex.def)             Requested size: 389.80772pt x 199.1684pt.
-LaTeX Info: Redefining \. on input line 138.
-LaTeX Info: Redefining \% on input line 138.
+LaTeX Info: Redefining \. on input line 136.
+LaTeX Info: Redefining \% on input line 136.
  [30 <./Figures/alarmas_tb.png> <./Figures/map2.png>]
-<./Figures/write_i2c.png, id=992, 1114.91531pt x 185.94469pt>
+<./Figures/write_i2c.png, id=990, 1114.91531pt x 185.94469pt>
 File: ./Figures/write_i2c.png Graphic file (type png)
 <use ./Figures/write_i2c.png>
-Package pdftex.def Info: ./Figures/write_i2c.png  used on input line 149.
+Package pdftex.def Info: ./Figures/write_i2c.png  used on input line 147.
 (pdftex.def)             Requested size: 389.8009pt x 91.05125pt.
-<./Figures/read_i2c..png, id=993, 1113.40968pt x 188.95593pt>
+<./Figures/read_i2c..png, id=991, 1113.40968pt x 188.95593pt>
 File: ./Figures/read_i2c..png Graphic file (type png)
 <use ./Figures/read_i2c..png>
-Package pdftex.def Info: ./Figures/read_i2c..png  used on input line 156.
+Package pdftex.def Info: ./Figures/read_i2c..png  used on input line 154.
 (pdftex.def)             Requested size: 389.80116pt x 99.58392pt.
-LaTeX Info: Redefining \. on input line 165.
-LaTeX Info: Redefining \% on input line 165.
+LaTeX Info: Redefining \. on input line 163.
+LaTeX Info: Redefining \% on input line 163.
  [31 <./Figures/persistencia_datos.png> <./Figures/write_i2c.png> <./Figures/read_i2c..png>]
-<./Figures/trama_uart1.png, id=1002, 1092.33093pt x 187.45032pt>
+<./Figures/trama_uart1.png, id=1000, 1092.33093pt x 187.45032pt>
 File: ./Figures/trama_uart1.png Graphic file (type png)
 <use ./Figures/trama_uart1.png>
-Package pdftex.def Info: ./Figures/trama_uart1.png  used on input line 168.
+Package pdftex.def Info: ./Figures/trama_uart1.png  used on input line 166.
 (pdftex.def)             Requested size: 389.80531pt x 99.58559pt.
-<./Figures/prototipo_implementacion.png, id=1004, 613.29124pt x 816.04875pt>
+<./Figures/prototipo_implementacion.png, id=1002, 613.29124pt x 816.04875pt>
 File: ./Figures/prototipo_implementacion.png Graphic file (type png)
 <use ./Figures/prototipo_implementacion.png>
-Package pdftex.def Info: ./Figures/prototipo_implementacion.png  used on input line 177.
+Package pdftex.def Info: ./Figures/prototipo_implementacion.png  used on input line 175.
 (pdftex.def)             Requested size: 142.2612pt x 142.26279pt.
-LaTeX Info: Redefining \. on input line 190.
-LaTeX Info: Redefining \% on input line 190.
+LaTeX Info: Redefining \. on input line 188.
+LaTeX Info: Redefining \% on input line 188.
  [32 <./Figures/trama_uart1.png> <./Figures/prototipo_implementacion.png>]
-<./Figures/tb_prueba1.png, id=1011, 1844.8925pt x 919.435pt>
+<./Figures/tb_prueba1.png, id=1009, 1844.8925pt x 919.435pt>
 File: ./Figures/tb_prueba1.png Graphic file (type png)
 <use ./Figures/tb_prueba1.png>
-Package pdftex.def Info: ./Figures/tb_prueba1.png  used on input line 195.
+Package pdftex.def Info: ./Figures/tb_prueba1.png  used on input line 193.
 (pdftex.def)             Requested size: 389.80353pt x 184.93594pt.
-<./Figures/humedad_alta_tb.png, id=1013, 1845.89626pt x 924.45375pt>
+<./Figures/humedad_alta_tb.png, id=1011, 1845.89626pt x 924.45375pt>
 File: ./Figures/humedad_alta_tb.png Graphic file (type png)
 <use ./Figures/humedad_alta_tb.png>
-Package pdftex.def Info: ./Figures/humedad_alta_tb.png  used on input line 212.
+Package pdftex.def Info: ./Figures/humedad_alta_tb.png  used on input line 210.
 (pdftex.def)             Requested size: 389.79028pt x 184.9439pt.
-LaTeX Info: Redefining \. on input line 221.
-LaTeX Info: Redefining \% on input line 221.
+LaTeX Info: Redefining \. on input line 219.
+LaTeX Info: Redefining \% on input line 219.
  [33 <./Figures/tb_prueba1.png> <./Figures/humedad_alta_tb.png>]
-<./Figures/trama_envio_datos3.png, id=1021, 944.02687pt x 326.11838pt>
+<./Figures/trama_envio_datos3.png, id=1019, 944.02687pt x 326.11838pt>
 File: ./Figures/trama_envio_datos3.png Graphic file (type png)
 <use ./Figures/trama_envio_datos3.png>
-Package pdftex.def Info: ./Figures/trama_envio_datos3.png  used on input line 224.
+Package pdftex.def Info: ./Figures/trama_envio_datos3.png  used on input line 222.
 (pdftex.def)             Requested size: 369.88315pt x 199.17076pt.
-<./Figures/sms_alarma2.png, id=1023, 370.38374pt x 243.91125pt>
+<./Figures/sms_alarma2.png, id=1021, 370.38374pt x 243.91125pt>
 File: ./Figures/sms_alarma2.png Graphic file (type png)
 <use ./Figures/sms_alarma2.png>
-Package pdftex.def Info: ./Figures/sms_alarma2.png  used on input line 234.
+Package pdftex.def Info: ./Figures/sms_alarma2.png  used on input line 232.
 (pdftex.def)             Requested size: 170.71768pt x 113.81206pt.
-LaTeX Info: Redefining \. on input line 241.
-LaTeX Info: Redefining \% on input line 241.
+LaTeX Info: Redefining \. on input line 239.
+LaTeX Info: Redefining \% on input line 239.
  [34 <./Figures/trama_envio_datos3.png> <./Figures/sms_alarma2.png>])
 \openout2 = `Chapters/Chapter5.aux'.
 
@@ -1371,15 +1366,13 @@ Package logreq Info: Writing requests to 'memoria.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 26700 strings out of 481239
- 563174 string characters out of 5920377
- 1326082 words of memory out of 5000000
- 41193 multiletter control sequences out of 15000+600000
+ 26703 strings out of 481239
+ 563321 string characters out of 5920377
+ 1326495 words of memory out of 5000000
+ 41196 multiletter control sequences out of 15000+600000
  585106 words of font info for 106 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
  64i,21n,86p,951b,3678s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{Hfootnote.18} has been referenced but does not exist, replaced by a fixed one
-
 pdfTeX warning (dest): name{Hfootnote.17} has been referenced but does not exist, replaced by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.16} has been referenced but does not exist, replaced by a fixed one
@@ -1415,7 +1408,7 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on /home/mario/Documents/memoria_CESE/build/memoria.pdf (50 pages, 9559713 bytes).
+Output written on /home/mario/Documents/memoria_CESE/build/memoria.pdf (50 pages, 9559682 bytes).
 PDF statistics:
  1171 PDF objects out of 1200 (max. 8388607)
  1001 compressed objects within 11 object streams

@@ -357,5 +357,23 @@
     \verb https://connectamericas.com/es/company/ubidots
     \endverb
   \endentry
+
+  \entry{METODOLOGIA_TDD}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=B}{%
+         family={{BrowserStack}},
+         familyi={B\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{B1}
+    \strng{fullhash}{B1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{note}{Visitado: 2023-11-10}
+    \field{title}{Definición de la metodología de desarrollo TDD}
+    \verb{url}
+    \verb https://www.browserstack.com/guide/what-is-test-driven-development
+    \endverb
+  \endentry
 \enddatalist
 \endinput

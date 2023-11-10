@@ -9,9 +9,7 @@ En este capítulo se explican las pruebas realizadas al hardware, firmware, cont
 %----------------------------------------------------------------------------------------
 
 \section{Pruebas unitarias}
-Para la implementación de los drivers se utilizó la metodología de desarrollo TDD\protect\footnotemark. Esto implica que se escribieron pruebas unitarias para los drivers. Se utilizó Ceedling como herramienta de desarrollo de pruebas automáticas.
-
-\footnotetext[1]{Definición de la abreviatura \url{https://www.browserstack.com/guide/what-is-test-driven-development}}
+Para la implementación de los drivers se utilizó la metodología de desarrollo TDD \citep{METODOLOGIA_TDD}. Esto implica que se escribieron pruebas unitarias para los drivers. Se utilizó Ceedling como herramienta de desarrollo de pruebas automáticas.
 
 En el código \ref{cod:codigo test driver AHT10} se muestra la prueba implementada para la función de \emph{aht10\_get\_status()} del driver del sensor AHT10. Internamente utiliza funciones mock para la lectura y escritura por protocolo I2C, líneas 6,11 y 15. 
 Se prueban dos casos: cuando la lectura de los registros de estado del sensor es 0 y cuando es 255.
@@ -180,7 +178,7 @@ Con el propósito de llevar a cabo las pruebas funcionales de todo el sistema, s
 \end{figure}
   
 \subsection{Pruebas de lectura de los sensores}
-Se realizaron varias pruebas al prototipo en diferentes escenarios, a continuación se desarrollaran algunas de las pruebas realizadas.
+Se realizaron varias pruebas al prototipo en diferentes escenarios, a continuación se desarrollarán algunas de las pruebas realizadas.
 \subsubsection{Caso de uso 1}
 La prueba consistió en realizar la lectura de los sensores en un momento donde se tenían las siguientes condiciones:
 \begin{itemize}

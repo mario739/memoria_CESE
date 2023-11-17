@@ -23,30 +23,33 @@
 \contentsline {figure}{\numberline {3.7}{\ignorespaces Diagrama de flujo de la tarea conexion server MQTT.\relax }}{17}{figure.caption.23}%
 \contentsline {figure}{\numberline {3.8}{\ignorespaces Máquina de estados down servidor.\relax }}{17}{figure.caption.24}%
 \contentsline {figure}{\numberline {3.9}{\ignorespaces Máquina de estados up servidor.\relax }}{18}{figure.caption.25}%
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Esquemático página raíz.\relax }}{21}{figure.caption.26}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Esquemático página raíz.\relax }}{22}{figure.caption.26}%
 \contentsline {figure}{\numberline {3.11}{\ignorespaces Conector módulo BG96 y NUCLEO-L432KC.\relax }}{22}{figure.caption.27}%
 \contentsline {figure}{\numberline {3.12}{\ignorespaces Esquemático interfaz de debug.\relax }}{22}{figure.caption.28}%
-\contentsline {figure}{\numberline {3.13}{\ignorespaces Esquemático conectores sensores.\relax }}{22}{figure.caption.29}%
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Esquemático conectores sensores.\relax }}{23}{figure.caption.29}%
 \contentsline {figure}{\numberline {3.14}{\ignorespaces Esquemático conectores de alimentación.\relax }}{23}{figure.caption.30}%
 \contentsline {figure}{\numberline {3.15}{\ignorespaces PCB del trabajo.\relax }}{23}{figure.caption.31}%
-\contentsline {figure}{\numberline {3.16}{\ignorespaces Modelo 3D de la tarjeta.\relax }}{23}{figure.caption.32}%
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Modelo 3D de la tarjeta.\relax }}{24}{figure.caption.32}%
 \contentsline {figure}{\numberline {3.17}{\ignorespaces PCB ensamblado.\relax }}{24}{figure.caption.33}%
-\contentsline {figure}{\numberline {3.18}{\ignorespaces Panel principal de la interfaz gráfica.\relax }}{24}{figure.caption.34}%
-\contentsline {figure}{\numberline {3.19}{\ignorespaces Panel nodo sensor.\relax }}{25}{figure.caption.35}%
+\contentsline {figure}{\numberline {3.18}{\ignorespaces Panel principal de la interfaz gráfica.\relax }}{25}{figure.caption.34}%
+\contentsline {figure}{\numberline {3.19}{\ignorespaces Panel nodo sensor.\relax }}{26}{figure.caption.35}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Informe de cobertura driver AHT10.\relax }}{28}{figure.caption.36}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Informe de cobertura driver BG96.\relax }}{28}{figure.caption.37}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Envio de datos por el cliente MQTT de mosquitto.\relax }}{29}{figure.caption.38}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Recepción de datos en el broker MQTT.\relax }}{29}{figure.caption.39}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Tabla de alarmas activas.\relax }}{30}{figure.caption.40}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Resultados de los tests realizados a los drivers.\relax }}{28}{figure.caption.36}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Informe de cobertura driver AHT10.\relax }}{29}{figure.caption.37}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Informe de cobertura driver BG96.\relax }}{29}{figure.caption.38}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Envio de datos por el cliente MQTT de mosquitto.\relax }}{29}{figure.caption.39}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Recepción de datos en el broker MQTT.\relax }}{30}{figure.caption.40}%
 \contentsline {figure}{\numberline {4.6}{\ignorespaces Ubicación del nodo sensor implementado.\relax }}{30}{figure.caption.41}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Persistencia de datos.\relax }}{31}{figure.caption.42}%
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Trama de escritura al sensor AHT10.\relax }}{31}{figure.caption.43}%
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Trama de lectura del sensor AHT10.\relax }}{31}{figure.caption.44}%
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Envío y recepción de comandos por puerto UART.\relax }}{32}{figure.caption.45}%
-\contentsline {figure}{\numberline {4.11}{\ignorespaces Instalación del prototipo.\relax }}{32}{figure.caption.46}%
-\contentsline {figure}{\numberline {4.12}{\ignorespaces Panel de visualización con las lecturas obtenidas en el caso de uso 1.\relax }}{33}{figure.caption.48}%
-\contentsline {figure}{\numberline {4.13}{\ignorespaces Panel de visualización con las lecturas obtenidas en el caso de uso 2.\relax }}{33}{figure.caption.50}%
-\contentsline {figure}{\numberline {4.14}{\ignorespaces Comandos para enviar datos al broker MQTT.\relax }}{34}{figure.caption.51}%
-\contentsline {figure}{\numberline {4.15}{\ignorespaces Recepción del SMS con el mensaje de alarma.\relax }}{34}{figure.caption.52}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Tabla de alarmas activas.\relax }}{31}{figure.caption.42}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Persistencia de datos.\relax }}{31}{figure.caption.43}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Trama de escritura al sensor AHT10.\relax }}{32}{figure.caption.44}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Trama de lectura del sensor AHT10.\relax }}{32}{figure.caption.45}%
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Bytes de lectura.\relax }}{32}{figure.caption.46}%
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Envío y recepción de comandos por puerto UART.\relax }}{33}{figure.caption.47}%
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Instalación del prototipo.\relax }}{33}{figure.caption.48}%
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Panel de visualización con las lecturas obtenidas en el caso de uso 1.\relax }}{34}{figure.caption.50}%
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Panel de visualización con las lecturas obtenidas en el caso de uso 2.\relax }}{35}{figure.caption.52}%
+\contentsline {figure}{\numberline {4.16}{\ignorespaces Comandos para enviar datos al broker MQTT.\relax }}{35}{figure.caption.53}%
+\contentsline {figure}{\numberline {4.17}{\ignorespaces Comandos para enviar un SMS.\relax }}{36}{figure.caption.54}%
+\contentsline {figure}{\numberline {4.18}{\ignorespaces Recepción del SMS con el mensaje de alarma.\relax }}{36}{figure.caption.55}%
 \addvspace {10\p@ }

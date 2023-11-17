@@ -52,19 +52,19 @@
 \BOOKMARK [1][-]{section.4.1}{Pruebas unitarias}{chapter.4}% 52
 \BOOKMARK [1][-]{section.4.2}{Pruebas de la plataforma IoT}{chapter.4}% 53
 \BOOKMARK [2][-]{subsection.4.2.1}{Prueba de inyecci\363n de mensajes}{section.4.2}% 54
-\BOOKMARK [2][-]{subsection.4.2.2}{Prueba de la tabla de alarmas del panel visualizaci\363n}{section.4.2}% 55
-\BOOKMARK [2][-]{subsection.4.2.3}{Prueba del widget de mapa}{section.4.2}% 56
+\BOOKMARK [2][-]{subsection.4.2.2}{Prueba del widget de mapa}{section.4.2}% 55
+\BOOKMARK [2][-]{subsection.4.2.3}{Prueba de la tabla de alarmas del panel visualizaci\363n}{section.4.2}% 56
 \BOOKMARK [2][-]{subsection.4.2.4}{Prueba de persistencia de datos}{section.4.2}% 57
 \BOOKMARK [1][-]{section.4.3}{Pruebas de hardware}{chapter.4}% 58
 \BOOKMARK [2][-]{subsection.4.3.1}{Prueba de comunicaci\363n entre el sensor AHT10 y el microcontrolador}{section.4.3}% 59
 \BOOKMARK [2][-]{subsection.4.3.2}{Prueba de comunicaci\363n entre el m\363dulo BG96 y el microcontrolador}{section.4.3}% 60
 \BOOKMARK [1][-]{section.4.4}{Pruebas funcionales del sistema}{chapter.4}% 61
 \BOOKMARK [2][-]{subsection.4.4.1}{Pruebas de lectura de los sensores}{section.4.4}% 62
-\BOOKMARK [3][-]{section*.47}{Caso de uso 1}{subsection.4.4.1}% 63
-\BOOKMARK [3][-]{section*.49}{Caso de uso 2}{subsection.4.4.1}% 64
+\BOOKMARK [3][-]{section*.49}{Caso de uso 1}{subsection.4.4.1}% 63
+\BOOKMARK [3][-]{section*.51}{Caso de uso 2}{subsection.4.4.1}% 64
 \BOOKMARK [2][-]{subsection.4.4.2}{Prueba del env\355o de datos al broker MQTT}{section.4.4}% 65
 \BOOKMARK [2][-]{subsection.4.4.3}{Prueba de envio de alarmas por SMS}{section.4.4}% 66
 \BOOKMARK [0][-]{chapter.5}{Conclusiones}{}% 67
 \BOOKMARK [1][-]{section.5.1}{Resultados obtenidos}{chapter.5}% 68
 \BOOKMARK [1][-]{section.5.2}{Pr\363ximos pasos}{chapter.5}% 69
-\BOOKMARK [0][-]{appendix*.53}{Bibliograf\355a}{}% 70
+\BOOKMARK [0][-]{appendix*.56}{Bibliograf\355a}{}% 70

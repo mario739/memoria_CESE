@@ -11,46 +11,86 @@ En este capítulo se explican las pruebas realizadas al hardware, firmware, cont
 \section{Pruebas unitarias}
 Para la implementación de los drivers se utilizó la metodología de desarrollo TDD \citep{METODOLOGIA_TDD}. Esto implica que se escribieron pruebas unitarias para los drivers. Se utilizó Ceedling como herramienta de desarrollo de pruebas automáticas.
 
-En el código \ref{cod:codigo test driver AHT10} se muestra la prueba implementada para la función de \emph{aht10\_get\_status()} del driver del sensor AHT10. Internamente utiliza funciones mock para la lectura y escritura por protocolo I2C, líneas 6,11 y 15. 
-Se prueban dos casos: cuando la lectura de los registros de estado del sensor es 0 y cuando es 255.
+En el fragmento de código \ref{cod:codigo test driver AHT10} se muestra la prueba implementada para la función de \emph{aht10\_get\_status()} del driver del sensor AHT10. Internamente utiliza funciones mock para la lectura y escritura por protocolo I2C. 
+
+Se prueban los siguientes casos: 
+\begin{itemize}
+  \item De la línea 9 a la 12: cuando la lectura del registro de estado del sensor es 0.
+  \item De la línea 14 a la 17: cuando la lectura del registro de estado del sensor es 255.
+  \item De la línea 19 a la 20: cuando la función de lectura devuelve error. 
+\end{itemize}
+
 \begin{lstlisting}[label=cod:codigo test driver AHT10,caption=Tests del driver del sensor AHT10.]
-//Prueba de funcion para obtener el estado del sensor AHT10
+/**
+ * @test prueba para la funcion de estado del sensor AHT10
+ * 
+ */
 void test_estado_del_sensor(void)
 {
   uint8_t buffer[1]={0};
+   
   uint8_t data=0;
-  read_I2C_STM32L432_port_ExpectAndReturn(AHT10_ADDRESS_SLAVE,buffer,1,AHT10_OK);
-  read_I2C_STM32L432_port_ReturnThruPtr_buffer(&data);
+  read_i2c_port_ExpectAndReturn(AHT10_ADDRESS,buffer,1,AHT10_OK);
+  read_i2c_port_ReturnThruPtr_buffer(&data);
   TEST_ASSERT_EQUAL(SENSOR_IDLE,aht10_get_status(&aht10config));
   
   data=255;
-  read_I2C_STM32L432_port_ExpectAndReturn(AHT10_ADDRESS_SLAVE,buffer,1,AHT10_OK);
-  read_I2C_STM32L432_port_ReturnThruPtr_buffer(&data);
+  read_i2c_port_ExpectAndReturn(AHT10_ADDRESS,buffer,1,AHT10_OK);
+  read_i2c_port_ReturnThruPtr_buffer(&data);
   TEST_ASSERT_EQUAL(SENSOR_BUSY,aht10_get_status(&aht10config));
-  
-  read_I2C_STM32L432_port_ExpectAndReturn(AHT10_ADDRESS_SLAVE,buffer,1,AHT10_ERROR);
-  TEST_ASSERT_EQUAL(SENSOR_BUSY,aht10_get_status(&aht10config)); 
+
+  read_i2c_port_ExpectAndReturn(AHT10_ADDRESS,buffer,1,AHT10_ERROR);
+  TEST_ASSERT_EQUAL(SENSOR_BUSY,aht10_get_status(&aht10config));
 }
 \end{lstlisting}
-
-En el código \ref{cod:codigo test driver BG96} se muestra la prueba desarrollada para la función \emph{send\_sms\_bg96()} encargada de mandar los mensajes de texto del driver BG96. Se probaron varios casos, cuando la función de envío de comandos responde con un OK y cuando responde con errores.
-\begin{lstlisting}[label=cod:codigo test driver BG96,caption=Tests del driver del módulo BG96.] 
-//Prueba de la funcion para mandar sms  
-void test_send_sms_bg96(void)
+En el fragmento de código \ref{cod:codigo test driver BG96} se muestra la prueba desarrollada para la función \emph{send\_sms\_bg96()} encargada de mandar los mensajes de texto del driver BG96. Se probaron varios casos, cuando la función de envío de comandos responde con un OK y cuando responde con errores.
+\begin{lstlisting}[label=cod:codigo test driver BG96,caption=Tests del driver del módulo BG96.]  
+/**
+ * @brief prueba de la funcion de envio de SMS
+ * 
+ */
+void test_send_sms(void)
 {
-  char buffer_resp[30]={0};
-  send_data_ExpectAndReturn("AT+CMGS=\"72950576\"\r",RS_BG96_SIGNAL,buffer_resp,12000,FT_BG96_OK);
-  send_data_ExpectAndReturn("HOLA\x1a\r",RS_BG96_OK,buffer_resp,12000,FT_BG96_OK);
-  TEST_ASSERT_EQUAL(FT_BG96_OK,send_sms_bg96(&config_module,"72950576","HOLA"));
+  char bf_resp[30]={0};
+   
+  send_data_ExpectAndReturn(
+    "AT+CMGS=\"72950576\"\r", 
+    RS_SIG,bf_resp, 12000, 
+    RF_OK);
+  send_data_ExpectAndReturn("HOLA\x1a\r",RS_OK,bf_resp,12000,RF_OK);
+  TEST_ASSERT_EQUAL(RF_OK,send_sms(&module,"72950576","HOLA"));
+  
+  send_data_ExpectAndReturn(
+    "AT+CMGS=\"72950576\"\r", 
+    RS_SIG,bf_resp, 12000,
+    RF_OK);
+  send_data_ExpectAndReturn("HOLA\x1a\r",RS_OK,bf_resp,12000,RF_ERROR);
+  TEST_ASSERT_EQUAL(RF_ERROR,send_sms(&module,"72950576","HOLA"));
 
-  send_data_ExpectAndReturn("AT+CMGS=\"72950576\"\r",RS_BG96_SIGNAL,buffer_resp,12000,FT_BG96_ERROR);
-  TEST_ASSERT_EQUAL(FT_BG96_ERROR,send_sms_bg96(&config_module,"72950576","HOLA"));
-
-  send_data_ExpectAndReturn("AT+CMGS=\"72950576\"\r",RS_BG96_SIGNAL,buffer_resp,12000,FT_BG96_OK);
-  send_data_ExpectAndReturn("HOLA\x1a\r",RS_BG96_OK,buffer_resp,12000,FT_BG96_ERROR);
-  TEST_ASSERT_EQUAL(FT_BG96_ERROR,send_sms_bg96(&config_module,"72950576","HOLA"));
+  send_data_ExpectAndReturn(
+    "AT+CMGS=\"72950576\"\r",
+    RS_SIG,bf_resp, 12000, 
+    RF_ERROR);
+  TEST_ASSERT_EQUAL(RF_ERROR,send_sms(&module,"72950576","HOLA"));
 }
 \end{lstlisting}
+
+En la figura \ref{fig:Resultado de tests drivers} se muestran los resultados de las pruebas realizadas a los drivers. En la figura \ref{fig:test driver AHT10} se puede ver que se realizaron 7 pruebas para el driver del sensor AHT10 de los cuales 7 pasaron exitosamente. En la figura \ref{fig:Test driver BG96} se puede ver que se realizaron 20 pruebas al driver del módulo BG96 y todas pasaron exitosamente.
+\begin{figure}[h!]
+    \begin{subfigure}[b]{0.49\linewidth}
+      \includegraphics[width=\textwidth, height=5cm]{./Figures/resultado_test_aht10.png}
+      \caption{Tests realizados al driver AHT10}
+      \label{fig:test driver AHT10}
+    \end{subfigure}
+\hfill
+  \begin{subfigure}[b]{0.49\linewidth}
+    \includegraphics[width=\textwidth, height=5cm]{./Figures/resultado_test_bg96.png}
+      \caption{Tests realizados al driver BG96}
+      \label{fig:Test driver BG96}
+  \end{subfigure}
+      \caption{Resultados de los tests realizados a los drivers.}
+    \label{fig:Resultado de tests drivers}
+\end{figure}
 
 Una forma cuantitativa de evaluar estas pruebas son los informes de cobertura generados por Ceedling.
 
@@ -79,17 +119,17 @@ Para realizar el envío de datos al broker, se utilizó el programa mosquitto. P
 
 \begin{figure}[h!]
   \centering
-    \includegraphics[width=\linewidth, height=2cm]{./Figures/mosquito_enviodatos.png}
+    \includegraphics[width=\linewidth, height=3.2cm]{./Figures/mosquito_enviodatos3.png}
   \caption{Envio de datos por el cliente MQTT de mosquitto.}
     \label{fig:mosquitto pub}
 \end{figure}
 
 Donde:
 \begin{itemize}
-  \item -h dirección del broker
-  \item -t tópico 
-  \item -u token
-  \item -m mensaje en formato json
+  \item Dirección del broker: \textit{-h}
+  \item Tópico: \textit{-t}  
+  \item Token: \textit{-u}
+  \item Mensaje en formato JSON: \textit{-m}
 \end{itemize}
 
 Al ejecutar el comando de la figura \ref{fig:mosquitto pub}, el cliente de mosquitto primeramente se conecta al broker MQTT, luego publica el mensaje en el tópico y finalmente, se desconecta del servidor.
@@ -98,9 +138,19 @@ Para comprobar la llegada de los datos al broker de ThingsBoard, se tiene que ir
 
 \begin{figure}[h!]
   \centering
-    \includegraphics[width=9cm, height=7.5cm]{./Figures/tb_recepcion2.png}
+    \includegraphics[width=11cm, height=8cm]{./Figures/tb_recepcion2.png}
   \caption{Recepción de datos en el broker MQTT.}
     \label{fig:tb recepcion}
+\end{figure}
+
+\subsection{Prueba del widget de mapa}
+Dentro de los paneles de visualización, se encuentran mapas que ilustran la ubicación del dispositivo en funcionamiento. En la figura \ref{fig:map thingsboard}, se presenta el mapa que indica la posición del prototipo empleado en el trabajo.
+
+\begin{figure}[h!]
+  \centering
+    \includegraphics[width=11cm, height=5.7cm]{./Figures/map2.png}
+  \caption{Ubicación del nodo sensor implementado.}
+    \label{fig:map thingsboard}
 \end{figure}
 
 \subsection{Prueba de la tabla de alarmas del panel visualización}
@@ -114,23 +164,13 @@ En la figura \ref{fig:alarmas tb} se puede ver la notificación de una alarma cu
     \label{fig:alarmas tb}
 \end{figure}
 
-\subsection{Prueba del widget de mapa}
-Dentro de los paneles de visualización, se encuentran mapas que ilustran la ubicación del dispositivo en funcionamiento. En la figura \ref{fig:map thingsboard}, se presenta el mapa que indica la posición del prototipo empleado en el trabajo.
-
-\begin{figure}[h!]
-  \centering
-    \includegraphics[width=11cm, height=6.5cm]{./Figures/map2.png}
-  \caption{Ubicación del nodo sensor implementado.}
-    \label{fig:map thingsboard}
-\end{figure}
-
 \subsection{Prueba de persistencia de datos}
 Para realizar la prueba de persistencia de datos, se configuró las gráficas de los paneles de visualización con un entorno de tiempo más amplio.
 En las gráficas se estableció un rango de tiempo de 7 días. El resultado se muestra en la figura \ref{fig:Persistencia de datos}.
 
 \begin{figure}[h!]
   \centering
-    \includegraphics[width=\linewidth, height=7cm]{./Figures/persistencia_datos.png}
+    \includegraphics[width=\linewidth, height=8cm]{./Figures/persistencia_datos4.png}
   \caption{Persistencia de datos.}
     \label{fig:Persistencia de datos}
 \end{figure}
@@ -138,27 +178,40 @@ En las gráficas se estableció un rango de tiempo de 7 días. El resultado se m
 \section{Pruebas de hardware}
 \subsection{Prueba de comunicación entre el sensor AHT10 y el microcontrolador}
 Para comprobar la comunicación por I2C entre el sensor y el microcontrolador se utilizó un analizador lógico.
-En la figura \ref{fig:write aht10} se puede ver la trama capturada por el analizador lógico cuando el firmware escribe en un registro del sensor. 
-
-En la figura \ref{fig:read aht10} se puede apreciar la trama capturada cuando se leen los registros del sensor. Se obtienen 6 bytes en los que se encuentra la información de la humedad y la temperatura.
+En la figura \ref{fig:write aht10} se puede ver la trama capturada por el analizador lógico cuando el firmware escribe en un registro del sensor.
+En la figura \ref{fig:read aht10} se puede apreciar la trama capturada cuando se leen los registros del sensor.
 
 \begin{figure}[h!]
   \centering
-    \includegraphics[width=\linewidth, height=3.2cm]{./Figures/write_i2c.png}
+    \includegraphics[width=\linewidth, height=3cm]{./Figures/write_i2c.png}
   \caption{Trama de escritura al sensor AHT10.}
     \label{fig:write aht10}
 \end{figure}
 
 \begin{figure}[h!]
   \centering
-    \includegraphics[width=\linewidth, height=3.5cm]{./Figures/read_i2c..png}
+    \includegraphics[width=\linewidth, height=3cm]{./Figures/read_i2c..png}
   \caption{Trama de lectura del sensor AHT10.}
     \label{fig:read aht10}
+\end{figure}
+Cuando se realiza la lectura de los registros del sensor se obtienen 6 bytes como se muestra en la figura \ref{fig:Bytes de lectura}. El primer byte contiene información de estado del sensor. De los 5 bytes restantes 20 bits contienen la información de la humedad y 20 bits de la temperatura. Para realizar la conversión de bits a valores representativos para variables físicas, se hace un corrimiento de bits y se aplican las fórmulas que nos proporciona la hoja de datos del sensor. 
+\begin{figure}[h!]
+  \centering
+    \includegraphics[width=8cm, height=6.5cm]{./Figures/info_bytes.png}
+  \caption{Bytes de lectura.}
+    \label{fig:Bytes de lectura}
 \end{figure}
 
 \subsection{Prueba de comunicación entre el módulo BG96 y el microcontrolador}
 
 Para probar la comunicación del microcontrolador con el módulo BG96, se utilizó un analizador lógico, que nos permite ver los comandos que envía el microcontrolador y la respuesta del módulo a estos comandos por protocolo serial.
+
+Para la prueba se mandó el siguiente comando:
+\begin{itemize}
+  \item Comando: AT+QMTOPEN=0,”mqtt.thingsboard.cloud”,1883\textbackslash r 
+  \item Respuesta: AT+QMTOPEN=0,”mqtt.thingsboard.cloud”,1883\textbackslash r\textbackslash r\textbackslash nOK\textbackslash r\textbackslash n
+\end{itemize}
+
 En la figura \ref{fig:trama uart1} se puede ver dos canales del analizador  lógico: el canal 2 muestra un comando mandado por el microcontrolador al módulo de comunicación y en el canal 3 la respuesta del módulo al comando enviado.
 
 \begin{figure}[h!]
@@ -169,12 +222,22 @@ En la figura \ref{fig:trama uart1} se puede ver dos canales del analizador  lóg
 \end{figure}
 
 \section{Pruebas funcionales del sistema}
-Con el propósito de llevar a cabo las pruebas funcionales de todo el sistema, se instaló el prototipo en un campo agrícola, tal como se ilustra en la figura \ref{fig:Condicionales ambientales prueba 1}.
+Con el propósito de llevar a cabo las pruebas funcionales de todo el sistema, se instaló el prototipo en un campo agrícola, tal como se ilustra en la figura \ref{fig:Instalacion del prototipo}.
+
 \begin{figure}[h!]
   \centering
-    \includegraphics[width=5cm, height=5cm]{./Figures/prototipo_implementacion.png}
-  \caption{Instalación del prototipo.}
-    \label{fig:Condicionales ambientales prueba 1}
+    \begin{subfigure}[b]{0.40\linewidth}
+      \includegraphics[width=4.5cm, height=7cm]{./Figures/prototipo_implementacion3.png}
+      \caption{Vista externa.}  
+      \label{fig:Prototipo serca}
+    \end{subfigure}
+  \begin{subfigure}[b]{0.40\linewidth}
+    \includegraphics[width=5cm, height=5cm]{./Figures/prt_serca.png}
+    \caption{Vista interna.}  
+    \label{fig:Prototipo serca2}
+  \end{subfigure}
+      \caption{Instalación del prototipo.}
+    \label{fig:Instalacion del prototipo}
 \end{figure}
   
 \subsection{Pruebas de lectura de los sensores}
@@ -190,7 +253,7 @@ En la figura \ref{fig:Lectura tierra seca tb} se muestran los resultados de la l
 
 \begin{figure}[h!]
   \centering
-    \includegraphics[width=\linewidth, height=6.5cm]{./Figures/tb_prueba1.png}
+    \includegraphics[width=\linewidth, height=7cm]{./Figures/tb_prueba1.png}
   \caption{Panel de visualización con las lecturas obtenidas en el caso de uso 1.}
     \label{fig:Lectura tierra seca tb}
 \end{figure}
@@ -207,7 +270,7 @@ En la figura \ref{fig:Humedad alta ThingsBoard} se muestran los resultados de la
 
 \begin{figure}[h!]
   \centering
-    \includegraphics[width=\linewidth, height=6.5cm]{./Figures/humedad_alta_tb.png}
+    \includegraphics[width=\linewidth, height=7cm]{./Figures/humedad_alta_tb.png}
   \caption{Panel de visualización con las lecturas obtenidas en el caso de uso 2.}
     \label{fig:Humedad alta ThingsBoard}
 \end{figure}
@@ -219,22 +282,33 @@ En la figura \ref{fig:secuencia de comandos shell} se puede observar toda la sec
 
 \begin{figure}[h]
   \centering
-    \includegraphics[width=13cm, height=7cm]{./Figures/trama_envio_datos3.png}
+    \includegraphics[width=13cm, height=8cm]{./Figures/trama_envio_datos3.png}
   \caption{Comandos para enviar datos al broker MQTT.}
     \label{fig:secuencia de comandos shell}
 \end{figure}
 
 \subsection{Prueba de envio de alarmas por SMS}
-El propósito de esta prueba radica en comprobar la eficacia de la alarma encargada de supervisar el nivel de humedad del suelo. Cuando la humedad del suelo disminuye por debajo del rango aceptable, el firmware envía un mensaje de texto al usuario con la notificación "Humedad de suelo muy baja". En la figura \ref{fig:sms alarma}, se observa que se ha recibido un mensaje de alarma cuando el nivel de humedad descendió por debajo del 10\%.
+El propósito de esta prueba radica en comprobar la eficacia de la alarma encargada de supervisar el nivel de humedad del suelo. Cuando la humedad del suelo disminuye por debajo del rango aceptable, el firmware envía un mensaje de texto al usuario con la notificación "Humedad de suelo muy baja". 
+
+En la figura \ref{fig:Comandos de envion SMS} podemos ver los comandos utilizados para enviar un SMS: 
+\begin{itemize}
+  \item AT+CMGF=1: comando para configurar el módulo en modo texto.
+  \item AT+CMGS=””: comando para enviar el mensaje.  
+\end{itemize}
+En la figura \ref{fig:sms alarma}, se observa que se ha recibido un mensaje de alarma cuando el nivel de humedad descendió por debajo del 10\%.
+
+\begin{figure}[h!]
+  \centering
+    \includegraphics[width=6cm, height=3cm]{./Figures/comandos_sms4.png}
+  \caption{Comandos para enviar un SMS.}
+    \label{fig:Comandos de envion SMS}
+\end{figure}
 
 \begin{figure}[h!]
   \centering
     \includegraphics[width=6cm, height=4cm]{./Figures/sms_alarma2.png}
-  \caption{Recepción del SMS con el mensaje  de alarma.}
+  \caption{Recepción del SMS con el mensaje de alarma.}
     \label{fig:sms alarma}
 \end{figure}
 
 \label{sec:pruebasHW}
-
-\clearpage
-\clearpage

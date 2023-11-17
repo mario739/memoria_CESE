@@ -6,7 +6,7 @@ En este capítulo se abordará la descripción de la arquitectura general del si
 \definecolor{mygreen}{rgb}{0,0.6,0}
 \definecolor{mygray}{rgb}{0.5,0.5,0.5}
 \definecolor{mymauve}{rgb}{0.58,0,0.82}
-
+\definecolor{mypurple}{rgb}{47,7,245}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % parámetros para configurar el formato del código en los entornos lstlisting
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -34,7 +34,12 @@ En este capítulo se abordará la descripción de la arquitectura general del si
   showtabs=false,                  % show tabs within strings adding particular underscores
   stepnumber=1,                    % the step between two line-numbers. If it's 1, each line will be numbered
   stringstyle=\color{mymauve},     % string literal style
-  tabsize=2,	                   % sets default tabsize to 2 spaces
+  tabsize=2,	                     % sets default tabsize to 2 spaces
+  emph={sprintf, read_i2c_port_ExpectAndReturn,read_i2c_port_ReturnThruPtr_buffer
+  ,TEST_ASSERT_EQUAL,send_data_ExpectAndReturn,aht10_launch_measurement}, 
+  emphstyle=\color{violet},
+  emph={[2]BG96_ERROR_SEND_SMS,BG96_ERROR_PUBLISH_MESSAGE,BG96_ERROR_CONNECT_SERVER_MQTT, RS_BG96_CERO,RF_ERROR,st_bg96_config,em_bg96_error_handling,AHT10_ADDRESS_SLAVE,int8_t,aht10_config_t,aht10_status_fnc,RS_SIG,RS_OK,RF_OK,RF_ERROR,uint8_t,SENSOR_BUSY,AHT10_OK,AHT10_ADDRESS,SENSOR_IDLE,AHT10_ERROR,uint32_t},emphstyle={[2]\color{blue}},
+  emph={[3]obj,self},emphstyle={[3]\color{orange}},
   title=\lstname,                  % show the filename of files included with \lstinputlisting; also try caption instead of title
   morecomment=[s]{/*}{*/}
 }
@@ -201,20 +206,22 @@ Las funciones comienzan iniciando una medición en el sensor con la función \em
 
 #define TEMPERATURE(A)                       (int8_t) ((A *0.000191)-50)       
 #define HUMEDITY(A)                          (uint8_t) (A *0.000095)        
-//Funcion para obtener el valor de la humeda
+/**
+ * @brief funcion para obtener el valor de la humedad
+ * 
+ * @param obj  puntero a la estructura principal del driver 
+ * @param data puntero a la variable donde se retorna la humedad
+ * @return aht10_status_fnc 
+ */
 aht10_status_fnc aht10_get_humedity(aht10_config_t*obj, uint8_t *data)
 {
-  if (obj== NULL)
-  {
-    return AHT10_ERROR;
-  }
   obj->status_fun=AHT10_ERROR;
   uint8_t bufferRead[6]={0};
   uint32_t data_humedity=0;
   obj->status_fun=aht10_launch_measurement(obj);
   if (obj->status_fun==AHT10_OK)
   {
-    obj->status_fun= obj->readI2C(AHT10_ADDRESS_SLAVE,bufferRead,6);
+    obj->status_fun= obj->readI2C(AHT10_ADDRESS,bufferRead,6);
     if (obj->status_fun==AHT10_OK)
     {
       data_humedity=(((uint32_t)bufferRead[1]<<16) | ((uint16_t)bufferRead[2]<<8) | (bufferRead[3]))>>4;
@@ -223,20 +230,23 @@ aht10_status_fnc aht10_get_humedity(aht10_config_t*obj, uint8_t *data)
   }
   return obj->status_fun;
 }
-//Funcion para obtener el valor de la temperatura 
+
+/**
+ * @brief funcion para obtener el valor de la temperatura
+ * 
+ * @param obj puntero a la estructura principal del driver 
+ * @param data puntero a la variable donde se retorna la temperatura
+ * @return aht10_status_fnc 
+ */
 aht10_status_fnc aht10_get_temperature(aht10_config_t*obj, int8_t *data)
 {
-  if (obj== NULL)
-  {
-    return AHT10_ERROR;
-  } 
   uint8_t buffer_read[6]={0};
   uint32_t data_temperature=0;
   obj->status_fun=AHT10_ERROR;
   obj->status_fun=aht10_launch_measurement(obj);
   if (obj->status_fun==AHT10_OK)
   {
-    obj->status_fun=obj->readI2C(AHT10_ADDRESS_SLAVE ,buffer_read,6);
+    obj->status_fun=obj->readI2C(AHT10_ADDRESS ,buffer_read,6);
     if (obj->status_fun==AHT10_OK)
     {
       data_temperature=((uint32_t)(buffer_read[3] & 0x0F)<<16) | ((uint16_t) buffer_read[4]<<8)| buffer_read[5];
@@ -255,39 +265,52 @@ El código \ref{cod:driver bg96} presenta dos funciones implementadas en el cont
 La función \emph{publish\_message()} es una de las más utilizadas por el firmware, es la encargada de publicar la trama JSON que contiene los datos de los sensores al tópico configurado inicialmente. 
 \begin{lstlisting}[label=cod:driver bg96,caption=Función de conexión y publicación al broker MQTT.]  % Start your code-block
 
-//Funcion para conectarse al servidor MQTT
+/**
+ * @brief funcion para conectarse al servidor MQTT
+ * 
+ * @param self puntero a la estructura principal del driver
+ * @return em_bg96_error_handling 
+ */
 em_bg96_error_handling connect_server_mqtt(st_bg96_config *self)
+{
+  self->ft_resp=RF_ERROR;
+  char cmd[150]={0};
+  sprintf(cmd,"AT+QMTCONN=%u,\"%s\",\"%s\",\"%s\"\r",self->self_mqtt.identifier_socket_mqtt,self->self_mqtt.mqtt_client_id,self->self_mqtt.mqtt_username,self->self_mqtt.mqtt_password);
+  self->ft_resp=self->send_data_device(cmd,RS_BG96_CERO,self->buffer_resp,10000);
+  if (self->ft_resp!=RF_OK)
   {
-    self->ft_resp=FT_BG96_ERROR;
-    char cmd[150]={0};
-    sprintf(cmd,"AT+QMTCONN=%u,\"%s\",\"%s\",\"%s\"\r",self->self_mqtt.identifier_socket_mqtt,self->self_mqtt.mqtt_client_id,self->self_mqtt.mqtt_username,self->self_mqtt.mqtt_password);
-    self->ft_resp=self->send_data_device(cmd,RS_BG96_CERO,self->buffer_resp,10000);
-    if (self->ft_resp!=FT_BG96_OK)
-    {
-      self->last_error=BG96_ERROR_CONNECT_SERVER_MQTT;
-    }
-    return self->ft_resp;
+    self->last_error=BG96_ERROR_CONNECT_SERVER_MQTT;
   }
-  //Funcion para publicar un mensaje al topico configurado 
-  em_bg96_error_handling publish_message(st_bg96_config *self,char *topic,char *data)
+  return self->ft_resp;
+}
+
+/**
+ * @brief funcion para publicar un mensaje al topico configurado 
+ * 
+ * @param self puntero a la estructura principal del driver
+ * @param topic topico donde se mandaran los datos
+ * @param data datos que se publicaran en el topico
+ * @return em_bg96_error_handling 
+ */
+em_bg96_error_handling publish_message(st_bg96_config *self,char *topic,char *data)
+{
+  self->ft_resp=RF_ERROR;
+  char cmd[50]={0};
+  char buffer_data[220]={0};
+  sprintf(buffer_data,"%s\x1a\r",data);
+  sprintf(cmd,"AT+QMTPUB=%u,0,0,0,\"%s\"\r",self->self_mqtt.identifier_socket_mqtt,topic);
+  self->ft_resp=self->send_data_device(cmd,RS_SIG,self->buffer_resp,3000);
+  if (RF_OK==self->ft_resp)
   {
-    self->ft_resp=FT_BG96_ERROR;
-    char cmd[50]={0};
-    char buffer_data[220]={0};
-    sprintf(buffer_data,"%s\x1a\r",data);
-    sprintf(cmd,"AT+QMTPUB=%u,0,0,0,\"%s\"\r",self->self_mqtt.identifier_socket_mqtt,topic);
-    self->ft_resp=self->send_data_device(cmd,RS_BG96_SIGNAL,self->buffer_resp,3000);
-    if (FT_BG96_OK==self->ft_resp)
+    self->ft_resp=self->send_data_device(buffer_data,RS_BG96_CERO,self->buffer_resp,15000);
+    if (self->ft_resp!=RF_OK)
     {
-      self->ft_resp=self->send_data_device(buffer_data,RS_BG96_CERO,self->buffer_resp,15000);
-      if (self->ft_resp!=FT_BG96_OK)
-      {
-        self->last_error=BG96_ERROR_PUBLISH_MESSAGE;
-      }   
-   }
-      else self->last_error=BG96_ERROR_PUBLISH_MESSAGE;
-      return self->ft_resp;
+       self->last_error=BG96_ERROR_PUBLISH_MESSAGE;
+    }   
   }
+  else self->last_error=BG96_ERROR_PUBLISH_MESSAGE;
+  return self->ft_resp;
+}
 \end{lstlisting}
 
 
@@ -295,20 +318,26 @@ Para el envío de mensajes de texto se desarrolló en el driver la función \emp
 El código \ref{cod:funcion de sms} muestra la implementación de la función \emph{send\_sms\_bg96()}
 \begin{lstlisting}[label=cod:funcion de sms,caption=Función para enviar SMS.]  % Start your code-block
 
-//Funcion para enviar mensaje de texto 
-em_bg96_error_handling send_sms_bg96(st_bg96_config *self,char*number,char*message)
+/**
+ * @brief funcion para enviar mensajes de texto
+ * 
+ * @param self puntero a estructura principal del driver
+ * @param number numero de telefono al que se mandara el mensaje
+ * @param message mensaje de texto
+ * @return em_bg96_error_handling 
+ */
+em_bg96_error_handling send_sms(st_bg96_config *self,char*number,char*message)
 {
-  self->ft_resp=FT_BG96_OK;
-  char buffer_message[256];
+  self->ft_resp=RF_OK;
+  char buffer_message[20];
   char buffer_number[20];
   sprintf(buffer_number,"AT+CMGS=\"%s\"\r",number);
   sprintf(buffer_message,"%s\x1a\r",message);
-  
-  self->ft_resp=self->send_data_device(buffer_number,RS_BG96_SIGNAL,self->buffer_resp,12000);
-  if (FT_BG96_OK==self->ft_resp)
+  self->ft_resp=self->send_data_device(buffer_number,RS_SIG,self->buffer_resp,12000);
+  if (RF_OK==self->ft_resp)
   {
-    self->ft_resp=self->send_data_device(buffer_message,RS_BG96_OK,self->buffer_resp,12000);
-    if (FT_BG96_OK!=self->ft_resp)
+    self->ft_resp=self->send_data_device(buffer_message,RS_OK,self->buffer_resp,12000);
+    if (RF_OK!=self->ft_resp)
     {
       self->last_error=BG96_ERROR_SEND_SMS;
     }
@@ -330,6 +359,7 @@ En la figura \ref{fig:esquematico root} se muestra la página raíz del esquemá
   \item Zona 2: modelo 3D de la tarjeta desarrollada.
   \item Zona 3: conexiones entre los diferentes hojas esquemáticas .
 \end{itemize}
+\clearpage
 
 \begin{figure}[h]
   \centering
@@ -350,23 +380,22 @@ En figura \ref{fig:esquematico modulos} se muestran los conectores de los módul
 Se incorporaron dos leds con fines de depuración: uno para indicar si se logró la  conexión al servidor MQTT y el otro para señalar cualquier estado de error del sistema. También se incluyó un conector para un puerto serial a través del cual el módulo transmite las secuencias de comandos enviadas y recibidas del módulo de comunicación. En la \ref{fig:esquematico conectores de debug} se puede ver el circuito implementado.
 \begin{figure}[h!]
   \centering
-	\includegraphics[width=10cm, height=4.5cm]{./Figures/esquematico_debug.png}
+	\includegraphics[width=10cm, height=3.5cm]{./Figures/esquematico_debug.png}
 	\caption{Esquemático interfaz de debug.}
 	\label{fig:esquematico conectores de debug}
 \end{figure}
 
 En la figura \ref{fig:esquematico conectores sensores} se pueden ver los conectores que se colocaron a la placa para conectar los sensores del nodo: sensor de humedad 1, sensor de humedad 2, sensor de luz UV y el sensor de humedad y temperatura ambiente AHT-10.
-\begin{figure}[h]
+\begin{figure}[h!]
   \centering
-	\includegraphics[width=10cm, height=4.5cm]{./Figures/conectores_sensores.png}
+	\includegraphics[width=10cm, height=4cm]{./Figures/conectores_sensores.png}
 	\caption{Esquemático conectores sensores.}
 	\label{fig:esquematico conectores sensores}
 \end{figure}
-
 Se colocaron dos colectores de alimentación como se muestra en la figura \ref{fig:esquematico conectores alimentacion}, el conector de 12V para alimentar al módulo del microcontrolador y el otro conector para alimentar al módulo de comunicación.
-\begin{figure}[h]
+\begin{figure}[h!]
   \centering
-	\includegraphics[width=9cm, height=3.5cm]{./Figures/esquematico_alimentacion.png}
+	\includegraphics[width=10cm, height=3.5cm]{./Figures/esquematico_alimentacion.png}
 	\caption{Esquemático conectores de alimentación.}
 	\label{fig:esquematico conectores alimentacion}
 \end{figure}
@@ -401,7 +430,7 @@ En la figura \ref{fig:3D del modulo} se muestra el diseño de la tarjeta del cir
 Una vez completado y validado el diseño, se generaron los archivos de fabricación y se mandaron a la empresa JLCPCB para su producción. La figura \ref{fig:PCB ensamblado} muestra la tarjeta ya ensamblada con los módulos. 
 \begin{figure}[h!]
   \centering
-	\includegraphics[width=6.5cm, height=4cm]{./Figures/hardware_vistalateral.png}
+	\includegraphics[width=7cm, height=4cm]{./Figures/hardware_vistalateral.png}
   \caption{PCB ensamblado.}
 	\label{fig:PCB ensamblado}
 \end{figure}
@@ -422,7 +451,7 @@ La figura \ref{fig:Panel principal} muestra el panel principal de la interfaz gr
 
 \begin{figure}[h]
   \centering
-	\includegraphics[width=\textwidth, height=8cm]{./Figures/panel_principal_editado.png}
+	\includegraphics[width=\textwidth, height=9cm]{./Figures/panel_principal_editado.png}
   \caption{Panel principal de la interfaz gráfica.}
 	\label{fig:Panel principal}
 \end{figure}
@@ -439,9 +468,9 @@ El panel está dividido en las siguientes zonas:
   \item Zona 4: se tiene un mapa que muestra la ubicación del nodo sensor implementado.
 \end{itemize}
 
-\begin{figure}[h!]
+\begin{figure}[hbt!]
   \centering
-	\includegraphics[width=\textwidth, height=8.5cm]{./Figures/panel_nodosensor_editado2.png}
+	\includegraphics[width=\textwidth, height=9cm]{./Figures/panel_nodosensor_editado2.png}
   \caption{Panel nodo sensor.}
 	\label{fig:Panel nodo sensor}
 \end{figure}

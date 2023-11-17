@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2023.5.31)  16 NOV 2023 21:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2023.5.31)  17 NOV 2023 10:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1155,77 +1155,72 @@ File: ./Figures/conectores_sensores.png Graphic file (type png)
 <use ./Figures/conectores_sensores.png>
 Package pdftex.def Info: ./Figures/conectores_sensores.png  used on input line 391.
 (pdftex.def)             Requested size: 284.52557pt x 113.80545pt.
-<./Figures/esquematico_alimentacion.png, id=900, 1129.21875pt x 359.3425pt>
-File: ./Figures/esquematico_alimentacion.png Graphic file (type png)
-<use ./Figures/esquematico_alimentacion.png>
-Package pdftex.def Info: ./Figures/esquematico_alimentacion.png  used on input line 398.
-(pdftex.def)             Requested size: 284.52672pt x 99.58438pt.
-LaTeX Info: Redefining \. on input line 402.
-LaTeX Info: Redefining \% on input line 402.
+LaTeX Info: Redefining \. on input line 395.
+LaTeX Info: Redefining \% on input line 395.
  [22
 
  <./Figures/esquematico_raiz.png> <./Figures/esquematico_modulos.png> <./Figures/esquematico_debug.png>]
+<./Figures/esquematico_alimentacion.png, id=907, 1129.21875pt x 359.3425pt>
+File: ./Figures/esquematico_alimentacion.png Graphic file (type png)
+<use ./Figures/esquematico_alimentacion.png>
+Package pdftex.def Info: ./Figures/esquematico_alimentacion.png  used on input line 400.
+(pdftex.def)             Requested size: 284.52672pt x 99.58438pt.
 <./Figures/pcb_top.png, id=909, 623.32875pt x 829.0975pt>
 File: ./Figures/pcb_top.png Graphic file (type png)
 <use ./Figures/pcb_top.png>
-Package pdftex.def Info: ./Figures/pcb_top.png  used on input line 409.
+Package pdftex.def Info: ./Figures/pcb_top.png  used on input line 411.
 (pdftex.def)             Requested size: 109.14427pt x 145.17014pt.
 <./Figures/pcb_bot.png, id=910, 608.2725pt x 830.10126pt>
 File: ./Figures/pcb_bot.png Graphic file (type png)
 <use ./Figures/pcb_bot.png>
-Package pdftex.def Info: ./Figures/pcb_bot.png  used on input line 414.
+Package pdftex.def Info: ./Figures/pcb_bot.png  used on input line 416.
 (pdftex.def)             Requested size: 105.24838pt x 143.62328pt.
-<./Figures/tarjeta3d.png, id=912, 767.86874pt x 627.34375pt>
+LaTeX Info: Redefining \. on input line 423.
+LaTeX Info: Redefining \% on input line 423.
+ [23 <./Figures/conectores_sensores.png> <./Figures/esquematico_alimentacion.png> <./Figures/pcb_top.png> <./Figures/pcb_bot.png>]
+<./Figures/tarjeta3d.png, id=920, 767.86874pt x 627.34375pt>
 File: ./Figures/tarjeta3d.png Graphic file (type png)
 <use ./Figures/tarjeta3d.png>
-Package pdftex.def Info: ./Figures/tarjeta3d.png  used on input line 425.
+Package pdftex.def Info: ./Figures/tarjeta3d.png  used on input line 427.
 (pdftex.def)             Requested size: 199.16078pt x 113.80724pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<./Figures/hardware_vistalateral.png, id=914, 1155.31625pt x 635.37375pt>
+<./Figures/hardware_vistalateral.png, id=922, 1155.31625pt x 635.37375pt>
 File: ./Figures/hardware_vistalateral.png Graphic file (type png)
 <use ./Figures/hardware_vistalateral.png>
-Package pdftex.def Info: ./Figures/hardware_vistalateral.png  used on input line 433.
+Package pdftex.def Info: ./Figures/hardware_vistalateral.png  used on input line 435.
 (pdftex.def)             Requested size: 199.16887pt x 113.80972pt.
-LaTeX Info: Redefining \. on input line 437.
-LaTeX Info: Redefining \% on input line 437.
-[23 <./Figures/conectores_sensores.png> <./Figures/esquematico_alimentacion.png> <./Figures/pcb_top.png> <./Figures/pcb_bot.png>]
 <./Figures/panel_principal_editado.png, id=924, 746.63943pt x 391.61307pt>
 File: ./Figures/panel_principal_editado.png Graphic file (type png)
 <use ./Figures/panel_principal_editado.png>
-Package pdftex.def Info: ./Figures/panel_principal_editado.png  used on input line 454.
-(pdftex.def)             Requested size: 389.80417pt x 256.08118pt.
+Package pdftex.def Info: ./Figures/panel_principal_editado.png  used on input line 456.
+(pdftex.def)             Requested size: 389.80417pt x 213.39201pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-LaTeX Info: Redefining \. on input line 463.
-LaTeX Info: Redefining \% on input line 463.
-[24 <./Figures/tarjeta3d.png> <./Figures/hardware_vistalateral.png>]
+LaTeX Info: Redefining \. on input line 464.
+LaTeX Info: Redefining \% on input line 464.
+[24
+
+ <./Figures/tarjeta3d.png> <./Figures/hardware_vistalateral.png>]
 <./Figures/panel_nodosensor_editado2.png, id=932, 907.89188pt x 471.56175pt>
 File: ./Figures/panel_nodosensor_editado2.png Graphic file (type png)
 <use ./Figures/panel_nodosensor_editado2.png>
 Package pdftex.def Info: ./Figures/panel_nodosensor_editado2.png  used on input line 473.
-(pdftex.def)             Requested size: 389.80406pt x 256.08583pt.
+(pdftex.def)             Requested size: 389.80406pt x 213.39526pt.
 )
 LaTeX Info: Redefining \. on input line 126.
 LaTeX Info: Redefining \% on input line 126.
- [25 <./Figures/panel_principal_editado.png>]
-LaTeX Info: Redefining \. on input line 126.
-LaTeX Info: Redefining \% on input line 126.
- [26 <./Figures/panel_nodosensor_editado2.png>]
+ [25 <./Figures/panel_principal_editado.png> <./Figures/panel_nodosensor_editado2.png>]
 \openout2 = `Chapters/Chapter4.aux'.
 
- (./Chapters/Chapter4.tex
-Cap\'{\i }tulo 4.
-1: section
-[27
+ (./Chapters/Chapter4.tex [26
 
 
 
 ]
+Cap\'{\i }tulo 4.
+1: section
+[27]
 <./Figures/resultado_test_aht10.png, id=977, 1084.05pt x 506.89375pt>
 File: ./Figures/resultado_test_aht10.png Graphic file (type png)
 <use ./Figures/resultado_test_aht10.png>
@@ -1405,7 +1400,7 @@ Package logreq Info: Writing requests to 'memoria.run.xml'.
 Here is how much of TeX's memory you used:
  26894 strings out of 481239
  566712 string characters out of 5920377
- 1310301 words of memory out of 5000000
+ 1308301 words of memory out of 5000000
  41336 multiletter control sequences out of 15000+600000
  585106 words of font info for 106 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
@@ -1445,7 +1440,7 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on /home/mario/Documents/memoria_CESE/build/memoria.pdf (52 pages, 9886973 bytes).
+Output written on /home/mario/Documents/memoria_CESE/build/memoria.pdf (52 pages, 9886645 bytes).
 PDF statistics:
  1251 PDF objects out of 1440 (max. 8388607)
  1068 compressed objects within 11 object streams

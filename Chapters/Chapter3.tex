@@ -260,7 +260,7 @@ aht10_status_fnc aht10_get_temperature(aht10_config_t*obj, int8_t *data)
 \subsection{ Controlador para el módulo de comunicación BG96 } 
 Se han creado diversas funciones destinadas al controlador BG96, las que posibilitan la configuración del módulo, la configuración de la red, y las más cruciales para el funcionamiento: las relacionadas con la conexión, publicación y desconexión del servidor MQTT.
 
-El código \ref{cod:driver bg96} presenta dos funciones implementadas en el controlador BG96. La función \emph{connect\_server\_mqtt()} se emplea para establecer la conexión con el servidor MQTT. En su interior, esta función envía el comando visible en la línea 6 y aguarda la respuesta del módulo, que puede ser \emph{OK} o \emph{ERROR}.
+El código \ref{cod:driver bg96} presenta dos funciones implementadas en el controlador BG96. La función \emph{connect\_server\_mqtt()} se emplea para establecer la conexión con el servidor MQTT. En su interior, esta función envía el comando visible en la línea 11 y aguarda la respuesta del módulo, que puede ser \emph{OK} o \emph{ERROR}.
 
 La función \emph{publish\_message()} es una de las más utilizadas por el firmware, es la encargada de publicar la trama JSON que contiene los datos de los sensores al tópico configurado inicialmente. 
 \begin{lstlisting}[label=cod:driver bg96,caption=Función de conexión y publicación al broker MQTT.]  % Start your code-block
@@ -285,11 +285,11 @@ em_bg96_error_handling connect_server_mqtt(st_bg96_config *self)
 }
 
 /**
- * @brief funcion para publicar un mensaje al topico configurado 
+ * @brief funcion para publicar un mensaje a un topico
  * 
  * @param self puntero a la estructura principal del driver
- * @param topic topico donde se mandaran los datos
- * @param data datos que se publicaran en el topico
+ * @param topic topico donde se mandaran los datos 
+ * @param data datos a publicar
  * @return em_bg96_error_handling 
  */
 em_bg96_error_handling publish_message(st_bg96_config *self,char *topic,char *data)
@@ -392,6 +392,8 @@ En la figura \ref{fig:esquematico conectores sensores} se pueden ver los conecto
 	\caption{Esquemático conectores sensores.}
 	\label{fig:esquematico conectores sensores}
 \end{figure}
+
+
 Se colocaron dos colectores de alimentación como se muestra en la figura \ref{fig:esquematico conectores alimentacion}, el conector de 12V para alimentar al módulo del microcontrolador y el otro conector para alimentar al módulo de comunicación.
 \begin{figure}[h!]
   \centering
@@ -418,7 +420,7 @@ La figura \ref{fig:PCB del proyecto} muestra el circuito impreso diseñado para 
   \caption{PCB del trabajo.}
   \label{fig:PCB del proyecto}
 \end{figure}
-
+\clearpage
 En la figura \ref{fig:3D del modulo} se muestra el diseño de la tarjeta del circuito impreso en 3D.
 \begin{figure}[h!]
   \centering
@@ -451,16 +453,14 @@ La figura \ref{fig:Panel principal} muestra el panel principal de la interfaz gr
 
 \begin{figure}[h]
   \centering
-	\includegraphics[width=\textwidth, height=9cm]{./Figures/panel_principal_editado.png}
+	\includegraphics[width=\textwidth, height=7.5cm]{./Figures/panel_principal_editado.png}
   \caption{Panel principal de la interfaz gráfica.}
 	\label{fig:Panel principal}
 \end{figure}
 
 \subsection{Panel nodo sensor} 
 
-Para tener un mayor detalle de todos los parámetros de monitoreo de cada nodo sensor se creó un panel secundario que se muestra en la figura \ref{fig:Panel nodo sensor}.
-
-El panel está dividido en las siguientes zonas:
+Para tener un mayor detalle de todos los parámetros de monitoreo de cada nodo sensor se creó un panel secundario que se muestra en la figura \ref{fig:Panel nodo sensor}. El panel está dividido en las siguientes zonas:
 \begin{itemize}
   \item Zona 1: gráficas que muestran los cambios que van teniendo los valores de las variables medidas por los sensores con respecto al tiempo.
   \item Zona 2: widgets que muestran el último valor obtenido por el nodo sensor de cada variable monitoreada.
@@ -468,9 +468,9 @@ El panel está dividido en las siguientes zonas:
   \item Zona 4: se tiene un mapa que muestra la ubicación del nodo sensor implementado.
 \end{itemize}
 
-\begin{figure}[hbt!]
+\begin{figure}[htb!]
   \centering
-	\includegraphics[width=\textwidth, height=9cm]{./Figures/panel_nodosensor_editado2.png}
+	\includegraphics[width=\textwidth, height=7.5cm]{./Figures/panel_nodosensor_editado2.png}
   \caption{Panel nodo sensor.}
 	\label{fig:Panel nodo sensor}
 \end{figure}

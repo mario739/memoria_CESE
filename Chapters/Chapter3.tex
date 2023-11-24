@@ -133,7 +133,9 @@ Para el control del sistema se crearon cuatro tareas sobre freeRTOS, que se comu
 
 \subsection{Tarea loop del sistema} 
 
-La tarea loop comienza iniciando un timer que se encarga controlar el tiempo de repetición del ciclo de la tarea. Luego la tarea se bloquea. 
+La tarea loop es un bucle que se encarga de brindar la secuencialidad al firmware, manda eventos a las demás tareas para que sean procesados. 
+
+Comienza iniciando un timer que se encarga controlar el tiempo de repetición del ciclo de la tarea. Luego la tarea se bloquea. 
 Cuando se termina el tiempo del timer, se ejecuta el handler de la interrupción desbloqueando la tarea loop. La tarea envía un evento a la cola de adquisición de datos para realizar la lectura  de  los sensores y un evento a la cola que maneja la conexión  para levantar el servidor. Posteriormente la tarea comprueba si se logró levantar una conexión. Si la conexión existe la tarea manda un evento  por la cola del servidor para que se envíen los datos al broker MQTT. Luego la tarea  envía un evento a la cola de alarmas para mandar los SMS (Short Message Service) de las alarmas activas del sistema. Finalmente, después de monitorear  las alarmas la tarea manda un evento a la cola de servidor para la desconexión. Al finalizar el ciclo de la tarea, inicia el timer nuevamente y manda al microcontrolador a modo de bajo consumo para ahorrar energía.
 
 \begin{figure}[h]  
@@ -144,7 +146,9 @@ Cuando se termina el tiempo del timer, se ejecuta el handler de la interrupción
 \end{figure}
 
 \subsection{Tarea adquisición de datos} 
-La figura \ref{fig:Df tarea adquisicion} muestra el diagrama de flujo de la tarea de adquisición de datos. La tarea inicia revisando si hay datos en la cola de adquisición. Si existen datos se realiza la lectura de todos los sensores, para posteriormente enviar los  valores leídos por la cola de datos y alarmas. Si no hay datos en la cola la tarea se bloquea. 
+La tarea de adquisición de datos es la encargada de hacer la lectura de los sensores. La figura \ref{fig:Df tarea adquisicion} muestra el diagrama de flujo de la tarea. 
+
+La tarea inicia revisando si hay datos en la cola de adquisición. Si existen datos se realiza la lectura de todos los sensores, para posteriormente enviar los  valores leídos por la cola de datos y alarmas. Si no hay datos en la cola la tarea se bloquea. 
 
 \begin{figure}[h]
   \centering
@@ -155,7 +159,8 @@ La figura \ref{fig:Df tarea adquisicion} muestra el diagrama de flujo de la tare
 
 \vspace{5cm}
 \subsection{Tarea manejador de alarmas} 
-El control de las alarmas se realiza a través de una tarea del sistema operativo, la figura \ref{fig:Df tarea alarmas} muestra el diagrama de flujo de la tarea que maneja las alarmas.
+
+Es la tarea encargada de monitorear que los valores leídos por los sensores no sean menores o mayores a los límites permitidos para la variable. La tarea activa una alarma si existe un valor fuera de los límites. La figura \ref{fig:Df tarea alarmas} muestra el diagrama de flujo de la tarea que maneja las alarmas.
 
 Al ingresar al bucle infinito, la tarea comienza por inspeccionar la cola de alarmas. Si se encuentran datos en dicha cola, procede a analizar el evento que contiene la información recibida.
 
@@ -171,17 +176,19 @@ En caso de no haber datos en la cola de alarmas, la tarea entra en un estado de 
 \end{figure}
 
 \subsection{Tarea manejador del servidor } 
-La tarea comienza esperando datos en la cola del servidor, al llegar datos se analiza el evento que se recibe. Se tiene tres posibles eventos: UP, DOWN y SEND. Si el evento es UP, la tarea ingresa a la máquina de estados que se muestra en la figura \ref{fig:Maquina de estados up servidor}, la que se encarga de establecer una conexión con el servidor. Si el evento es DOWN, la tarea ejecuta la máquina de estados que se ve en la figura \ref{fig:Maquina de estados dowm servidor}, que se encarga de terminar la conexión con el servidor. Si el evento es SEND, la tarea obtiene los últimos datos leídos por los sensores, arma la trama y publica los datos al broker MQTT. 
+La tarea se encarga de configurar, conectar y desconectar una conexión con el servidor. También permite enviar datos al broker MQTT. 
+
+Comienza esperando datos en la cola del servidor, al llegar datos se analiza el evento que se recibe. Se tiene tres posibles eventos: UP, DOWN y SEND. Si el evento es UP, la tarea ingresa a la máquina de estados que se muestra en la figura \ref{fig:Maquina de estados up servidor}, la que se encarga de establecer una conexión con el servidor. Si el evento es DOWN, la tarea ejecuta la máquina de estados que se ve en la figura \ref{fig:Maquina de estados dowm servidor}, que se encarga de terminar la conexión con el servidor. Si el evento es SEND, la tarea obtiene los últimos datos leídos por los sensores, arma la trama y publica los datos al broker MQTT. 
 \begin{figure}[h]
   \centering
-	\includegraphics[width=8cm, height=8.5cm]{./Figures/DF general task conection.png}
+	\includegraphics[width=8cm, height=8.1cm]{./Figures/DF general task conection.png}
 	\caption{Diagrama de flujo de la tarea conexion server MQTT.}
 	\label{fig:Df tarea conexion}
 \end{figure}
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=8cm, height=7.5cm]{./Figures/SM down server.png}
+  \includegraphics[width=8cm, height=7.7cm]{./Figures/SM down server.png}
   \caption{Máquina de estados down servidor.}
   \label{fig:Maquina de estados dowm servidor}
 \end{figure}
@@ -201,7 +208,6 @@ Se implementaron dos controladores: para el módulo de comunicación BG96 y para
 
 Para la lectura de humedad y temperatura, se desarrolló en el driver las funciones de \emph{aht10\_get\_humedity()} y \emph{aht10\_get\_temperature()} que se muestran en el código \ref{cod:codigo funciones lectura}.
 Las funciones comienzan iniciando una medición en el sensor con la función \emph{aht10\_launch\_measurement()}, luego realizan la lectura de los registros del sensor, almacenando los valores de retorno en un buffer. Con los bytes obtenidos se realiza un corrimiento para  obtener los bytes que contienen la información de humedad y temperatura. Finalmente, se aplican las fórmulas de las líneas 1 y 2 del código \ref{cod:codigo funciones lectura} para convertir los bytes en valores significativos de las variables físicas.
- 
 \begin{lstlisting}[label=cod:codigo funciones lectura ,caption=Funciones de lectura de humedad y temperatura.]  % Start your code-block
 
 #define TEMPERATURE(A)                       (int8_t) ((A *0.000191)-50)       

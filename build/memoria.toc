@@ -64,8 +64,8 @@
 \contentsline {subsection}{\numberline {4.4.1}Pruebas de lectura de los sensores}{34}{subsection.4.4.1}%
 \contentsline {subsubsection}{Caso de uso 1}{34}{section*.49}%
 \contentsline {subsubsection}{Caso de uso 2}{34}{section*.51}%
-\contentsline {subsection}{\numberline {4.4.2}Prueba del envío de datos al broker MQTT}{34}{subsection.4.4.2}%
-\contentsline {subsection}{\numberline {4.4.3}Prueba de envio de alarmas por SMS}{35}{subsection.4.4.3}%
+\contentsline {subsection}{\numberline {4.4.2}Prueba del envío de datos al broker MQTT}{35}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}Prueba de envio de alarmas por SMS}{36}{subsection.4.4.3}%
 \contentsline {chapter}{\numberline {5}Conclusiones}{37}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Resultados obtenidos}{37}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Próximos pasos}{38}{section.5.2}%

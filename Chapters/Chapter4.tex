@@ -267,6 +267,7 @@ Esta prueba se realiza bajo las siguientes condiciones:
 \end{itemize}
 
 En la figura \ref{fig:Humedad alta ThingsBoard} se muestran los resultados de la lectura. Como resultado tenemos: humedad del suelo del 75\%, nivel de radiación baja de 2, humedad ambiente de 54\% y temperatura ambiente de 23\textcelsius.
+\clearpage
 
 \begin{figure}[h!]
   \centering
@@ -274,7 +275,6 @@ En la figura \ref{fig:Humedad alta ThingsBoard} se muestran los resultados de la
   \caption{Panel de visualización con las lecturas obtenidas en el caso de uso 2.}
     \label{fig:Humedad alta ThingsBoard}
 \end{figure}
-
 \subsection{Prueba del envío de datos al broker MQTT}
 Una de las tareas más importantes del firmware, es la del manejo de la comunicación con el servidor. Para verificar el funcionamiento de esta tarea, es necesario ver la secuencia de comandos que envía el microcontrolador al módulo de comunicación.
 Para realizar esta prueba se conectó un convertidor UART a USB al conector de depuración que tiene el dispositivo.
